@@ -6,39 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".HumanResource.StaffActivity">
 
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-                <RadioButton
-                    android:id="@+id/radio_one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginTop="53dp"
-                    android:checked="true"
-                    android:onClick="checkButton"
-                    android:text="Input details"
-                    android:textColor="#0c4763"
-                    android:textSize="18sp" />
-
-        <RadioButton
-            android:id="@+id/radio_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="205dp"
-            android:layout_marginTop="52dp"
-            android:onClick="checkButton"
-            android:text="Upload document"
-            android:textSize="18sp" />
-
-
-        <!--      </RadioGroup>-->
 
 
 

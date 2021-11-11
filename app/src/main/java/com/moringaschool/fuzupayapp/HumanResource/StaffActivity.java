@@ -16,8 +16,8 @@ import butterknife.ButterKnife;
 
 public class StaffActivity extends AppCompatActivity {
     private RadioButton mRadioButton;
-    @BindView(R.id.addStaffButton)
-    Button mAddStaffButton;
+//    @BindView(R.id.addStaffButton)
+//    Button mAddStaffButton;
 
    // @BindView(R.id.radioButton) RadioButton mRadioButton;
  //   @BindView(R.id.radio_two) RadioButton mRadioButton;
@@ -26,17 +26,17 @@ public class StaffActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_staff);
-
-        ButterKnife.bind(this);
-
-        mAddStaffButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int radioId = mRadioGroup.getCheckedRadioButtonId();
-                mRadioButton = findViewById(radioId);
-            }
-        });
+//        mAddStaffButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.activity_staff);
+//
+//                ButterKnife.bind(this);
+//
+//                int radioId = mRadioGroup.getCheckedRadioButtonId();
+//                mRadioButton = findViewById(radioId);
+//            }
+//        });
 
 
 

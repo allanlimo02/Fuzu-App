@@ -58,6 +58,7 @@
         android:layout_toStartOf="@+id/textview"
         android:layout_toLeftOf="@+id/textview"
         android:text="login"
+        android:backgroundTint="#0c4763"
         android:textColorHighlight="#144763"
         android:textColorLink="#144763"
         tools:ignore="MissingConstraints,UnknownId"

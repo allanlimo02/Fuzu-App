@@ -135,13 +135,16 @@
                     android:background="@drawable/circle"
                     android:src="@drawable/ic_add_people" />
 
-                <ImageView
+                <TextView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:padding="5dp"
                     android:layout_marginLeft="20dp"
                     android:background="@drawable/circle"
-                    android:src="@drawable/ic_30f" />
+                    android:textSize="30sp"
+                    android:textColor="#004673"
+                    android:paddingStart="15dp"
+                    android:text="03" />
             </LinearLayout>
         </HorizontalScrollView>
 

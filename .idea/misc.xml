@@ -11,6 +11,12 @@
         <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_add_staff.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_all_staff.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1984375" />
+        <entry key="app/src/main/res/drawable/loginbackground.xml" value="0.1984375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1734375" />
+        <entry key="app/src/main/res/layout/fragment_account.xml" value="0.178125" />
+
       </map>
     </option>
   </component>

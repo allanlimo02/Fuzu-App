@@ -13,7 +13,9 @@ import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardFragment;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.Leave_Request_Fragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaff;
+import com.moringaschool.fuzupayapp.HumanResource.Leave;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,9 +48,9 @@ BottomNavigationView bottomNavigationView;
                     case R.id.nav_staff:
                         fragment = new AllStaff();
                         break;
-//                    case R.id.nav_leave:
-//                        fragment =new leaveFragment();
-//                        break;
+                    case R.id.nav_leave:
+                        fragment =new Leave_Request_Fragment();
+                        break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_container, fragment).commit();
                 return true;

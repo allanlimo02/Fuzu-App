@@ -7,7 +7,9 @@
         <entry key="app/src/main/res/drawable/tick.xml" value="0.29775280898876405" />
         <entry key="app/src/main/res/layout/activity_leave.xml" value="0.11296296296296296" />
         <entry key="app/src/main/res/layout/fragment_leave__request_.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_on__leave_.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.2833333333333333" />
+        <entry key="app/src/main/res/layout/on_leave_list_item.xml" value="0.2833333333333333" />
       </map>
     </option>
   </component>

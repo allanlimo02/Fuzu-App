@@ -16,7 +16,7 @@
             android:name=".HumanResource.Leave"
             android:exported="true" />
         <activity
-            android:name=".HumanResource.Staff"
+            android:name= ".HumanResource.StaffActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

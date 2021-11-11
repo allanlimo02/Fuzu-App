@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
         <activity
+            android:name=".HumanResource.Login"
+            android:exported="true" />
+        <activity
             android:name=".HumanResource.Leave"
             android:exported="true" />
         <activity

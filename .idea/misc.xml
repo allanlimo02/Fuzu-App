@@ -12,8 +12,8 @@
         <entry key="app/src/main/res/layout/activity_staff2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_staff_input_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.178125" />
-        <entry key="app/src/main/res/layout/fragment_add__staff__input_.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_add__staff__input_.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_add_staff.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_all_staff.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.6106304079110012" />

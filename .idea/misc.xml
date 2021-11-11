@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/layout/fragment_add_staff.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_all_staff.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.6106304079110012" />
+        <entry key="app/src/main/res/layout/fragment_departments.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/holidays_holder.xml" value="0.31979166666666664" />
       </map>
     </option>

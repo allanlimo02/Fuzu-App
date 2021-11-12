@@ -15,16 +15,18 @@
         android:textColor="#144763"
         android:textSize="24sp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="260dp" />
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="215dp" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="382dp"
         android:layout_height="55dp"
+        android:background="@drawable/thin_border"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
+        android:paddingStart="5dp"
         android:layout_alignParentRight="true"
         android:focusable="true"
         android:hint="Password"
@@ -32,7 +34,7 @@
         android:textColorHint="#144763"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="400dp" />
+        tools:layout_editor_absoluteY="338dp" />
 
     <EditText
         android:id="@+id/emailEditText"
@@ -44,36 +46,47 @@
         android:layout_alignParentRight="true"
         android:focusable="true"
         android:hint="Email"
+        android:background="@drawable/thin_border"
+        android:paddingStart="5dp"
         android:textColorHighlight="#144763"
         android:textColorHint="#144763"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="318dp" />
+        tools:layout_editor_absoluteY="268dp" />
 
     <Button
         android:id="@+id/findLoginButton"
         android:layout_width="177dp"
-        android:layout_height="53dp"
+        android:layout_height="43dp"
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/textview"
         android:layout_toLeftOf="@+id/textview"
-        android:text="login"
         android:backgroundTint="#0c4763"
+        android:text="login"
         android:textColorHighlight="#144763"
-        android:textColorLink="#144763"
         tools:ignore="MissingConstraints,UnknownId"
         tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="478dp" />
+        tools:layout_editor_absoluteY="409dp" />
 
     <TextView
         android:id="@+id/forgetPasswordTextView"
         android:layout_width="211dp"
         android:layout_height="26dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginTop="468dp"
         android:text="Forget Password?"
         android:textColor="#144763"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="220dp"
+        android:layout_height="76dp"
+        android:src="@drawable/untitled"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

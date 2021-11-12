@@ -7,35 +7,34 @@
     tools:context=".HumanResource.Login">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/pleaseLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Please login to your account."
         android:textColor="#144763"
         android:textSize="24sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="215dp" />
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="163dp" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="382dp"
         android:layout_height="55dp"
-        android:background="@drawable/thin_border"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
-        android:paddingStart="5dp"
         android:layout_alignParentRight="true"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/thin_border"
         android:focusable="true"
         android:hint="Password"
         android:inputType="textPassword"
+        android:paddingStart="5dp"
         android:textColorHighlight="#144763"
         android:textColorHint="#144763"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="338dp" />
+        app:layout_constraintBottom_toTopOf="@+id/findLoginButton"
+        />
 
     <EditText
         android:id="@+id/emailEditText"
@@ -45,29 +44,31 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:background="@drawable/thin_border"
         android:focusable="true"
         android:hint="Email"
-        android:background="@drawable/thin_border"
         android:paddingStart="5dp"
         android:textColorHighlight="#144763"
         android:textColorHint="#144763"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="268dp" />
+        app:layout_constraintBottom_toTopOf="@+id/findLoginButton"
+        app:layout_constraintTop_toBottomOf="@+id/pleaseLogin"
+        app:layout_constraintVertical_bias="0.369"
+      />
 
     <Button
         android:id="@+id/findLoginButton"
         android:layout_width="177dp"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/textview"
-        android:layout_toLeftOf="@+id/textview"
+        android:layout_marginBottom="32dp"
+        android:layout_toStartOf="@+id/forgetPasswordTextView"
+        android:layout_toLeftOf="@+id/forgetPasswordTextView"
         android:backgroundTint="#0c4763"
         android:text="login"
         android:textColorHighlight="#144763"
-        tools:ignore="MissingConstraints,UnknownId"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="409dp" />
+        app:layout_constraintBottom_toTopOf="@+id/forgetPasswordTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/forgetPasswordTextView"
@@ -87,10 +88,13 @@
         android:id="@+id/imageView2"
         android:layout_width="220dp"
         android:layout_height="76dp"
+        android:layout_marginTop="36dp"
         android:src="@drawable/untitled"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/pleaseLogin"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,7 @@ import com.moringaschool.fuzupayapp.MainActivity;
 import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.findLoginButton)
@@ -29,7 +30,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        ButterKnife.bind(this);
         mFindLoginButton.setOnClickListener(this);
 
     }

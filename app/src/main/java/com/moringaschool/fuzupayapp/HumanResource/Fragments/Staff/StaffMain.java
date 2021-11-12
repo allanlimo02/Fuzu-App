@@ -30,7 +30,6 @@ public class StaffMain extends Fragment {
 //     * @param param2 Parameter 2.
 //     * @return A new instance of fragment StaffMain.
 //     */
-//    public static StaffMain newInstance(String param1, String param2) {
 //        StaffMain fragment = new StaffMain();
 //        Bundle args = new Bundle();
 //        args.putString(ARG_PARAM1, param1);

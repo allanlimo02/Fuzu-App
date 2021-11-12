@@ -1,475 +1,548 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="30dp"
-    android:padding="10dp"
+    android:background="#fbf3ee"
     tools:context=".HumanResource.StaffActivity">
 
-
-
-<!--    line 1-->
-
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="25dp"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <!--    line 1-->
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-                <!--    line 1-->
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/employeeCodeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#004673"
                     android:layout_marginStart="16dp"
-                    android:text="@string/employee_code" />
+                    android:text="@string/employee_code"
+                    android:textColor="@color/black" />
 
 
                 <EditText
                     android:id="@+id/employeeCode"
-                    android:layout_width="110dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"/>
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
 
-       </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/surnameTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#004673"
                     android:layout_height="wrap_content"
-                    android:text="@string/surname" />
+                    android:text="@string/surname"
+                    android:textColor="@color/black" />
 
 
                 <EditText
                     android:id="@+id/surname"
-                    android:layout_width="110dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"/>
-       </LinearLayout>
-       <LinearLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginStart="20dp"
-               android:orientation="vertical">
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/otherNameTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#004673"
                     android:layout_height="wrap_content"
-                    android:text="@string/other_name" />
+                    android:text="@string/other_name"
+                    android:textColor="@color/black" />
 
 
                 <EditText
                     android:id="@+id/otherName"
-                    android:layout_width="110dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName" />
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
 
-       </LinearLayout>
-    </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
 
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="100dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!--    line 2-->
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="80dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- line 2-->
 
                 <TextView
                     android:id="@+id/phoneNumberTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#004673"
                     android:layout_height="wrap_content"
-                    android:text="Phone Number" />
+                    android:text="Phone Number"
+                    android:textColor="@color/black" />
 
 
                 <EditText
                     android:id="@+id/phoneNumber"
-                    android:layout_width="110dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/emailTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#004673"
                     android:layout_height="wrap_content"
-                    android:text="Email" />
+                    android:text="Email"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/email"
-                    android:layout_width="110dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
+                    android:background="@drawable/thin_border"
+                    android:inputType="textEmailAddress"
+                    android:padding="2px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/idPassportNumberTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#004673"
                     android:layout_height="wrap_content"
-                    android:text="ID/Passport Number" />
+                    android:text="ID/Passport Number"
+                    android:textColor="@color/black" />
 
-               <EditText
-                   android:id="@+id/idPassportNumber"
-                   android:layout_width="110dp"
-                   android:layout_height="wrap_content"
-                   android:inputType="textPersonName"/>
+                <EditText
+                    android:id="@+id/idPassportNumber"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="200dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="160dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--line3-->
+
+                <TextView
+                    android:id="@+id/nationalityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nationality"
+                    android:textColor="@color/black" />
+
+
+                <EditText
+                    android:id="@+id/nationality"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dateOfBirthTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Birth"
+                    android:textColor="@color/black" />
+
+
+                <EditText
+                    android:id="@+id/dateOfBirth"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/positionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Position"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/position"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="240dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--    line4-->
+
+                <TextView
+                    android:id="@+id/departmentTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Department"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/department"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/employmentTypeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Employment Type"
+                    android:textColor="@color/black" />
+
+
+                <EditText
+                    android:id="@+id/employmentType"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/employmentDateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Employment Date"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/employmentDate"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="320dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/grossSalaryTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gross Salary"
+                    android:textColor="@color/black" />
+
+
+                <EditText
+                    android:id="@+id/grossSalary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/maritalStatusTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marital Status"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/maritalStatus"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/emergencyContactTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergency Contact"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/emergencyContact"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="400dp"
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal">
 
-        <!--    line3-->
-
-            <TextView
-                android:id="@+id/nationalityTextView"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:textColor="#004673"
                 android:layout_height="wrap_content"
-                android:text="Nationality"/>
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/emergencyContactPhoneTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergency Contact Phone"
+                    android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/nationality"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"/>
+                <EditText
+                    android:id="@+id/emergencyContactPhone"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
 
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
+
+
+        <TextView
+            android:id="@+id/paymentDetails"
             android:layout_width="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
+            android:layout_marginTop="480dp"
+            android:text="Payment Details"
+            android:textColor="#0c4763" />
 
-            <TextView
-                android:id="@+id/dateOfBirthTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Date of Birth" />
-
-
-            <EditText
-                android:id="@+id/dateOfBirth"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/positionTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Position" />
-
-            <EditText
-                android:id="@+id/position"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="300dp">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="520dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/bankNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bank Name"
+                    android:textColor="@color/black" />
+
+
+                <EditText
+                    android:id="@+id/bankName"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/branchTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Branch"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/branch"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/accountNumberTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account Number"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName19"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_border"
+                    android:inputType="textPersonName"
+                    android:padding="2px" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/saveDetailsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!--    line4-->
-
-            <TextView
-                android:id="@+id/departmentTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Department" />
-
-            <EditText
-                android:id="@+id/department"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/employmentTypeTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Employment Type" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="590dp"
+            android:backgroundTint="#0c4763"
+            android:text="Save Details"
+            android:textColor="@color/white" />
+    </RelativeLayout>
 
 
-            <EditText
-                android:id="@+id/employmentType"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:orientation="vertical">
-            <TextView
-                android:id="@+id/employmentDateTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Employment Date" />
-
-            <EditText
-                android:id="@+id/employmentDate"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="400dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/grossSalaryTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Gross Salary" />
-
-
-            <EditText
-                android:id="@+id/grossSalary"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/maritalStatusTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Marital Status" />
-
-            <EditText
-                android:id="@+id/maritalStatus"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/emergencyContactTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Emergency Contact" />
-
-            <EditText
-                android:id="@+id/emergencyContact"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"/>
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="500dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/emergencyContactPhoneTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#004673"
-                android:text="Emergency Contact Phone" />
-
-            <EditText
-                android:id="@+id/emergencyContactPhone"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/paymentDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#0c4763"
-        android:layout_marginTop="580dp"
-        android:text="Payment Details" />
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="620dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/bankNameTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Bank Name" />
-
-
-            <EditText
-                android:id="@+id/bankName"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/branchTextView"
-                android:layout_width="wrap_content"
-                android:textColor="#004673"
-                android:layout_height="wrap_content"
-                android:text="Branch"/>
-
-            <EditText
-                android:id="@+id/branch"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/accountNumberTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#004673"
-                android:text="Account Number" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName19"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-
-        </LinearLayout>
-    </LinearLayout>
-    <Button
-        android:id="@+id/saveDetailsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save Details"
-        android:layout_marginTop="690dp"
-        android:textColor="@color/white"
-        android:backgroundTint="#0c4763"
-        android:layout_centerHorizontal="true"/>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

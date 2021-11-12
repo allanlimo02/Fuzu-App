@@ -1,29 +1,24 @@
 package com.moringaschool.fuzupayapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TableLayout;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.tabs.TabLayout;
-//import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardFragment;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.Leave_Request_Fragment;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaff;
-import com.moringaschool.fuzupayapp.HumanResource.Leave;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.mainLeave;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffMain;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+//import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
 
 public class MainActivity extends AppCompatActivity {
 //
@@ -60,10 +55,10 @@ BottomNavigationView bottomNavigationView;
                         fragment=new DashboardFragment();
                         break;
                     case R.id.nav_staff:
-                        fragment = new AllStaff();
+                        fragment = new StaffMain();
                         break;
                     case R.id.nav_leave:
-                        fragment =new Leave_Request_Fragment();
+                        fragment =new mainLeave();
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_container, fragment).commit();

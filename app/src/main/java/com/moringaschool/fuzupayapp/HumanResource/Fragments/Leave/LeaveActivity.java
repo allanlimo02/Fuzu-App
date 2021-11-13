@@ -30,6 +30,7 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.onleave) TextView onLeaveButton;
     BottomNavigationView bottomNavigationView;
 
+
     //    fragment inititializations
     private TextView fragmentOneBtn2, fragmentTwoBtn2;
 
@@ -38,8 +39,12 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leave2);
 
+
+
+
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_leave);
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

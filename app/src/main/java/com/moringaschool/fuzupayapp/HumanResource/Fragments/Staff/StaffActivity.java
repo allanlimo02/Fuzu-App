@@ -22,7 +22,8 @@ import com.moringaschool.fuzupayapp.R;
 import butterknife.BindView;
 
 public class StaffActivity extends AppCompatActivity {
-    @BindView(R.id.bottom_navigation) BottomNavigationView bottomNavigationView;
+    @BindView(R.id.bottom_navigation)
+    BottomNavigationView bottomNavigationView;
 
 //    fragment inititializations
     private TextView fragmentOneBtn, fragmentTwoBtn, fragmentThreeBtn;
@@ -32,6 +33,41 @@ public class StaffActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff);
+
+//        initiaize
+        init();
+//        setOnClickListener
+
+        fragmentOneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        fragmentTwoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayout,new DepartmentsFragment());
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        fragmentThreeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayout,new fragmentAddStaff());
+                fragmentTransaction.commit();
+
+            }
+        });
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_staff);
@@ -56,43 +92,6 @@ public class StaffActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
-//        initiaize
-        init();
-//        setOnClickListener
-
-        fragmentOneBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
-                fragmentTransaction.commit();
-
-            }
-        });
-
-        fragmentTwoBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout,new fragmentAddStaff());
-                fragmentTransaction.commit();
-
-            }
-        });
-
-        fragmentThreeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout,new DepartmentsFragment());
-                fragmentTransaction.commit();
-
-            }
-        });
-
 
 
     }

@@ -2,15 +2,21 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaff;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.DepartmentsFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.fragmentAddStaff;
 import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
@@ -18,6 +24,9 @@ import butterknife.BindView;
 public class LeaveActivity extends AppCompatActivity {
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bottomNavigationView;
+
+    //    fragment inititializations
+    private Button fragmentOneBtn2, fragmentTwoBtn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,5 +56,42 @@ public class LeaveActivity extends AppCompatActivity {
                 return false;
             }
         });
+        //        initiaize
+        init();
+//        setOnClickListener
+
+        fragmentOneBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayout2,new Leave_Request_Fragment());
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        fragmentTwoBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
+                fragmentTransaction.commit();
+
+            }
+        });
+
+
+
+
+
     }
+    //    outside onCreate
+    private void init(){
+        fragmentOneBtn2 = findViewById(R.id.fragmentOneBtn2);
+        fragmentTwoBtn2 = findViewById(R.id.fragmentTwoBtn2);
+
+
+    }
+
 }

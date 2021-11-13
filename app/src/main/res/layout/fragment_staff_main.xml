@@ -50,7 +50,7 @@
             android:background="@drawable/thin_border"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:id="@id/addstaff"
+
             android:text="Add Staff"
             android:textColor="#004673" />
 

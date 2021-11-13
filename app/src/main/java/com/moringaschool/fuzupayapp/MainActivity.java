@@ -75,14 +75,6 @@ BottomNavigationView bottomNavigationView;
                         startActivity(new Intent(getApplicationContext(), StaffActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                        fragment=new DashboardFragment();
-                        break;
-                    case R.id.nav_staff:
-                        fragment = new StaffMain();
-                        break;
-                    case R.id.nav_leave:
-                        fragment =new mainLeave();
-                        break;
                 }
                 return false;
             }

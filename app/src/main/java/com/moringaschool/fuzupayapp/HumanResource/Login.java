@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.R;
 
@@ -19,7 +22,7 @@ import butterknife.ButterKnife;
 public class Login extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.findLoginButton) Button mFindLoginButton;
     @BindView(R.id.emailEditText) EditText mEmailEditText;
-    @BindView(R.id.passwordEditText) EditText mPasswordEditText;
+    @BindView(R.id.passwordEditText) TextInputLayout mPasswordEditText;
     @BindView(R.id.forgetPasswordTextView) TextView mForgetPasswordTextView;
 
     @Override
@@ -38,7 +41,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 //        initialize the username and password
 
         String userEmail = mEmailEditText.getText().toString().trim();
-        String userPassword = mPasswordEditText.getText().toString().trim();
+        TextInputEditText userPassword = new TextInputEditText(mPasswordEditText.getContext());
+//        Editable userPassword = mPasswordEditText.getEditText().getText();
 
 //        logic
         if(v==mFindLoginButton){

@@ -38,6 +38,17 @@
         <entry key="app/src/main/res/menu/all_stuff.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.25" />
         <entry key="app/src/main/res/menu/top_navbar.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_leave2.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/activity_staff.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_all_staff.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_leave__request_.xml" value="0.1734375" />
+        <entry key="app/src/main/res/layout/fragment_mainstaff.xml" value="0.1734375" />
+        <entry key="app/src/main/res/layout/fragment_single_staff.xml" value="0.1734375" />
+        <entry key="app/src/main/res/layout/fragment_staff_main.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.1734375" />
+        <entry key="app/src/main/res/layout/on_leave_list_item.xml" value="0.1734375" />
       </map>
     </option>
   </component>

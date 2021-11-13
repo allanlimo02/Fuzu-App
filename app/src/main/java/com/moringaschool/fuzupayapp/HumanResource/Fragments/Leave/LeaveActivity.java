@@ -92,9 +92,11 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
-    public void onClick(View v) {
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
-            fragmentTransaction.commit();
+    public void onClick(View view) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
+        fragmentTransaction.commit();
+
+
     }
 }

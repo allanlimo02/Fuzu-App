@@ -6,13 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="600dp"
     android:orientation="vertical"
-    android:background="@color/two"
     tools:context=".HumanResource.Fragments.Leave.Leave_Request_Fragment">
 
 
 
     <LinearLayout
-
         android:layout_marginTop="70dp"
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"

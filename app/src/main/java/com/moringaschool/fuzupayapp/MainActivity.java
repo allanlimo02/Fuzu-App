@@ -18,8 +18,20 @@ import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardFragment;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.mainLeave;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffMain;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+//import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
 
 public class MainActivity extends AppCompatActivity {
 //
@@ -63,6 +75,14 @@ BottomNavigationView bottomNavigationView;
                         startActivity(new Intent(getApplicationContext(), StaffActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                        fragment=new DashboardFragment();
+                        break;
+                    case R.id.nav_staff:
+                        fragment = new StaffMain();
+                        break;
+                    case R.id.nav_leave:
+                        fragment =new mainLeave();
+                        break;
                 }
                 return false;
             }

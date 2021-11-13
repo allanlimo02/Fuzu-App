@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import com.moringaschool.fuzupayapp.R;
 
 
-public class fragmentAddStaff extends Fragment {
+public class DepartmentsFragment extends Fragment {
 
 
-    public fragmentAddStaff() {
+    public DepartmentsFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +23,7 @@ public class fragmentAddStaff extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_staff, container, false);
+        View view = inflater.inflate(R.layout.fragment_departments, container, false);
+         return view;
     }
-
 }

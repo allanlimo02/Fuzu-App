@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
+//import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //    TableLayout tableLayout;
 //    ViewPager2 pager2;
-    AdapterFragment adapter;
+//    AdapterFragment adapter;
 
 
     @BindView(R.id.bottom_navigation)
@@ -82,8 +82,8 @@ BottomNavigationView bottomNavigationView;
         });
 
 //        getSupportFragmentManager()
-        FragmentManager fm = getSupportFragmentManager();
-        adapter = new AdapterFragment(fm, getLifecycle());
+//        FragmentManager fm = getSupportFragmentManager();
+//        adapter = new AdapterFragment(fm, getLifecycle());
 //        pager2.setAdapter(adapter);
 //
 //        tableLayout.addTab(tableLayout.newTab().setText("All staff"));

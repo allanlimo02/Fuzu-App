@@ -31,7 +31,7 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     BottomNavigationView bottomNavigationView;
 
     //    fragment inititializations
-    private Button fragmentOneBtn2, fragmentTwoBtn2;
+    private TextView fragmentOneBtn2, fragmentTwoBtn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,17 +82,19 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
                 fragmentTransaction.commit();
-
             }
         });
-
     }
     //    outside onCreate
     private void init(){
         fragmentOneBtn2 = findViewById(R.id.fragmentOneBtn2);
         fragmentTwoBtn2 = findViewById(R.id.fragmentTwoBtn2);
-
-
     }
 
+    @Override
+    public void onClick(View v) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
+            fragmentTransaction.commit();
+    }
 }

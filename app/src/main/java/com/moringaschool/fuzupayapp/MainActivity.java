@@ -75,6 +75,7 @@ BottomNavigationView bottomNavigationView;
                         startActivity(new Intent(getApplicationContext(), StaffActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+
                 }
                 return false;
             }

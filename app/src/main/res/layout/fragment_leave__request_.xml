@@ -11,14 +11,17 @@
 
 
 
+
     <LinearLayout
 
         android:layout_marginTop="70dp"
+    <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
         android:padding="3dp"
+        android:layout_marginTop="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -75,6 +78,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="396dp"
         android:layout_height="117dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"

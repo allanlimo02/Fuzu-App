@@ -3,12 +3,15 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -21,8 +24,10 @@ import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
 
-public class LeaveActivity extends AppCompatActivity {
-    @BindView(R.id.bottom_navigation)
+public class LeaveActivity extends AppCompatActivity implements View.OnClickListener{
+    @BindView(R.id.bottom_navigation) BottomNavigationView mBottomNavigationView;
+    @BindView(R.id.leaverequests) TextView leaveRequestButton;
+    @BindView(R.id.onleave) TextView onLeaveButton;
     BottomNavigationView bottomNavigationView;
 
     //    fragment inititializations
@@ -80,10 +85,6 @@ public class LeaveActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
 
     }
     //    outside onCreate

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HumanResource.Fragments.Leave.LeaveActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.088">
+
+        <TextView
+            android:id="@+id/leaverequests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="272dp"
+            android:background="@drawable/thin_border"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="Leave request"
+            android:textColor="#004673" />
+
+        <TextView
+            android:id="@+id/onleave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="236dp"
+            android:layout_marginEnd="63dp"
+            android:background="@drawable/thin_border"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="On-Leave"
+            android:textColor="#004673" />
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selecto"
+        app:menu="@menu/bottom_menu"
+        android:background="#004763"
+        />
+
+    <RelativeLayout
+        android:layout_width="420dp"
+        android:layout_height="639dp"
+        android:backgroundTint="@color/black"
+        android:id="@+id/frholder"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:layout_marginTop="160dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+</androidx.constraintlayout.widget.ConstraintLayout>

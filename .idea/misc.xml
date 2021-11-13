@@ -3,37 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/border_background.xml" value="0.3359375" />
-        <entry key="app/src/main/res/drawable/circle.xml" value="0.3359375" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1984375" />
-        <entry key="app/src/main/res/drawable/ic_person.xml" value="0.3359375" />
-        <entry key="app/src/main/res/drawable/loginbackground.xml" value="0.1984375" />
-        <entry key="app/src/main/res/drawable/thin_border.xml" value="0.3359375" />
-        <entry key="app/src/main/res/layout/activity_input_detail.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_leave.xml" value="0.1734375" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1734375" />
-        <entry key="app/src/main/res/layout/activity_staff.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_staff2.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_staff_input_detail.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/fragment_account.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_add__staff__input_.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_add_staff.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_all_staff.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_departments.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/fragment_leave__request_.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/fragment_on__leave_.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/fragment_single_staff.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/holidays_holder.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/on_leave_list_item.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/single_holiday.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/thin_border_with_radius.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/layout/toolbar.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/activity_staff.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/fragment_all_staff.xml" value="0.1734375" />
+        <entry key="app/src/main/res/layout/fragment_staff_main.xml" value="0.31979166666666664" />
       </map>
     </option>
   </component>

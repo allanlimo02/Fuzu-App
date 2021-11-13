@@ -22,7 +22,7 @@
             android:name=".HumanResource.Login"
             android:exported="true" />
         <activity
-            android:name=".HumanResource.StaffActivity"
+            android:name=".HumanResource.SomethingElse"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

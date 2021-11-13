@@ -14,7 +14,7 @@ import com.moringaschool.fuzupayapp.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class StaffActivity extends AppCompatActivity {
+public class SomethingElse extends AppCompatActivity {
     private RadioButton mRadioButton;
 //    @BindView(R.id.addStaffButton)
 //    Button mAddStaffButton;

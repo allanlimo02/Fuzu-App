@@ -2,8 +2,6 @@ package com.moringaschool.fuzupayapp.HumanResource;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,23 +12,10 @@ import com.google.android.material.navigation.NavigationBarView;
 
 //import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
-import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardFragment;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.mainLeave;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffMain;
 import com.moringaschool.fuzupayapp.R;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 //import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
 

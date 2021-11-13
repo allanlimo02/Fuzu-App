@@ -2,18 +2,14 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -24,29 +20,22 @@ import com.moringaschool.fuzupayapp.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class StaffActivity extends AppCompatActivity implements View.OnClickListener {
-    @BindView(R.id.bottom_navigation)
-    BottomNavigationView bottomNavigationView;
-
-    @BindView(R.id.fragmentOneBtn)
-    Button fragmentOneBtn;
-    @BindView(R.id.fragmentTwoBtn)
-    Button fragmentTwoBtn;
-    @BindView(R.id.fragmentThreeBtn)
-    Button fragmentThreeBtn;
-
+public class AddStaffMain extends AppCompatActivity implements View.OnClickListener{
+    @BindView(R.id.bottom_navigation)  BottomNavigationView bottomNavigationView;
+    @BindView(R.id.fragmentOneBtn) Button fragmentOneBtn;
+    @BindView(R.id.fragmentTwoBtn) Button fragmentTwoBtn;
+    @BindView(R.id.fragmentThreeBtn) Button fragmentThreeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_staff);
+        setContentView(R.layout.activity_add_staff_main);
         ButterKnife.bind(this);
 
         fragmentTwoBtn.setOnClickListener(this);
         fragmentOneBtn.setOnClickListener(this);
         fragmentThreeBtn.setOnClickListener(this);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_staff);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -69,26 +58,10 @@ public class StaffActivity extends AppCompatActivity implements View.OnClickList
                 return false;
             }
         });
-
-
-    }
-    @Override
-    public void onStart() {
-        super.onStart();
-        fragmentThreeBtn.setBackgroundColor(Color.WHITE);
-        fragmentTwoBtn.setBackgroundColor(Color.WHITE);
-        fragmentOneBtn.setBackgroundColor(Color.rgb(0,70,115));
-        fragmentTwoBtn.setTextColor(Color.BLACK);
-        fragmentThreeBtn.setTextColor(Color.BLACK);
-        fragmentOneBtn.setTextColor(Color.WHITE);
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
-        fragmentTransaction.commit();
     }
 
     @Override
     public void onClick(View v) {
-
         if(v==fragmentOneBtn){
             fragmentThreeBtn.setBackgroundColor(Color.WHITE);
             fragmentTwoBtn.setBackgroundColor(Color.WHITE);
@@ -120,12 +93,10 @@ public class StaffActivity extends AppCompatActivity implements View.OnClickList
             fragmentTwoBtn.setTextColor(Color.BLACK);
             fragmentThreeBtn.setTextColor(Color.WHITE);
             fragmentOneBtn.setTextColor(Color.BLACK);
-//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//            fragmentTransaction.replace(R.id.frameLayout,new fragmentAddStaff());
-//            fragmentTransaction.commit();
             startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
             overridePendingTransition(0,0);
 
         }
+
     }
 }

@@ -1,44 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".HumanResource.Fragments.Staff.StaffActivity">
+    tools:context=".HumanResource.Fragments.Staff.AddStaffMain">
 
     <include
         android:id="@+id/include"
         layout="@layout/toolbar" />
 
-<!--    layout displaying the classes-->
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088">
-
+        app:layout_constraintTop_toBottomOf="@+id/include">
 
 
         <Button
             android:id="@+id/fragmentOneBtn"
             android:layout_width="wrap_content"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="36dp"
+            android:layout_marginEnd="5dp"
             android:layout_toStartOf="@+id/textview"
             android:layout_toLeftOf="@+id/textview"
             android:backgroundTint="@color/button_buckground_color"
             android:text="All staff"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:textColor="@color/black"
             android:textColorHighlight="#144763"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,15 +41,15 @@
             android:id="@+id/fragmentTwoBtn"
             android:layout_width="wrap_content"
             android:layout_height="43dp"
-            android:textColor="@color/black"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="36dp"
+            android:layout_marginEnd="5dp"
             android:layout_toStartOf="@+id/textview"
             android:layout_toLeftOf="@+id/textview"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:backgroundTint="@color/button_buckground_color"
             android:text="Departments"
+            android:textColor="@color/black"
             android:textColorHighlight="#144763"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,14 +61,14 @@
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="36dp"
-            android:textColor="@color/black"
+            android:layout_marginEnd="5dp"
             android:layout_toStartOf="@+id/textview"
             android:layout_toLeftOf="@+id/textview"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:backgroundTint="@color/button_buckground_color"
             android:text="Add staff"
+            android:textColor="@color/black"
             android:textColorHighlight="#144763"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -86,28 +77,60 @@
 
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Input details"
+                android:textColor="#0c4763"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/radio_two"
+                app:layout_constraintHorizontal_bias="0.329"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.064" />
+
+            <RadioButton
+                android:id="@+id/radio_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="60dp"
+                android:text="Upload document"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.064" />
+        </LinearLayout>
+    </RadioGroup>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#004763"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selecto"
+        app:itemRippleColor="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:itemRippleColor="@android:color/transparent"
-        app:itemIconSize="30dp"
-        app:itemIconTint="@drawable/item_selecto"
-        app:menu="@menu/bottom_menu"
-        android:background="#004763"
-        />
-
+        app:menu="@menu/bottom_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

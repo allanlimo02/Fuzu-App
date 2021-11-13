@@ -46,17 +46,21 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
 //        logic
         if(v==mFindLoginButton){
+            Intent intent = new Intent(Login.this, DashboardActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
 
-            if(userEmail.equals("")){
-                mEmailEditText.setError("Email cannot be blank");
-            }
-            else if(userPassword.equals("")){
-                mPasswordEditText.setError("password cannot be blank");
-            }
-            else{
-                Intent intent = new Intent(Login.this, DashboardActivity.class);
-                startActivity(intent);
-            }
+//            if(userEmail.equals("")){
+//                mEmailEditText.setError("Email cannot be blank");
+//            }
+//            else if(userPassword.equals("")){
+//                mPasswordEditText.setError("password cannot be blank");
+//            }
+//            else{
+//                Intent intent = new Intent(Login.this, DashboardActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(intent);
+//            }
         }
 
     }

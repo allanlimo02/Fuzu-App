@@ -1,4 +1,4 @@
-package com.moringaschool.fuzupayapp;
+package com.moringaschool.fuzupayapp.HumanResource;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +27,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.mainLeave;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffMain;
+import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,9 +39,6 @@ public class MainActivity extends AppCompatActivity {
 //    TableLayout tableLayout;
 //    ViewPager2 pager2;
 //    AdapterFragment adapter;
-
-
-    @BindView(R.id.bottom_navigation)
 BottomNavigationView bottomNavigationView;
 //    @BindView(R.id.tab_layout)
 //    TabLayout tableLayout;
@@ -52,7 +50,6 @@ BottomNavigationView bottomNavigationView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);

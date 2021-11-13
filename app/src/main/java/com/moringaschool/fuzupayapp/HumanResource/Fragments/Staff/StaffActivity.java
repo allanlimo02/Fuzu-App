@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,18 +22,29 @@ import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class StaffActivity extends AppCompatActivity {
-    @BindView(R.id.bottom_navigation) BottomNavigationView bottomNavigationView;
+public class StaffActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.bottom_navigation)
+    BottomNavigationView bottomNavigationView;
 
-//    fragment inititializations
-    private TextView fragmentOneBtn, fragmentTwoBtn, fragmentThreeBtn;
+    @BindView(R.id.fragmentOneBtn)
+    Button fragmentOneBtn;
+    @BindView(R.id.fragmentTwoBtn)
+    Button fragmentTwoBtn;
+    @BindView(R.id.fragmentThreeBtn)
+    Button fragmentThreeBtn;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff);
+        ButterKnife.bind(this);
+
+        fragmentTwoBtn.setOnClickListener(this);
+        fragmentOneBtn.setOnClickListener(this);
+        fragmentThreeBtn.setOnClickListener(this);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_staff);
@@ -58,50 +71,46 @@ public class StaffActivity extends AppCompatActivity {
         });
 
 
-//        initiaize
-        init();
-//        setOnClickListener
-
-        fragmentOneBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
-                fragmentTransaction.commit();
-
-            }
-        });
-
-        fragmentTwoBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout,new fragmentAddStaff());
-                fragmentTransaction.commit();
-
-            }
-        });
-
-        fragmentThreeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout,new DepartmentsFragment());
-                fragmentTransaction.commit();
-
-            }
-        });
-
-
-
-    }
-//    outside onCreate
-    private void init(){
-        fragmentOneBtn = findViewById(R.id.fragmentOneBtn);
-        fragmentTwoBtn = findViewById(R.id.fragmentTwoBtn);
-        fragmentThreeBtn = findViewById(R.id.fragmentThreeBtn);
-
     }
 
+    @Override
+    public void onClick(View v) {
+
+        if(v==fragmentOneBtn){
+            fragmentThreeBtn.setBackgroundColor(Color.WHITE);
+            fragmentTwoBtn.setBackgroundColor(Color.WHITE);
+            fragmentOneBtn.setBackgroundColor(Color.rgb(0,70,115));
+            fragmentTwoBtn.setTextColor(Color.BLACK);
+            fragmentThreeBtn.setTextColor(Color.BLACK);
+            fragmentOneBtn.setTextColor(Color.WHITE);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
+            fragmentTransaction.commit();
+        }
+
+        if(v==fragmentTwoBtn){
+            fragmentTwoBtn.setBackgroundColor(Color.rgb(0,70,115));
+            fragmentThreeBtn.setBackgroundColor(Color.WHITE);
+            fragmentOneBtn.setBackgroundColor(Color.WHITE);
+            fragmentTwoBtn.setTextColor(Color.WHITE);
+            fragmentThreeBtn.setTextColor(Color.BLACK);
+            fragmentOneBtn.setTextColor(Color.BLACK);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout,new DepartmentsFragment());
+            fragmentTransaction.commit();
+        }
+
+        if(v==fragmentThreeBtn){
+            fragmentThreeBtn.setBackgroundColor(Color.rgb(0,70,115));
+            fragmentTwoBtn.setBackgroundColor(Color.WHITE);
+            fragmentOneBtn.setBackgroundColor(Color.WHITE);
+            fragmentTwoBtn.setTextColor(Color.BLACK);
+            fragmentThreeBtn.setTextColor(Color.WHITE);
+            fragmentOneBtn.setTextColor(Color.BLACK);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout,new fragmentAddStaff());
+            fragmentTransaction.commit();
+
+        }
+    }
 }

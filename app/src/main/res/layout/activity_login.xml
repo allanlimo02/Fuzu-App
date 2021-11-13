@@ -31,6 +31,7 @@
         android:focusable="true"
         android:hint="@string/password"
         android:paddingStart="5dp"
+        android:background="@drawable/thin_border"
         android:textColorHighlight="#144763"
         android:textColorHint="#144763"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +43,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/thin_border"
+            android:background="@android:color/transparent"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,15 +88,14 @@
 
     <TextView
         android:id="@+id/forgetPasswordTextView"
-        android:layout_width="211dp"
-        android:layout_height="26dp"
+        android:layout_width="181dp"
+        android:layout_height="37dp"
         android:layout_marginTop="28dp"
         android:text="Forget Password?"
         android:textColor="#144763"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/findLoginButton" />
 

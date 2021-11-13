@@ -11,7 +11,6 @@
         android:id="@+id/include"
         layout="@layout/toolbar" />
 
-
     <LinearLayout
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
@@ -24,30 +23,44 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.088">
 
-    <TextView
-        android:id="@+id/fragmentOneBtn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/fragmentOneBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="36dp"
+            android:layout_toStartOf="@+id/textview"
+            android:layout_toLeftOf="@+id/textview"
+            android:backgroundTint="@color/button_buckground_color"
+            android:text="Leave Request"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/black"
+            android:textColorHighlight="#144763"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+            tools:ignore="MissingConstraints,UnknownId" />
 
-        android:paddingTop="2dp"
-        android:paddingBottom="2dp"
-        android:background="@drawable/thin_border"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:layout_marginStart="20dp"
-        android:text="Leave Requests" />
+        <Button
+            android:id="@+id/fragmentTwoBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:textColor="@color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="36dp"
+            android:layout_toStartOf="@+id/textview"
+            android:layout_toLeftOf="@+id/textview"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@color/button_buckground_color"
+            android:text="On Leave"
+            android:textColorHighlight="#144763"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+            tools:ignore="MissingConstraints,UnknownId" />
 
-    <TextView
-        android:id="@+id/fragmentTwoBtn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="2dp"
-        android:paddingBottom="2dp"
-        android:background="@drawable/thin_border"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:layout_marginStart="40dp"
-        android:text="On Leave" />
 
 </LinearLayout>
 

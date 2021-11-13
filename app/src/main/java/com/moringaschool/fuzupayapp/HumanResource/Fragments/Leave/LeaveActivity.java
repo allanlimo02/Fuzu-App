@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,23 +24,34 @@ import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.fragmentAddSta
 import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class LeaveActivity extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.bottom_navigation) BottomNavigationView mBottomNavigationView;
-    @BindView(R.id.leaverequests) TextView leaveRequestButton;
-    @BindView(R.id.onleave) TextView onLeaveButton;
+    @BindView(R.id.fragmentOneBtn2) Button fragmentOneBtn2;
+    @BindView(R.id.fragmentTwoBtn2) Button fragmentTwoBtn2;
     BottomNavigationView bottomNavigationView;
 
+
     //    fragment inititializations
-    private TextView fragmentOneBtn2, fragmentTwoBtn2;
+//    private TextView fragmentOneBtn2, fragmentTwoBtn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leave2);
 
+        ButterKnife.bind(this);
+
+
+
+        fragmentTwoBtn2.setOnClickListener(this);
+        fragmentOneBtn2.setOnClickListener(this);
+
+
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_leave);
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -61,41 +73,30 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
                 return false;
             }
         });
-        //        initiaize
-        init();
-//        setOnClickListener
 
-        fragmentOneBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout2,new Leave_Request_Fragment());
-                fragmentTransaction.commit();
-
-            }
-        });
-
-        fragmentTwoBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
-                fragmentTransaction.commit();
-            }
-        });
-    }
-    //    outside onCreate
-    private void init(){
-        fragmentOneBtn2 = findViewById(R.id.fragmentOneBtn2);
-        fragmentTwoBtn2 = findViewById(R.id.fragmentTwoBtn2);
     }
 
     @Override
-    public void onClick(View view) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
-        fragmentTransaction.commit();
+    public void onClick(View v) {
+        if(v == fragmentOneBtn2){
+            fragmentTwoBtn2.setBackgroundColor(Color.WHITE);
+            fragmentOneBtn2.setBackgroundColor(Color.rgb(0,70,115));
+            fragmentTwoBtn2.setTextColor(Color.BLACK);
+            fragmentOneBtn2.setTextColor(Color.WHITE);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout2,new Leave_Request_Fragment());
+            fragmentTransaction.commit();
+        }
+
+        if(v == fragmentTwoBtn2){
+            fragmentTwoBtn2.setBackgroundColor(Color.rgb(0,70,115));
+            fragmentOneBtn2.setBackgroundColor(Color.WHITE);
+            fragmentTwoBtn2.setTextColor(Color.WHITE);
+            fragmentOneBtn2.setTextColor(Color.BLACK);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
+            fragmentTransaction.commit();
+        }
 
 
     }

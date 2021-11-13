@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -21,11 +22,10 @@ import com.moringaschool.fuzupayapp.R;
 import butterknife.BindView;
 
 public class StaffActivity extends AppCompatActivity {
-    @BindView(R.id.bottom_navigation)
-    BottomNavigationView bottomNavigationView;
+    @BindView(R.id.bottom_navigation) BottomNavigationView bottomNavigationView;
 
 //    fragment inititializations
-    private Button fragmentOneBtn, fragmentTwoBtn, fragmentThreeBtn;
+    private TextView fragmentOneBtn, fragmentTwoBtn, fragmentThreeBtn;
 
 
     @Override

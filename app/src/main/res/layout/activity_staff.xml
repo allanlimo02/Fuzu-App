@@ -24,32 +24,47 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.088">
 
-        <Button
+        <TextView
             android:id="@+id/fragmentOneBtn"
-            android:layout_width="1dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:text="All Staff" />
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="12sp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:background="@drawable/thin_border"
+            android:layout_marginStart="20dp"
+            android:text="All Staff"
+            android:textColor="#004673"  />
 
-        <Button
+        <TextView
             android:id="@+id/fragmentTwoBtn"
-            android:layout_width="1dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:text="All Staff" />
+            android:background="@drawable/thin_border"
+            android:paddingStart="20dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="2dp"
+            android:text="Departments"
+            android:layout_marginStart="20dp"
+            android:textColor="#004673"
 
-        <Button
+            android:textSize="12sp" />
+
+        <TextView
             android:id="@+id/fragmentThreeBtn"
-            android:layout_width="1dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/thin_border"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:text="All Staff" />
+            android:layout_marginStart="20dp"
+            android:text="Add Staff"
+            android:textColor="#004673"  />
 
     </LinearLayout>
 

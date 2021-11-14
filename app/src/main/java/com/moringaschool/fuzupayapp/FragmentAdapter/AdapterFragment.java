@@ -8,7 +8,7 @@
 //
 //import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.Add_Staff_Input_Fragment;
 //import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaff;
-//import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.DepartmentsFragment;
+//import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.fragmentAddStaff;
 //
 //public class AdapterFragment extends FragmentStateAdapter {
 //    public AdapterFragment(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
@@ -22,7 +22,7 @@
 //        switch (position)
 //        {
 //            case 1 :
-//                return new DepartmentsFragment();
+//                return new fragmentAddStaff.DepartmentsFragment();
 //
 //            case 2:
 //                return new Add_Staff_Input_Fragment();

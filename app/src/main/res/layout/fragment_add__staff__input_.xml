@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="100dp"
-    android:padding="10dp"
-    tools:context=".HumanResource.SomethingElse">
+    tools:context=".HumanResource.SomethingElse"
+    android:padding="10dp">
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    >
 
 
 
@@ -279,11 +284,12 @@
                 android:layout_height="wrap_content"
                 android:text="Employment Date" />
 
-            <EditText
-                android:id="@+id/employmentDate"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/employmentDate"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
         </LinearLayout>
     </LinearLayout>
 
@@ -470,6 +476,8 @@
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
+        </ScrollView>
+
 
 
 

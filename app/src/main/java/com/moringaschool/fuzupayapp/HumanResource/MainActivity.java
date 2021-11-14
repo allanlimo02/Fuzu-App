@@ -1,38 +1,29 @@
-package com.moringaschool.fuzupayapp;
+package com.moringaschool.fuzupayapp.HumanResource;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TableLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.tabs.TabLayout;
-//import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
-import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardFragment;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.Leave_Request_Fragment;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaff;
-import com.moringaschool.fuzupayapp.HumanResource.Leave;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
+import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
+
+import com.moringaschool.fuzupayapp.R;
+
+//import com.moringaschool.fuzupayapp.FragmentAdapter.AdapterFragment;
 
 public class MainActivity extends AppCompatActivity {
 //
 //    TableLayout tableLayout;
 //    ViewPager2 pager2;
 //    AdapterFragment adapter;
-
-
-    @BindView(R.id.bottom_navigation)
 BottomNavigationView bottomNavigationView;
 //    @BindView(R.id.tab_layout)
 //    TabLayout tableLayout;
@@ -44,36 +35,37 @@ BottomNavigationView bottomNavigationView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new DashboardFragment()).commit();
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment = null;
 
-                switch(item.getItemId()){
+
+                switch (item.getItemId()) {
                     case R.id.nav_home:
-                        fragment=new DashboardFragment();
-                        break;
-                    case R.id.nav_staff:
-                        fragment = new AllStaff();
-                        break;
+                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.nav_leave:
-                        fragment =new Leave_Request_Fragment();
-                        break;
+                        startActivity(new Intent(getApplicationContext(), LeaveActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.nav_staff:
+                        startActivity(new Intent(getApplicationContext(), StaffActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.main_container, fragment).commit();
-                return true;
+                return false;
             }
         });
 
 //        getSupportFragmentManager()
 //        FragmentManager fm = getSupportFragmentManager();
-//        adapter = new AdapterFragment(fm,getLifecycle());
+//        adapter = new AdapterFragment(fm, getLifecycle());
 //        pager2.setAdapter(adapter);
 //
 //        tableLayout.addTab(tableLayout.newTab().setText("All staff"));
@@ -103,12 +95,13 @@ BottomNavigationView bottomNavigationView;
 //                tableLayout.selectTab(tableLayout.getTabAt(position));
 //            }
 //        });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.top_navbar,menu);
-        return true;
+//    }
+//
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.top_navbar,menu);
+//        return true;
+//    }
     }
 }

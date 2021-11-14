@@ -11,30 +11,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
         android:text="Please login to your account."
         android:textColor="#144763"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="163dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:ignore="MissingConstraints" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordEditText"
         android:layout_width="382dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="36dp"
-        android:background="@drawable/thin_border"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="36dp"
         android:focusable="true"
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:hint="@string/password"
         android:paddingStart="5dp"
+        android:background="@drawable/thin_border"
         android:textColorHighlight="#144763"
         android:textColorHint="#144763"
-        app:layout_constraintBottom_toTopOf="@+id/findLoginButton"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailEditText"
+        tools:ignore="MissingConstraints" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/emailEditText"
@@ -42,39 +53,43 @@
         android:layout_height="54dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:inputType="text"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
         android:background="@drawable/thin_border"
         android:focusable="true"
         android:hint="Email"
         android:paddingStart="5dp"
         android:textColorHighlight="#144763"
         android:textColorHint="#144763"
-        app:layout_constraintBottom_toTopOf="@+id/findLoginButton"
-        app:layout_constraintTop_toBottomOf="@+id/pleaseLogin"
-        app:layout_constraintVertical_bias="0.369"
-      />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/findLoginButton"
         android:layout_width="177dp"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="32dp"
-        android:layout_toStartOf="@+id/forgetPasswordTextView"
-        android:layout_toLeftOf="@+id/forgetPasswordTextView"
+        android:layout_marginTop="36dp"
+        android:layout_toStartOf="@+id/textview"
+        android:layout_toLeftOf="@+id/textview"
         android:backgroundTint="#0c4763"
         android:text="login"
         android:textColorHighlight="#144763"
-        app:layout_constraintBottom_toTopOf="@+id/forgetPasswordTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+        tools:ignore="MissingConstraints,UnknownId" />
 
     <TextView
         android:id="@+id/forgetPasswordTextView"
-        android:layout_width="180dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="540dp"
+        android:layout_width="181dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="28dp"
         android:text="Forget Password?"
         android:textColor="#144763"
         android:textSize="20sp"
@@ -82,15 +97,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/findLoginButton" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="220dp"
+        android:layout_width="1500dp"
         android:layout_height="76dp"
         android:layout_marginTop="36dp"
         android:src="@drawable/untitled"
-        app:layout_constraintBottom_toTopOf="@+id/pleaseLogin"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

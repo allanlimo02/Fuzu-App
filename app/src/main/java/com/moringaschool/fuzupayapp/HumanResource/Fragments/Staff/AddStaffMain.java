@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -25,6 +27,7 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.fragmentOneBtn) Button fragmentOneBtn;
     @BindView(R.id.fragmentTwoBtn) Button fragmentTwoBtn;
     @BindView(R.id.fragmentThreeBtn) Button fragmentThreeBtn;
+//    @BindView(R.id.framelayout)  FrameLayout  frameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
         fragmentTwoBtn.setOnClickListener(this);
         fragmentOneBtn.setOnClickListener(this);
         fragmentThreeBtn.setOnClickListener(this);
+
 
         bottomNavigationView.setSelectedItemId(R.id.nav_staff);
 
@@ -82,9 +86,8 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.BLACK);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout,new DepartmentsFragment());
-            fragmentTransaction.commit();
-        }
+            fragmentTransaction.replace(R.id.newFramelayout, new DepartmentsFragment());
+            fragmentTransaction.commit();        }
 
         if(v==fragmentThreeBtn){
             fragmentThreeBtn.setBackgroundColor(Color.rgb(0,70,115));

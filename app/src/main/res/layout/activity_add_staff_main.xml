@@ -119,6 +119,12 @@
                 app:layout_constraintVertical_bias="0.064" />
         </LinearLayout>
     </RadioGroup>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newFramelayout"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        android:padding="5dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

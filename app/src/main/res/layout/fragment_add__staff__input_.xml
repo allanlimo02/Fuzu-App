@@ -417,7 +417,6 @@
                     android:layout_height="wrap_content"
                     android:text="Bank Name" />
 
-
                 <EditText
                     android:id="@+id/bankName"
                     android:layout_width="110dp"

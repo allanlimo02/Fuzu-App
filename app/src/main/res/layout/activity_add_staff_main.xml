@@ -89,7 +89,7 @@
             android:id="@+id/linearHidden"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:visibility="gone">
+            >
 
             <RadioButton
                 android:id="@+id/radio_one"

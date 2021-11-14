@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,6 +30,8 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.fragmentTwoBtn) Button fragmentTwoBtn;
     @BindView(R.id.fragmentThreeBtn) Button fragmentThreeBtn;
     @BindView(R.id.linearHidden) LinearLayout linearHidden;
+    @BindView(R.id.radio_one) RadioButton mRadio_one;
+    @BindView(R.id.radio_two)RadioButton mRadio_two;
 //    @BindView(R.id.framelayout)  FrameLayout  frameLayout;
 
     @Override
@@ -40,6 +43,8 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
         fragmentTwoBtn.setOnClickListener(this);
         fragmentOneBtn.setOnClickListener(this);
         fragmentThreeBtn.setOnClickListener(this);
+        mRadio_one.setOnClickListener(this);
+        mRadio_two.setOnClickListener(this);
 
 
         bottomNavigationView.setSelectedItemId(R.id.nav_staff);
@@ -109,6 +114,16 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
             overridePendingTransition(0,0);
 
+        }
+        if(v==mRadio_one){
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.newFramelayout, new Add_Staff_Input_Fragment());
+            fragmentTransaction.commit();
+        }
+        if(v==mRadio_two){
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.newFramelayout, new Add_Staff_Upload_Fragment());
+            fragmentTransaction.commit();
         }
 
     }

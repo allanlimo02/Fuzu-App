@@ -10,6 +10,8 @@ tools:context=".HumanResource.SomethingElse">
 <RadioGroup
     android:id="@+id/radioGroup"
     android:layout_width="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
     android:layout_height="wrap_content"/>
 
     <RadioButton
@@ -44,6 +46,13 @@ tools:context=".HumanResource.SomethingElse">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.064" />
+
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/radio_one"
+            android:padding="5dp"/>
 
 
     <!--      </RadioGroup>-->

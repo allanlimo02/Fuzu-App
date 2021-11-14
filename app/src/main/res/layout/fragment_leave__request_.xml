@@ -11,14 +11,14 @@
 
 
     <LinearLayout
-        android:layout_marginTop="70dp"
+
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
         android:padding="3dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
+
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -44,6 +44,7 @@
 
             <Button
                 android:id="@+id/approveButton"
+                android:background="@drawable/thin_border"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,6 +60,7 @@
                 android:id="@+id/reject"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
+                android:background="@drawable/thin_border"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:textColor="#004763"

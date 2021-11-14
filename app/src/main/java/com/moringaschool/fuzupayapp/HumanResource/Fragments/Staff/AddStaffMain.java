@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,6 +28,7 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.fragmentOneBtn) Button fragmentOneBtn;
     @BindView(R.id.fragmentTwoBtn) Button fragmentTwoBtn;
     @BindView(R.id.fragmentThreeBtn) Button fragmentThreeBtn;
+    @BindView(R.id.linearHidden) LinearLayout linearHidden;
 //    @BindView(R.id.framelayout)  FrameLayout  frameLayout;
 
     @Override
@@ -63,6 +65,12 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        linearHidden.setVisibility(View.VISIBLE);
+
+    }
 
     @Override
     public void onClick(View v) {
@@ -74,7 +82,7 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.WHITE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
+            fragmentTransaction.replace(R.id.newFramelayout,new AllStaff());
             fragmentTransaction.commit();
         }
 
@@ -85,6 +93,7 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             fragmentTwoBtn.setTextColor(Color.WHITE);
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.BLACK);
+            linearHidden.setVisibility(View.INVISIBLE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.newFramelayout, new DepartmentsFragment());
             fragmentTransaction.commit();        }
@@ -96,6 +105,7 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             fragmentTwoBtn.setTextColor(Color.BLACK);
             fragmentThreeBtn.setTextColor(Color.WHITE);
             fragmentOneBtn.setTextColor(Color.BLACK);
+            linearHidden.setVisibility(View.VISIBLE);
             startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
             overridePendingTransition(0,0);
 

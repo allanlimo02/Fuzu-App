@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/thin_border.xml" value="0.209375" />
+        <entry key="app/src/main/res/layout/activity_add_staff_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_add__staff__input_.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_add_staff.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_all_staff.xml" value="0.17300724637681159" />
+        <entry key="app/src/main/res/layout/fragment_leave__request_.xml" value="0.4976830398517145" />
         <entry key="../../../../../layout/custom_preview.xml" value="0.37083333333333335" />
         <entry key="app/src/main/res/drawable/allstuffselector.xml" value="0.2962962962962963" />
         <entry key="app/src/main/res/drawable/border_background.xml" value="0.28125" />
@@ -15,6 +24,7 @@
         <entry key="app/src/main/res/drawable/item_selector.xml" value="0.20092592592592592" />
         <entry key="app/src/main/res/drawable/profile.xml" value="0.29333333333333333" />
         <entry key="app/src/main/res/drawable/thin_border.xml" value="0.29333333333333333" />
+
         <entry key="app/src/main/res/layout/activity_add_staff_main.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_leave.xml" value="0.19427083333333334" />

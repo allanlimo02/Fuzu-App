@@ -15,7 +15,6 @@
         <activity
             android:name=".HumanResource.Fragments.Leave.LeaveActivity"
             android:exported="true" />
-
         <activity
             android:name=".HumanResource.Fragments.Staff.StaffActivity"
             android:exported="true" />
@@ -25,13 +24,11 @@
         <activity
             android:name=".HumanResource.Login"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".HumanResource.SomethingElse"
@@ -39,8 +36,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"/>
-
-
     </application>
 
 </manifest>

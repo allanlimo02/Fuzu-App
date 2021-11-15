@@ -171,164 +171,162 @@
                     android:inputType="textPersonName"/>
             </LinearLayout>
         </LinearLayout>
+      <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="120dp">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--    line3-->
+
+        <TextView
+            android:id="@+id/nationalityTextView"
             android:layout_width="wrap_content"
+            android:textColor="#000000"
+            android:textSize="12sp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="120dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!--    line3-->
-
-                <TextView
-                    android:id="@+id/nationalityTextView"
-                    android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
-                    android:layout_height="wrap_content"
-                    android:text="Nationality"/>
+            android:text="Nationality"/>
 
 
-                <EditText
-                    android:id="@+id/nationality"
-                    android:layout_width="110dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:inputType="textPersonName"/>
+        <EditText
+            android:id="@+id/nationality"
+            android:layout_width="110dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/thin_border"
+            android:layout_height="35dp"
+            android:inputType="textPersonName"/>
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:orientation="vertical">
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/dateOfBirthTextView"
-                    android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
-                    android:layout_height="wrap_content"
-                    android:text="Date of Birth" />
-
-
-                <EditText
-                    android:id="@+id/dateOfBirth"
-                    android:layout_width="110dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:inputType="textPersonName" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/positionTextView"
-                    android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
-                    android:layout_height="wrap_content"
-                    android:text="Position" />
-
-                <EditText
-                    android:id="@+id/position"
-                    android:layout_width="110dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:inputType="textPersonName" />
-            </LinearLayout>
-        </LinearLayout>
-
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/dateOfBirthTextView"
             android:layout_width="wrap_content"
+            android:textColor="#000000"
+            android:textSize="12sp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="176dp">
+            android:text="Date of Birth" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-                <!--    line4-->
+        <EditText
+            android:id="@+id/dateOfBirth"
+            android:layout_width="110dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/thin_border"
+            android:layout_height="35dp"
+            android:inputType="textPersonName" />
 
-                <TextView
-                    android:id="@+id/departmentTextView"
-                    android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
-                    android:layout_height="wrap_content"
-                    android:text="Department" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/department"
-                    android:layout_width="110dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:paddingLeft="4dp"
-                    android:inputType="textPersonName" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:orientation="vertical">
+        <TextView
+            android:id="@+id/positionTextView"
+            android:layout_width="wrap_content"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_height="wrap_content"
+            android:text="Position" />
 
-                <TextView
-                    android:id="@+id/employmentTypeTextView"
-                    android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
-                    android:layout_height="wrap_content"
-                    android:text="Employment Type" />
+        <EditText
+            android:id="@+id/position"
+            android:layout_width="110dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/thin_border"
+            android:layout_height="35dp"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+</LinearLayout>
 
-                <EditText
-                    android:id="@+id/employmentType"
-                    android:layout_width="110dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:inputType="textPersonName" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/employmentDateTextView"
-                    android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
-                    android:layout_height="wrap_content"
-                    android:text="Employment Date" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="176dp">
 
-                <EditText
-                    android:id="@+id/employmentDate"
-                    android:layout_width="110dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:paddingLeft="4dp"
-                    android:inputType="textPersonName"
-                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-            </LinearLayout>
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <!--    line4-->
+
+        <TextView
+            android:id="@+id/departmentTextView"
+            android:layout_width="wrap_content"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_height="wrap_content"
+            android:text="Department" />
+
+        <EditText
+            android:id="@+id/department"
+            android:layout_width="110dp"
+            android:background="@drawable/thin_border"
+            android:layout_height="35dp"
+            android:paddingLeft="4dp"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/employmentTypeTextView"
+            android:layout_width="wrap_content"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_height="wrap_content"
+            android:text="Employment Type" />
+
+        <EditText
+            android:id="@+id/employmentType"
+            android:layout_width="110dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/thin_border"
+            android:layout_height="35dp"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/employmentDateTextView"
+            android:layout_width="wrap_content"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_height="wrap_content"
+            android:text="Employment Date" />
+
+        <EditText
+            android:id="@+id/employmentDate"
+            android:layout_width="110dp"
+            android:background="@drawable/thin_border"
+            android:layout_height="35dp"
+            android:paddingLeft="4dp"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
+</LinearLayout>
+      <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -535,32 +533,4 @@
 
     </RelativeLayout>
 
-
-
-
 </ScrollView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

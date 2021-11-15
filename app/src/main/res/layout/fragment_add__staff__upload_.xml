@@ -20,10 +20,10 @@
 
 
         <LinearLayout
+            android:id="@+id/firstLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="115dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -58,12 +58,15 @@
                     android:text="Download" />
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/secondLayout"
+            android:layout_below="@id/firstLayout"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="220dp">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -84,6 +87,7 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:orientation="vertical">
@@ -92,6 +96,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:textAllCaps="false"
+
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"

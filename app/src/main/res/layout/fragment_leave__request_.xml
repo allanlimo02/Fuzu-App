@@ -11,7 +11,7 @@
 
 
     <LinearLayout
-        android:layout_marginTop="70dp"
+
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -29,6 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingRight="10dp"
+                android:layout_marginEnd="60dp"
                 android:textColor="#000000"
                 android:text="Select All"
                 android:textSize="12sp" />
@@ -43,6 +44,7 @@
 
             <Button
                 android:id="@+id/approveButton"
+                android:background="@drawable/thin_border"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,19 +56,21 @@
                 android:textAllCaps="false"
                 android:textSize="12sp" />
 
-            <Button
-                android:id="@+id/reject"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:textColor="#004763"
-                android:paddingTop="2dp"
-                android:paddingBottom="2dp"
-                android:text="Reject"
-                android:textAllCaps="false"
-                android:textSize="12sp" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/reject"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/thin_border"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="Reject"
+            android:textAllCaps="false"
+            android:textColor="#004763"
+            android:textSize="12sp" />
 
     </LinearLayout>
 

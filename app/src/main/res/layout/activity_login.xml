@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
+        android:fontFamily="@font/open_sans_light"
         android:text="Please login to your account."
         android:textColor="#144763"
         android:textSize="24sp"
@@ -70,21 +71,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/findLoginButton"
-        android:layout_width="177dp"
-        android:layout_height="48dp"
+<!--    <Button-->
+<!--        android:id="@+id/findLoginButton"-->
+<!--        android:layout_width="177dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:background="@drawable/login_backround"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:text="log In"-->
+<!--        android:textColorHighlight="#144763"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"-->
+<!--        tools:ignore="MissingConstraints,UnknownId" />
+-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="36dp"
-        android:layout_toStartOf="@+id/textview"
-        android:layout_toLeftOf="@+id/textview"
-        android:backgroundTint="#0c4763"
-        android:text="login"
-        android:textColorHighlight="#144763"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
-        tools:ignore="MissingConstraints,UnknownId" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"/>
 
     <TextView
         android:id="@+id/forgetPasswordTextView"
@@ -95,9 +101,10 @@
         android:textColor="#144763"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/findLoginButton" />
+        />
 
     <ImageView
         android:id="@+id/imageView2"

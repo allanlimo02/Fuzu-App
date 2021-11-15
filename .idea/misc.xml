@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/thin_border.xml" value="0.209375" />
+        <entry key="app/src/main/res/layout/activity_add_staff_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_add__staff__input_.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.1" />

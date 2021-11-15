@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         mFindLoginButton.setOnClickListener(this);
         mForgetPasswordTextView.setOnClickListener(this);
 
+
     }
 
     @Override
@@ -61,6 +62,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 //                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 //                startActivity(intent);
 //            }
+
         }
 
     }

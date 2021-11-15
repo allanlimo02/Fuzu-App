@@ -77,6 +77,19 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        fragmentTwoBtn2.setBackgroundColor(Color.WHITE);
+        fragmentOneBtn2.setBackgroundColor(Color.rgb(0,70,115));
+        fragmentTwoBtn2.setTextColor(Color.BLACK);
+        fragmentOneBtn2.setTextColor(Color.WHITE);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout2,new Leave_Request_Fragment());
+        fragmentTransaction.commit();
+    }
+
+
+    @Override
     public void onClick(View v) {
         if(v == fragmentOneBtn2){
             fragmentTwoBtn2.setBackgroundColor(Color.WHITE);

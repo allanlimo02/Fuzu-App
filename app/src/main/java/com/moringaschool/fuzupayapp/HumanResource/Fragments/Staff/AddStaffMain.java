@@ -73,8 +73,16 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onStart() {
         super.onStart();
-        linearHidden.setVisibility(View.VISIBLE);
-
+        fragmentThreeBtn.setBackgroundColor(Color.rgb(0,70,115));
+        fragmentTwoBtn.setBackgroundColor(Color.WHITE);
+        fragmentOneBtn.setBackgroundColor(Color.WHITE);
+        fragmentTwoBtn.setTextColor(Color.BLACK);
+        fragmentThreeBtn.setTextColor(Color.WHITE);
+        fragmentOneBtn.setTextColor(Color.BLACK);
+        mRadio_one.setChecked(true);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.newFramelayout, new Add_Staff_Input_Fragment());
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -119,11 +127,16 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.newFramelayout, new Add_Staff_Input_Fragment());
             fragmentTransaction.commit();
+            mRadio_one.setChecked(true);
+            mRadio_two.setChecked(false);
+
         }
         if(v==mRadio_two){
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.newFramelayout, new Add_Staff_Upload_Fragment());
             fragmentTransaction.commit();
+            mRadio_one.setChecked(false);
+            mRadio_two.setChecked(true);
         }
 
     }

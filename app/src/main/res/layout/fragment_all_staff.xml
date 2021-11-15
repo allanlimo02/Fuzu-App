@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginEnd="191dp"
+            android:layout_marginEnd="205dp"
             android:text="Position"
             android:textColor="#004673"
             android:textStyle="bold" />
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="73dp"
+            android:layout_marginEnd="67dp"
             android:text="Work Type"
             android:textColor="#004673"
             android:textStyle="bold" />

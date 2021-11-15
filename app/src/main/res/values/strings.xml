@@ -6,4 +6,10 @@
     <string name="employee_code">Employee Code</string>
     <string name="other_name">Other Name</string>
     <string name="password">Password</string>
+    <string-array name="employmentTypes">
+        <item> Full time</item>
+        <item>Contract</item>
+        <item>Internship</item>
+        <item>Part-time</item>
+    </string-array>
 </resources>

@@ -11,7 +11,6 @@
 
 
     <LinearLayout
-        android:layout_marginTop="70dp"
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -22,6 +21,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
+            android:orientation="vertical"
             android:layout_height="wrap_content">
 
             <RadioButton
@@ -29,13 +29,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingRight="10dp"
+                android:layout_marginEnd="60dp"
                 android:textColor="#000000"
                 android:text="Select All"
                 android:textSize="12sp" />
 
         </LinearLayout>
-
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,11 +46,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textColor="#004763"
                 android:paddingTop="2dp"
                 android:paddingBottom="2dp"
                 android:text="Approve"
                 android:textAllCaps="false"
+                android:textColor="#004763"
                 android:textSize="12sp" />
 
             <Button
@@ -60,15 +59,51 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:textColor="#004763"
                 android:paddingTop="2dp"
                 android:paddingBottom="2dp"
                 android:text="Reject"
                 android:textAllCaps="false"
+                android:textColor="#004763"
                 android:textSize="12sp" />
         </LinearLayout>
-
     </LinearLayout>
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentEnd="true">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/approveButton"-->
+<!--                android:backgroundTint="@drawable/thin_border"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:textColor="#fff"-->
+<!--                android:paddingTop="2dp"-->
+<!--                android:paddingBottom="2dp"-->
+<!--                android:text="Approve"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textSize="12sp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/reject"-->
+<!--            style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="15dp"-->
+<!--            android:paddingTop="2dp"-->
+<!--            android:paddingBottom="2dp"-->
+<!--            android:text="Reject"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#004763"-->
+<!--            android:textSize="12sp" />-->
+
+<!--    </LinearLayout>-->
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="396dp"

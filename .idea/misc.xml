@@ -18,7 +18,7 @@
         <entry key="app/src/main/res/layout/activity_add_staff_main.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_leave.xml" value="0.19427083333333334" />
-        <entry key="app/src/main/res/layout/activity_leave2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_leave2.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_staff.xml" value="0.33" />
@@ -40,10 +40,12 @@
         <entry key="app/src/main/res/layout/fragment_staff_main.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/fragment_stuff.xml" value="0.21693840579710144" />
         <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.28177083333333336" />
+        <entry key="app/src/main/res/layout/on_leave_list_item.xml" value="0.2617753623188406" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.5" />
         <entry key="app/src/main/res/menu/all_stuff.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.25" />
         <entry key="app/src/main/res/menu/button_background_color.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/menu/dashboard.xml" value="0.121875" />
         <entry key="app/src/main/res/menu/top_navbar.xml" value="0.33" />
       </map>
     </option>

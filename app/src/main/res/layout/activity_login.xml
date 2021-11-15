@@ -46,8 +46,6 @@
             android:background="@android:color/transparent"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
-
-
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="382dp"
@@ -79,7 +77,8 @@
         android:layout_toStartOf="@+id/textview"
         android:layout_toLeftOf="@+id/textview"
         android:backgroundTint="#0c4763"
-        android:text="login"
+        android:text="Log In"
+        android:textAllCaps="false"
         android:textColorHighlight="#144763"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,10 +90,9 @@
         android:layout_width="181dp"
         android:layout_height="37dp"
         android:layout_marginTop="28dp"
-        android:text="Forget Password?"
+        android:text="Forgot Password?"
         android:textColor="#144763"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/findLoginButton" />

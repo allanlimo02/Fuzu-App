@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/circle"
+        android:padding="5dp"
+        android:icon="@drawable/ic_edit"
+        android:title="staff"  />
+    <item
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/circle"
+        android:padding="5dp"
+        android:icon="@drawable/ic_baseline_people_alt_24"
+        android:title="staff"/>
+    <item
+        android:id="@+id/nav_leave"
+        android:icon="@drawable/ic_leave"
+        android:title="leave" />
+</menu>

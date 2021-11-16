@@ -96,7 +96,9 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
 
         }
         if(v==onleave){
-            Toast.makeText(DashboardActivity.this,"Onleave Coming up Soon",Toast.LENGTH_SHORT).show();
+            Intent intent= new Intent(DashboardActivity.this,LeaveActivity.class);
+            startActivity(intent);
+
 
         }
         if(v==approvebutton){

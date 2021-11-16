@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FDF3EE"
-    tools:context=".HumanResource.SomethingElse">
+    android:fillViewport="true"
+    tools:context=".HumanResource.SomethingElse"
+    android:paddingBottom="70dp">
     <RelativeLayout
 
         android:layout_width="match_parent"
@@ -532,5 +534,7 @@
             android:textColor="@color/white" />
 
     </RelativeLayout>
+
+
 
 </ScrollView>

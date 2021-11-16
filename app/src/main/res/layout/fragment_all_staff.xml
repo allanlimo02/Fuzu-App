@@ -8,8 +8,6 @@
     tools:context=".HumanResource.Fragments.Staff.AllStaff">
 
 
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/menu_drop"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"

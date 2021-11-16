@@ -55,7 +55,6 @@
         android:inputType="textEmailAddress"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="16dp"
-
         android:background="@drawable/thin_border"
         android:focusable="true"
         android:hint="Email"

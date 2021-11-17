@@ -2,50 +2,38 @@ package com.moringaschool.fuzupayapp.HumanResource.Dashboard;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ProgressBar;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.moringaschool.fuzupayapp.Holidays.Holiday;
-import com.moringaschool.fuzupayapp.Holidays.Responses;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AddStaffMain;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.DepartmentsFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
-import com.moringaschool.fuzupayapp.HumanResource.HrAdapters.HrListAdaper;
-//import com.moringaschool.fuzupayapp.HumanResource.HrApiInterface.HolidayClient;
-import com.moringaschool.fuzupayapp.HumanResource.HrApiInterface.hrApi;
 import com.moringaschool.fuzupayapp.R;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-public class DashboardActivity extends AppCompatActivity {
-    @BindView(R.id.bottom_navigation)
-    BottomNavigationView bottomNavigationView;
-    @BindView(R.id.errorTextView)
-    TextView mErrorTextView;
-    @BindView(R.id.holidayprogressBar)
-    ProgressBar mProgressBar;
-    @BindView(R.id.textUser)TextView
-    Username;
-    @BindView(R.id.holidaysRecyclerview)
-    RecyclerView mRecyclerView;
-    private HrListAdaper mAdapter;
-    public List<Holiday> mHoliday;
+public class DashboardActivity extends AppCompatActivity  implements View.OnClickListener{
+    @BindView(R.id.bottom_navigation) BottomNavigationView bottomNavigationView;
+    @BindView(R.id.managestaff) ImageView managestaff;
+    @BindView(R.id.departments) ImageView departments;
+    @BindView(R.id.addstaff) ImageView addstaff;
+    @BindView(R.id.onleave) TextView onleave;
+    @BindView(R.id.approvebutton)  Button approvebutton;
+
+
+
 
 
     @Override
@@ -53,43 +41,11 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         ButterKnife.bind(this);
-        String Country = "KE";
-
-//        hrApi client = HolidayClient.getClient();
-//        Call<Responses> call = client.getHoliday("2021",Country);
-
-//        call.enqueue(new Callback<Responses>() {
-//            @Override
-//            public void onResponse(Call<Responses> call, Response<Responses> response) {
-//                hideProgressBar();
-//                if (response.isSuccessful()) {
-//                    mHoliday = response.body().getHolidays();
-//                    mAdapter = new HrListAdaper(DashboardActivity.this, mHoliday);
-
-//
-//                    mRecyclerView.setAdapter(mAdapter);
-//                    RecyclerView.LayoutManager layoutManager =
-//                            new LinearLayoutManager(DashboardActivity.this);
-//                    mRecyclerView.setLayoutManager(layoutManager);
-//                    mRecyclerView.setHasFixedSize(true);
-//
-//                    showRestaurants();
-//
-////                    mErrorTextView.setText("yeii");
-////                    mErrorTextView.setVisibility(View.VISIBLE);
-//                } else {
-//                    showUnsuccessfulMessage();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Responses> call, Throwable t) {
-//                Log.e("Error Message", "onFailure: ",t );
-//                hideProgressBar();
-//                showFailureMessage();
-//            }
-//
-//        });
+        managestaff.setOnClickListener(this);
+        departments.setOnClickListener(this);
+        addstaff.setOnClickListener(this);
+        onleave.setOnClickListener(this);
+        approvebutton.setOnClickListener(this);
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -98,7 +54,6 @@ public class DashboardActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
 
                 switch (item.getItemId()) {
                     case R.id.nav_home:
@@ -117,22 +72,38 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
-    private void showFailureMessage() {
-        mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
-        mErrorTextView.setVisibility(View.VISIBLE);
-    }
+    @Override
+    public void onClick(View v) {
+        if(v==managestaff){
+            Intent intent= new Intent(DashboardActivity.this,StaffActivity.class);
+            startActivity(intent);
+//            Toast.makeText(DashboardActivity.this,"Manage Staff Coming up Soon",Toast.LENGTH_SHORT).show();
 
-    private void showUnsuccessfulMessage() {
-        mErrorTextView.setText("Something went wrong. Please try again later");
-        mErrorTextView.setVisibility(View.VISIBLE);
-    }
+        }
+        if(v==departments){
+            Intent intent= new Intent(DashboardActivity.this,StaffActivity.class);
+            startActivity(intent);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout,new DepartmentsFragment());
+            fragmentTransaction.commit();
 
-    private void showRestaurants() {
-        mRecyclerView.setVisibility(View.VISIBLE);
-//        mLocationTextView.setVisibility(View.VISIBLE);
-    }
+        }
+        if(v==addstaff){
+            Intent intent= new Intent(DashboardActivity.this,StaffActivity.class);
+            startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
+            overridePendingTransition(0,0);
+            startActivity(intent);
 
-    private void hideProgressBar() {
-        mProgressBar.setVisibility(View.GONE);
+        }
+        if(v==onleave){
+            Toast.makeText(DashboardActivity.this,"Onleave Coming up Soon",Toast.LENGTH_SHORT).show();
+
+        }
+        if(v==approvebutton){
+            Intent intent=new Intent(DashboardActivity.this,LeaveActivity.class);
+            startActivity(intent);
+
+        }
+
     }
 }

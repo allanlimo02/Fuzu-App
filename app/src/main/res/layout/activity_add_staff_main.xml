@@ -13,6 +13,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
+        android:weightSum="3"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/include">
@@ -20,19 +21,15 @@
 
         <Button
             android:id="@+id/fragmentOneBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_alignParentBottom="true"
-            android:textAllCaps="false"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="5dp"
-            android:layout_toStartOf="@+id/textview"
-            android:layout_toLeftOf="@+id/textview"
             android:backgroundTint="@color/button_buckground_color"
             android:text="All staff"
-            android:textColor="@color/black"
-            android:textColorHighlight="#144763"
+            android:textAllCaps="false"
+            android:textColor="#144763"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
@@ -40,19 +37,15 @@
 
         <Button
             android:id="@+id/fragmentTwoBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="43dp"
-            android:layout_alignParentBottom="true"
-            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="36dp"
+            android:layout_weight="1"
             android:layout_marginEnd="5dp"
-            android:layout_toStartOf="@+id/textview"
-            android:layout_toLeftOf="@+id/textview"
             android:backgroundTint="@color/button_buckground_color"
             android:text="Departments"
-            android:textColor="@color/black"
-            android:textColorHighlight="#144763"
+            android:textAllCaps="false"
+            android:textColor="#144763"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
@@ -60,23 +53,17 @@
 
         <Button
             android:id="@+id/fragmentThreeBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="43dp"
-            android:layout_alignParentBottom="true"
-            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="36dp"
+            android:layout_weight="1"
+            android:textAllCaps="false"
             android:layout_marginEnd="5dp"
-            android:layout_toStartOf="@+id/textview"
-            android:layout_toLeftOf="@+id/textview"
             android:backgroundTint="@color/button_buckground_color"
             android:text="Add staff"
             android:textColor="@color/black"
             android:textColorHighlight="#144763"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
-            tools:ignore="MissingConstraints,UnknownId" />
+             />
 
     </LinearLayout>
 

@@ -113,6 +113,8 @@
         app:itemRippleColor="@android:color/transparent"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_selecto"
+        app:itemTextColor="@drawable/bottom_menu_text"
+        android:textStyle="bold"
         app:menu="@menu/bottom_menu"
         android:background="#004763"
         />

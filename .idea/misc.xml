@@ -7,10 +7,12 @@
         <entry key="app/src/main/res/drawable/profile.xml" value="0.29775280898876405" />
         <entry key="app/src/main/res/drawable/thin_border.xml" value="0.30364583333333334" />
         <entry key="app/src/main/res/drawable/tick.xml" value="0.29775280898876405" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/activity_leave.xml" value="0.11296296296296296" />
         <entry key="app/src/main/res/layout/activity_leave2.xml" value="0.23489583333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.17" />
-        <entry key="app/src/main/res/layout/fragment_leave__request_.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_leave__request_.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_on__leave_.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/on_leave_list_item.xml" value="0.2833333333333333" />

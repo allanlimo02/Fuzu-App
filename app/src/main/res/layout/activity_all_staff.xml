@@ -149,10 +149,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:itemRippleColor="@android:color/transparent"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_selecto"
         app:menu="@menu/bottom_menu"
+        app:itemTextColor="#fff"
+        android:textStyle="bold"
         android:background="#004763"
         />
     <FrameLayout

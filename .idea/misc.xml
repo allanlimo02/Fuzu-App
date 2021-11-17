@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/drawable/border_background.xml" value="0.28125" />
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.17407407407407408" />
+        <entry key="app/src/main/res/drawable/circle_with_theme_color.xml" value="0.1550925925925926" />
         <entry key="app/src/main/res/drawable/ic_baseline_pin_drop_24.xml" value="0.28125" />
         <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.17407407407407408" />
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.371875" />
@@ -23,7 +24,7 @@
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_leave.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_leave2.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_single_staff.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_staff.xml" value="0.33" />

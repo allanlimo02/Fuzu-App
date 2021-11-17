@@ -2,4 +2,30 @@
     <string name="app_name">FuzuPay App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="surname">Surname</string>
+    <string name="employee_code">Employee Code</string>
+    <string name="other_name">Other Name</string>
+    <string name="password">Password</string>
+    <string-array name="workTypes">
+        <item> Full time</item>
+        <item>Contract</item>
+        <item>Internship</item>
+        <item>Part-time</item>
+        <item>Full Time</item>
+    </string-array>
+    <string-array name="position">
+        <item>Developer</item>
+        <item>Engineer</item>
+        <item>Receptionist</item>
+        <item>Fieldwork Coordinator</item>
+        <item>Designer</item>
+    </string-array>
+    <string-array name="names">
+        <item>Aron Langat</item>
+        <item>Allan Limo</item>
+        <item>Erick Okumu</item>
+        <item>Esther Moki</item>
+        <item>Judy Rop</item>
+    </string-array>
+
 </resources>

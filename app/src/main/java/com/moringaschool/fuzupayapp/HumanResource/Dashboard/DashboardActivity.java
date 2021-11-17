@@ -17,12 +17,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.petyfinderip_version2.models.SearchResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 //import com.moringaschool.fuzupayapp.Holidays.Holiday;
 import com.example.petyfinderip_version2.models.Animal;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AddStaffMain;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaffActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.DepartmentsFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
 import com.moringaschool.fuzupayapp.HumanResource.HrAdapters.HrListAdaper;
@@ -48,15 +50,13 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     @BindView(R.id.addstaff) ImageView addstaff;
     @BindView(R.id.onleave) TextView onleave;
     @BindView(R.id.approvebutton)  Button approvebutton;
-
+  
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.holidayprogressBar)
     ProgressBar mProgressBar;
 
     private HrListAdaper mAdapter;
     public List<Animal> genders;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,9 +68,12 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
         onleave.setOnClickListener(this);
         approvebutton.setOnClickListener(this);
 
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+
 //        API
         hrApi client = HolidayClient.getClient();
-        Call<com.example.petyfinderip_version2.models.SearchResponse> call = client.getPets("horse");
+        Call<SearchResponse> call = client.getPets("horse");
 
         call.enqueue(new Callback<com.example.petyfinderip_version2.models.SearchResponse>() {
             @Override
@@ -85,7 +88,6 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
                             new LinearLayoutManager(DashboardActivity.this);
                     recycle.setLayoutManager(layoutManager);
                     recycle.setHasFixedSize(true);
-
                     showRestaurants();
 
                 } else {
@@ -103,7 +105,8 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
         });
 
             bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+
+      bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -125,40 +128,38 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
             }
         });
     }
-
     @Override
     public void onClick(View v) {
         if(v==managestaff){
             Intent intent= new Intent(DashboardActivity.this,StaffActivity.class);
             startActivity(intent);
-//            Toast.makeText(DashboardActivity.this,"Manage Staff Coming up Soon",Toast.LENGTH_SHORT).show();
-
         }
         if(v==departments){
-            Intent intent= new Intent(DashboardActivity.this,StaffActivity.class);
+            Intent intent= new Intent(DashboardActivity.this, AllStaffActivity.class);
             startActivity(intent);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout,new DepartmentsFragment());
+            fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
             fragmentTransaction.commit();
-
         }
         if(v==addstaff){
-            Intent intent= new Intent(DashboardActivity.this,StaffActivity.class);
-            startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
-            overridePendingTransition(0,0);
+            Intent intent= new Intent(DashboardActivity.this,AddStaffMain.class);
+//            startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
+//            overridePendingTransition(0,0);
             startActivity(intent);
-
         }
         if(v==onleave){
-            Toast.makeText(DashboardActivity.this,"Onleave Coming up Soon",Toast.LENGTH_SHORT).show();
-
+            Intent intent= new Intent(DashboardActivity.this,LeaveActivity.class);
+            startActivity(intent);
         }
         if(v==approvebutton){
             Intent intent=new Intent(DashboardActivity.this,LeaveActivity.class);
             startActivity(intent);
-
         }
-
+    }
+    private void openDepartments(){
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
+        fragmentTransaction.commit();
     }
     private void showFailureMessage() {
         mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");

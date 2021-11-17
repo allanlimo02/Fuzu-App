@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_home"
-        android:title="home" />
+        app:itemTextColor="#edd59b"
+        android:title="Home" />
     <item
         android:id="@+id/nav_staff"
         android:icon="@drawable/ic_staff"
-        android:title="staff" />
+        app:itemTextColor="#edd59b"
+        android:title="Staff" />
     <item
         android:id="@+id/nav_leave"
         android:icon="@drawable/ic_leave"
-        android:title="leave" />
+        app:itemTextColor="#edd59b"
+        android:title="Leave" />
 </menu>

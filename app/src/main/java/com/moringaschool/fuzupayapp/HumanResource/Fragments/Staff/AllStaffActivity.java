@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -33,6 +34,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @BindView(R.id.fragmentOneBtn)   Button fragmentOneBtn;
     @BindView(R.id.fragmentTwoBtn)  Button fragmentTwoBtn;
     @BindView(R.id.fragmentThreeBtn)  Button fragmentThreeBtn;
+    @BindView(R.id.ourFrameLayout)  FrameLayout ourFrameLayout;
 
     private List list;
     private String[] names=new String[]{"Allan Limo","Aron Langat","Esther Moki","Judy Rop","Erick Okumu"};
@@ -114,8 +116,9 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentTwoBtn.setTextColor(Color.WHITE);
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.BLACK);
+            ourView.setVisibility(View.GONE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout,new DepartmentsFragment());
+            fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
             fragmentTransaction.commit();
         }
 

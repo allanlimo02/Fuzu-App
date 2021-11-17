@@ -108,7 +108,8 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             linearHidden.setVisibility(View.INVISIBLE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.newFramelayout, new DepartmentsFragment());
-            fragmentTransaction.commit();        }
+            fragmentTransaction.commit();
+        }
 
         if(v==fragmentThreeBtn){
             fragmentThreeBtn.setBackgroundColor(Color.rgb(0,70,115));

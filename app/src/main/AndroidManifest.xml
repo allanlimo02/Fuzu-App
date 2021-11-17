@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moringaschool.fuzupayapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
-        <activity
-            android:name=".HumanResource.Leave"
-            android:exported="true" />
-        <activity
-            android:name=".HumanResource.Staff"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
+        <activity android:name=".SplashScreen"
+            android:theme="@style/SplashThemes"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +20,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HumanResource.Fragments.Staff.SIngleStaffActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HumanResource.Fragments.Staff.AllStaffActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HumanResource.Fragments.Staff.AddStaffMain"
+            android:exported="true" />
+        <activity
+            android:name=".HumanResource.Fragments.Leave.LeaveActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HumanResource.Fragments.Staff.StaffActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HumanResource.Dashboard.DashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HumanResource.Login"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HumanResource.SomethingElse"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

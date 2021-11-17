@@ -21,6 +21,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".HumanResource.Fragments.Staff.SIngleStaffActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HumanResource.Fragments.Staff.AllStaffActivity"
+            android:exported="true" />
+        <activity
             android:name=".HumanResource.Fragments.Staff.AddStaffMain"
             android:exported="true" />
         <activity

@@ -25,7 +25,7 @@ android {
         }
     }
     buildTypes.each{
-        it.buildConfigField 'String', 'HOLIDAY_API_KEY', api_key
+        it.buildConfigField 'String', 'API_KEY', ApiKey
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.moringaschool.fuzupayapp.Holidays.Holiday;
+import com.example.petyfinderip_version2.models.Animal;
 import com.moringaschool.fuzupayapp.R;
 
 import java.util.List;
@@ -18,11 +18,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HrListAdaper  extends RecyclerView.Adapter<HrListAdaper.HrViewHolder> {
-   private List<Holiday> mHoliday;
-   private Context mContext;
+   public List<Animal> mHoliday;
+   public Context mContext;
 
 
-   public HrListAdaper(Context context,List<Holiday>holidays){
+   public HrListAdaper(Context context,List<Animal>holidays){
        mContext = context;
        mHoliday = holidays;
    }
@@ -59,10 +59,10 @@ public class HrListAdaper  extends RecyclerView.Adapter<HrListAdaper.HrViewHolde
         }
 
 
-        public void bindRestaurant(Holiday holiday) {
-            date.setText(holiday.getDate().getIso());
-            Type.setText(holiday.getType().toString());
-            nameOfHoliday.setText(holiday.getName().toString());
+        public void bindRestaurant(Animal holiday) {
+            date.setText(holiday.getAge());
+            Type.setText(holiday.getType());
+            nameOfHoliday.setText(holiday.getName());
 
         }
     }

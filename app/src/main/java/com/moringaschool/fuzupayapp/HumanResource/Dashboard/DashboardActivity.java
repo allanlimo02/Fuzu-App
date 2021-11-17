@@ -3,37 +3,58 @@ package com.moringaschool.fuzupayapp.HumanResource.Dashboard;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+//import com.moringaschool.fuzupayapp.Holidays.Holiday;
+import com.example.petyfinderip_version2.models.Animal;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AddStaffMain;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.DepartmentsFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
+import com.moringaschool.fuzupayapp.HumanResource.HrAdapters.HrListAdaper;
+import com.moringaschool.fuzupayapp.HumanResource.HrApiInterface.HolidayClient;
+import com.moringaschool.fuzupayapp.HumanResource.HrApiInterface.hrApi;
 import com.moringaschool.fuzupayapp.R;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class DashboardActivity extends AppCompatActivity  implements View.OnClickListener{
     @BindView(R.id.bottom_navigation) BottomNavigationView bottomNavigationView;
     @BindView(R.id.managestaff) ImageView managestaff;
     @BindView(R.id.departments) ImageView departments;
+    @BindView(R.id.holidaysRecyclerview)
+    RecyclerView recycle;
     @BindView(R.id.addstaff) ImageView addstaff;
     @BindView(R.id.onleave) TextView onleave;
     @BindView(R.id.approvebutton)  Button approvebutton;
 
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    @BindView(R.id.holidayprogressBar)
+    ProgressBar mProgressBar;
 
-
+    private HrListAdaper mAdapter;
+    public List<Animal> genders;
 
 
     @Override
@@ -47,8 +68,58 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
         onleave.setOnClickListener(this);
         approvebutton.setOnClickListener(this);
 
+//        API
+        hrApi client = HolidayClient.getClient();
+        Call<com.example.petyfinderip_version2.models.SearchResponse> call = client.getPets("horse");
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        call.enqueue(new Callback<com.example.petyfinderip_version2.models.SearchResponse>() {
+            @Override
+            public void onResponse(Call<com.example.petyfinderip_version2.models.SearchResponse> call, Response<com.example.petyfinderip_version2.models.SearchResponse> response) {
+                hideProgressBar();
+                if (response.isSuccessful()) {
+                    genders = response.body().getAnimals();
+                    mAdapter = new HrListAdaper(DashboardActivity.this, genders);
+
+                    recycle.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(DashboardActivity.this);
+                    recycle.setLayoutManager(layoutManager);
+                    recycle.setHasFixedSize(true);
+
+//                    List<Animal> AnimalList = response.body().getAnimals();
+//                    String[] Animal = new String[AnimalList.size()];
+//                    String[] breed = new String[AnimalList.size()];
+////
+//                    for (int i = 0; i < Animal.length; i++){
+//                        Animal[i] = AnimalList.get(i).getName();
+//                    }
+////
+//                    for (int i = 0; i < breed.length; i++) {
+//                        breed[i] = AnimalList.get(i).getAge();
+//                    }
+////
+//                    ArrayAdapter adapter  = new PetArrayAdapter(PetListActivity.this, android.R.layout.simple_list_item_1,Animal,breed);
+//                    mListView.setAdapter(adapter);
+
+                    showRestaurants();
+
+//                    mErrorTextView.setText("yeii");
+//                    mErrorTextView.setVisibility(View.VISIBLE);
+                } else {
+                    showUnsuccessfulMessage();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<com.example.petyfinderip_version2.models.SearchResponse> call, Throwable t) {
+                Log.e("Error Message", "onFailure: ",t );
+                hideProgressBar();
+                showFailureMessage();
+            }
+
+        });
+
+            bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -105,5 +176,22 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
 
         }
 
+    }
+    private void showFailureMessage() {
+        mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void showUnsuccessfulMessage() {
+        mErrorTextView.setText("Something went wrong. Please try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void showRestaurants() {
+        recycle.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        mProgressBar.setVisibility(View.GONE);
     }
 }

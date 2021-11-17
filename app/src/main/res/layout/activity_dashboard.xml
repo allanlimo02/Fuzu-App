@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:backgroundTint="#fbf3ee"
+    android:background="#fbf3ee"
     android:layout_height="match_parent"
     tools:context=".HumanResource.Dashboard.DashboardActivity">
     <include layout="@layout/toolbar"/>
@@ -99,6 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="#fbf3ee"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <HorizontalScrollView
@@ -178,6 +179,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#fbf3ee"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="60dp"
@@ -258,9 +260,12 @@
         app:itemRippleColor="@android:color/transparent"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_selecto"
+        app:itemTextColor="@drawable/bottom_menu_text"
+        android:textStyle="bold"
         app:menu="@menu/bottom_menu"
         android:background="#004763"
         />
+
 
     <ProgressBar
         android:id="@+id/holidayprogressBar"

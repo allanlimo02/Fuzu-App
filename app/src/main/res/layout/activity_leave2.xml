@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fbf3ee"
     android:backgroundTint="#fbf3ee"
     tools:context=".HumanResource.Fragments.Leave.LeaveActivity">
     <include layout="@layout/toolbar"/>
@@ -83,6 +84,8 @@
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_selecto"
         app:menu="@menu/bottom_menu"
+        app:itemTextColor="@drawable/bottom_menu_text"
+        android:textStyle="bold"
         android:background="#004763"
         />
 

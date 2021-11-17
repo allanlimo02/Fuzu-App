@@ -18,10 +18,8 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
         import butterknife.ButterKnife;
 
 public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickListener{
-    @BindView(R.id.saveDetails)
-    Button mSaveDetailsButton;
-    @BindView(R.id.employeeCode)
-    EditText mEmployeeCodeEditText;
+    @BindView(R.id.saveDetails) Button mSaveDetailsButton;
+    @BindView(R.id.employeeCode) EditText mEmployeeCodeEditText;
     @BindView(R.id.surname)    EditText mSurnameEditText;
     @BindView(R.id.otherName)    EditText mOtherNameEditText;
     @BindView(R.id.phoneNumber)    EditText mPhoneNumberEditText;
@@ -85,6 +83,58 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
         String branch = mBranchEditText.getText().toString().trim();
         String accountNumber = mAccountNumberEditText.getText().toString().trim();
 
+        if(employeeCode.equals("")){
+            mEmployeeCodeEditText.setError("Cannot be blank");
+        }else
+        if (surname.equals("")){
+            mSurnameEditText.setError("Cannot be blank");
+        }else
+        if(otherName.equals("")){
+            mOtherNameEditText.setError("Cannot be blank");
+        }else
+        if(phoneNumber.equals("")){
+            mPhoneNumberEditText.setError("Cannot be blank");
+        }else
+        if( email.equals("")){
+            mEmailEditText.setError("Cannot be blank");
+        }else
+        if(idPassportNumber.equals("")){
+            mIdPassportNumberEditText.setError("Cannot be blank");
+        }else
+        if(nationality.equals("")){
+            mNationalityEditText.setError("Cannot be blank");
+        }else
+        if(dateOfBirth .equals("")){
+            mDateOfBirthEditText.setError("Cannot be blank");
+        }else
+        if( position .equals("")){
+            mPositionEditText.setError("Cannot be blank");
+        }else
+        if( department .equals("")){
+            mDepartmentEditText.setError("Cannot be blank");
+        }else
+        if(employmentType.equals("")){
+            mEmploymentTypeEditText.setError("Cannot be blank");
+        }else
+        if(employmentDate.equals("")){
+            mEmploymentDateEditText.setError("Cannot be blank");
+        }else
+        if(grossSalary .equals("")){
+            mGrossSalaryEditText.setError("Cannot be blank");
+        }else
+        if(maritalStatus.equals("")){
+            mMaritalStatusEditText.setError("Cannot be blank");
+        }else if( emergencyContact.equals("")){
+            mEmergencyContactEditText.setError("Cannot be blank");
+        }else if(emergencyContactPhone.equals("")){
+            mEmergencyContactPhoneEditText.setError("Cannot be blank");
+        }else if( bankName.equals("")){
+            mBankNameEditText.setError("Cannot be blank");
+        }else if(  branch.equals("")){
+            mBranchEditText.setError("Cannot be blank");
+        }else if( accountNumber .equals("")){
+            mAccountNumberEditText.setError("Cannot be blank");
+        }
 
     }
 }

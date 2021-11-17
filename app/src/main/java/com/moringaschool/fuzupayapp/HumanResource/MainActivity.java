@@ -62,46 +62,5 @@ BottomNavigationView bottomNavigationView;
                 return false;
             }
         });
-
-//        getSupportFragmentManager()
-//        FragmentManager fm = getSupportFragmentManager();
-//        adapter = new AdapterFragment(fm, getLifecycle());
-//        pager2.setAdapter(adapter);
-//
-//        tableLayout.addTab(tableLayout.newTab().setText("All staff"));
-//        tableLayout.addTab(tableLayout.newTab().setText("Department"));
-//        tableLayout.addTab(tableLayout.newTab().setText("Add Staff"));
-//
-//        tableLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                pager2.setCurrentItem(tab.getPosition());
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
-//
-//        pager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-//            @Override
-//            public void onPageSelected(int position) {
-//                tableLayout.selectTab(tableLayout.getTabAt(position));
-//            }
-//        });
-//    }
-//
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.top_navbar,menu);
-//        return true;
-//    }
     }
 }

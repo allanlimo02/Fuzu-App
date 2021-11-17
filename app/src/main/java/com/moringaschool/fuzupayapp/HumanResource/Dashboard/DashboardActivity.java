@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.petyfinderip_version2.models.SearchResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 //import com.moringaschool.fuzupayapp.Holidays.Holiday;
@@ -72,7 +73,7 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
 
 //        API
         hrApi client = HolidayClient.getClient();
-        Call<com.example.petyfinderip_version2.models.SearchResponse> call = client.getPets("horse");
+        Call<SearchResponse> call = client.getPets("horse");
 
         call.enqueue(new Callback<com.example.petyfinderip_version2.models.SearchResponse>() {
             @Override
@@ -87,26 +88,8 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
                             new LinearLayoutManager(DashboardActivity.this);
                     recycle.setLayoutManager(layoutManager);
                     recycle.setHasFixedSize(true);
-
-//                    List<Animal> AnimalList = response.body().getAnimals();
-//                    String[] Animal = new String[AnimalList.size()];
-//                    String[] breed = new String[AnimalList.size()];
-////
-//                    for (int i = 0; i < Animal.length; i++){
-//                        Animal[i] = AnimalList.get(i).getName();
-//                    }
-////
-//                    for (int i = 0; i < breed.length; i++) {
-//                        breed[i] = AnimalList.get(i).getAge();
-//                    }
-////
-//                    ArrayAdapter adapter  = new PetArrayAdapter(PetListActivity.this, android.R.layout.simple_list_item_1,Animal,breed);
-//                    mListView.setAdapter(adapter);
-
                     showRestaurants();
 
-//                    mErrorTextView.setText("yeii");
-//                    mErrorTextView.setVisibility(View.VISIBLE);
                 } else {
                     showUnsuccessfulMessage();
                 }
@@ -145,9 +128,6 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
             }
         });
     }
-
-
-
     @Override
     public void onClick(View v) {
         if(v==managestaff){
@@ -162,9 +142,9 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
             fragmentTransaction.commit();
         }
         if(v==addstaff){
-            Intent intent= new Intent(DashboardActivity.this,StaffActivity.class);
-            startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
-            overridePendingTransition(0,0);
+            Intent intent= new Intent(DashboardActivity.this,AddStaffMain.class);
+//            startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
+//            overridePendingTransition(0,0);
             startActivity(intent);
         }
         if(v==onleave){

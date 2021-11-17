@@ -15,7 +15,7 @@
         android:layout_marginTop="100dp"
         android:text="Please login to your account."
         android:textColor="#144763"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
@@ -23,7 +23,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordEditText"
-        android:layout_width="382dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -49,12 +51,14 @@
     </com.google.android.material.textfield.TextInputLayout>
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="382dp"
+        android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_alignParentStart="true"
         android:inputType="textEmailAddress"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/thin_border"
         android:focusable="true"
         android:hint="Email"

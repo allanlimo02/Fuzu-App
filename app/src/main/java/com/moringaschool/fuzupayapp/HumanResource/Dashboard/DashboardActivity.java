@@ -86,25 +86,8 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
                     recycle.setLayoutManager(layoutManager);
                     recycle.setHasFixedSize(true);
 
-//                    List<Animal> AnimalList = response.body().getAnimals();
-//                    String[] Animal = new String[AnimalList.size()];
-//                    String[] breed = new String[AnimalList.size()];
-////
-//                    for (int i = 0; i < Animal.length; i++){
-//                        Animal[i] = AnimalList.get(i).getName();
-//                    }
-////
-//                    for (int i = 0; i < breed.length; i++) {
-//                        breed[i] = AnimalList.get(i).getAge();
-//                    }
-////
-//                    ArrayAdapter adapter  = new PetArrayAdapter(PetListActivity.this, android.R.layout.simple_list_item_1,Animal,breed);
-//                    mListView.setAdapter(adapter);
-
                     showRestaurants();
 
-//                    mErrorTextView.setText("yeii");
-//                    mErrorTextView.setVisibility(View.VISIBLE);
                 } else {
                     showUnsuccessfulMessage();
                 }
@@ -167,9 +150,7 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
 
         }
         if(v==onleave){
-            Intent intent= new Intent(DashboardActivity.this,LeaveActivity.class);
-            startActivity(intent);
-
+            Toast.makeText(DashboardActivity.this,"Onleave Coming up Soon",Toast.LENGTH_SHORT).show();
 
         }
         if(v==approvebutton){

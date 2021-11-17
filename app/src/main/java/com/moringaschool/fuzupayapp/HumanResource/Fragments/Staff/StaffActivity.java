@@ -84,9 +84,13 @@ public class StaffActivity extends AppCompatActivity implements View.OnClickList
         fragmentTwoBtn.setTextColor(Color.BLACK);
         fragmentThreeBtn.setTextColor(Color.BLACK);
         fragmentOneBtn.setTextColor(Color.WHITE);
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
-        fragmentTransaction.commit();
+//        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//        fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
+//        fragmentTransaction.commit();
+        startActivity(new Intent(getApplicationContext(), AllStaffActivity.class));
+        overridePendingTransition(0,0);
+
+
     }
 
     @Override
@@ -99,9 +103,11 @@ public class StaffActivity extends AppCompatActivity implements View.OnClickList
             fragmentTwoBtn.setTextColor(Color.BLACK);
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.WHITE);
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
-            fragmentTransaction.commit();
+//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//            fragmentTransaction.replace(R.id.frameLayout,new AllStaff());
+//            fragmentTransaction.commit();
+            startActivity(new Intent(getApplicationContext(), AllStaffActivity.class));
+            overridePendingTransition(0,0);
         }
 
         if(v==fragmentTwoBtn){
@@ -130,5 +136,8 @@ public class StaffActivity extends AppCompatActivity implements View.OnClickList
             overridePendingTransition(0,0);
 
         }
+    }
+    public void recyclerViewPopulate(){
+
     }
 }

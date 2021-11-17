@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:backgroundTint="#fbf3ee"
     android:layout_height="match_parent"
     tools:context=".HumanResource.Dashboard.DashboardActivity">
     <include layout="@layout/toolbar"/>
@@ -55,6 +56,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="23dp"
             android:layout_marginEnd="47dp"
+
             android:text="you have pending leave requests awaiting your approval"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,15 +64,15 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/approvebutton"
             android:layout_width="107dp"
             android:layout_height="37dp"
             android:layout_below="@+id/textView3"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="286dp"
-            android:text="Approve"
             android:backgroundTint="#004673"
+            android:text="Approve"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,49 +102,102 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="97dp"
+            android:gravity="center"
             tools:ignore="SpeakableTextPresentCheck">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:paddingStart="30dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:id="@+id/managestaff"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/circle"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_edit"
+                        android:title="staff" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manage Staff"
+                        android:textColor="#004763"
+                        android:textAlignment="center"/>
 
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_edit" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:id="@+id/departments"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/circle"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_people_alt_24" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Departments"
+                        android:layout_marginStart="20dp"
+                        android:textColor="#004763"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/addstaff"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/circle"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_add_people" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Staff"
+                        android:layout_marginStart="20dp"
+                        android:textColor="#004763"
+                        android:textAlignment="center"/>
 
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_baseline_people_alt_24" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/circle"
+                        android:padding="5dp"
+                        android:paddingStart="15dp"
+                        android:text="03"
+                        android:id="@+id/onleave"
+                        android:textColor="#004673"
+                        android:textSize="30sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="On Leave"
+                        android:paddingStart="20dp"
+                        android:textColor="#004763"
+                        android:textAlignment="center"/>
+                </LinearLayout>
 
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_add_people" />
-
-                <TextView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle"
-                    android:padding="5dp"
-                    android:paddingStart="15dp"
-                    android:text="03"
-                    android:textColor="#004673"
-                    android:textSize="30sp" />
             </LinearLayout>
         </HorizontalScrollView>
 

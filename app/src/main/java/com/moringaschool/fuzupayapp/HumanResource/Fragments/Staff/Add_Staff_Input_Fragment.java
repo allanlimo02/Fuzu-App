@@ -1,17 +1,43 @@
 package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 
-import android.os.Bundle;
+        import android.content.Context;
+        import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
+        import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.Button;
+        import android.widget.EditText;
+        import android.widget.Toast;
 
-import com.moringaschool.fuzupayapp.R;
+        import com.moringaschool.fuzupayapp.R;
 
-public class Add_Staff_Input_Fragment extends Fragment {
+        import butterknife.BindView;
+        import butterknife.ButterKnife;
 
+public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickListener{
+    @BindView(R.id.saveDetails) Button mSaveDetailsButton;
+    @BindView(R.id.employeeCode) EditText mEmployeeCodeEditText;
+    @BindView(R.id.surname)    EditText mSurnameEditText;
+    @BindView(R.id.otherName)    EditText mOtherNameEditText;
+    @BindView(R.id.phoneNumber)    EditText mPhoneNumberEditText;
+    @BindView(R.id.email)    EditText mEmailEditText;
+    @BindView(R.id.idPassportNumber)    EditText mIdPassportNumberEditText;
+    @BindView(R.id.nationality)    EditText mNationalityEditText;
+    @BindView(R.id.dateOfBirth)   EditText mDateOfBirthEditText;
+    @BindView(R.id.position)    EditText mPositionEditText;
+    @BindView(R.id.department)    EditText mDepartmentEditText;
+    @BindView(R.id.employmentType)    EditText mEmploymentTypeEditText;
+    @BindView(R.id.employmentDate)    EditText mEmploymentDateEditText;
+    @BindView(R.id.grossSalary)    EditText mGrossSalaryEditText;
+    @BindView(R.id.maritalStatus)    EditText mMaritalStatusEditText;
+    @BindView(R.id.emergencyContact)    EditText mEmergencyContactEditText;
+    @BindView(R.id.emergencyContactPhone)    EditText mEmergencyContactPhoneEditText;
+    @BindView(R.id.bankName)    EditText mBankNameEditText;
+    @BindView(R.id.branch)    EditText mBranchEditText;
+    @BindView(R.id.accountNumber) EditText mAccountNumberEditText;
 
     public Add_Staff_Input_Fragment() {
         // Required empty public constructor
@@ -23,7 +49,92 @@ public class Add_Staff_Input_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add__staff__input_, container, false);
+        ButterKnife.bind(this,view);
 
+        mSaveDetailsButton.setOnClickListener(this);
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v==mSaveDetailsButton){
+            validator();
+        }
+
+    }
+    public void validator(){
+        String employeeCode = mEmployeeCodeEditText.getText().toString().trim();
+        String surname = mSurnameEditText.getText().toString().trim();
+        String otherName = mOtherNameEditText.getText().toString().trim();
+        String phoneNumber = mPhoneNumberEditText.getText().toString().trim();
+        String email = mEmailEditText.getText().toString().trim();
+        String idPassportNumber = mIdPassportNumberEditText.getText().toString().trim();
+        String nationality = mNationalityEditText.getText().toString().trim();
+        String dateOfBirth = mDateOfBirthEditText.getText().toString().trim();
+        String position = mPositionEditText.getText().toString().trim();
+        String department = mDepartmentEditText.getText().toString().trim();
+        String employmentType = mEmploymentTypeEditText.getText().toString().trim();
+        String employmentDate = mEmploymentDateEditText.getText().toString().trim();
+        String grossSalary = mGrossSalaryEditText.getText().toString().trim();
+        String maritalStatus = mMaritalStatusEditText.getText().toString().trim();
+        String emergencyContact = mEmergencyContactEditText.getText().toString().trim();
+        String emergencyContactPhone = mEmergencyContactPhoneEditText.getText().toString().trim();
+        String bankName = mBankNameEditText.getText().toString().trim();
+        String branch = mBranchEditText.getText().toString().trim();
+        String accountNumber = mAccountNumberEditText.getText().toString().trim();
+
+        if(employeeCode.equals("")){
+            mEmployeeCodeEditText.setError("Cannot be blank");
+        }else
+        if (surname.equals("")){
+            mSurnameEditText.setError("Cannot be blank");
+        }else
+        if(otherName.equals("")){
+            mOtherNameEditText.setError("Cannot be blank");
+        }else
+        if(phoneNumber.equals("")){
+            mPhoneNumberEditText.setError("Cannot be blank");
+        }else
+        if( email.equals("")){
+            mEmailEditText.setError("Cannot be blank");
+        }else
+        if(idPassportNumber.equals("")){
+            mIdPassportNumberEditText.setError("Cannot be blank");
+        }else
+        if(nationality.equals("")){
+            mNationalityEditText.setError("Cannot be blank");
+        }else
+        if(dateOfBirth .equals("")){
+            mDateOfBirthEditText.setError("Cannot be blank");
+        }else
+        if( position .equals("")){
+            mPositionEditText.setError("Cannot be blank");
+        }else
+        if( department .equals("")){
+            mDepartmentEditText.setError("Cannot be blank");
+        }else
+        if(employmentType.equals("")){
+            mEmploymentTypeEditText.setError("Cannot be blank");
+        }else
+        if(employmentDate.equals("")){
+            mEmploymentDateEditText.setError("Cannot be blank");
+        }else
+        if(grossSalary .equals("")){
+            mGrossSalaryEditText.setError("Cannot be blank");
+        }else
+        if(maritalStatus.equals("")){
+            mMaritalStatusEditText.setError("Cannot be blank");
+        }else if( emergencyContact.equals("")){
+            mEmergencyContactEditText.setError("Cannot be blank");
+        }else if(emergencyContactPhone.equals("")){
+            mEmergencyContactPhoneEditText.setError("Cannot be blank");
+        }else if( bankName.equals("")){
+            mBankNameEditText.setError("Cannot be blank");
+        }else if(  branch.equals("")){
+            mBranchEditText.setError("Cannot be blank");
+        }else if( accountNumber .equals("")){
+            mAccountNumberEditText.setError("Cannot be blank");
+        }
+
     }
 }

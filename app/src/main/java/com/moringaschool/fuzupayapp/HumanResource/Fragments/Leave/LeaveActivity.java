@@ -3,24 +3,22 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.FragmentAdapter.LeaveRequestAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaff;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.DepartmentsFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.fragmentAddStaff;
 import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
@@ -30,7 +28,14 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.bottom_navigation) BottomNavigationView mBottomNavigationView;
     @BindView(R.id.fragmentOneBtn2) Button fragmentOneBtn2;
     @BindView(R.id.fragmentTwoBtn2) Button fragmentTwoBtn2;
+    @BindView(R.id.recview2)  RecyclerView recyclerView2;
     BottomNavigationView bottomNavigationView;
+
+    private String[] leaveName=new String[]{"Martenity Leave","Annual Leave ","Sabbatical Leave"};
+    private String[] dates=new String[]{"12-11-2021","34-12-2021","22-22-2021"};
+    private String[] names=new String[]{"Winnie Lagat","Kawira Kinyua","June Adhiambo"};
+    private String[] durations=new String[]{"10 Days","23 Days","5 Days"};
+    Context context;
 
 
     //    fragment inititializations
@@ -47,6 +52,10 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
 
         fragmentTwoBtn2.setOnClickListener(this);
         fragmentOneBtn2.setOnClickListener(this);
+
+//        LeaveRequestAdapter adapter=new LeaveRequestAdapter(context,leaveName,names,dates,durations);
+//        recyclerView2.setAdapter(adapter);
+//        recyclerView2.setLayoutManager(new LinearLayoutManager(context));
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);

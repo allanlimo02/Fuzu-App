@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fbf3ee"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HumanResource.Fragments.Staff.fragmentAddStaff$DepartmentsFragment">
     <LinearLayout
@@ -10,14 +11,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/topsearch"
         android:orientation="horizontal"
-        android:weightSum="3"
+        android:weightSum="5"
         android:padding="5dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000"
-            android:text="Employment Type"/>
+            android:text="Department"/>
 <!--       <Spinner-->
 <!--           android:layout_width="wrap_content"-->
 <!--           android:layout_height="wrap_content"-->
@@ -30,8 +31,6 @@
             android:layout_height="35dp"
             android:layout_marginEnd="40dp"
             android:hint="All"/>
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +42,6 @@
             android:background="@drawable/thin_border"
             android:text="Download List"
             android:inputType="none"/>
-
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"

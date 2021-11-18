@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fbf3ee"
     tools:context=".HumanResource.Fragments.Staff.AddStaffMain">
 
     <include
@@ -112,12 +113,13 @@
                 app:layout_constraintVertical_bias="0.064" />
         </LinearLayout>
     </RadioGroup>
+
     <FrameLayout
+        android:id="@+id/newFramelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/newFramelayout"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        android:padding="5dp"/>
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -129,6 +131,8 @@
         app:itemRippleColor="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:itemTextColor="@drawable/bottom_menu_text"
+        android:textStyle="bold"
         app:layout_constraintHorizontal_bias="0.5"
         app:menu="@menu/bottom_menu" />
 

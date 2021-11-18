@@ -8,104 +8,103 @@
     tools:context=".HumanResource.Fragments.Staff.AllStaff">
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/menu_drop"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-        android:layout_width="97dp"
-        android:layout_height="27dp"
-        android:hint="All"
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/menu_drop"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"-->
+<!--        android:layout_width="97dp"-->
+<!--        android:layout_height="27dp"-->
+<!--        android:hint="All"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/titleBar"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.382"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.883">-->
 
-        app:layout_constraintBottom_toTopOf="@+id/titleBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.382"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883">
+<!--        <AutoCompleteTextView-->
+<!--            android:layout_width="92dp"-->
+<!--            android:layout_height="28dp"-->
+<!--            android:inputType="none"-->
+<!--            android:paddingRight="322dp"-->
+<!--            tools:ignore="TouchTargetSizeCheck" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
-        <AutoCompleteTextView
-            android:layout_width="92dp"
-            android:layout_height="28dp"
-            android:inputType="none"
-            android:paddingRight="322dp"
-            tools:ignore="TouchTargetSizeCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
+<!--    <TextView-->
+<!--        android:id="@+id/textView5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:text="Employment Type"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/titleBar"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/menu_drop"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.888" />-->
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="Employment Type"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/titleBar"
-        app:layout_constraintEnd_toStartOf="@+id/menu_drop"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="121dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:backgroundTint="#004673"-->
+<!--        android:text="Download List"-->
+<!--        android:textSize="10sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/titleBar"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.424"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/menu_drop"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="121dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#004673"
-        android:text="Download List"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/titleBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
-        app:layout_constraintStart_toEndOf="@+id/menu_drop"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/titleBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/recyclerview"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.907"-->
+<!--        tools:layout_editor_absoluteX="10dp">-->
 
-    <RelativeLayout
-        android:id="@+id/titleBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerview"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.907"
-        tools:layout_editor_absoluteX="10dp">
+<!--        <TextView-->
+<!--            android:id="@+id/fullName"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="Full Name"-->
+<!--            android:textColor="#004673"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:id="@+id/fullName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Full Name"
-            android:textColor="#004673"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/department"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginEnd="214dp"-->
+<!--            android:text="Position"-->
+<!--            android:textColor="#004673"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:id="@+id/department"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="214dp"
-            android:text="Position"
-            android:textColor="#004673"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/status"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginEnd="67dp"-->
+<!--            android:text="Work Type"-->
+<!--            android:textColor="#004673"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:id="@+id/status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="67dp"
-            android:text="Work Type"
-            android:textColor="#004673"
-            android:textStyle="bold" />
+<!--    </RelativeLayout>-->
 
-    </RelativeLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="464dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="43dp" />
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="464dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        tools:layout_editor_absoluteX="43dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

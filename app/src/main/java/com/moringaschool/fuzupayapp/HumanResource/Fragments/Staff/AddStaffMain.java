@@ -32,6 +32,7 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.linearHidden) LinearLayout linearHidden;
     @BindView(R.id.radio_one) RadioButton mRadio_one;
     @BindView(R.id.radio_two)RadioButton mRadio_two;
+//    @BindView(R.id.saveDetails) Button mSaveDetailsButton;
 //    @BindView(R.id.framelayout)  FrameLayout  frameLayout;
 
     @Override
@@ -94,9 +95,8 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             fragmentTwoBtn.setTextColor(Color.BLACK);
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.WHITE);
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.newFramelayout,new AllStaff());
-            fragmentTransaction.commit();
+            startActivity(new Intent(getApplicationContext(), AllStaffActivity.class));
+            overridePendingTransition(0,0);
         }
 
         if(v==fragmentTwoBtn){
@@ -109,7 +109,8 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             linearHidden.setVisibility(View.INVISIBLE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.newFramelayout, new DepartmentsFragment());
-            fragmentTransaction.commit();        }
+            fragmentTransaction.commit();
+        }
 
         if(v==fragmentThreeBtn){
             fragmentThreeBtn.setBackgroundColor(Color.rgb(0,70,115));

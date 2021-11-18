@@ -11,9 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
-        <activity android:name=".SplashScreen"
-            android:theme="@style/SplashThemes"
-            android:exported="true">
+        <activity
+            android:name=".Finance.LogIn"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/SplashThemes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

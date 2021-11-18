@@ -18,17 +18,17 @@ public class AllStaff extends Fragment {
     public AllStaff() {
         // Required empty public constructor
     }
-    String names[],position[],workTypes[];
-    Context context;
+//    String names[],position[],workTypes[];
+//    Context context;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        names=getResources().getStringArray(R.array.names);
-        position=getResources().getStringArray(R.array.position);
-        workTypes=getResources().getStringArray(R.array.workTypes);
+//        names=getResources().getStringArray(R.array.names);
+//        position=getResources().getStringArray(R.array.position);
+//        workTypes=getResources().getStringArray(R.array.workTypes);
 
 //        recyclerView= recyclerView.findViewById(R.id.recyclerview);
 //        DepartmentAdapter departmentAdapter=new DepartmentAdapter(AllStaff.this,names,position,workTypes);

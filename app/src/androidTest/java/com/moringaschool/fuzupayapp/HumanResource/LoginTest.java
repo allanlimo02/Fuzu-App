@@ -1,6 +1,7 @@
 package com.moringaschool.fuzupayapp.HumanResource;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -36,6 +37,10 @@ public class LoginTest extends TestCase {
 //        onView(withId(R.id.passwordEditText)).perform(typeText("FuzuPay"))
 //                .check(matches(withText("FuzuPay")));
 //    }
+    @Test
+    public void login_button_validation(){
+        onView(withId(R.id.findLoginButton)).perform(click());
+    }
 
 
 }

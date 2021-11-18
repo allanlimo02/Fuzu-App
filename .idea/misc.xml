@@ -12,7 +12,6 @@
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.17407407407407408" />
         <entry key="app/src/main/res/drawable/circle_with_theme_color.xml" value="0.1550925925925926" />
-        <entry key="app/src/main/res/drawable/finance_grey_circle.xml" value="0.3359375" />
         <entry key="app/src/main/res/drawable/ic_baseline_pin_drop_24.xml" value="0.28125" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/drawable/ic_leave.xml" value="0.3359375" />
@@ -26,8 +25,13 @@
         <entry key="app/src/main/res/drawable/thin_border.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/font/open_sans_light.xml" value="0.35" />
         <entry key="app/src/main/res/layout/activity_add_staff_main.xml" value="0.31979166666666664" />
+
+        <entry key="app/src/main/res/layout/activity_all_staff.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.75" />
+
         <entry key="app/src/main/res/layout/activity_all_staff.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.6056860321384425" />
+
         <entry key="app/src/main/res/layout/activity_leave.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_leave2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5" />
@@ -56,7 +60,6 @@
         <entry key="app/src/main/res/layout/fragment_single_staff.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/fragment_staff_main.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/fragment_stuff.xml" value="0.21693840579710144" />
-        <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/staff_rec_item.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.5" />
         <entry key="app/src/main/res/menu/all_stuff.xml" value="0.22592592592592592" />

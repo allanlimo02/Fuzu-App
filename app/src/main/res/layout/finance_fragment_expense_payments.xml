@@ -5,19 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HumanResource.Fragments.Staff.SingleStaffFragment">
-
-    <TextView
-        android:id="@+id/approvalID2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Approval ID"
-        android:textColor="#004673"
-        android:textStyle="bold" />
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/toolbar" />
-
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
@@ -29,8 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.062">
-
-
         <Button
             android:id="@+id/pending"
             android:layout_width="wrap_content"
@@ -51,7 +36,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
             tools:ignore="MissingConstraints,UnknownId" />
-
         <Button
             android:id="@+id/Payments"
             android:layout_width="wrap_content"

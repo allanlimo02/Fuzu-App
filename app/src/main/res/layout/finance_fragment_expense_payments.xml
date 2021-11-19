@@ -6,6 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HumanResource.Fragments.Staff.SingleStaffFragment">
 
+    <TextView
+        android:id="@+id/approvalID2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Approval ID"
+        android:textColor="#004673"
+        android:textStyle="bold" />
+
     <include
         android:id="@+id/include"
         layout="@layout/toolbar" />
@@ -87,28 +95,38 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/titleBar"
+        android:id="@+id/approvalBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="20dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="119dp">
+        tools:layout_editor_absoluteX="-55dp"
+        tools:layout_editor_absoluteY="117dp">
 
         <TextView
-            android:id="@+id/fullName"
+            android:id="@+id/approvalID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Full Name"
+            android:text="Approval ID"
             android:textColor="#004673"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/department"
+            android:id="@+id/approved"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="18dp"
+            android:layout_toEndOf="@+id/approvalID"
+            android:text="Approved"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-
-            android:text="Department"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="178dp"
+            android:text="Amount"
             android:textColor="#004673"
             android:textStyle="bold" />
 
@@ -117,8 +135,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="73dp"
+            android:layout_marginEnd="112dp"
             android:text="Status"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:text="Action"
             android:textColor="#004673"
             android:textStyle="bold" />
     </RelativeLayout>

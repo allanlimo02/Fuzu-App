@@ -35,7 +35,7 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     private String[] dates=new String[]{"12-11-2021","34-12-2021","22-22-2021"};
     private String[] names=new String[]{"Winnie Lagat","Kawira Kinyua","June Adhiambo"};
     private String[] durations=new String[]{"10 Days","23 Days","5 Days"};
-    Context context;
+
 
 
     //    fragment inititializations
@@ -53,9 +53,9 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
         fragmentTwoBtn2.setOnClickListener(this);
         fragmentOneBtn2.setOnClickListener(this);
 
-//        LeaveRequestAdapter adapter=new LeaveRequestAdapter(context,leaveName,names,dates,durations);
-//        recyclerView2.setAdapter(adapter);
-//        recyclerView2.setLayoutManager(new LinearLayoutManager(context));
+        LeaveRequestAdapter adapter=new LeaveRequestAdapter(this,leaveName,names,dates,durations);
+        recyclerView2.setAdapter(adapter);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(this));
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.moringaschool.fuzupayapp" >
+    package="com.moringaschool.fuzupayapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,7 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FuzuPayApp" >
+        android:theme="@style/Theme.FuzuPayApp">
+        <activity
+            android:name=".Finance.Pazyroll.Finance_Approve_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Pazyroll.financePayroll_1"
+            android:exported="true" />
         <activity
             android:name=".Finance.Dashboard_Finance"
             android:exported="true" />
@@ -20,7 +26,7 @@
         <activity
             android:name=".SplashScreen"
             android:exported="true"
-            android:theme="@style/SplashThemes" >
+            android:theme="@style/SplashThemes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,7 +53,7 @@
             android:exported="true" />
         <activity
             android:name=".HumanResource.Login"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

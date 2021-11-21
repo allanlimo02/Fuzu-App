@@ -1,4 +1,4 @@
-package com.moringaschool.fuzupayapp.Finance.Pazyroll;
+package com.moringaschool.fuzupayapp.Finance.Expences;
 
 import androidx.appcompat.app.AppCompatActivity;
 

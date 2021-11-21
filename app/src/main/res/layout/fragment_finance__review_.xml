@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Finance.Pazyroll.Finance_Review_Fragment">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/financeCloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_cloud" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Download Excel"
+
+            android:textColor="@color/one"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llout"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/editbutton"
+            android:layout_width="100dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="7dp"
+            android:backgroundTint="#004673"
+            android:text="Edit" />
+
+        <Button
+            android:id="@+id/confirmbutton"
+            android:layout_width="100dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#004673"
+            android:paddingStart="5dp"
+            android:text="Confirm" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutPayroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llout" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

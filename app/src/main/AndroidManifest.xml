@@ -12,6 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
         <activity
+
+            android:name=".Finance.Expences.ARDActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Expences.Finance_Approve_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Pazyroll.financePayroll_1"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Dashboard_Finance"
             android:name=".Finance.Payroll2"
             android:exported="true" />
         <activity

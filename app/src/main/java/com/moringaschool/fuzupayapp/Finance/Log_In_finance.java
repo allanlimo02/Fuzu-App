@@ -55,7 +55,7 @@ public void onClick(View v) {
 //                mPasswordEditText.setError("password cannot be blank");
 //            }
 //            else{
-//                Intent intent = new Intent(Login.this, DashboardActivity.class);
+//                Intent intent = new Intent(Log_In_finance.this, Dashboard_Finance.class);
 //                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 //                startActivity(intent);
 //            }

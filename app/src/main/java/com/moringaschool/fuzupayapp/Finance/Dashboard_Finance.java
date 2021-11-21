@@ -35,8 +35,6 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(getApplicationContext(), Dashboard_Finance.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.nav_payroll:
                         startActivity(new Intent(getApplicationContext(), Payroll2.class));

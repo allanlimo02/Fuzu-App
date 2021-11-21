@@ -1,17 +1,26 @@
 package com.moringaschool.fuzupayapp.Finance;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.Finance.Expences.Finance_Approve_Activity;
 import com.moringaschool.fuzupayapp.Finance.Fragments.FinanceComingSoon;
 import com.moringaschool.fuzupayapp.Finance.Fragments.NewrunFragment;
+import com.moringaschool.fuzupayapp.Finance.Pazyroll.financePayroll_1;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.Leave_Request_Fragment;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaffActivity;
 import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
@@ -23,6 +32,8 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.staff) TextView staffbtn;
     @BindView(R.id.nframe) FrameLayout frameLayout;
 
+    @BindView(R.id.bottom_navigation)
+    BottomNavigationView bottom_navigation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +43,29 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
         newrun.setOnClickListener(this);
         payrollbtn.setOnClickListener(this);
         staffbtn.setOnClickListener(this);
+
+        bottom_navigation.setSelectedItemId(R.id.nav_home);
+        bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        startActivity(new Intent(getApplicationContext(), Dashboard_Finance.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.nav_payroll:
+                        return true;
+                    case R.id.nav_staff:
+//                        startActivity(new Intent(getApplicationContext(), Log_In_finance.class));
+//                        overridePendingTransition(0,0);
+                        Toast.makeText(Payroll2.this, "Coming Soon", Toast.LENGTH_SHORT).show();
+                        return true;
+
+                }
+
+                return false;
+            }
+        });
 
     }
 
@@ -67,9 +101,8 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
             newrun.setTextColor(Color.rgb(0,70,115));
             staffbtn.setBackgroundResource(R.drawable.thin_border);
             staffbtn.setTextColor(Color.rgb(0,70,115));
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.nframe,new FinanceComingSoon());
-            fragmentTransaction.commit();
+            startActivity(new Intent(getApplicationContext(), financePayroll_1.class));
+            overridePendingTransition(0,0);
 
         }
         if(v==staffbtn){

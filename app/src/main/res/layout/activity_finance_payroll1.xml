@@ -6,24 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".Finance.Pazyroll.financePayroll_1">
 
+    <include
+        android:id="@+id/topnav"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="55dp" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selecto"
+        app:menu="@menu/finance_bottom_menu"
+        app:itemTextColor="@drawable/bottom_menu_text"
+        android:textStyle="bold"
+        android:background="#004763"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finance"
+        app:layout_constraintTop_toBottomOf="@+id/topnav"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        android:text="Finance"
+        android:textColor="#004763"
+        android:padding="10dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/buttonsLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@+id/finance"
+        tools:layout_editor_absoluteX="16dp">
+
+        <TextView
+            android:id="@+id/newrun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/thin_border"
+            android:paddingStart="30dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="5dp"
+            android:text="New Run"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/payroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:background="@drawable/thin_border"
+            android:paddingStart="30dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="5dp"
+            android:text="Payroll"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/staff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:background="@drawable/thin_border"
+            android:paddingStart="30dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="5dp"
+            android:text="Staff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginTop="5dp"
         android:background="@drawable/thin_border"
         android:orientation="horizontal"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/buttonsLine">
 
         <TextView
             android:id="@+id/payments"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="64dp"
+            android:layout_marginEnd="88dp"
             android:text="Approve Run"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -35,10 +120,11 @@
             android:id="@+id/approvepayment"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:text="Review"
             android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/payments"
+            app:layout_constraintHorizontal_bias="0.312"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,11 +132,13 @@
             android:id="@+id/review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:text="Payments"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="301dp" />
+            app:layout_constraintVertical_bias="0.454" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

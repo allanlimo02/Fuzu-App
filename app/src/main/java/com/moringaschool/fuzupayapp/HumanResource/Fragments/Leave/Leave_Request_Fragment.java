@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 
 public class Leave_Request_Fragment extends Fragment {
 
-    @BindView(R.id.recview) RecyclerView recyclerView;
+//    @BindView(R.id.recview) RecyclerView recyclerView;
 
    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -78,6 +78,12 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
     @Override
     public void onStart() {
         super.onStart();
+        payrollbtn.setBackgroundColor(Color.rgb(0,70,115));
+        payrollbtn.setTextColor(Color.WHITE);
+        newrun.setBackgroundResource(R.drawable.thin_border);
+        newrun.setTextColor(Color.rgb(0,70,115));
+        staffbtn.setBackgroundResource(R.drawable.thin_border);
+        staffbtn.setTextColor(Color.rgb(0,70,115));
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.payrollActive, new Finance_Review_Fragment());
         fragmentTransaction.commit();

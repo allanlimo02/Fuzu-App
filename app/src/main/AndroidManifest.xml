@@ -50,6 +50,9 @@
             android:name=".HumanResource.Fragments.Staff.StaffActivity"
             android:exported="true" />
         <activity
+            android:name=".Finance.Expences.ARDActivity"
+            android:exported="true" />
+        <activity
             android:name=".HumanResource.Dashboard.DashboardActivity"
             android:exported="true" />
         <activity

@@ -1,4 +1,4 @@
-package com.moringaschool.fuzupayapp.Finance;
+package com.moringaschool.fuzupayapp.Finance.Expences;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.moringaschool.fuzupayapp.R;
 
-public class LogIn extends AppCompatActivity {
+public class Finance_Approve_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.finance_activity_login);
+        setContentView(R.layout.activity_finance_approve);
     }
 }

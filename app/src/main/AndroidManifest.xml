@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FuzuPayApp">
 
         <activity
+            android:name=".Finance.Expences.ARDActivity"
+            android:exported="true" />
+        <activity
             android:name=".Finance.Expences.Finance_Approve_Activity"
             android:exported="true" />
         <activity

@@ -113,7 +113,7 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
             payrollbtn.setBackgroundResource(R.drawable.thin_border);//setBackgroundColor(Color.WHITE);
             payrollbtn.setTextColor(Color.rgb(0,70,115));
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.nframe,new FinanceComingSoon());
+            fragmentTransaction.replace(R.id.nframe,new FinanceStaffFragment());
             fragmentTransaction.commit();
         }
     }

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#fbf3ee"
     android:orientation="vertical"
-    tools:context=".Finance.expenses">
+    tools:context=".Finance.FinanceStaffFragment">
 
 
 
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="9dp"
                 android:orientation="vertical">
 
 
@@ -79,14 +79,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="8dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/SpinnerTwo"
                     style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                     android:layout_width="68dp"
-                    android:layout_height="35dp"
+                    android:layout_height="30dp"
                     android:hint="@string/All" />
 
 
@@ -106,7 +106,7 @@
                     android:text="Filter"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 

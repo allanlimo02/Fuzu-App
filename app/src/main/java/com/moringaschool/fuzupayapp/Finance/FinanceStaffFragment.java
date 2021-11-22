@@ -1,4 +1,4 @@
-package com.moringaschool.fuzupayapp.Finance.Pazyroll;
+package com.moringaschool.fuzupayapp.Finance;
 
 import android.os.Bundle;
 
@@ -10,7 +10,8 @@ import android.view.ViewGroup;
 
 import com.moringaschool.fuzupayapp.R;
 
-public class Finance_Approve_Fragment extends Fragment {
+
+public class FinanceStaffFragment extends Fragment {
 
 
     @Override
@@ -23,6 +24,6 @@ public class Finance_Approve_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_finance__approve_, container, false);
+        return inflater.inflate(R.layout.finance_fragment_staff, container, false);
     }
 }

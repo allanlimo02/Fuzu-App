@@ -107,6 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:id="@+id/linelayout1"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
         <RadioButton
             android:id="@+id/radio_Expense"
@@ -144,10 +145,15 @@
             android:textColor="@color/one"
             android:textStyle="bold"
             android:layout_marginStart="20dp"/>
-
-
-
-    </LinearLayout>
+        </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/frameLayoutPendings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linelayout1" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

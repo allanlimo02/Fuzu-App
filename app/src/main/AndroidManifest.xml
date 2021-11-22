@@ -11,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
-        <activity
-            android:name=".Finance.expense"
-            android:exported="true" />
-        <activity
-            android:name=".Finance.LogIn"
+<!--        <activity-->
+<!--            android:name=".Finance.expense"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".Finance.LogIn"-->
 
-            android:name=".Finance.Expences.ARDActivity"
-            android:exported="true" />
+<!--            android:name=".Finance.Expences.ARDActivity"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".Finance.Expences.Finance_Approve_Activity"
             android:exported="true" />

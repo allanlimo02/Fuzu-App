@@ -33,4 +33,7 @@
         <item>DisApprove</item>
     </string-array>
 
+    <string name="All">All</string>
+
+
 </resources>

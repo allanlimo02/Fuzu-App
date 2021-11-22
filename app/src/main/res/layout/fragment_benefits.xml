@@ -7,16 +7,18 @@
     tools:context=".Finance.BenefitsFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="596dp"
-        android:src="@drawable/user_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/personal"
+        android:src="@drawable/ic_baseline_person_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personalInfo" />
 
     <TextView
         android:id="@+id/personalInfo"
@@ -28,45 +30,45 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/nameItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="184dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="140dp"
         android:text="Sheila Martins"
-        android:textSize="20sp"
         android:textColor="#004763"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/personalInfo"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintTop_toBottomOf="@+id/personalInfo" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Information System Assistant"
         android:textColor="#004763"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/nameItem"
-        app:layout_constraintVertical_bias="0.015" />
+        app:layout_constraintTop_toBottomOf="@+id/nameItem" />
 
     <ImageView
         android:id="@+id/pinDrop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="280dp"
-        android:src="@drawable/ic_baseline_pin_drop_24"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="240dp"
+        android:src="@drawable/ic_baseline_location_on_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -76,10 +78,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="184dp"
-        android:textColor="#004763"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="140dp"
         android:text="Nairobi, Kenya"
+        android:textColor="#004763"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/pinDrop"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -89,13 +91,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Working Period: 9 Months"
+        android:textColor="#004763"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.429"
-        android:textColor="#004763"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pinDrop"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <LinearLayout
         android:id="@+id/layoutOne"
@@ -180,7 +182,7 @@
     <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:orientation="horizontal"
         android:background="#3FE0D0"
         android:layout_marginTop="8dp"

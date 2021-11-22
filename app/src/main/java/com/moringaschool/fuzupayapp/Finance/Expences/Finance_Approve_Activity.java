@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.Finance.Dashboard_Finance;
+import com.moringaschool.fuzupayapp.Finance.FinanceStaffFragment;
 import com.moringaschool.fuzupayapp.Finance.Payroll2;
 import com.moringaschool.fuzupayapp.R;
 
@@ -105,7 +106,7 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
            Pending.setBackgroundResource(R.drawable.thin_border);
            Pending.setTextColor(Color.rgb(0,70,115));
            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-           fragmentTransaction.replace(R.id.frameLayoutPendings,new ArdaFragment());
+           fragmentTransaction.replace(R.id.frameLayoutPendings,new FinanceStaffFragment());
            fragmentTransaction.commit();
        }
 

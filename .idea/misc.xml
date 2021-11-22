@@ -36,6 +36,8 @@
         <entry key="app/src/main/res/layout/activity_single_staff.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.16979166666666667" />
         <entry key="app/src/main/res/layout/activity_staff.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/benefits_list_item.xml" value="0.2833333333333333" />
+        <entry key="app/src/main/res/layout/deduction_list_item.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/department_drop_down.xml" value="0.25" />
         <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.22780797101449277" />

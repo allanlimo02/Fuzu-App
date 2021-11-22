@@ -8,6 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/relativeone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,21 +23,188 @@
             android:textStyle="bold"
             android:text="Back"
             app:drawableStartCompat="@drawable/ic_backarrow" />
+
         <TextView
-            android:layout_marginTop="5dp"
-            android:layout_width="340dp"
             android:id="@+id/expensedetailbtn"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:background="#004673"
-            android:textColor="@color/white"
             android:layout_below="@+id/backtext"
-            android:textStyle="bold"
-            android:textSize="22sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round_button_backround"
             android:text="Expense Details"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/epxensedetails"
+        app:layout_constraintTop_toBottomOf="@+id/relativeone"
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/statustxt"
+            android:text="Status"
+            android:textColor="#004673"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/expenseId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/statustxt"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/ic_tinny_circle"
+            android:text="Pending"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/expenseIdtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:text="Created By" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/statustxt"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Pending"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/createdbytitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/expenseId"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:text="Created by"
+            android:paddingTop="10dp"
+            android:textColor="@color/one" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/expenseId"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:paddingTop="10dp"
+            android:text="Time Claimed"
+            android:textColor="@color/one" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/staffname"
+            android:layout_below="@+id/createdbytitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:text="James Wanyama"
+            android:textColor="#68d0c4" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/createdbytitle"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:text="12/11/2021"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/merchanttxt"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/staffname"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Mechant"
+            android:textColor="#000000" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/staffname"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:text="Category"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/merchantname"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/merchanttxt"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Raddison Blue Hotel"
+            android:textColor="#000000" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/merchanttxt"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:text="Accomodation"
+            android:textColor="@color/black" />
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Receipt"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/epxensedetails"
+        android:id="@+id/receipttitle"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@+id/receipttitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/receiptRelative"
+        android:background="@drawable/thin_border">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/receipt"
+            />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/receiptRelative"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/one"
+        android:paddingStart="30dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:text="Approve"
+        android:paddingTop="5dp"
+        android:paddingBottom="6dp"
+        android:id="@+id/approvebtn"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

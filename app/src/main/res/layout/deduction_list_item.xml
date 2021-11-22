@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_margin="10dp"
+        android:background="#3FE0D0"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dedType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deduction Type"
+                android:textColor="#004763" />
+
+
+            <TextView
+                android:id="@+id/paye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PAYE"
+                android:textColor="#000000"
+                app:layout_constraintHorizontal_bias="0.042"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dedType" />
+
+            <TextView
+                android:id="@+id/insurance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/paye"
+                android:layout_marginTop="-3dp"
+                android:text="Insurance(NHIF)"
+                android:textColor="#000000"
+                app:layout_constraintHorizontal_bias="0.116"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/paye"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/pension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pension(NSSF)"
+                android:textColor="#000000"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/insurance" />
+
+            <TextView
+                android:id="@+id/sacco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sacco"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/dedType"
+                android:text="Rate"
+                android:textColor="#004763" />
+
+            <TextView
+                android:id="@+id/percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.6%"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/nhif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kES 1500"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/percent" />
+
+            <TextView
+                android:id="@+id/nssf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KES 800"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/nhif" />
+
+            <TextView
+                android:id="@+id/saccoAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KES 300"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/nssf" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@
     <string name="employee_code">Employee Code</string>
     <string name="other_name">Other Name</string>
     <string name="password">Password</string>
+    <string name="Approve">Approve</string>
     <string-array name="workTypes">
         <item> Full time</item>
         <item>Contract</item>
@@ -26,6 +27,10 @@
         <item>Erick Okumu</item>
         <item>Esther Moki</item>
         <item>Judy Rop</item>
+    </string-array>
+    <string-array name="approves">
+        <item>Approve</item>
+        <item>DisApprove</item>
     </string-array>
 
 </resources>

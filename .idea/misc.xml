@@ -5,6 +5,7 @@
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.33489583333333334" />
         <entry key="../../../../../layout/custom_preview.xml" value="0.37083333333333335" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/allstuffselector.xml" value="0.2962962962962963" />
         <entry key="app/src/main/res/drawable/background_splash.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/drawable/border_background.xml" value="0.28125" />
@@ -12,8 +13,18 @@
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.17407407407407408" />
         <entry key="app/src/main/res/drawable/circle_with_theme_color.xml" value="0.1550925925925926" />
+        <entry key="app/src/main/res/drawable/finance_grey_circle.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_30f.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_add_people.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/ic_baseline_pin_drop_24.xml" value="0.28125" />
+        <entry key="app/src/main/res/drawable/ic_check.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_insert_chart_24.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_leave.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.17407407407407408" />
+        <entry key="app/src/main/res/drawable/ic_outline_person.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/item_selecto.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/item_selector.xml" value="0.20092592592592592" />
@@ -34,7 +45,7 @@
         <entry key="app/src/main/res/layout/department_drop_down.xml" value="0.25" />
         <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.5" />
         <entry key="app/src/main/res/layout/finance_fragment_expense_payments.xml" value="0.353125" />
-        <entry key="app/src/main/res/layout/finance_fragment_single_staff2.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/finance_fragment_single_staff2.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.22780797101449277" />
         <entry key="app/src/main/res/layout/fragment_add__staff__input_.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.35572916666666665" />

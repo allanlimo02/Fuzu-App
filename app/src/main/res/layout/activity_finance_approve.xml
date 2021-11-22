@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Finance.Expences.Finance_Approve_Activity">
 
+    <include layout="@layout/toolbar"
+        android:id="@+id/app"/>
+
     <!--    layout displaying the classes-->
     <LinearLayout
         android:id="@+id/approveLinear3"
@@ -83,6 +86,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/approveLinear3" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selecto"
+        app:itemTextColor="@drawable/bottom_menu_text"
+        android:textStyle="bold"
+        app:menu="@menu/finance_bottom_menu"
+        android:background="#004763"
+        />
+
 
 
 

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.Finance.Expences.Finance_Approve_Activity;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
@@ -40,14 +41,12 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
                         startActivity(new Intent(getApplicationContext(), Payroll2.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.nav_staff:
-//                        startActivity(new Intent(getApplicationContext(), Log_In_finance.class));
-//                        overridePendingTransition(0,0);
-                        Toast.makeText(Dashboard_Finance.this, "Coming Soon", Toast.LENGTH_SHORT).show();
+                    case R.id.nav_expenses:
+                        startActivity(new Intent(getApplicationContext(), Finance_Approve_Activity.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                 }
-
                 return false;
             }
         });

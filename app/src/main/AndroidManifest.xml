@@ -11,10 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
-        <activity
 
-            android:name=".Finance.Expences.ARDActivity"
-            android:exported="true" />
         <activity
             android:name=".Finance.Expences.Finance_Approve_Activity"
             android:exported="true" />
@@ -30,22 +27,13 @@
         <activity
             android:name=".Finance.Log_In_finance"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-<!--        <activity-->
-<!--            android:name=".SplashScreen"-->
-<!--            android:exported="true"-->
-<!--            android:theme="@style/SplashThemes">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+                          <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+        </activity>
+
         <activity
             android:name=".HumanResource.Fragments.Staff.SIngleStaffActivity"
             android:exported="true" />
@@ -66,7 +54,9 @@
             android:exported="true" />
         <activity
             android:name=".HumanResource.Login"
-            android:exported="true"/>
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".HumanResource.SomethingElse"
             android:exported="true" />

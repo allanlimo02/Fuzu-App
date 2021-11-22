@@ -6,24 +6,46 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
         <activity
-            android:name=".Finance.LogIn"
+
+            android:name=".Finance.Expences.ARDActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashScreen"
-            android:exported="true"
-            android:theme="@style/SplashThemes">
+            android:name=".Finance.Expences.Finance_Approve_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Pazyroll.financePayroll_1"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Payroll2"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Dashboard_Finance"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Log_In_finance"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity-->
+<!--            android:name=".SplashScreen"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/SplashThemes">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
             android:name=".HumanResource.Fragments.Staff.SIngleStaffActivity"
             android:exported="true" />
@@ -44,18 +66,12 @@
             android:exported="true" />
         <activity
             android:name=".HumanResource.Login"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".HumanResource.SomethingElse"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HumanResource.MainActivity"
             android:exported="true" />
     </application>
 

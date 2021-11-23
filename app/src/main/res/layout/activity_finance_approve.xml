@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fbf3ee"
+    tools:context=".Finance.Expences.Finance_Approve_Activity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/app"/>
+
+    <!--    layout displaying the classes-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finance"
+        app:layout_constraintTop_toBottomOf="@+id/app"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        android:text="Expenses"
+        android:textColor="#004763"
+        android:padding="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/finance"
+        android:padding="5dp"
+        android:layout_marginStart="20dp"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:id="@+id/buttonsLine">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Pending"
+            android:id="@+id/newrun"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:background="@drawable/thin_border"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Payments"
+            android:id="@+id/payroll"
+            android:textStyle="bold"
+            android:paddingBottom="5dp"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:background="@drawable/thin_border"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Completed"
+            android:layout_marginStart="19dp"
+            android:textStyle="bold"
+            android:paddingBottom="5dp"
+            android:textSize="18sp"
+            android:id="@+id/staff"
+            android:paddingTop="5dp"
+            android:background="@drawable/thin_border"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/frameLayoutPendings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonsLine" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/my_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selecto"
+        app:itemTextColor="@drawable/bottom_menu_text"
+        android:textStyle="bold"
+        app:menu="@menu/finance_bottom_menu"
+        android:background="#004763"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Finance.Expences.ArdaFragment">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Spinner
+            android:id="@+id/SpinnerARD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint = "@string/approve"
+            />
+
+        <Spinner
+            android:id="@+id/SpinnerARD1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            />
+
+        <Spinner
+            android:id="@+id/SpinnerARD2"
+            android:layout_width="79dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linelayout1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        <RadioButton
+            android:id="@+id/radio_Expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Expense ID"
+            android:textColor="#0c4763"
+            android:layout_marginStart="20dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/Astaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="staff Name"
+            android:textStyle="bold"
+            android:textColor="@color/one"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:id="@+id/Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:textStyle="bold"
+            android:textColor="@color/one"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/ADate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textColor="@color/one"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"/>
+    </LinearLayout>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/frameLayoutPendings"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="5dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linelayout1" />-->
+    <LinearLayout
+        android:id="@+id/linelayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linelayout1">
+
+        <RadioButton
+            android:id="@+id/radio_Expense2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:text="RE34334"
+            android:textColor="#0c4763"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/Astaff2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="James Wanyama"
+            android:textColor="@color/one"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Amount2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="KES 3000"
+            android:textColor="@color/one"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ADate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="12/3/2021"
+            android:textColor="@color/one"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linelayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linelayout2">
+
+        <RadioButton
+            android:id="@+id/radio_Expense3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:text="Reff3e3"
+            android:textColor="#0c4763"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/Astaff3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Allan Limo langat "
+            android:textColor="@color/one"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Amount3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="3434343"
+            android:textColor="@color/one"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ADate3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="2/3/2021"
+            android:textColor="@color/one"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutPendings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,7 +27,7 @@
             android:layout_marginStart="-234dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="45dp"
-            android:src="@drawable/ic_notifications" />
+            android:src="@drawable/ic_outline_notifications" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -38,14 +38,13 @@
             android:layout_marginStart="-366dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="10dp"
-            app:srcCompat="@drawable/ic_staff"
             android:background="@drawable/circle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.093"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintVertical_bias="0.028"
-            />
+            app:srcCompat="@drawable/ic_outline_person" />
     </RelativeLayout>
 
 

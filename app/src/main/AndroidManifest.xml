@@ -6,13 +6,31 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
-        <activity android:name=".SplashScreen"
-            android:theme="@style/SplashThemes"
+        <activity
+            android:name=".Finance.Fragments.FinanceExpenseDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Expences.ARDActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Expences.Finance_Approve_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Pazyroll.financePayroll_1"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Payroll2"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Dashboard_Finance"
+            android:exported="true" />
+        <activity
+            android:name=".Finance.Log_In_finance"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,22 +54,19 @@
             android:name=".HumanResource.Fragments.Staff.StaffActivity"
             android:exported="true" />
         <activity
+            android:name=".Finance.Expences.ARDActivity"
+            android:exported="true" />
+        <activity
             android:name=".HumanResource.Dashboard.DashboardActivity"
             android:exported="true" />
         <activity
             android:name=".HumanResource.Login"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".HumanResource.SomethingElse"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HumanResource.MainActivity"
             android:exported="true" />
     </application>
 

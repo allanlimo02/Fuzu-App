@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Finance.Expences.ARDActivity">
+    <include layout="@layout/toolbar"
+        android:id="@+id/app"/>
+
+    <LinearLayout
+        android:id="@+id/approveLinear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@+id/app">
+
+
+        <Button
+            android:id="@+id/EPending1"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/button_buckground_color"
+            android:text="Pending"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textColorHighlight="#144763"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints,UnknownId" />
+
+        <Button
+            android:id="@+id/Epayments"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/button_buckground_color"
+            android:text="Payments"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textColorHighlight="#144763"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints,UnknownId" />
+
+        <Button
+            android:id="@+id/Ecompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/button_buckground_color"
+            android:text="Completed"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textColorHighlight="#144763"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints,UnknownId" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/approveLinear3">
+
+        <Spinner
+            android:id="@+id/SpinnerARD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <Spinner
+            android:id="@+id/SpinnerARD1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+          />
+
+        <Spinner
+            android:id="@+id/SpinnerARD2"
+            android:layout_width="79dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linelayout1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        <RadioButton
+            android:id="@+id/radio_Expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Expense ID"
+            android:textColor="#0c4763"
+            android:layout_marginStart="20dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/Astaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="staff Name"
+            android:textStyle="bold"
+            android:textColor="@color/one"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:id="@+id/Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:textStyle="bold"
+            android:textColor="@color/one"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/ADate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textColor="@color/one"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"/>
+        </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/frameLayoutPendings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linelayout1" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selecto"
+        app:itemTextColor="@drawable/bottom_menu_text"
+        android:textStyle="bold"
+        app:menu="@menu/finance_bottom_menu"
+        android:background="#004763"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

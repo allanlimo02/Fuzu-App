@@ -24,7 +24,89 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+<!--    <TextView-->
+<!--        android:id="@+id/leaveTitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Annual Leave"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.03"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.098" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:background="@drawable/profile"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.03"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/leaveTitle"-->
+<!--        app:layout_constraintVertical_bias="0.059"-->
+<!--        app:srcCompat="@drawable/ic_person" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/name"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="James Wanyama"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.33"-->
+<!--        app:layout_constraintLeft_toRightOf="@+id/imageView"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/leaveTitle"-->
+<!--        app:layout_constraintVertical_bias="0.064" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/duration"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Remaining: 18 Days"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="12sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.333"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/name"-->
+<!--        app:layout_constraintVertical_bias="0.024" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Start date/end Date"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/date"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.859"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.886" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/date"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="June 06 -June 20 2021"-->
+<!--        android:textColor="#004763"-->
+<!--        android:textSize="12sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.84"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/leaveTitle"-->
+<!--        app:layout_constraintVertical_bias="0.125" />-->
+        <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"

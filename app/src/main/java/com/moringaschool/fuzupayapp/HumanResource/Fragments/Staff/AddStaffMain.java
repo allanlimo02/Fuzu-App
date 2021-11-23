@@ -32,6 +32,7 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.linearHidden) LinearLayout linearHidden;
     @BindView(R.id.radio_one) RadioButton mRadio_one;
     @BindView(R.id.radio_two)RadioButton mRadio_two;
+//    @BindView(R.id.saveDetails) Button mSaveDetailsButton;
 //    @BindView(R.id.framelayout)  FrameLayout  frameLayout;
 
     @Override

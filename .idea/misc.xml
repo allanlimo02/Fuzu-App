@@ -6,6 +6,7 @@
         <entry key="../../../../../../layout/custom_preview.xml" value="0.33489583333333334" />
         <entry key="../../../../../layout/custom_preview.xml" value="0.37083333333333335" />
         <entry key="../../../Android/Sdk/platforms/android-29/data/res/layout/simple_spinner_item.xml" value="0.2259963768115942" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/allstuffselector.xml" value="0.2962962962962963" />
         <entry key="app/src/main/res/drawable/background_splash.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/drawable/border_background.xml" value="0.28125" />
@@ -21,7 +22,18 @@
         <entry key="app/src/main/res/drawable/ic_cloud.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/drawable/ic_leave.xml" value="0.3359375" />
+        <entry key="app/src/main/res/drawable/finance_grey_circle.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_30f.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_add_people.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_pin_drop_24.xml" value="0.28125" />
+        <entry key="app/src/main/res/drawable/ic_check.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_insert_chart_24.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_leave.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.17407407407407408" />
+        <entry key="app/src/main/res/drawable/ic_outline_person.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/ic_staff.xml" value="0.3359375" />
         <entry key="app/src/main/res/drawable/ic_tinny_circle.xml" value="0.33541666666666664" />
@@ -44,6 +56,8 @@
         <entry key="app/src/main/res/layout/activity_finance_new_run.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_finance_payments.xml" value="0.1580547112462006" />
         <entry key="app/src/main/res/layout/activity_finance_payroll1.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_all_staff.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.75" />
         <entry key="app/src/main/res/layout/activity_leave.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_leave2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5" />
@@ -54,6 +68,14 @@
         <entry key="app/src/main/res/layout/benefits_list_item.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/deduction_list_item.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/department_drop_down.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.20555555555555555" />
+        <entry key="app/src/main/res/layout/finance_activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/finance_activity_staff.xml" value="0.16621376811594202" />
+        <entry key="app/src/main/res/layout/finance_fragment_completed_expenses.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/finance_fragment_expenses.xml" value="0.16621376811594202" />
+        <entry key="app/src/main/res/layout/finance_fragment_staff.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/finance_staff_recview.xml" value="0.31179775280898875" />
+        <entry key="app/src/main/res/layout/financeexpenses_recview.xml" value="0.25" />
         <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.5" />
         <entry key="app/src/main/res/layout/finance_activity_dashboard.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/finance_activity_login.xml" value="0.31979166666666664" />
@@ -72,6 +94,8 @@
         <entry key="app/src/main/res/layout/finance_fragment_staff.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/finance_fragment_staff_deductions.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/finance_new_run_recyler_fragment.xml" value="0.31927083333333334" />
+        <entry key="app/src/main/res/layout/finance_fragment_expense_payments.xml" value="0.353125" />
+        <entry key="app/src/main/res/layout/finance_fragment_single_staff2.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.22780797101449277" />
         <entry key="app/src/main/res/layout/fragment_add__staff__input_.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.35572916666666665" />
@@ -95,6 +119,7 @@
         <entry key="app/src/main/res/layout/holidayholder.xml" value="0.30344202898550726" />
         <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.30932971014492755" />
         <entry key="app/src/main/res/layout/single_holiday.xml" value="0.30344202898550726" />
+
         <entry key="app/src/main/res/layout/staff_rec_item.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.5" />
         <entry key="app/src/main/res/menu/all_stuff.xml" value="0.22592592592592592" />

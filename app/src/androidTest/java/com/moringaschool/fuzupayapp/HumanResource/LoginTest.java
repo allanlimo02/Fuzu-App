@@ -33,9 +33,9 @@ public class LoginTest extends TestCase {
                 .check(matches(withText("FuzuPay")));
     }
 //    @Test
-//    public void Validates_Pasword_input(){
-//        onView(withId(R.id.passwordEditText)).perform(typeText("FuzuPay"))
-//                .check(matches(withText("FuzuPay")));
+//    public void Validates_Password_input(){
+//        onView(withId(R.id.passwordEditText)).perform(typeText("FuzuPay123"))
+//                .check(matches(withText("FuzuPay123")));
 //    }
     @Test
     public void login_button_validation(){

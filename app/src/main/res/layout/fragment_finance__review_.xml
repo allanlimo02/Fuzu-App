@@ -31,7 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Download Excel"
-
+            android:paddingTop="5dp"
+            android:paddingStart="4dp"
             android:textColor="@color/one"
             android:textSize="13dp"
             android:textStyle="bold" />

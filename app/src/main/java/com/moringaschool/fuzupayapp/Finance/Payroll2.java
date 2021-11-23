@@ -44,7 +44,7 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
         payrollbtn.setOnClickListener(this);
         staffbtn.setOnClickListener(this);
 
-        bottom_navigation.setSelectedItemId(R.id.nav_home);
+        bottom_navigation.setSelectedItemId(R.id.nav_payroll);
         bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -55,10 +55,10 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
                         return true;
                     case R.id.nav_payroll:
                         return true;
-                    case R.id.nav_staff:
-//                        startActivity(new Intent(getApplicationContext(), Log_In_finance.class));
-//                        overridePendingTransition(0,0);
-                        Toast.makeText(Payroll2.this, "Coming Soon", Toast.LENGTH_SHORT).show();
+                    case R.id.nav_expenses:
+                        startActivity(new Intent(getApplicationContext(), Finance_Approve_Activity.class));
+                        overridePendingTransition(0,0);
+//                        Toast.makeText(Payroll2.this, "Coming Soon", Toast.LENGTH_SHORT).show();
                         return true;
 
                 }
@@ -113,7 +113,7 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
             payrollbtn.setBackgroundResource(R.drawable.thin_border);//setBackgroundColor(Color.WHITE);
             payrollbtn.setTextColor(Color.rgb(0,70,115));
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.nframe,new FinanceComingSoon());
+            fragmentTransaction.replace(R.id.nframe,new FinanceStaffFragment());
             fragmentTransaction.commit();
         }
     }

@@ -41,6 +41,7 @@
         <entry key="app/src/main/res/layout/department_drop_down.xml" value="0.25" />
         <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.5" />
         <entry key="app/src/main/res/layout/finance_dashboard_activity.xml" value="0.2833333333333333" />
+        <entry key="app/src/main/res/layout/finance_fragment_staff.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.22780797101449277" />
         <entry key="app/src/main/res/layout/fragment_add__staff__input_.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.35572916666666665" />

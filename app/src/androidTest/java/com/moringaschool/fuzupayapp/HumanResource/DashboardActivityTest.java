@@ -26,6 +26,11 @@ public class DashboardActivityTest extends TestCase {
             new ActivityScenarioRule<>(DashboardActivity.class);
 
     @Test
+    public void testClickApprove_leave_requests() throws Exception {
+        onView(ViewMatchers.withId(R.id.approvebutton)).perform(click());
+    }
+
+    @Test
     public void clickManage_Staff_managestaff()throws Exception{
         onView(ViewMatchers.withId(R.id.managestaff)).perform(click());
     }
@@ -40,6 +45,19 @@ public class DashboardActivityTest extends TestCase {
     @Test
     public void clickonleave_opensonleavepage()throws Exception{
         onView(withId(R.id.onleave)).perform(click());
+    }
+
+    @Test
+    public void testBottomNavigation_navHome() throws Exception {
+        onView(withId(R.id.nav_home)).perform(click());
+    }
+    @Test
+    public void testBottomNavigation_navStaff() throws Exception {
+        onView(withId(R.id.nav_staff)).perform(click());
+    }
+    @Test
+    public void testBottomNavigation_navLeave() throws Exception {
+        onView(withId(R.id.nav_leave)).perform(click());
     }
 
 }

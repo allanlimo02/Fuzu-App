@@ -4,21 +4,31 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.loginAPI.loginClient;
+import com.moringaschool.fuzupayapp.loginAPI.loginRequest;
+import com.moringaschool.fuzupayapp.loginAPI.models.LoginResponse;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Log_In_finance extends AppCompatActivity implements View.OnClickListener {
 @BindView(R.id.findLoginButton)Button mFindLoginButton;
 @BindView(R.id.emailEditText) EditText mEmailEditText;
+@BindView(R.id.pasw) TextInputEditText passwor;
 @BindView(R.id.passwordEditText) TextInputLayout mPasswordEditText;
 @BindView(R.id.forgetPasswordTextView)TextView mForgetPasswordTextView;
 
@@ -37,30 +47,49 @@ protected void onCreate(Bundle savedInstanceState) {
 @Override
 public void onClick(View v) {
 //        initialize the username and password
-
-        String userEmail = mEmailEditText.getText().toString().trim();
-        TextInputEditText userPassword = new TextInputEditText(mPasswordEditText.getContext());
-//        Editable userPassword = mPasswordEditText.getEditText().getText();
-
-//        logic
-        if(v==mFindLoginButton){
-        Intent intent = new Intent(Log_In_finance.this, Dashboard_Finance.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-
-//            if(userEmail.equals("")){
-//                mEmailEditText.setError("Email cannot be blank");
-//            }
-//            else if(userPassword.equals("")){
-//                mPasswordEditText.setError("password cannot be blank");
-//            }
-//            else{
-//                Intent intent = new Intent(Log_In_finance.this, Dashboard_Finance.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                startActivity(intent);
-//            }
-
+        if(TextUtils.isEmpty(mEmailEditText.getText().toString()) || TextUtils.isEmpty(passwor.getText().toString())){
+                String message = "All method required";
+                Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();
+        }
+        else {
+                loginRequest lOginRequest = new loginRequest();
+                lOginRequest.setEmail(mEmailEditText.getText().toString());
+                lOginRequest.setPassword(passwor.getText().toString());
+                loginUser(lOginRequest);
         }
 
+
         }
-        }
+public void loginUser(loginRequest lOginRequest){
+        Call<LoginResponse> loginResponseCall = loginClient.getService().loginUser(lOginRequest);
+        loginResponseCall.enqueue(new Callback<LoginResponse>() {
+                @Override
+                public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                        if(response.isSuccessful()){
+
+                                LoginResponse loginResponse = response.body();
+                                if(loginResponse.getUser().getRole().getId().toString().trim()=="2"){
+                                startActivity(new Intent(Log_In_finance.this,Dashboard_Finance.class).putExtra("data",loginResponse));
+                                finish();
+                                }else
+                                {
+                                        startActivity(new Intent(Log_In_finance.this, DashboardActivity.class).putExtra("data",loginResponse));
+                                        finish();
+                                }
+
+                        }else
+                        {
+                                String message = "An Error has occurred try later ..";
+                                Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();
+                        }
+                }
+
+                @Override
+                public void onFailure(Call<LoginResponse> call, Throwable t) {
+                        String message = t.getLocalizedMessage();
+                        Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();
+                }
+        });
+}
+
+}

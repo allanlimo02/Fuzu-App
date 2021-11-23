@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,18 +19,31 @@ import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.loginAPI.models.LoginResponse;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Dashboard_Finance extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.bottom_navigation) BottomNavigationView bottom_navigation;
+    @BindView(R.id.textUser) TextView userName;
+    LoginResponse loginResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finance_dashboard_activity);
         ButterKnife.bind(this);
+
+//        displayName
+        Intent intent = getIntent();
+        if(intent.getExtras() != null){
+            loginResponse =(LoginResponse) intent.getSerializableExtra("data");
+            userName.setText(loginResponse.getUser().getUsername());
+            Log.e("TAG","--------"+loginResponse.getUser().getUsername());
+        }
+
+
 
         bottom_navigation.setSelectedItemId(R.id.nav_home);
         bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

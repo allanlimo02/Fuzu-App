@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="30dp"
+            android:paddingStart="20dp"
             android:paddingEnd="30dp"
             android:text="New Run"
             android:id="@+id/newrun"
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
-            android:paddingStart="30dp"
+            android:paddingStart="20dp"
             android:paddingEnd="30dp"
             android:text="Payroll"
             android:id="@+id/payroll"
@@ -74,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="30dp"
+            android:paddingStart="20dp"
             android:paddingEnd="30dp"
             android:text="Staff"
             android:layout_marginStart="19dp"

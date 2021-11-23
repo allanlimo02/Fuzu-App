@@ -54,6 +54,14 @@
         <entry key="app/src/main/res/layout/benefits_list_item.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/deduction_list_item.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/department_drop_down.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.20555555555555555" />
+        <entry key="app/src/main/res/layout/finance_activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/finance_activity_staff.xml" value="0.16621376811594202" />
+        <entry key="app/src/main/res/layout/finance_fragment_completed_expenses.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/finance_fragment_expenses.xml" value="0.16621376811594202" />
+        <entry key="app/src/main/res/layout/finance_fragment_staff.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/finance_staff_recview.xml" value="0.31179775280898875" />
+        <entry key="app/src/main/res/layout/financeexpenses_recview.xml" value="0.25" />
         <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.5" />
         <entry key="app/src/main/res/layout/finance_activity_dashboard.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/finance_activity_login.xml" value="0.31979166666666664" />

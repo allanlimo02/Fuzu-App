@@ -2,6 +2,8 @@ package com.moringaschool.fuzupayapp.HumanResource;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import androidx.test.espresso.matcher.ViewMatchers;
@@ -24,6 +26,12 @@ public class DashboardActivityTest extends TestCase {
     @Rule
     public ActivityScenarioRule<DashboardActivity> activityRule =
             new ActivityScenarioRule<>(DashboardActivity.class);
+//Test on approve button
+    @Test
+    public void testClickApprove_leave_requests() throws Exception {
+        onView(ViewMatchers.withId(R.id.approvebutton)).perform(click());
+    }
+    //Test on Quick navigation buttons
 
     @Test
     public void clickManage_Staff_managestaff()throws Exception{
@@ -40,6 +48,23 @@ public class DashboardActivityTest extends TestCase {
     @Test
     public void clickonleave_opensonleavepage()throws Exception{
         onView(withId(R.id.onleave)).perform(click());
+    }
+
+    //Test on bottom navigation button
+    @Test
+    public void testBottomNavigation_navHome() throws Exception {
+        onView(withId(R.id.nav_home)).perform(click())
+                .check(matches(isDisplayed()));
+    }
+    @Test
+    public void testBottomNavigation_navStaff() throws Exception {
+        onView(withId(R.id.nav_staff)).perform(click())
+                .check(matches(isDisplayed()));
+    }
+    @Test
+    public void testBottomNavigation_navLeave() throws Exception {
+        onView(withId(R.id.nav_leave)).perform(click())
+                .check(matches(isDisplayed()));
     }
 
 }

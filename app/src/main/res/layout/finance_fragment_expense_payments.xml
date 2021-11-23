@@ -97,7 +97,7 @@
         <TextView
             android:id="@+id/approved"
             android:layout_width="80dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_toEndOf="@+id/approvalID"
             android:text="Approved"

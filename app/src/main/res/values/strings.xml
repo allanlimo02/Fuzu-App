@@ -36,5 +36,14 @@
     <string name="All">All</string>
     <string name="approve">Approve</string>
 
+    <string name="reject">Reject</string>
+    <string name="dispute">Dispute</string>
+
+    <string-array name="approve">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+    </string-array>
+
 
 </resources>

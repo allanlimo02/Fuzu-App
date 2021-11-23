@@ -1,9 +1,11 @@
 package com.moringaschool.fuzupayapp.Finance.Expences;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,16 +13,27 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.moringaschool.fuzupayapp.Finance.Fragments.FinanceExpenseDetail;
+import com.moringaschool.fuzupayapp.Finance.Fragments.FinanceExpenseDetailsActivity;
+import com.moringaschool.fuzupayapp.Finance.Pazyroll.financePayroll_1;
+import com.moringaschool.fuzupayapp.Finance.SingleStaffFragment;
 import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ArdaFragment extends Fragment {
+public class ArdaFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.SpinnerARD)  Spinner spinner;
+    @BindView(R.id.linelayout1)
+    LinearLayout linelayout1;
+    @BindView(R.id.linelayout2)
+    LinearLayout linelayout2;
+    @BindView(R.id.linelayout3)
+    LinearLayout linelayout3;
 //    @BindView(R.id.bottom_navigation) BottomNavigationView bottomNavigationView;
 
     private Context context;
@@ -31,6 +44,9 @@ public class ArdaFragment extends Fragment {
         View view=inflater.inflate(R.layout.finance_arda_fragment, container, false);
         ButterKnife.bind(this,view);
 
+        linelayout2.setOnClickListener(this);
+        linelayout3.setOnClickListener(this);
+
 //        ArrayAdapter<CharSequence> adapter = ArrayAdapter .createFromResource(context,R.array.approves, android.R.layout.simple_spinner_item);
 //        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 //        spinner.setAdapter(adapter);
@@ -38,5 +54,19 @@ public class ArdaFragment extends Fragment {
 //        spinner.setOnItemSelectedListener(spinner);
 
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view == linelayout2){
+            startActivity(new Intent(getActivity(), FinanceExpenseDetailsActivity.class));
+        }
+        if(view == linelayout1){
+            startActivity(new Intent(getActivity(), FinanceExpenseDetailsActivity.class));
+        }
+        if(view == linelayout3){
+            startActivity(new Intent(getActivity(), FinanceExpenseDetailsActivity.class));
+        }
+
     }
 }

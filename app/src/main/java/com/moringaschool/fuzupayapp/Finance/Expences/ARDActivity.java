@@ -52,7 +52,9 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ardactivity);
         ButterKnife.bind(this);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter .createFromResource(this,R.array.approves, android.R.layout.simple_spinner_item);
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter .createFromResource(this,R.array.approve, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);

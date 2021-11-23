@@ -109,6 +109,7 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
            fragmentTransaction.replace(R.id.frameLayoutPendings,new FinanceStaffFragment());
            fragmentTransaction.commit();
+//           dwq  wf  wef
        }
 
     }

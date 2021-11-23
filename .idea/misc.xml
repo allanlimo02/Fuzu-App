@@ -42,6 +42,24 @@
         <entry key="app/src/main/res/layout/activity_single_staff.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.16979166666666667" />
         <entry key="app/src/main/res/layout/activity_staff.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/benefits_list_item.xml" value="0.2833333333333333" />
+        <entry key="app/src/main/res/layout/deduction_list_item.xml" value="0.2833333333333333" />
+        <entry key="app/src/main/res/layout/department_drop_down.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/finance_activity_dashboard.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/finance_activity_login.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/finance_activity_new_run.xml" value="0.291213768115942" />
+        <entry key="app/src/main/res/layout/finance_activity_payroll2.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/finance_activity_ss_holder.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/finance_arda_fragment.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/finance_dashboard_activity.xml" value="0.31521739130434784" />
+        <entry key="app/src/main/res/layout/finance_expense_detail_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/finance_expense_fragment.xml" value="0.16979166666666667" />
+        <entry key="app/src/main/res/layout/finance_fragment_coming_soon.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/finance_fragment_newrun.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/finance_fragment_staff.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/finance_new_run_recyler_fragment.xml" value="0.31927083333333334" />
+
         <entry key="app/src/main/res/layout/department_drop_down.xml" value="0.25" />
         <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.5" />
         <entry key="app/src/main/res/layout/finance_activity_login.xml" value="0.24320652173913043" />
@@ -69,6 +87,10 @@
         <entry key="app/src/main/res/layout/fragment_on__leave_.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_payments.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_single_staff.xml" value="0.31927083333333334" />
+        <entry key="app/src/main/res/layout/fragment_staff.xml" value="0.25" />
+
+        <entry key="app/src/main/res/layout/fragment_staff.xml" value="0.31979166666666664" />
+
         <entry key="app/src/main/res/layout/fragment_staff.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/fragment_staff_main.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/fragment_stuff.xml" value="0.21693840579710144" />

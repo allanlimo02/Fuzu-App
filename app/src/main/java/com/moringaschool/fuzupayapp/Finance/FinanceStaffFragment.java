@@ -26,18 +26,9 @@ public class FinanceStaffFragment extends Fragment  implements View.OnClickListe
     @BindView(R.id.row2) RelativeLayout row2;
     @BindView(R.id.row3) RelativeLayout row3;
     @BindView(R.id.babu) RelativeLayout babu;
+    @BindView(R.id.relativeTwo) RelativeLayout relativeTwo;
+    @BindView(R.id.headingPart) RelativeLayout headingPart;
 
-
-
-
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        View view= inflater.inflate(R.layout.finance_fragment_staff, container, false);
-//        ButterKnife.bind(view,this);
-//        return  view;
-//    }
 @Override
 public View onCreateView(LayoutInflater inflater, ViewGroup container,
                          Bundle savedInstanceState) {
@@ -57,15 +48,30 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
     @Override
     public void onClick(View v) {
     if(v==rowone){
+        relativeTwo.setVisibility(View.GONE);
+        headingPart.setVisibility(View.GONE);
         FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.framebabu,new SingleStaffFragment());
         fragmentTransaction.commit();
         babu.setVisibility(View.GONE);
+
     }
     if(v==row2){
+        relativeTwo.setVisibility(View.GONE);
+        headingPart.setVisibility(View.GONE);
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.framebabu,new SingleStaffFragment());
+        fragmentTransaction.commit();
+        babu.setVisibility(View.GONE);
 
     }
     if(v==row3){
+        relativeTwo.setVisibility(View.GONE);
+        headingPart.setVisibility(View.GONE);
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.framebabu,new SingleStaffFragment());
+        fragmentTransaction.commit();
+        babu.setVisibility(View.GONE);
 
     }
 

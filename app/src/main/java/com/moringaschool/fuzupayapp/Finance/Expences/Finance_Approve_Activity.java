@@ -50,7 +50,10 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
         Pending.setOnClickListener(this);
         payments.setOnClickListener(this);
         completed.setOnClickListener(this);
-
+        Pending.setBackgroundColor(Color.rgb(0,70,115));
+        Pending.setTextColor(Color.WHITE);
+        payments.setTextColor(Color.rgb(0,70,115));
+        completed.setTextColor(Color.rgb(0,70,115));
 
         our_bottom_navigation.setSelectedItemId(R.id.nav_expenses);
         our_bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

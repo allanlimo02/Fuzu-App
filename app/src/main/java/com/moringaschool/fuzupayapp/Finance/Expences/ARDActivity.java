@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -32,6 +33,17 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
     @BindView(R.id.EPending1)    Button Pending;
     @BindView(R.id.Epayments)Button            payments;
     @BindView(R.id.Ecompleted)Button            completed;
+//    del
+    @BindView(R.id.linelayout1)
+    LinearLayout linelayout1;
+    @BindView(R.id.linelayout2)
+    LinearLayout linelayout2;
+    @BindView(R.id.linelayout3)
+    LinearLayout linelayout3;
+
+
+
+
     @BindView(R.id.frameLayoutPendings) FrameLayout Rpendings;
 
 
@@ -48,6 +60,9 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
         Pending.setOnClickListener(this);
         payments.setOnClickListener(this);
         completed.setOnClickListener(this);
+        linelayout2.setOnClickListener(this);
+        linelayout1.setOnClickListener(this);
+        linelayout1.setOnClickListener(this);
 
         bottomNavigationView.setSelectedItemId(R.id.nav_expenses);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -120,5 +135,6 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
             Pending.setBackgroundResource(R.drawable.thin_border);
             Pending.setTextColor(Color.rgb(0,70,115));
         }
+
     }
 }

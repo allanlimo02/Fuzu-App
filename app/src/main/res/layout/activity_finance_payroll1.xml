@@ -120,10 +120,10 @@
             android:id="@+id/approvepayment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Review"
+            android:layout_alignParentStart="true"
             android:padding="5dp"
+            android:text="Review"
             android:textColor="@color/black"
-           android:layout_alignParentStart="true"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView

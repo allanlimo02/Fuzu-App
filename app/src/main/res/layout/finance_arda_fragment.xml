@@ -17,26 +17,77 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Spinner
-            android:id="@+id/SpinnerARD"
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/thin_border"
+           android:layout_marginStart="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/approve"
+                android:paddingTop="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/one"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/SpinnerARD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint = "@string/All"
+                android:background="@drawable/ic_drop_down"/>
+       </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint = "@string/approve"
-            />
+            android:background="@drawable/thin_border"
+            android:layout_marginStart="20dp">
 
-        <Spinner
-            android:id="@+id/SpinnerARD1"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reject"
+                android:textColor="@color/one"
+                android:textStyle="bold"
+                android:paddingTop="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="2dp"/>
+            <Spinner
+                android:id="@+id/SpinnerARD1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_drop_down"
+            />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            />
+            android:layout_height="wrap_content"
+            android:background="@drawable/thin_border"
+            android:layout_marginStart="25dp">
 
-        <Spinner
-            android:id="@+id/SpinnerARD2"
-            android:layout_width="79dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dispute"
+                android:textColor="@color/one"
+                android:textStyle="bold"
+                android:paddingTop="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="2dp"/>
+            <Spinner
+                android:id="@+id/SpinnerARD2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_drop_down"/>
+        </LinearLayout>
 
 
     </LinearLayout>

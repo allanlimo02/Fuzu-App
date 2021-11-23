@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:text="Finance Please login to your account."
+        android:text="Please login to your account."
         android:textColor="#144763"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

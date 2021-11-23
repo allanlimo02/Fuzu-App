@@ -34,6 +34,7 @@
     </string-array>
 
     <string name="All">All</string>
+    <string name="approve">Approve</string>
 
 
 </resources>

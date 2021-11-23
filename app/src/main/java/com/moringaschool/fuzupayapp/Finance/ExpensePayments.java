@@ -12,10 +12,10 @@ import com.moringaschool.fuzupayapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link StaffFragment#newInstance} factory method to
+ * Use the {@link ExpensePayments#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class StaffFragment extends Fragment {
+public class ExpensePayments extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class StaffFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public StaffFragment() {
+    public ExpensePayments() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class StaffFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment StaffFragment.
+     * @return A new instance of fragment ExpensePayments.
      */
     // TODO: Rename and change types and number of parameters
-    public static StaffFragment newInstance(String param1, String param2) {
-        StaffFragment fragment = new StaffFragment();
+    public static ExpensePayments newInstance(String param1, String param2) {
+        ExpensePayments fragment = new ExpensePayments();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class StaffFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_staff, container, false);
+        return inflater.inflate(R.layout.finance_fragment_expense_payments, container, false);
     }
 }

@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Finance.Expences.ARDActivity">
-    <include layout="@layout/toolbar"
-        android:id="@+id/app"/>
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HumanResource.Fragments.Staff.SingleStaffFragment">
     <LinearLayout
-        android:id="@+id/approveLinear3"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="3"
-        app:layout_constraintTop_toBottomOf="@+id/app">
-
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062">
         <Button
-            android:id="@+id/EPending1"
+            android:id="@+id/pending"
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="36dp"
             android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/textview"
+            android:layout_toLeftOf="@+id/textview"
             android:layout_weight="1"
             android:backgroundTint="@color/button_buckground_color"
             android:text="Pending"
@@ -32,15 +34,18 @@
             android:textColorHighlight="#144763"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
             tools:ignore="MissingConstraints,UnknownId" />
-
         <Button
-            android:id="@+id/Epayments"
+            android:id="@+id/Payments"
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="36dp"
             android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/textview"
+            android:layout_toLeftOf="@+id/textview"
             android:layout_weight="1"
             android:backgroundTint="@color/button_buckground_color"
             android:text="Payments"
@@ -49,15 +54,18 @@
             android:textColorHighlight="#144763"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
             tools:ignore="MissingConstraints,UnknownId" />
-
         <Button
-            android:id="@+id/Ecompleted"
+            android:id="@+id/Completed"
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="36dp"
             android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/textview"
+            android:layout_toLeftOf="@+id/textview"
             android:layout_weight="1"
             android:backgroundTint="@color/button_buckground_color"
             android:text="Completed"
@@ -66,94 +74,66 @@
             android:textColorHighlight="#144763"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
             tools:ignore="MissingConstraints,UnknownId" />
-
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout5"
+    <RelativeLayout
+        android:id="@+id/approvalBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/approveLinear3">
-
-        <Spinner
-            android:id="@+id/SpinnerARD"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-
-        <Spinner
-            android:id="@+id/SpinnerARD1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-          />
-
-        <Spinner
-            android:id="@+id/SpinnerARD2"
-            android:layout_width="79dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/linelayout1"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
-        <RadioButton
-            android:id="@+id/radio_Expense"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Expense ID"
-            android:textColor="#0c4763"
-            android:layout_marginStart="20dp"
-            android:textSize="14sp" />
+        android:paddingStart="20dp"
+        tools:layout_editor_absoluteX="-55dp"
+        tools:layout_editor_absoluteY="117dp">
 
         <TextView
-            android:id="@+id/Astaff"
+            android:id="@+id/approvalID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="staff Name"
-            android:textStyle="bold"
-            android:textColor="@color/one"
-            android:layout_marginStart="20dp"/>
+            android:text="Approval ID"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
         <TextView
-            android:id="@+id/Amount"
+            android:id="@+id/approved"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="18dp"
+            android:layout_toEndOf="@+id/approvalID"
+            android:text="Approved"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="178dp"
             android:text="Amount"
-            android:textStyle="bold"
-            android:textColor="@color/one"
-            android:layout_marginStart="20dp"/>
+            android:textColor="#004673"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/ADate"
+            android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date"
-            android:textColor="@color/one"
-            android:textStyle="bold"
-            android:layout_marginStart="20dp"/>
-        </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/frameLayoutPendings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linelayout1" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="112dp"
+            android:text="Status"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:text="Action"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -165,10 +145,7 @@
         app:itemRippleColor="@android:color/transparent"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_selecto"
-        app:itemTextColor="@drawable/bottom_menu_text"
-        android:textStyle="bold"
-        app:menu="@menu/finance_bottom_menu"
+        app:menu="@menu/bottom_menu"
         android:background="#004763"
         />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

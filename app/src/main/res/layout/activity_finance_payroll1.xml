@@ -91,13 +91,14 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/thin_border"
         android:orientation="horizontal"
-        android:paddingStart="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,26 +107,23 @@
         <TextView
             android:id="@+id/payments"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="88dp"
             android:text="Approve Run"
+            android:padding="5dp"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/review"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/approvepayment"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
             android:text="Review"
+            android:padding="5dp"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/payments"
-            app:layout_constraintHorizontal_bias="0.312"
-            app:layout_constraintStart_toStartOf="parent"
+           android:layout_alignParentStart="true"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -134,13 +132,12 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:text="Payments"
+            android:padding="5dp"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_alignParentEnd="true"
             app:layout_constraintVertical_bias="0.454" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
     <FrameLayout
         android:layout_width="match_parent"

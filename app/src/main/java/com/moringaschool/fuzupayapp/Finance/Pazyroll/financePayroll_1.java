@@ -10,14 +10,18 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.Finance.Dashboard_Finance;
+import com.moringaschool.fuzupayapp.Finance.Expences.Finance_Approve_Activity;
+import com.moringaschool.fuzupayapp.Finance.FinanceStaffFragment;
 import com.moringaschool.fuzupayapp.Finance.Fragments.FinanceComingSoon;
 import com.moringaschool.fuzupayapp.Finance.Fragments.NewrunFragment;
+import com.moringaschool.fuzupayapp.Finance.Payroll2;
 import com.moringaschool.fuzupayapp.R;
 
 import butterknife.BindView;
@@ -30,10 +34,9 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
     @BindView(R.id.payments) TextView approvepayment;
     @BindView(R.id.approvepayment) TextView review;
     @BindView(R.id.review) TextView payments;
-    @BindView(R.id.payrollActive)
-    FrameLayout payrollActive;
-    @BindView(R.id.bottom_navigation)
-    BottomNavigationView bottom_navigation;
+    @BindView(R.id.payrollActive) FrameLayout payrollActive;
+    @BindView(R.id.bottom_navigation) BottomNavigationView bottom_navigation;
+    @BindView(R.id.constraintLayout) RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,7 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
 
 
 
-        bottom_navigation.setSelectedItemId(R.id.nav_home);
+        bottom_navigation.setSelectedItemId(R.id.nav_payroll);
         bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -60,15 +63,14 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.nav_payroll:
+                        startActivity(new Intent(getApplicationContext(), Payroll2.class));
+                        overridePendingTransition(0,0);
                         return true;
-                    case R.id.nav_staff:
-//                        startActivity(new Intent(getApplicationContext(), Log_In_finance.class));
-//                        overridePendingTransition(0,0);
-                        Toast.makeText(financePayroll_1.this, "Coming Soon", Toast.LENGTH_SHORT).show();
+                    case R.id.nav_expenses:
+                        startActivity(new Intent(getApplicationContext(), Finance_Approve_Activity.class));
+                        overridePendingTransition(0,0);
                         return true;
-
                 }
-
                 return false;
             }
         });
@@ -77,6 +79,15 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
     @Override
     public void onStart() {
         super.onStart();
+        payrollbtn.setBackgroundColor(Color.rgb(0,70,115));
+        payrollbtn.setTextColor(Color.WHITE);
+        newrun.setBackgroundResource(R.drawable.thin_border);
+        newrun.setTextColor(Color.rgb(0,70,115));
+        staffbtn.setBackgroundResource(R.drawable.thin_border);
+        staffbtn.setTextColor(Color.rgb(0,70,115));
+        review.setTextColor(Color.rgb(0,70,115));
+        approvepayment.setTextColor(Color.BLACK);
+        payments.setTextColor(Color.BLACK);
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.payrollActive, new Finance_Review_Fragment());
         fragmentTransaction.commit();
@@ -86,16 +97,25 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
 //fragmentSection
         if(view==review){
+            review.setTextColor(Color.rgb(0,70,115));
+            approvepayment.setTextColor(Color.BLACK);
+            payments.setTextColor(Color.BLACK);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.payrollActive, new Finance_Review_Fragment());
             fragmentTransaction.commit();
         }
         if(view==approvepayment){
+            approvepayment.setTextColor(Color.rgb(0,70,115));
+            review.setTextColor(Color.BLACK);
+            payments.setTextColor(Color.BLACK);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.payrollActive,new Finance_Approve_Fragment());
             fragmentTransaction.commit();
         }
         if(view == payments){
+            approvepayment.setTextColor(Color.BLACK);
+            review.setTextColor(Color.BLACK);
+            payments.setTextColor(Color.rgb(0,70,115));
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.payrollActive,new Payments_Fragment());
             fragmentTransaction.commit();
@@ -109,6 +129,7 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
             payrollbtn.setTextColor(Color.rgb(0,70,115));
             staffbtn.setBackgroundResource(R.drawable.thin_border);
             staffbtn.setTextColor(Color.rgb(0,70,115));
+            relativeLayout.setVisibility(View.GONE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.payrollActive,new NewrunFragment());
             fragmentTransaction.commit();
@@ -132,8 +153,9 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
             newrun.setTextColor(Color.rgb(0,70,115));
             payrollbtn.setBackgroundResource(R.drawable.thin_border);//setBackgroundColor(Color.WHITE);
             payrollbtn.setTextColor(Color.rgb(0,70,115));
+            relativeLayout.setVisibility(View.GONE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.payrollActive,new FinanceComingSoon());
+            fragmentTransaction.replace(R.id.payrollActive,new FinanceStaffFragment());
             fragmentTransaction.commit();
         }
     }

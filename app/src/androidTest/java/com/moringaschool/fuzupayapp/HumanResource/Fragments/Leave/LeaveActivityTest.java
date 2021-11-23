@@ -49,16 +49,19 @@ public class LeaveActivityTest extends TestCase {
     //Test on radioButton
     @Test
     public void test_radioButton() throws Exception {
-        onView(ViewMatchers.withId(R.id.radioButton)).perform(click());
+        onView(ViewMatchers.withId(R.id.radioButton)).perform(click())
+                .check(matches(isDisplayed()));
     }
     //test on approve button
     @Test
     public void test_approve_button() throws Exception {
-        onView(ViewMatchers.withId(R.id.approveButton)).perform(click());
+        onView(ViewMatchers.withId(R.id.approveButton)).perform(click())
+                .check(matches(isDisplayed()));
     }
     //test on reject button
     @Test
     public void test_reject_button() throws Exception {
-        onView(ViewMatchers.withId(R.id.reject)).perform(click());
+        onView(ViewMatchers.withId(R.id.reject)).perform(click())
+                .check(matches(isDisplayed()));
     }
 }

@@ -15,9 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="10dp"
         android:layout_marginStart="221dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/thin_border"
+        android:background="#fbf3ee"
         app:layout_constraintTop_toBottomOf="@+id/include">
 
         <TextView

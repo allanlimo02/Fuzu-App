@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".Finance.Dashboard_Finance">
 
-        <include layout="@layout/toolbar"/>
+<!--        <include layout="@layout/toolbar"/>-->
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="23dp"
-                android:text="Start working on your next payday. It's easy, fast and \n compliant."
+                android:text="Start preparing for your next payday. It's easy, fast and \n compliant."
                 android:textColor="@color/black"
                 app:layout_constraintHorizontal_bias="0.661"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -68,6 +68,7 @@
                 android:layout_below="@+id/textView3"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="3dp"
+                android:textAllCaps="false"
                 android:layout_marginEnd="199dp"
                 android:backgroundTint="#004673"
                 android:text="Run Payroll"
@@ -121,6 +122,7 @@
                     android:paddingStart="0dp">
                     <LinearLayout
                         android:layout_width="wrap_content"
+                        android:id="@+id/advancerequestLinear"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <ImageView
@@ -135,7 +137,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Advance Request"
+                            android:text="Advance Requests"
                             android:textColor="#004763"
                             android:textAlignment="center"/>
 
@@ -151,7 +153,7 @@
                             android:background="@drawable/circle"
                             android:padding="5dp"
                             android:paddingStart="15dp"
-                            android:text="02"
+                            android:text="12"
                             android:id="@+id/approveExpense"
                             android:textColor="#004673"
                             android:textSize="30sp" />
@@ -180,7 +182,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="On Leave"
+                            android:text="Manage Staff"
                             android:paddingStart="20dp"
                             android:textColor="#004763"
                             android:textAlignment="center"/>

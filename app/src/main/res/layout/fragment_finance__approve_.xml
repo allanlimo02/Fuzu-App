@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
 
     tools:context=".Finance.Pazyroll.Finance_Approve_Fragment">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -337,8 +332,36 @@
                 android:text="Send Text and Email NOtificatiuon to staff after approving the Pay Run."/>
 
         </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="71dp"
+                android:background="@drawable/btn_slim_bg"
+                android:paddingStart="20dp"
+                android:paddingEnd="30dp"
+                android:text="Back"
+                android:textColor="@color/one" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="107dp"
+                android:background="@color/one"
+                android:paddingStart="20dp"
+                android:paddingEnd="30dp"
+                android:text="Approve"
+                android:textColor="@color/two" />
+        </RelativeLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

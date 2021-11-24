@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +30,36 @@ import butterknife.ButterKnife;
 public class Dashboard_Finance extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.bottom_navigation) BottomNavigationView bottom_navigation;
     @BindView(R.id.textUser) TextView userName;
+    @BindView(R.id.advancerequestLinear) LinearLayout advancerequestLinear;
     LoginResponse loginResponse;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.top_navbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.notification:
+                Toast.makeText(this, "No new Notifications", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.switchaccount:
+                Intent intent=new Intent(Dashboard_Finance.this,DashboardActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                return true;
+            case R.id.logout:
+                Intent newintent=new Intent(Dashboard_Finance.this,Log_In_finance.class);
+                newintent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(newintent);
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +74,6 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
             userName.setText(loginResponse.getUser().getUsername());
             Log.e("TAG","--------"+loginResponse.getUser().getUsername());
         }
-
-
-
         bottom_navigation.setSelectedItemId(R.id.nav_home);
         bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

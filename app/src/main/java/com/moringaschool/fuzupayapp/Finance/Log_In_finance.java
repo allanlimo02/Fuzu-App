@@ -8,12 +8,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.loginAPI.loginClient;
 import com.moringaschool.fuzupayapp.loginAPI.loginRequest;
@@ -28,9 +28,11 @@ import retrofit2.Response;
 public class Log_In_finance extends AppCompatActivity implements View.OnClickListener {
 @BindView(R.id.findLoginButton)Button mFindLoginButton;
 @BindView(R.id.emailEditText) EditText mEmailEditText;
-@BindView(R.id.pasw) TextInputEditText passwor;
+@BindView(R.id.pasw) TextInputEditText password;
 @BindView(R.id.passwordEditText) TextInputLayout mPasswordEditText;
 @BindView(R.id.forgetPasswordTextView)TextView mForgetPasswordTextView;
+@BindView(R.id.progressBar) ProgressBar progressBar;
+@BindView(R.id.textView5) TextView textView5;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +49,16 @@ protected void onCreate(Bundle savedInstanceState) {
 @Override
 public void onClick(View v) {
 //        initialize the username and password
-        if(TextUtils.isEmpty(mEmailEditText.getText().toString()) || TextUtils.isEmpty(passwor.getText().toString())){
-                String message = "All method required";
+        if(TextUtils.isEmpty(mEmailEditText.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
+                String message = "Cannot submit empty Fields";
+
                 Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();
         }
         else {
+                showProgressbar();
                 loginRequest lOginRequest = new loginRequest();
-                lOginRequest.setEmail(mEmailEditText.getText().toString());
-                lOginRequest.setPassword(passwor.getText().toString());
+                lOginRequest.setEmail(mEmailEditText.getText().toString().trim());
+                lOginRequest.setPassword(password.getText().toString().trim());
                 loginUser(lOginRequest);
         }
 
@@ -65,6 +69,7 @@ public void loginUser(loginRequest lOginRequest){
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                        hideProgressbar();
                         if(response.isSuccessful()){
 
                                 LoginResponse loginResponse = response.body();
@@ -73,13 +78,13 @@ public void loginUser(loginRequest lOginRequest){
                                 finish();
                                 }else
                                 {
-                                        startActivity(new Intent(Log_In_finance.this, DashboardActivity.class).putExtra("data",loginResponse));
+                                        startActivity(new Intent(Log_In_finance.this, Dashboard_Finance.class).putExtra("data",loginResponse));
                                         finish();
                                 }
 
                         }else
                         {
-                                String message = "An Error has occurred try later ..";
+                                String message = "Check Your email And Password ..";
                                 Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();
                         }
                 }
@@ -91,5 +96,16 @@ public void loginUser(loginRequest lOginRequest){
                 }
         });
 }
+        private void showProgressbar(){
+        progressBar.setVisibility(View.VISIBLE);
+        textView5.setVisibility(View.VISIBLE);
+
+        }
+        private void hideProgressbar(){
+                progressBar.setVisibility(View.GONE);
+                textView5.setVisibility(View.GONE);
+
+        }
+
 
 }

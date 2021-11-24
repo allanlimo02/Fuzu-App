@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.moringaschool.fuzupayapp.Finance.Dashboard_Finance;
 import com.moringaschool.fuzupayapp.Finance.Log_In_finance;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.R;
@@ -32,7 +33,7 @@ public class SwitchLogoutActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
 
         if(view == backswitch){
-            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+            startActivity(new Intent(getApplicationContext(), Dashboard_Finance.class));
             overridePendingTransition(0,0);
         }
         if (view == logout){

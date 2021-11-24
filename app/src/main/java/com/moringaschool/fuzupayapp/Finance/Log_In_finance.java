@@ -75,11 +75,11 @@ public void loginUser(loginRequest lOginRequest){
 
                                 LoginResponse loginResponse = response.body();
                                 if(loginResponse.getUser().getRole().getId().toString().trim()=="2"){
-                                startActivity(new Intent(Log_In_finance.this, Dashboard_Finance.class).putExtra("data",loginResponse));
+                                startActivity(new Intent(Log_In_finance.this, DashboardActivity.class).putExtra("data",loginResponse));
                                 finish();
                                 }else
                                 {
-                                        startActivity(new Intent(Log_In_finance.this, Dashboard_Finance.class).putExtra("data",loginResponse));
+                                        startActivity(new Intent(Log_In_finance.this, DashboardActivity.class).putExtra("data",loginResponse));
                                         finish();
                                 }
 

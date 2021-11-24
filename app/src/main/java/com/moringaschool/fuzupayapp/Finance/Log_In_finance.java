@@ -74,15 +74,14 @@ public void loginUser(loginRequest lOginRequest){
                         if(response.isSuccessful()){
 
                                 LoginResponse loginResponse = response.body();
-                                if(loginResponse.getUser().getRole().getId().toString().trim()=="2"){
-                                startActivity(new Intent(Log_In_finance.this, DashboardActivity.class).putExtra("data",loginResponse));
+                                if(loginResponse.getUser().getRole().getId().toString().trim().equals("2")){
+                                startActivity(new Intent(Log_In_finance.this, Dashboard_Finance.class).putExtra("data",loginResponse));
                                 finish();
                                 }else
                                 {
                                         startActivity(new Intent(Log_In_finance.this, DashboardActivity.class).putExtra("data",loginResponse));
                                         finish();
                                 }
-
                         }else
                         {
                                 String message = "Check Your email And Password ..";

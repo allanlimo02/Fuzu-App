@@ -62,7 +62,6 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
                         return true;
 
                 }
-
                 return false;
             }
         });

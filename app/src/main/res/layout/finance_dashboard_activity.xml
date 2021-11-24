@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".Finance.Dashboard_Finance">
 
-        <include layout="@layout/toolbar"/>
+<!--        <include layout="@layout/toolbar"/>-->
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -122,6 +122,7 @@
                     android:paddingStart="0dp">
                     <LinearLayout
                         android:layout_width="wrap_content"
+                        android:id="@+id/advancerequestLinear"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <ImageView

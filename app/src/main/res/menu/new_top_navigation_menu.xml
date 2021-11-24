@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/notification"
+        android:icon="@drawable/ic_outline_notifications"
+        android:title="Notifications"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/user"
+        android:icon="@drawable/ic_outline_person"
+        android:title="Notifications"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item android:id="@+id/switchaccount"
+                android:title="Switch Account"
+                app:showAsAction="collapseActionView"/>
+            <item android:id="@+id/logout"
+                android:title="Log Out"
+                app:showAsAction="collapseActionView"/>
+        </menu>
+
+    </item>
+
+</menu>

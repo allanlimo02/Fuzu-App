@@ -50,15 +50,25 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     @BindView(R.id.addstaff) ImageView addstaff;
     @BindView(R.id.onleave) TextView onleave;
     @BindView(R.id.approvebutton)  Button approvebutton;
-  
     @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.holidayprogressBar)
-    ProgressBar mProgressBar;
+    @BindView(R.id.holidayprogressBar) ProgressBar mProgressBar;
     @BindView(R.id.textUser) TextView userName;
     LoginResponse loginResponse;
 
     private HrListAdaper mAdapter;
     public List<Animal> genders;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = getIntent();
+        if(intent.getExtras() != null){
+            loginResponse =(LoginResponse) intent.getSerializableExtra("data");
+            userName.setText(loginResponse.getUser().getUsername());
+            Log.e("TAG","--------"+loginResponse.getUser().getUsername());
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

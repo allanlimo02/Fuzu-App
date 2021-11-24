@@ -39,6 +39,8 @@
         <entry key="app/src/main/res/layout/activity_add_staff_main.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/activity_all_staff.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/activity_ardactivity.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_finance_approve.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_finance_approve.xml" value="0.12" />
         <entry key="app/src/main/res/layout/activity_finance_expense_details.xml" value="0.35572916666666665" />
@@ -100,6 +102,7 @@
         <entry key="app/src/main/res/layout/fragment_stuff.xml" value="0.21693840579710144" />
         <entry key="app/src/main/res/layout/holidayholder.xml" value="0.30344202898550726" />
         <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.30932971014492755" />
+        <entry key="app/src/main/res/layout/on_leave_list_item.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/on_leave_list_item.xml" value="0.321875" />
         <entry key="app/src/main/res/layout/review_holder.xml" value="0.33" />
         <entry key="app/src/main/res/layout/single_holiday.xml" value="0.30344202898550726" />

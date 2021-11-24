@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import com.moringaschool.fuzupayapp.Finance.Pazyroll.financePayroll_1;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.Leave_Request_Fragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaffActivity;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +36,9 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
 
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bottom_navigation;
+    @BindView(R.id.imageView5)
+    ImageView logout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,7 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
         newrun.setOnClickListener(this);
         payrollbtn.setOnClickListener(this);
         staffbtn.setOnClickListener(this);
+        logout.setOnClickListener(this);
 
         bottom_navigation.setSelectedItemId(R.id.nav_payroll);
         bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -114,6 +120,10 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.nframe,new FinanceStaffFragment());
             fragmentTransaction.commit();
+        }
+        if(v == logout){
+            startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+            overridePendingTransition(0,0);
         }
     }
 }

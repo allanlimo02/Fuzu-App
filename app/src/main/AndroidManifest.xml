@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
         <activity
+            android:name=".SwitchAccount.SwitchLogoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".Finance.Fragments.FinanceExpenseDetailsActivity"
             android:exported="true" />
         <activity

@@ -108,10 +108,10 @@
             android:id="@+id/payments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="88dp"
-            android:text="Approve Run"
-            android:padding="5dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginEnd="88dp"
+            android:padding="5dp"
+            android:text="Approve Run"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />

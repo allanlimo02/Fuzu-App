@@ -11,10 +11,7 @@
 
 
 
-
-    <include layout="@layout/toolbar"/>
-
-    <include
+<include
         android:id="@+id/include"
         layout="@layout/toolbar" />
 

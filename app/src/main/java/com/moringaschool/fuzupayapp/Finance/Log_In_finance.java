@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.loginAPI.loginClient;
 import com.moringaschool.fuzupayapp.loginAPI.loginRequest;
@@ -78,7 +79,7 @@ public void loginUser(loginRequest lOginRequest){
                                 finish();
                                 }else
                                 {
-                                        startActivity(new Intent(Log_In_finance.this, Dashboard_Finance.class).putExtra("data",loginResponse));
+                                        startActivity(new Intent(Log_In_finance.this, DashboardActivity.class).putExtra("data",loginResponse));
                                         finish();
                                 }
 

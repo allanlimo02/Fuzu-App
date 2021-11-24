@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -23,6 +24,7 @@ import com.moringaschool.fuzupayapp.FragmentAdapter.DepartmentAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
 import java.util.List;
 
@@ -37,6 +39,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @BindView(R.id.fragmentThreeBtn)  Button fragmentThreeBtn;
     @BindView(R.id.ourFrameLayout)  FrameLayout ourFrameLayout;
     @BindView(R.id.titleBar) RelativeLayout titleBar;
+    @BindView(R.id.imageView5) ImageView logout;
 
     private List list;
     private String[] names=new String[]{"Allan Limo","Aron Langat","Esther Moki","Judy Rop","Erick Okumu"};
@@ -52,7 +55,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         fragmentTwoBtn.setOnClickListener(this);
         fragmentOneBtn.setOnClickListener(this);
         fragmentThreeBtn.setOnClickListener(this);
-
+        logout.setOnClickListener(this);
 
         // Array adapter feeder
 
@@ -136,6 +139,10 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
             overridePendingTransition(0,0);
 
+        }
+        if(v == logout){
+            startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+            overridePendingTransition(0,0);
         }
 
 

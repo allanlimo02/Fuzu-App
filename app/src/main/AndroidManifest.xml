@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuzuPayApp">
-
+        <activity
+            android:name=".SwitchAccount.SwitchLogoutActivity"
+            android:exported="true" />
         <activity
             android:name=".Finance.Fragments.FinanceExpenseDetailsActivity"
             android:exported="true" />
@@ -62,7 +64,7 @@
             android:exported="true" />
         <activity
             android:name=".HumanResource.Login"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".HumanResource.SomethingElse"
             android:exported="true" />

@@ -12,7 +12,18 @@
     <item android:id="@+id/item2"
         android:icon="@drawable/ic_staff"
         android:title="profile"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom">
+        <menu>
+            <item android:id="@+id/switchaccount"
+                android:title="Switch Account"
+                app:showAsAction="never"/>
+            <item android:id="@+id/logout"
+                android:title="Switch Account"
+                android:icon="@drawable/ic_drop_down"
+                app:showAsAction="never"/>
+
+        </menu>
+    </item>
 
 
 

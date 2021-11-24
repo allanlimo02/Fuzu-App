@@ -13,15 +13,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
             android:id="@+id/backtext"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#004673"
-            android:paddingEnd="10dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="5dp"
-            android:textStyle="bold"
+            android:paddingEnd="10dp"
             android:text="Back"
+            android:textColor="#004673"
+            android:textStyle="bold"
             app:drawableStartCompat="@drawable/ic_backarrow" />
 
         <TextView

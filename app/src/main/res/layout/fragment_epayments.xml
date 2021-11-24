@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Finance.EpaymentsFragment">
+
+
+    <LinearLayout
+        android:id="@+id/Epayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="4"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Approval ID"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Approved"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Amount"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="Status"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:text="Action"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+    </LinearLayout>
+<!--    to be deleted-->
+    <LinearLayout
+        android:id="@+id/Epayment2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@+id/Epayment"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="#004673"
+            android:textSize="10dp"
+            android:text="EXPS/06/08/021"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="48"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:text="KES 450,000"
+            android:textSize="11sp"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="pending"
+            android:textSize="13dp"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_marginStart="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="Send Payments"
+            android:textSize="11sp"
+            android:background="@color/one"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Epayment3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@+id/Epayment2"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="#004673"
+            android:textSize="10dp"
+            android:text="EXPS/06/08/021"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="58"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:text="KES 540,000"
+            android:textSize="11sp"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="pending"
+            android:textSize="13dp"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_marginStart="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="Send Payments"
+            android:textSize="11sp"
+            android:background="@color/one"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/Epayment3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="5dp"-->
+<!--        android:weightSum="4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/Epayment2"-->
+<!--        tools:layout_editor_absoluteX="0dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="EXPS/06/08/021"-->
+<!--            android:textColor="#004673"-->
+<!--            android:textSize="10dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="45dp"-->
+<!--            android:text="48"-->
+<!--            android:textColor="#004673"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="48dp"-->
+<!--            android:text="KES 450,000"-->
+<!--            android:textColor="#004673"-->
+<!--            android:textSize="9dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="25dp"-->
+<!--            android:text="pending"-->
+<!--            android:textColor="#004673"-->
+<!--            android:textSize="13dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="25dp"-->
+<!--            android:background="@color/one"-->
+<!--            android:text="Send Payments"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="7dp"-->
+<!--            android:textStyle="bold" />-->
+<!--    </LinearLayout>-->
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/recyclerviewMain"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/Epayment"-->
+<!--        android:layout_margin="10dp"/>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

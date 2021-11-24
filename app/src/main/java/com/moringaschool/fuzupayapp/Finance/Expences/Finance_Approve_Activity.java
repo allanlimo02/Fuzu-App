@@ -11,14 +11,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.Finance.Dashboard_Finance;
+import com.moringaschool.fuzupayapp.Finance.EpaymentsFragment;
 import com.moringaschool.fuzupayapp.Finance.FinanceStaffFragment;
 import com.moringaschool.fuzupayapp.Finance.Payroll2;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,7 +33,8 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
     @BindView(R.id.staff) TextView completed;
     @BindView(R.id.frameLayoutPendings) FrameLayout Rpendings;
     @BindView(R.id.my_bottom_navigation) BottomNavigationView our_bottom_navigation;
-
+    @BindView(R.id.imageView5)
+    ImageView logout;
     @Override
     protected void onStart() {
         super.onStart();
@@ -49,7 +53,12 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
         Pending.setOnClickListener(this);
         payments.setOnClickListener(this);
         completed.setOnClickListener(this);
+        logout.setOnClickListener(this);
 
+        Pending.setBackgroundColor(Color.rgb(0,70,115));
+        Pending.setTextColor(Color.WHITE);
+        payments.setTextColor(Color.rgb(0,70,115));
+        completed.setTextColor(Color.rgb(0,70,115));
 
         our_bottom_navigation.setSelectedItemId(R.id.nav_expenses);
         our_bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -94,7 +103,7 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
            Pending.setBackgroundResource(R.drawable.thin_border);
            Pending.setTextColor(Color.rgb(0,70,115));
            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-           fragmentTransaction.replace(R.id.frameLayoutPendings,new ArdaFragment());
+           fragmentTransaction.replace(R.id.frameLayoutPendings,new EpaymentsFragment());
            fragmentTransaction.commit();
 
        }
@@ -109,6 +118,10 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
            fragmentTransaction.replace(R.id.frameLayoutPendings,new FinanceStaffFragment());
            fragmentTransaction.commit();
        }
+        if(view == logout){
+            startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+            overridePendingTransition(0,0);
+        }
 
     }
 }

@@ -31,6 +31,8 @@ import com.moringaschool.fuzupayapp.HumanResource.HrAdapters.HrListAdaper;
 import com.moringaschool.fuzupayapp.HumanResource.HrApiInterface.HolidayClient;
 import com.moringaschool.fuzupayapp.HumanResource.HrApiInterface.hrApi;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
+import com.moringaschool.fuzupayapp.loginAPI.models.LoginResponse;
 
 import java.util.List;
 
@@ -49,13 +51,28 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     @BindView(R.id.addstaff) ImageView addstaff;
     @BindView(R.id.onleave) TextView onleave;
     @BindView(R.id.approvebutton)  Button approvebutton;
-  
     @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.holidayprogressBar)
-    ProgressBar mProgressBar;
+    @BindView(R.id.holidayprogressBar) ProgressBar mProgressBar;
+    @BindView(R.id.textUser) TextView userName;
+    LoginResponse loginResponse;
+    @BindView(R.id.imageView5)
+    ImageView logout;
+
 
     private HrListAdaper mAdapter;
     public List<Animal> genders;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = getIntent();
+        if(intent.getExtras() != null){
+            loginResponse =(LoginResponse) intent.getSerializableExtra("data");
+            userName.setText(loginResponse.getUser().getUsername());
+            Log.e("TAG","--------"+loginResponse.getUser().getUsername());
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +83,14 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
         addstaff.setOnClickListener(this);
         onleave.setOnClickListener(this);
         approvebutton.setOnClickListener(this);
+        logout.setOnClickListener(this);
+
+        Intent intent = getIntent();
+        if(intent.getExtras() != null){
+            loginResponse =(LoginResponse) intent.getSerializableExtra("data");
+            userName.setText(loginResponse.getUser().getUsername());
+            Log.e("TAG","--------"+loginResponse.getUser().getUsername());
+        }
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -154,6 +179,11 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
             Intent intent=new Intent(DashboardActivity.this,LeaveActivity.class);
             startActivity(intent);
         }
+        if(v == logout){
+            startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+            overridePendingTransition(0,0);
+        }
+
     }
     private void openDepartments(){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

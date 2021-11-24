@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HumanResource.Fragments.Staff.SingleStaffFragment">
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062">
+        <Button
+            android:id="@+id/pending"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/textview"
+            android:layout_toLeftOf="@+id/textview"
+            android:layout_weight="1"
+            android:backgroundTint="@color/button_buckground_color"
+            android:text="Pending"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textColorHighlight="#144763"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+            tools:ignore="MissingConstraints,UnknownId" />
+        <Button
+            android:id="@+id/Payments"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/textview"
+            android:layout_toLeftOf="@+id/textview"
+            android:layout_weight="1"
+            android:backgroundTint="@color/button_buckground_color"
+            android:text="Payments"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textColorHighlight="#144763"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+            tools:ignore="MissingConstraints,UnknownId" />
+        <Button
+            android:id="@+id/Completed"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/textview"
+            android:layout_toLeftOf="@+id/textview"
+            android:layout_weight="1"
+            android:backgroundTint="@color/button_buckground_color"
+            android:text="Completed"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textColorHighlight="#144763"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+            tools:ignore="MissingConstraints,UnknownId" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/approvalBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        tools:layout_editor_absoluteX="-55dp"
+        tools:layout_editor_absoluteY="117dp">
+
+        <TextView
+            android:id="@+id/approvalID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Approval ID"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/approved"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_toEndOf="@+id/approvalID"
+            android:text="Approved"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="178dp"
+            android:text="Amount"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="112dp"
+            android:text="Status"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:text="Action"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selecto"
+        app:menu="@menu/bottom_menu"
+        android:background="#004763"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -22,6 +23,7 @@ import com.moringaschool.fuzupayapp.FragmentAdapter.LeaveRequestAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +35,8 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.recview2)  RecyclerView recyclerView2;
     @BindView(R.id.lineLayout)    RelativeLayout lineLayout;
     BottomNavigationView bottomNavigationView;
+    @BindView(R.id.imageView5)
+    ImageView logout;
 
     private String[] leaveName=new String[]{"Martenity Leave","Annual Leave ","Sabbatical Leave","Ramadhan Leave","Annual Leave"};
     private String[] dates=new String[]{"12-11-2021","34-12-2021","22-22-2021","22-22-2021","22-22-2021"};
@@ -54,6 +58,7 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
 
         fragmentTwoBtn2.setOnClickListener(this);
         fragmentOneBtn2.setOnClickListener(this);
+        logout.setOnClickListener(this);
 
         LeaveRequestAdapter adapter=new LeaveRequestAdapter(this,leaveName,names,dates,durations);
         recyclerView2.setAdapter(adapter);
@@ -124,6 +129,10 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
             fragmentTransaction.commit();
+        }
+        if(v == logout){
+            startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+            overridePendingTransition(0,0);
         }
 
 

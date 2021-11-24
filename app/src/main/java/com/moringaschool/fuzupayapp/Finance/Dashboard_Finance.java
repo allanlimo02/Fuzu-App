@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 import com.moringaschool.fuzupayapp.loginAPI.models.LoginResponse;
 
 import butterknife.BindView;
@@ -32,6 +34,8 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
     @BindView(R.id.textUser) TextView userName;
     @BindView(R.id.advancerequestLinear) LinearLayout advancerequestLinear;
     LoginResponse loginResponse;
+    @BindView(R.id.imageView5)
+    ImageView logout;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,6 +71,7 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.finance_dashboard_activity);
         ButterKnife.bind(this);
 
+        logout.setOnClickListener(this);
 //        displayName
         Intent intent = getIntent();
         if(intent.getExtras() != null){
@@ -100,6 +105,11 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        if(v == logout){
+            startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+            overridePendingTransition(0,0);
+        }
 
     }
+
 }

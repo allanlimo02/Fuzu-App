@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ import com.moringaschool.fuzupayapp.Finance.Fragments.FinanceComingSoon;
 import com.moringaschool.fuzupayapp.Finance.Fragments.NewrunFragment;
 import com.moringaschool.fuzupayapp.Finance.Payroll2;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,7 +39,8 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
     @BindView(R.id.payrollActive) FrameLayout payrollActive;
     @BindView(R.id.bottom_navigation) BottomNavigationView bottom_navigation;
     @BindView(R.id.constraintLayout) RelativeLayout relativeLayout;
-
+    @BindView(R.id.imageView5)
+    ImageView logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +53,7 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
         newrun.setOnClickListener(this);
         payrollbtn.setOnClickListener(this);
         staffbtn.setOnClickListener(this);
+        logout.setOnClickListener(this);
 
 
 
@@ -157,6 +161,10 @@ public class financePayroll_1 extends AppCompatActivity implements View.OnClickL
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.payrollActive,new FinanceStaffFragment());
             fragmentTransaction.commit();
+            if(view == logout){
+                startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+                overridePendingTransition(0,0);
+            }
         }
     }
 }

@@ -186,9 +186,9 @@
                         android:layout_height="60dp"
                         android:layout_marginLeft="20dp"
                         android:background="@drawable/circle"
-                        android:padding="5dp"
-                        android:paddingStart="15dp"
+                        android:paddingStart="12dp"
                         android:text="03"
+                        android:paddingTop="10dp"
                         android:id="@+id/onleave"
                         android:textColor="#004673"
                         android:textSize="30sp" />

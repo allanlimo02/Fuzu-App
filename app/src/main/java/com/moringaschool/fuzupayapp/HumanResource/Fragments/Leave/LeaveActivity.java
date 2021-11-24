@@ -31,7 +31,7 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.fragmentOneBtn2) Button fragmentOneBtn2;
     @BindView(R.id.fragmentTwoBtn2) Button fragmentTwoBtn2;
     @BindView(R.id.recview2)  RecyclerView recyclerView2;
-    @BindView(R.id.lineLayout)    LinearLayout lineLayout;
+    @BindView(R.id.lineLayout)    RelativeLayout lineLayout;
     BottomNavigationView bottomNavigationView;
 
     private String[] leaveName=new String[]{"Martenity Leave","Annual Leave ","Sabbatical Leave","Ramadhan Leave","Annual Leave"};

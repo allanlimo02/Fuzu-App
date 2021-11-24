@@ -33,20 +33,14 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
     @BindView(R.id.SpinnerARD)   Spinner spinner;
     @BindView(R.id.bottom_navigation) BottomNavigationView bottomNavigationView;
     @BindView(R.id.EPending1)    Button Pending;
-    @BindView(R.id.Epayments)Button            payments;
-    @BindView(R.id.Ecompleted)Button            completed;
-//    del
-    @BindView(R.id.linelayout1)
-    LinearLayout linelayout1;
-    @BindView(R.id.linelayout2)
-    LinearLayout linelayout2;
-    @BindView(R.id.linelayout3)
-    LinearLayout linelayout3;
+    @BindView(R.id.Epayments)Button payments;
+    @BindView(R.id.Ecompleted)Button completed;
+
+    @BindView(R.id.linelayout1) LinearLayout linelayout1;
+    @BindView(R.id.linelayout2) LinearLayout linelayout2;
+    @BindView(R.id.linelayout3) LinearLayout linelayout3;
     @BindView(R.id.imageView5)
     ImageView logout;
-
-
-
 
     @BindView(R.id.frameLayoutPendings) FrameLayout Rpendings;
 

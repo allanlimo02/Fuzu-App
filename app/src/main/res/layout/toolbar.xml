@@ -15,7 +15,8 @@
 
         <ImageView
             android:id="@+id/ni"
-            android:layout_width="163dp"
+            android:layout_width="103dp"
+            android:layout_marginStart="-7dp"
             android:layout_height="41dp"
             android:src="@drawable/logo_clear" />
 
@@ -30,7 +31,7 @@
             android:src="@drawable/ic_outline_notifications" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView5"
             android:layout_width="28dp"
             android:layout_height="25dp"
             android:layout_alignParentTop="true"

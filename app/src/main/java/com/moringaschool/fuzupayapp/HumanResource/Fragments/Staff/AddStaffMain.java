@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +34,8 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.linearHidden) LinearLayout linearHidden;
     @BindView(R.id.radio_one) RadioButton mRadio_one;
     @BindView(R.id.radio_two)RadioButton mRadio_two;
+    @BindView(R.id.imageView5)
+    ImageView logout;
 //    @BindView(R.id.saveDetails) Button mSaveDetailsButton;
 //    @BindView(R.id.framelayout)  FrameLayout  frameLayout;
 
@@ -41,11 +45,13 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_add_staff_main);
         ButterKnife.bind(this);
 
+
         fragmentTwoBtn.setOnClickListener(this);
         fragmentOneBtn.setOnClickListener(this);
         fragmentThreeBtn.setOnClickListener(this);
         mRadio_one.setOnClickListener(this);
         mRadio_two.setOnClickListener(this);
+        logout.setOnClickListener(this);
 
 
         bottomNavigationView.setSelectedItemId(R.id.nav_staff);
@@ -138,6 +144,10 @@ public class AddStaffMain extends AppCompatActivity implements View.OnClickListe
             fragmentTransaction.commit();
             mRadio_one.setChecked(false);
             mRadio_two.setChecked(true);
+        }
+        if(v == logout){
+            startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+            overridePendingTransition(0,0);
         }
 
     }

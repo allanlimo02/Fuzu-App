@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ import com.moringaschool.fuzupayapp.Finance.Dashboard_Finance;
 import com.moringaschool.fuzupayapp.Finance.Fragments.NewrunFragment;
 import com.moringaschool.fuzupayapp.Finance.Payroll2;
 import com.moringaschool.fuzupayapp.R;
+import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,18 +33,14 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
     @BindView(R.id.SpinnerARD)   Spinner spinner;
     @BindView(R.id.bottom_navigation) BottomNavigationView bottomNavigationView;
     @BindView(R.id.EPending1)    Button Pending;
-    @BindView(R.id.Epayments)Button            payments;
-    @BindView(R.id.Ecompleted)Button            completed;
-//    del
-    @BindView(R.id.linelayout1)
-    LinearLayout linelayout1;
-    @BindView(R.id.linelayout2)
-    LinearLayout linelayout2;
-    @BindView(R.id.linelayout3)
-    LinearLayout linelayout3;
+    @BindView(R.id.Epayments)Button payments;
+    @BindView(R.id.Ecompleted)Button completed;
 
-
-
+    @BindView(R.id.linelayout1) LinearLayout linelayout1;
+    @BindView(R.id.linelayout2) LinearLayout linelayout2;
+    @BindView(R.id.linelayout3) LinearLayout linelayout3;
+    @BindView(R.id.imageView5)
+    ImageView logout;
 
     @BindView(R.id.frameLayoutPendings) FrameLayout Rpendings;
 
@@ -52,6 +50,8 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ardactivity);
         ButterKnife.bind(this);
+        logout.setOnClickListener(this);
+
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter .createFromResource(this,R.array.approve, android.R.layout.simple_spinner_item);
@@ -136,6 +136,11 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
             payments.setTextColor(Color.rgb(0,70,115));
             Pending.setBackgroundResource(R.drawable.thin_border);
             Pending.setTextColor(Color.rgb(0,70,115));
+        }
+
+        if(view == logout){
+            startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+            overridePendingTransition(0,0);
         }
 
     }

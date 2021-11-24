@@ -122,6 +122,7 @@
                     android:paddingStart="0dp">
                     <LinearLayout
                         android:layout_width="wrap_content"
+                        android:id="@+id/advancerequestLinear"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <ImageView
@@ -150,8 +151,8 @@
                             android:layout_height="60dp"
                             android:layout_marginLeft="20dp"
                             android:background="@drawable/circle"
-                            android:padding="5dp"
-                            android:paddingStart="15dp"
+                            android:paddingTop="10dp"
+                            android:paddingStart="11dp"
                             android:text="12"
                             android:id="@+id/approveExpense"
                             android:textColor="#004673"
@@ -178,13 +179,14 @@
                             android:padding="5dp"
                             android:src="@drawable/ic_many_people"
                             android:title="staff" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Manage Staff"
                             android:paddingStart="20dp"
-                            android:textColor="#004763"
-                            android:textAlignment="center"/>
+                            android:text="Manage Staff"
+                            android:textAlignment="center"
+                            android:textColor="#004763" />
                     </LinearLayout>
 
                 </LinearLayout>

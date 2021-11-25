@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,11 +24,13 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.gson.JsonArray;
+import com.moringaschool.fuzupayapp.Department_pojo;
 import com.moringaschool.fuzupayapp.FragmentAdapter.DepartmentAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIclient.staffClient;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIentities.Department_pojo;
+
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIinterface.staffInterface;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
@@ -44,6 +47,7 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class AllStaffActivity extends AppCompatActivity  implements View.OnClickListener{
     @BindView(R.id.ourView)  RecyclerView ourView;
@@ -126,14 +130,14 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                             Department_pojo department_pojo = new Department_pojo();
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             department_pojo.setId(jsonObject.getInt("id"));
-                            department_pojo.setDname(jsonObject.getString("name"));
+                            department_pojo.setName(jsonObject.getString("name"));
                             departmentlist.add(department_pojo);
-                            Log.d("name",department_pojo.getDname().toString());
+                            Log.d("name",department_pojo.getName().toString());
 //                            Log.i("id",department_pojo.getId());
 //                            Toast toast=Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT);
                         }
                         for(int i= 0;i<departmentlist.size();i++){
-                            getDepName.add(departmentlist.get(i).getDname());
+                            getDepName.add(departmentlist.get(i).getName());
                         }
                         ArrayAdapter<String> newDepNameAD = new ArrayAdapter<String>(AllStaffActivity.this, android.R.layout.simple_spinner_item,getDepName);
                         newDepNameAD.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

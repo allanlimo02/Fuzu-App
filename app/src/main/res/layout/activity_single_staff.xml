@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fbf3ee"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HumanResource.Fragments.Staff.SingleStaffFragment">
 
@@ -13,8 +14,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="376dp"
-        android:layout_height="82dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +32,6 @@
             android:layout_height="43dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="36dp"
             android:layout_marginEnd="5dp"
             android:layout_toStartOf="@+id/textview"
             android:layout_toLeftOf="@+id/textview"
@@ -52,7 +52,6 @@
             android:layout_height="43dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="36dp"
             android:layout_marginEnd="5dp"
             android:layout_toStartOf="@+id/textview"
             android:layout_toLeftOf="@+id/textview"
@@ -73,7 +72,6 @@
             android:layout_height="43dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="36dp"
             android:layout_marginEnd="5dp"
             android:layout_toStartOf="@+id/textview"
             android:layout_toLeftOf="@+id/textview"

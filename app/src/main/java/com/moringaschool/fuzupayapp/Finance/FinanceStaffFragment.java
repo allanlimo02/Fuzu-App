@@ -22,6 +22,8 @@ import butterknife.ButterKnife;
 
 public class FinanceStaffFragment extends Fragment  implements View.OnClickListener{
 
+
+
     @BindView(R.id.rowone)  RelativeLayout rowone;
     @BindView(R.id.row2) RelativeLayout row2;
     @BindView(R.id.row3) RelativeLayout row3;

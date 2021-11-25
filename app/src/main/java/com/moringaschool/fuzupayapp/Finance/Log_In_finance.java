@@ -84,7 +84,7 @@ public void loginUser(loginRequest lOginRequest){
                                 }
                         }else
                         {
-                                String message = "Check Your email And Password ..";
+                                String message = "Check your email And password ..";
                                 Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();
                         }
                 }

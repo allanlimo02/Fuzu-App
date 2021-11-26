@@ -54,8 +54,6 @@ protected void onCreate(Bundle savedInstanceState) {
 public void onClick(View v) {
 //        initialize the username and password
         if(v==mFindLoginButton){
-//                startActivity(new Intent(Log_In_finance.this, Dashboard_Finance.class));
-//                finish();
                 if(TextUtils.isEmpty(mEmailEditText.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
                         String message = "Cannot submit empty Fields";
 
@@ -76,7 +74,7 @@ public void onClick(View v) {
                 password.setText("123456");
         }
 
-
+        }
         }
 public void loginUser(loginRequest lOginRequest){
         Call<LoginResponse> loginResponseCall = loginClient.getService().loginUser(lOginRequest);

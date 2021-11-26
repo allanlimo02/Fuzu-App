@@ -3,6 +3,7 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -21,29 +23,33 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.FragmentAdapter.LeaveRequestAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestAdapter;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestClient;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestResponse;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LeaveActivity extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.bottom_navigation) BottomNavigationView mBottomNavigationView;
     @BindView(R.id.fragmentOneBtn2) Button fragmentOneBtn2;
     @BindView(R.id.fragmentTwoBtn2) Button fragmentTwoBtn2;
-    @BindView(R.id.recview2)  RecyclerView recyclerView2;
+    @BindView(R.id.recviewRequest)  RecyclerView recyclerView2;
     @BindView(R.id.lineLayout)    RelativeLayout lineLayout;
     BottomNavigationView bottomNavigationView;
     @BindView(R.id.imageView5)
     ImageView logout;
 
-    private String[] leaveName=new String[]{"Martenity Leave","Annual Leave ","Sabbatical Leave","Ramadhan Leave","Annual Leave"};
-    private String[] dates=new String[]{"12-11-2021","34-12-2021","22-22-2021","22-22-2021","22-22-2021"};
-    private String[] names=new String[]{"Winnie Lagat","Kawira Kinyua","June Adhiambo","Moses Chelimo","Triza Cherorot"};
-    private String[] durations=new String[]{"10 Days","23 Days","5 Days","5 Days","5 Days"};
 
-
+   RequestAdapter requestAdapter;
     //    fragment inititializations
 //    private TextView fragmentOneBtn2, fragmentTwoBtn2;
 
@@ -60,10 +66,13 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
         fragmentOneBtn2.setOnClickListener(this);
         logout.setOnClickListener(this);
 
-        LeaveRequestAdapter adapter=new LeaveRequestAdapter(this,leaveName,names,dates,durations);
-        recyclerView2.setAdapter(adapter);
+//        LeaveRequestAdapter adapter=new LeaveRequestAdapter(this,leaveName,names,dates,durations);
+//        recyclerView2.setAdapter(adapter);
         recyclerView2.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView2.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        requestAdapter = new RequestAdapter();
 
+        getAll();
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_leave);
@@ -87,6 +96,30 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
                         return true;
                 }
                 return false;
+            }
+        });
+
+
+
+
+    }
+    public void getAll(){
+        Call<List<RequestResponse>> userlist = RequestClient.getRequests().getAllRequests();
+        userlist.enqueue(new Callback<List<RequestResponse>>() {
+            @Override
+            public void onResponse(Call<List<RequestResponse>> call, Response<List<RequestResponse>> response) {
+                if (response.isSuccessful()) {
+                    List<RequestResponse> requestResponses = response.body();
+
+                    requestAdapter.setData(requestResponses);
+                    recyclerView2.setAdapter(requestAdapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<RequestResponse>> call, Throwable t) {
+
+                Log.e("failure",t.getLocalizedMessage());
             }
         });
 

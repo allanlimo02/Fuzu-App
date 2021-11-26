@@ -35,7 +35,7 @@ public class SingleStaffFragment extends Fragment implements View.OnClickListene
         FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.flayout,new FinanceFragmentSingleStaffOverview());
         fragmentTransaction.commit();
-        deductionDisplay.setText("Employee information");
+        deductionDisplay.setText("StaffInterface information");
     }
 
     @Override
@@ -66,7 +66,7 @@ public class SingleStaffFragment extends Fragment implements View.OnClickListene
             FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.flayout,new FinanceFragmentSingleStaffOverview());
             fragmentTransaction.commit();
-            deductionDisplay.setText("Employee information");
+            deductionDisplay.setText("StaffInterface information");
         }
         if(v==deductionsBtn){
             deductionsBtn.setBackgroundColor(Color.rgb(0,70,115));

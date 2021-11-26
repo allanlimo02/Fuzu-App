@@ -3,24 +3,30 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Layout;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.moringaschool.fuzupayapp.FragmentAdapter.DepartmentAdapter;
+import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.ItemOnclickPosition;
+import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.Models.StaffResponse;
+import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.StaffAdapter;
+import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.StaffClientClass;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.R;
@@ -30,9 +36,12 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-public class AllStaffActivity extends AppCompatActivity  implements View.OnClickListener{
-    @BindView(R.id.ourView)  RecyclerView ourView;
+public class AllStaffActivity extends AppCompatActivity  implements View.OnClickListener, ItemOnclickPosition{
+    @BindView(R.id.ourViewStaffHolder)  RecyclerView ourViewStaffHolder;
     @BindView(R.id.bottom_navigation)    BottomNavigationView bottomNavigationView;
     @BindView(R.id.fragmentOneBtn)   Button fragmentOneBtn;
     @BindView(R.id.fragmentTwoBtn)  Button fragmentTwoBtn;
@@ -40,11 +49,17 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @BindView(R.id.ourFrameLayout)  FrameLayout ourFrameLayout;
     @BindView(R.id.titleBar) RelativeLayout titleBar;
     @BindView(R.id.imageView5) ImageView logout;
+    @BindView(R.id.progressBar2) ProgressBar progressBar;
+    @BindView(R.id.pleasewait) TextView pleasewait;
+    Context context;
+    StaffAdapter staffAdapter;
+    private ItemOnclickPosition itemOnclickPosition;
 
-    private List list;
-    private String[] names=new String[]{"Allan Limo","Aron Langat","Esther Moki","Judy Rop","Erick Okumu"};
-    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
-    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
+
+//    private List list;
+//    private String[] names=new String[]{"Allan Limo","Aron Langat","Esther Moki","Judy Rop","Erick Okumu"};
+//    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
+//    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +74,16 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
         // Array adapter feeder
 
-        DepartmentAdapter adapter=new DepartmentAdapter(this,names,position,employmentType);
-        ourView.setAdapter(adapter);
-        ourView.setLayoutManager(new LinearLayoutManager(this));
+//        DepartmentAdapter adapter=new DepartmentAdapter(this,names,position,employmentType);
+//        ourView.setAdapter(adapter);
+//        ourView.setLayoutManager(new LinearLayoutManager(this));
         // End of array adapter code
 
+        ourViewStaffHolder.setLayoutManager(new LinearLayoutManager(this));
+        ourViewStaffHolder.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+
+        staffAdapter=new StaffAdapter();
+        fetchAPI();
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_staff);
@@ -88,11 +108,67 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                 return false;
             }
         });
+        //API RESPONSE
+//
+//        ourView.hasFixedSize();
+//        ourView.setLayoutManager(new LinearLayoutManager(this));
+//        Retrofit retrofit= new Retrofit.Builder()
+//                .baseUrl("https://fuzupay-hr.herokuapp.com/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        StaffInterface staffInterface= retrofit.create(StaffInterface.class);
+//        Call<StaffResponse> call=staffInterface.getStaff();
+//        showProgressbar();
+//        call.enqueue(new Callback<StaffResponse>() {
+//            @Override
+//            public void onResponse(Call<StaffResponse> call, Response<StaffResponse> response) {
+//                hideProgressbar();
+//                if(response.isSuccessful()){
+////                    List<StaffResponse>newStaffList= (List<StaffResponse>) response.body();
+////                    //StaffAdapter adapter1=new StaffAdapter(list,context);
+////                    DepartmentAdapter adapter2=new DepartmentAdapter(this,newStaffList.get().getSurname());
+////                    ourView.setAdapter(adapter2);
+//
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<StaffResponse> call, Throwable t) {
+//                hideProgressbar();
+//                Toast.makeText(AllStaffActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+//
+//            }
+//        });
+
+    }
+    private void fetchAPI(){
+        Call<List<StaffResponse>> stafflist= StaffClientClass.staffInterface().getStaff();
+        showProgressbar();
+        stafflist.enqueue(new Callback<List<StaffResponse>>() {
+
+            @Override
+            public void onResponse(Call<List<StaffResponse>> call, Response<List<StaffResponse>> response) {
+               hideProgressbar();
+                if(response.isSuccessful()){
+
+                    List<StaffResponse> staffResponses=response.body();
+                    staffAdapter.StaffAdapterFilled(staffResponses,itemOnclickPosition);
+                    ourViewStaffHolder.setAdapter(staffAdapter);
+                }
+            }
+            @Override
+            public void onFailure(Call<List<StaffResponse>> call, Throwable t) {
+                hideProgressbar();
+                Log.d("Haiwezimake",t.getLocalizedMessage());
+            }
+        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        fetchAPI();
         fragmentThreeBtn.setBackgroundColor(Color.WHITE);
         fragmentTwoBtn.setBackgroundColor(Color.WHITE);
         fragmentOneBtn.setBackgroundColor(Color.rgb(0,70,115));
@@ -122,7 +198,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentTwoBtn.setTextColor(Color.WHITE);
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.BLACK);
-            ourView.setVisibility(View.GONE);
+            ourViewStaffHolder.setVisibility(View.GONE);
             titleBar.setVisibility(View.GONE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
@@ -151,6 +227,21 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,new SingleStaffFragment());
         fragmentTransaction.commit();
+
+    }
+    private void showProgressbar(){
+        progressBar.setVisibility(View.VISIBLE);
+        pleasewait.setVisibility(View.VISIBLE);
+    }
+    private void hideProgressbar(){
+        progressBar.setVisibility(View.GONE);
+        pleasewait.setVisibility(View.GONE);
+    }
+
+
+    @Override
+    public void onItemClick(int position) {
+
 
     }
 }

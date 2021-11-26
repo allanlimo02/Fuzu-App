@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +35,7 @@ public class Log_In_finance extends AppCompatActivity implements View.OnClickLis
 @BindView(R.id.forgetPasswordTextView)TextView mForgetPasswordTextView;
 @BindView(R.id.progressBar) ProgressBar progressBar;
 @BindView(R.id.textView5) TextView textView5;
+@BindView(R.id.fillform) TextView fillform;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ protected void onCreate(Bundle savedInstanceState) {
         ButterKnife.bind(this);
         mFindLoginButton.setOnClickListener(this);
         mForgetPasswordTextView.setOnClickListener(this);
+        fillform.setOnClickListener(this);
 
 
         }
@@ -50,17 +53,27 @@ protected void onCreate(Bundle savedInstanceState) {
 @Override
 public void onClick(View v) {
 //        initialize the username and password
-        if(TextUtils.isEmpty(mEmailEditText.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
-                String message = "Cannot submit empty Fields";
+        if(v==mFindLoginButton){
+//                startActivity(new Intent(Log_In_finance.this, Dashboard_Finance.class));
+//                finish();
+                if(TextUtils.isEmpty(mEmailEditText.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
+                        String message = "Cannot submit empty Fields";
 
-                Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();
+                }
+                else {
+                        showProgressbar();
+                        loginRequest lOginRequest = new loginRequest();
+                        lOginRequest.setEmail(mEmailEditText.getText().toString().trim());
+                        lOginRequest.setPassword(password.getText().toString().trim());
+                        loginUser(lOginRequest);
+                }
+
         }
-        else {
-                showProgressbar();
-                loginRequest lOginRequest = new loginRequest();
-                lOginRequest.setEmail(mEmailEditText.getText().toString().trim());
-                lOginRequest.setPassword(password.getText().toString().trim());
-                loginUser(lOginRequest);
+
+        if(v==fillform){
+                mEmailEditText.setText("hr@fuzupay.com");
+                password.setText("123456");
         }
 
 
@@ -68,6 +81,7 @@ public void onClick(View v) {
 public void loginUser(loginRequest lOginRequest){
         Call<LoginResponse> loginResponseCall = loginClient.getService().loginUser(lOginRequest);
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
+
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                         hideProgressbar();
@@ -77,9 +91,10 @@ public void loginUser(loginRequest lOginRequest){
                                 if(loginResponse.getUser().getRole().getId().toString().trim().equals("2")){
                                 startActivity(new Intent(Log_In_finance.this, DashboardActivity.class).putExtra("data",loginResponse));
                                 finish();
-                                }else
-                                {
-                                        startActivity(new Intent(Log_In_finance.this, DashboardActivity.class).putExtra("data",loginResponse));
+                                }
+                                if(loginResponse.getUser().getRole().getId().toString().trim().equals("4")){
+
+                                        startActivity(new Intent(Log_In_finance.this, Dashboard_Finance.class).putExtra("data",loginResponse));
                                         finish();
                                 }
                         }else

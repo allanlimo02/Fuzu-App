@@ -75,7 +75,7 @@ public void onClick(View v) {
         }
 
         }
-        }
+
 public void loginUser(loginRequest lOginRequest){
         Call<LoginResponse> loginResponseCall = loginClient.getService().loginUser(lOginRequest);
         loginResponseCall.enqueue(new Callback<LoginResponse>() {

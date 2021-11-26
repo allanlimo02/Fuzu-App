@@ -191,7 +191,6 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,new SingleStaffFragment());
         fragmentTransaction.commit();
-
     }
     private void showProgressbar(){
         progressBar.setVisibility(View.VISIBLE);

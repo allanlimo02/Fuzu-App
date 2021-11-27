@@ -57,7 +57,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
 
 //    private List list;
-//    private String[] names=new String[]{"Allan Limo","Aron Langat","Esther Moki","Judy Rop","Erick Okumu"};
+//    private String[] names=new String[]{"Allan Limo","AronLangat","Esther Moki","Judy Rop","Erick Okumu"};
 //    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
 //    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
 

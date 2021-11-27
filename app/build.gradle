@@ -35,6 +35,10 @@ android {
     buildTypes.each {
         it.buildConfigField 'String', 'EMPLOYMENT_API_KEY', EmploymentApiKey
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'DEPARTMENT_API_KEY', DepartmentApiKey
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

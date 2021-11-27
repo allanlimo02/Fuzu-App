@@ -49,8 +49,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
 @Override
 public void onClick(View v) {
-//        initialize the username and password
-        if(TextUtils.isEmpty(mEmailEditText.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
+        //initialize the username and password
+        if(TextUtils.isEmpty(
+         mEmailEditText.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
                 String message = "Cannot submit empty Fields";
 
                 Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();

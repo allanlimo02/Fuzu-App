@@ -9,10 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -42,9 +40,9 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @BindView(R.id.imageView5) ImageView logout;
 
     private List list;
-    private String[] names=new String[]{"Allan Limo","Aron Langat","Esther Moki","Judy Rop","Erick Okumu"};
-    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
-    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
+   private String[] names=new String[]{"Allan Limo","Aron Langat","Esther Moki","Judy Rop","Erick Okumu"};
+  private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
+  private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +57,9 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
         // Array adapter feeder
 
-        DepartmentAdapter adapter=new DepartmentAdapter(this,names,position,employmentType);
-        ourView.setAdapter(adapter);
-        ourView.setLayoutManager(new LinearLayoutManager(this));
+       // DepartmentAdapter adapter=new DepartmentAdapter(this,names,position,employmentType);
+        //ourView.setAdapter(adapter);
+       // ourView.setLayoutManager(new LinearLayoutManager(this));
         // End of array adapter code
 
 
@@ -153,4 +151,19 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         fragmentTransaction.commit();
 
     }
+
+
+    //Api part
+//    EmploymentApi client = EmploymentClient.getClient();
+//    Call<EmploymentSearchResponse> call = client.getEmployment("employmentType");
+//
+//    call.enqueue(new Callback<EmploymentSearchResponse>(){
+//        @Override
+//                public void onResponse (Call<EmploymentSearchResponse> call, Response<EmploymentSearchResponse> response){
+//                if (response.isSuccessful()) {
+//                    List<name> namList = response.body.getNames();
+//                }
+//        }
+//    })
+
 }

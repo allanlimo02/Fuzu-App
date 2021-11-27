@@ -81,5 +81,8 @@ dependencies {
 //    paercelables
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
+    //httplogging
+    implementation("com.squareup.okhttp3:logging-interceptor:3.9.0")
+
 
 }

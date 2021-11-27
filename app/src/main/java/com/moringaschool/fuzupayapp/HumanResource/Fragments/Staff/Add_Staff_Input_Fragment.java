@@ -5,17 +5,29 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 
         import androidx.fragment.app.Fragment;
 
+
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.Toast;
+        import android.widget.VideoView;
 
+        import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.BankApploadApiClient;
+        import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.BankApploadUserRequest;
+        import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.BankApploadUserResponse;
+        import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.BankApploadUserService;
+        import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.Docs.DocsApploadApiClient;
+        import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.Docs.DocsApploadUserRequest;
+        import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.Docs.DocsApploadUserResponse;
         import com.moringaschool.fuzupayapp.R;
 
         import butterknife.BindView;
         import butterknife.ButterKnife;
+        import retrofit2.Call;
+        import retrofit2.Callback;
+        import retrofit2.Response;
 
 public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickListener{
     @BindView(R.id.saveDetails) Button mSaveDetailsButton;
@@ -28,7 +40,7 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
     @BindView(R.id.nationality)    EditText mNationalityEditText;
     @BindView(R.id.dateOfBirth)   EditText mDateOfBirthEditText;
     @BindView(R.id.position)    EditText mPositionEditText;
-    @BindView(R.id.department)    EditText mDepartmentEditText;
+    @BindView(R.id.departmentDocs)    EditText mDepartmentEditText;
     @BindView(R.id.employmentType)    EditText mEmploymentTypeEditText;
     @BindView(R.id.employmentDate)    EditText mEmploymentDateEditText;
     @BindView(R.id.grossSalary)    EditText mGrossSalaryEditText;
@@ -38,19 +50,31 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
     @BindView(R.id.bankName)    EditText mBankNameEditText;
     @BindView(R.id.branch)    EditText mBranchEditText;
     @BindView(R.id.accountNumber) EditText mAccountNumberEditText;
+//    EditText mBankNameEditText,mBranchEditText,mAccountNumberEditText;
+//    Button  mSaveDetailsButton;
 
     public Add_Staff_Input_Fragment() {
         // Required empty public constructor
     }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        mBankNameEditText = getView().findViewById(R.id.bankName);
+//        mBranchEditText= getView().findViewById(R.id.branch);
+//        mAccountNumberEditText = getView().findViewById(R.id.accountNumber);
+
+
+    }
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_add__staff__input_, container, false);
         ButterKnife.bind(this,view);
-
         mSaveDetailsButton.setOnClickListener(this);
         return view;
     }
@@ -58,10 +82,81 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
     @Override
     public void onClick(View v) {
         if(v==mSaveDetailsButton){
-            validator();
+            saveBank(createRequest());
+            saveDocs(DocsRequest());
         }
 
     }
+    public BankApploadUserRequest createRequest(){
+        BankApploadUserRequest bankApploadUserRequest = new BankApploadUserRequest();
+        bankApploadUserRequest.setBank_name(mBankNameEditText.getText().toString().trim());
+        bankApploadUserRequest.setBranch_name(mBranchEditText.getText().toString().trim());
+        bankApploadUserRequest.setAccount_number(mAccountNumberEditText.getText().toString().trim());
+
+
+        return bankApploadUserRequest;
+    }
+    public void saveBank(BankApploadUserRequest bankApploadUserRequest){
+        Call<BankApploadUserResponse> bankApploadUserResponseCall= BankApploadApiClient.getService().saveBankDetails(bankApploadUserRequest);
+        bankApploadUserResponseCall.enqueue(new Callback<BankApploadUserResponse>() {
+            @Override
+            public void onResponse(Call<BankApploadUserResponse> call, Response<BankApploadUserResponse> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(getActivity(),"saved successfully",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(getActivity(),"Docs not saved successfully please input the required inputs",Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<BankApploadUserResponse> call, Throwable t) {
+                Toast.makeText(getActivity(),"Request failure"+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
+    public DocsApploadUserRequest DocsRequest(){
+        DocsApploadUserRequest docsApploadUserRequest = new DocsApploadUserRequest();
+        docsApploadUserRequest.setEmployee_id(mEmployeeCodeEditText.getText().toString().trim());
+//        converting mDepartment to integer
+        String Depart = mDepartmentEditText.getText().toString().trim();
+        int DepartmentInt = new Integer(Depart).intValue();
+        docsApploadUserRequest.setDepartment(DepartmentInt);
+        docsApploadUserRequest.setSurname(mSurnameEditText.getText().toString().trim());
+        docsApploadUserRequest.setOther_names(mOtherNameEditText.getText().toString().trim());
+        docsApploadUserRequest.setPhone_number(mPhoneNumberEditText.getText().toString().trim());
+        docsApploadUserRequest.setPosition(mPositionEditText.getText().toString().trim());
+        String Etype = mEmploymentTypeEditText.getText().toString().trim();
+        int ReadDep = new Integer(Etype).intValue();
+        docsApploadUserRequest.setEmployment_type(ReadDep);
+        return docsApploadUserRequest;
+    }
+    public void saveDocs(DocsApploadUserRequest docsApploadUserRequest){
+        Call<DocsApploadUserResponse> docsApploadUserResponseCall= DocsApploadApiClient.getDocsApploadService().saveDocs(docsApploadUserRequest);
+        docsApploadUserResponseCall.enqueue(new Callback<DocsApploadUserResponse>() {
+            @Override
+            public void onResponse(Call<DocsApploadUserResponse> call, Response<DocsApploadUserResponse> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(getActivity(),"saved successfully",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(getActivity(),"Not saved successfully",Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DocsApploadUserResponse> call, Throwable t) {
+                Toast.makeText(getActivity(),"Request failure"+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
+
+//    private BankApploadUserRequest createRequest() {
+//    }
     public void validator(){
         String employeeCode = mEmployeeCodeEditText.getText().toString().trim();
         String surname = mSurnameEditText.getText().toString().trim();

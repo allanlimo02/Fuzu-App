@@ -13,9 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
 
+
 import com.moringaschool.fuzupayapp.APIRequests.DepartmentAdapter;
 import com.moringaschool.fuzupayapp.APIRequests.DepartmentClient;
 import com.moringaschool.fuzupayapp.APIRequests.DepartmentResponse;
+
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestClient;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestResponse;
 import com.moringaschool.fuzupayapp.R;
 
 import java.util.List;
@@ -24,8 +29,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import retrofit2.Call;
+
 
 public class DepartmentsFragment extends Fragment {
+    LeaveActivity leaveActivity = new LeaveActivity();
 //    Spinner spinner;
     private Spinner spinner;
     RecyclerView recyclerView;
@@ -51,6 +61,9 @@ public class DepartmentsFragment extends Fragment {
         departmentAdapter = new DepartmentAdapter();
         getDepartment();
         return view;
+
+
+
 
 
     }
@@ -122,3 +135,6 @@ public class DepartmentsFragment extends Fragment {
     }
 
 
+
+
+}

@@ -17,7 +17,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -47,6 +49,10 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     BottomNavigationView bottomNavigationView;
     @BindView(R.id.imageView5)
     ImageView logout;
+    @BindView(R.id.progressBars)
+    ProgressBar progressBar;
+    @BindView(R.id.pleasewaits)
+    TextView pleasewait;
 
 
    RequestAdapter requestAdapter;
@@ -105,12 +111,13 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     }
     public void getAll(){
         Call<List<RequestResponse>> userlist = RequestClient.getRequests().getAllRequests();
+        showProgressbar();
         userlist.enqueue(new Callback<List<RequestResponse>>() {
             @Override
             public void onResponse(Call<List<RequestResponse>> call, Response<List<RequestResponse>> response) {
                 if (response.isSuccessful()) {
                     List<RequestResponse> requestResponses = response.body();
-
+                    hideProgressbar();
                     requestAdapter.setData(requestResponses);
                     recyclerView2.setAdapter(requestAdapter);
                 }
@@ -169,5 +176,13 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
         }
 
 
+    }
+    private void showProgressbar(){
+        progressBar.setVisibility(View.VISIBLE);
+        pleasewait.setVisibility(View.VISIBLE);
+    }
+    private void hideProgressbar(){
+        progressBar.setVisibility(View.GONE);
+        pleasewait.setVisibility(View.GONE);
     }
 }

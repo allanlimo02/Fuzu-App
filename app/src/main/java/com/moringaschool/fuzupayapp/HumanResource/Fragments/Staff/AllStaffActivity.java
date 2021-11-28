@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+
 import android.util.Log;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -62,9 +64,12 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     private ArrayList<String>getDepName = new ArrayList<String>();
 
 
-    private String[] names=new String[]{"Allan Limo","Aron Langat","Esther Moki","Judy Rop","Erick Okumu"};
-    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
-    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
+//    private List list;
+//    private String[] names=new String[]{"Allan Limo","AronLangat","Esther Moki","Judy Rop","Erick Okumu"};
+//    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
+//    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +89,10 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         ourView.setAdapter(adapter);
         ourView.setLayoutManager(new LinearLayoutManager(this));
         // End of array adapter code
+
+
+        ourViewStaffHolder.setLayoutManager(new LinearLayoutManager(this));
+        ourViewStaffHolder.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -229,4 +238,19 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         fragmentTransaction.commit();
 
     }
+
+
+    //Api part
+//    EmploymentApi client = EmploymentClient.getClient();
+//    Call<EmploymentSearchResponse> call = client.getEmployment("employmentType");
+//
+//    call.enqueue(new Callback<EmploymentSearchResponse>(){
+//        @Override
+//                public void onResponse (Call<EmploymentSearchResponse> call, Response<EmploymentSearchResponse> response){
+//                if (response.isSuccessful()) {
+//                    List<name> namList = response.body.getNames();
+//                }
+//        }
+//    })
+
 }

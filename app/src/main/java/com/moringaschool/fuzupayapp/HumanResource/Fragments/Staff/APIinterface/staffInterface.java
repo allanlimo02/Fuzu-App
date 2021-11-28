@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 
 public interface staffInterface {
     @GET("departments")
-    Call<String> getDepartmentName();
+    Call<List> getDepartmentName();
 
     @GET("employees")
     Call<List<EmployeesDetails_Pojo>>getDetails();

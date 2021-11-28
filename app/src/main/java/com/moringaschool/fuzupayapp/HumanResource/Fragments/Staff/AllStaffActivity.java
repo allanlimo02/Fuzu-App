@@ -3,11 +3,9 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,28 +14,24 @@ import android.util.Log;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.ItemOnclickPosition;
-import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.Models.StaffResponse;
-import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.StaffAdapter;
-import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.StaffClientClass;
+import com.google.gson.reflect.TypeToken;
+import com.moringaschool.fuzupayapp.FragmentAdapter.DepartmentAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIclient.staffClient;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIentities.Department_pojo;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIinterface.staffInterface;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
@@ -54,8 +48,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AllStaffActivity extends AppCompatActivity  implements View.OnClickListener, ItemOnclickPosition{
-    @BindView(R.id.ourViewStaffHolder)  RecyclerView ourViewStaffHolder;
+public class AllStaffActivity extends AppCompatActivity  implements View.OnClickListener{
+    @BindView(R.id.ourView)  RecyclerView ourView;
     @BindView(R.id.bottom_navigation)    BottomNavigationView bottomNavigationView;
     @BindView(R.id.fragmentOneBtn)   Button fragmentOneBtn;
     @BindView(R.id.fragmentTwoBtn)  Button fragmentTwoBtn;
@@ -63,13 +57,18 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @BindView(R.id.ourFrameLayout)  FrameLayout ourFrameLayout;
     @BindView(R.id.titleBar) RelativeLayout titleBar;
     @BindView(R.id.imageView5) ImageView logout;
-    @BindView(R.id.progressBar2) ProgressBar progressBar;
-    @BindView(R.id.pleasewait) TextView pleasewait;
-    Context context;
-    StaffAdapter staffAdapter;
-    private ItemOnclickPosition itemOnclickPosition;
+    @BindView(R.id.spinnerDep) Spinner spinnerDep;
 
-    RequestQueue requestQueue;
+    private List<Department_pojo> departmentlist;
+//    List<Department_pojo> sectionlist = gson.fromJson(jsonTemp, new TypeToken<List<Department_pojo>>(){}.getType());
+    private ArrayList<String>getDepName = new ArrayList<String>();
+
+
+//    private List list;
+//    private String[] names=new String[]{"Allan Limo","AronLangat","Esther Moki","Judy Rop","Erick Okumu"};
+//    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
+//    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
+
 
 
     @Override
@@ -77,19 +76,24 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_staff);
         ButterKnife.bind(this);
+        getDetpartMent();
 
         fragmentTwoBtn.setOnClickListener(this);
         fragmentOneBtn.setOnClickListener(this);
         fragmentThreeBtn.setOnClickListener(this);
         logout.setOnClickListener(this);
 
+        // Array adapter feeder
+
+        DepartmentAdapter adapter=new DepartmentAdapter(this,names,position,employmentType);
+        ourView.setAdapter(adapter);
+        ourView.setLayoutManager(new LinearLayoutManager(this));
+        // End of array adapter code
 
 
         ourViewStaffHolder.setLayoutManager(new LinearLayoutManager(this));
         ourViewStaffHolder.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
-        staffAdapter=new StaffAdapter();
-        fetchAPI();
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_staff);
@@ -114,29 +118,59 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                 return false;
             }
         });
-        //API RESPONSE
-//
-//
     }
-    private void fetchAPI(){
-        Call<List<StaffResponse>> stafflist= StaffClientClass.staffInterface().getStaff();
-        showProgressbar();
-        stafflist.enqueue(new Callback<List<StaffResponse>>() {
 
+    private void getDetpartMent() {
+        staffInterface serviceAPI = staffClient.getDepClient().create(staffInterface.class);
+        serviceAPI.getDepartmentName().enqueue(new Callback<List>() {
             @Override
-            public void onResponse(Call<List<StaffResponse>> call, Response<List<StaffResponse>> response) {
-                hideProgressbar();
+            public void onResponse(Call<List> call, Response<List> response) {
+                Log.i("Response",response.body().toString());
                 if(response.isSuccessful()){
+                    Log.i("Success",response.body().toString());
+                    try{
+                        List getResponse = response.body();
+                        departmentlist=new ArrayList<Department_pojo>();
+                        JSONArray jsonArray = new JSONArray(getResponse);
+                        departmentlist.add(new Department_pojo(-1,"All"));
+                        for(int i=0;i<jsonArray.length();i++){
+                            Department_pojo department_pojo = new Department_pojo();
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            department_pojo.setId(jsonObject.getInt("id"));
+                            department_pojo.setDname(jsonObject.getString("name"));
+                            departmentlist.add(department_pojo);
+                            Log.d("name",department_pojo.getDname().toString());
+//                            Log.i("id",department_pojo.getId());
+//                            Toast toast=Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT);
+                        }
+                        for(int i= 0;i<departmentlist.size();i++){
+                            getDepName.add(departmentlist.get(i).getDname());
+                        }
+                        ArrayAdapter<String> newDepNameAD = new ArrayAdapter<String>(AllStaffActivity.this, android.R.layout.simple_spinner_item,getDepName);
+                        newDepNameAD.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        spinnerDep.setAdapter(newDepNameAD);
+                        spinnerDep.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                    List<StaffResponse> staffResponses=response.body();
-                    staffAdapter.StaffAdapterFilled(staffResponses,itemOnclickPosition);
-                    ourViewStaffHolder.setAdapter(staffAdapter);
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> adapterView) {
+
+                            }
+                        });
+                    }
+                    catch (JSONException ex){
+                        ex.printStackTrace();
+                    }
                 }
             }
+
             @Override
-            public void onFailure(Call<List<StaffResponse>> call, Throwable t) {
-                hideProgressbar();
-                Log.d("Haiwezimake",t.getLocalizedMessage());
+            public void onFailure(Call<List> call, Throwable t) {
+//                Toast.makeText(AllStaffActivity.this,t.getMessage(),Toast.LENGTH_LONG).show();
+                Log.e("error",t.getMessage());
             }
         });
     }
@@ -144,7 +178,6 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @Override
     protected void onStart() {
         super.onStart();
-        fetchAPI();
         fragmentThreeBtn.setBackgroundColor(Color.WHITE);
         fragmentTwoBtn.setBackgroundColor(Color.WHITE);
         fragmentOneBtn.setBackgroundColor(Color.rgb(0,70,115));
@@ -174,7 +207,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentTwoBtn.setTextColor(Color.WHITE);
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.BLACK);
-            ourViewStaffHolder.setVisibility(View.GONE);
+            ourView.setVisibility(View.GONE);
             titleBar.setVisibility(View.GONE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
@@ -203,22 +236,21 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,new SingleStaffFragment());
         fragmentTransaction.commit();
-    }
-    private void showProgressbar(){
-        progressBar.setVisibility(View.VISIBLE);
-        pleasewait.setVisibility(View.VISIBLE);
-    }
-    private void hideProgressbar(){
-        progressBar.setVisibility(View.GONE);
-        pleasewait.setVisibility(View.GONE);
-    }
-
-
-    @Override
-    public void onItemClick(int position) {
-
 
     }
 
+
+    //Api part
+//    EmploymentApi client = EmploymentClient.getClient();
+//    Call<EmploymentSearchResponse> call = client.getEmployment("employmentType");
+//
+//    call.enqueue(new Callback<EmploymentSearchResponse>(){
+//        @Override
+//                public void onResponse (Call<EmploymentSearchResponse> call, Response<EmploymentSearchResponse> response){
+//                if (response.isSuccessful()) {
+//                    List<name> namList = response.body.getNames();
+//                }
+//        }
+//    })
 
 }

@@ -16,13 +16,20 @@ import android.util.Log;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.ItemOnclickPosition;
@@ -34,6 +41,11 @@ import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -57,12 +69,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     StaffAdapter staffAdapter;
     private ItemOnclickPosition itemOnclickPosition;
 
-
-
-//    private List list;
-//    private String[] names=new String[]{"Allan Limo","AronLangat","Esther Moki","Judy Rop","Erick Okumu"};
-//    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
-//    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
+    RequestQueue requestQueue;
 
 
     @Override
@@ -213,18 +220,5 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
     }
 
-
-    //Api part
-//    EmploymentApi client = EmploymentClient.getClient();
-//    Call<EmploymentSearchResponse> call = client.getEmployment("employmentType");
-//
-//    call.enqueue(new Callback<EmploymentSearchResponse>(){
-//        @Override
-//                public void onResponse (Call<EmploymentSearchResponse> call, Response<EmploymentSearchResponse> response){
-//                if (response.isSuccessful()) {
-//                    List<name> namList = response.body.getNames();
-//                }
-//        }
-//    })
 
 }

@@ -36,16 +36,16 @@ public class Dashboard_FinanceTest extends TestCase {
                 .check(matches(isDisplayed()));
     }
     //test on quick nav
-    @Test
-    public void testQuicknav_advanceRequests() throws Exception {
-        onView(ViewMatchers.withId(R.id.advancerequest)).perform(click())
-                .check(matches(isDisplayed()));
-    }
-    @Test
-    public void testQuicknav_Approve_expenses() throws Exception {
-        onView(ViewMatchers.withId(R.id.approveExpense)).perform(click())
-                .check(matches(isDisplayed()));
-    }
+//    @Test
+//    public void testQuicknav_advanceRequests() throws Exception {
+//        onView(ViewMatchers.withId(R.id.advancerequest)).perform(click())
+//                .check(matches(isDisplayed()));
+//    }
+//    @Test
+//    public void testQuicknav_Approve_expenses() throws Exception {
+//        onView(ViewMatchers.withId(R.id.approveExpense)).perform(click())
+//                .check(matches(isDisplayed()));
+//    }
     @Test
     public void testQuicknav_manage_staffs() throws Exception {
         onView(ViewMatchers.withId(R.id.managestaff)).perform(click())

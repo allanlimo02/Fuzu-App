@@ -1,5 +1,8 @@
 package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIentities;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.Serializable;
 
 public class Department_pojo implements Serializable {
@@ -29,4 +32,14 @@ public class Department_pojo implements Serializable {
     public void setDname(String dname) {
         this.dname = dname;
     }
+
+    @Override
+    public String toString() {
+        return "Department_pojo{" +
+                "did=" + did +
+                ", dname='" + dname + '\'' +
+                '}';
+    }
+    final GsonBuilder gsonBuilder = new GsonBuilder();
+    final Gson gson = gsonBuilder.create();
 }

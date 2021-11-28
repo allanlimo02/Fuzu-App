@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.gson.reflect.TypeToken;
 import com.moringaschool.fuzupayapp.FragmentAdapter.DepartmentAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
@@ -57,6 +58,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @BindView(R.id.spinnerDep) Spinner spinnerDep;
 
     private List<Department_pojo> departmentlist;
+//    List<Department_pojo> sectionlist = gson.fromJson(jsonTemp, new TypeToken<List<Department_pojo>>(){}.getType());
     private ArrayList<String>getDepName = new ArrayList<String>();
 
 
@@ -111,14 +113,14 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
     private void getDetpartMent() {
         staffInterface serviceAPI = staffClient.getDepClient().create(staffInterface.class);
-        serviceAPI.getDepartmentName().enqueue(new Callback<String>() {
+        serviceAPI.getDepartmentName().enqueue(new Callback<List>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<List> call, Response<List> response) {
                 Log.i("Response",response.body().toString());
                 if(response.isSuccessful()){
                     Log.i("Success",response.body().toString());
                     try{
-                        String getResponse = response.body();
+                        List getResponse = response.body();
                         departmentlist=new ArrayList<Department_pojo>();
                         JSONArray jsonArray = new JSONArray(getResponse);
                         departmentlist.add(new Department_pojo(-1,"All"));
@@ -157,8 +159,9 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Toast.makeText(AllStaffActivity.this,t.getMessage(),Toast.LENGTH_LONG).show();
+            public void onFailure(Call<List> call, Throwable t) {
+//                Toast.makeText(AllStaffActivity.this,t.getMessage(),Toast.LENGTH_LONG).show();
+                Log.e("error",t.getMessage());
             }
         });
     }

@@ -52,6 +52,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 @Override
 public void onClick(View v) {
+
 //        initialize the username and password
         if(v==mFindLoginButton){
                 if(TextUtils.isEmpty(mEmailEditText.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
@@ -66,6 +67,7 @@ public void onClick(View v) {
                         lOginRequest.setPassword(password.getText().toString().trim());
                         loginUser(lOginRequest);
                 }
+
 
         }
 
@@ -97,7 +99,7 @@ public void loginUser(loginRequest lOginRequest){
                                 }
                         }else
                         {
-                                String message = "Check Your email And Password ..";
+                                String message = "Check your email And password ..";
                                 Toast.makeText(Log_In_finance.this,message,Toast.LENGTH_SHORT).show();
                         }
                 }

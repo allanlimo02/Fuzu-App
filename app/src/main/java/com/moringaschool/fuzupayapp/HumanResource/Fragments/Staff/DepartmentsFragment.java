@@ -48,8 +48,6 @@ public class DepartmentsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
@@ -61,15 +59,9 @@ public class DepartmentsFragment extends Fragment {
         departmentAdapter = new DepartmentAdapter();
         getDepartment();
         return view;
-
-
-
-
-
     }
 
     private void getDepartment() {
-
         Call<List<DepartmentResponse>> departmentList = DepartmentClient.getDepartmentService().getDepartment();
         departmentList.enqueue(new Callback<List<DepartmentResponse>>() {
             @Override

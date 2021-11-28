@@ -11,7 +11,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+
 import android.util.Log;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -56,10 +58,12 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     private ItemOnclickPosition itemOnclickPosition;
 
 
+
 //    private List list;
-//    private String[] names=new String[]{"Allan Limo","Aron Langat","Esther Moki","Judy Rop","Erick Okumu"};
+//    private String[] names=new String[]{"Allan Limo","AronLangat","Esther Moki","Judy Rop","Erick Okumu"};
 //    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
 //    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +75,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         fragmentOneBtn.setOnClickListener(this);
         fragmentThreeBtn.setOnClickListener(this);
         logout.setOnClickListener(this);
+
 
 
         ourViewStaffHolder.setLayoutManager(new LinearLayoutManager(this));
@@ -191,7 +196,6 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,new SingleStaffFragment());
         fragmentTransaction.commit();
-
     }
     private void showProgressbar(){
         progressBar.setVisibility(View.VISIBLE);
@@ -208,4 +212,19 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
 
     }
+
+
+    //Api part
+//    EmploymentApi client = EmploymentClient.getClient();
+//    Call<EmploymentSearchResponse> call = client.getEmployment("employmentType");
+//
+//    call.enqueue(new Callback<EmploymentSearchResponse>(){
+//        @Override
+//                public void onResponse (Call<EmploymentSearchResponse> call, Response<EmploymentSearchResponse> response){
+//                if (response.isSuccessful()) {
+//                    List<name> namList = response.body.getNames();
+//                }
+//        }
+//    })
+
 }

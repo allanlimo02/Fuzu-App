@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 
@@ -30,6 +31,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,15 +54,15 @@ public class DepartmentsFragment extends Fragment {
 
 
 //    @BindView(R.id.depspinner) Spinner depspinner;
-@Override
-public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-
-    RecyclerView recyclerView;
-    DepartmentAdapter departmentAdapter;
-
-
-}
+//@Override
+//public void onCreate(Bundle savedInstanceState) {
+//    super.onCreate(savedInstanceState);
+//
+//    RecyclerView recyclerView;
+//    DepartmentAdapter departmentAdapter;
+//
+//
+//}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,12 +79,12 @@ public void onCreate(Bundle savedInstanceState) {
         fetchDepartments();
              return view;
 
-        recyclerView = view.findViewById(R.id.recyclerviewDepartments);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
-        departmentAdapter = new DepartmentAdapter();
-        getDepartment();
-        return view;
+//        recyclerView = view.findViewById(R.id.recyclerviewDepartments);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+//        departmentAdapter = new DepartmentAdapter();
+//        getDepartment();
+//        return view;
 
 
     }
@@ -164,10 +166,10 @@ public void onCreate(Bundle savedInstanceState) {
             @Override
             public void onResponse(Call<List<DepartmentResponse>> call, Response<List<DepartmentResponse>> response) {
                 if (response.isSuccessful()) {
-                    List<DepartmentResponse> departmentResponses = response.body();
-                    departmentAdapter.setData(departmentResponses);
-                    recyclerView.setAdapter(departmentAdapter);
-                    Log.e("successful",response.body().toString());
+//                    List<DepartmentResponse> departmentResponses = response.body();
+//                    departmentAdapter.setData(departmentResponses);
+//                    recyclerView.setAdapter(departmentAdapter);
+//                    Log.e("successful",response.body().toString());
                 }
             }
 

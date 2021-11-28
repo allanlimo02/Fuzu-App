@@ -12,5 +12,5 @@ public interface staffInterface {
     Call<List> getDepartmentName();
 
     @GET("employees")
-    Call<List<EmployeesDetails_Pojo>>getDetails();
+    Call<List<EmployeesDetails_Pojo>>getEmpDetails(int getdepid);
 }

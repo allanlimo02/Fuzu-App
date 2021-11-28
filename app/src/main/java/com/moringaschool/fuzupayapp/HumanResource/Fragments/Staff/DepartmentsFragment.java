@@ -88,48 +88,5 @@ public class DepartmentsFragment extends Fragment {
             }
         });
     }
-
-
-
-
-//        DepartmentApi client = DepartmentClient.getClient();
-//
-//        Call<DepartmentSearchResponse> call = client.getDepartment("other_names", "position","employment_type");
-//        call.enqueue(new Callback<DepartmentSearchResponseOutcomes>() {
-//            @Override
-//            public void onResponse(@NonNull okhttp3.Call call, @NonNull Response response) throws IOException {
-//                if (response.isSuccessful()) {
-//                    List<DepartmentSearchResponse> departmentSearchResponseList = response.body().getDepartmentSearchResponseO();
-//                    String[] otherNames = new String[departmentSearchResponseList .size()];
-//                    String[] position = new String[departmentSearchResponseList .size()];
-//                    String[] employmentType = new String[departmentSearchResponseList.size()];
-//
-//                    for (int i = 0; i < otherNames.length; i++){
-//                        otherNames[i] = departmentSearchResponseList .get(i).getOtherNames();
-//                    }
-//
-//                    for (int i = 0; i < position.length; i++) {
-//                       position[i] = departmentSearchResponseList.get(i).getPosition();
-//                    }
-//                    for (int i = 0; i <  employmentType.length; i++) {
-//                        employmentType[i] = departmentSearchResponseList.get(i).getEmploymentType();
-//                    }
-//
-//                    //    DepartmentAdapter adapter=new DepartmentAdapter(this,names,position,employmentType);
-//                    //   ourView.setAdapter(adapter);
-//                    // ourView.setLayoutManager(new LinearLayoutManager(this));
-//                    // End of array adapter code
-//
-//                    DepartmentAdapter adapter =  new DepartmentAdapter(this, android.R.layout.staff_rec_item, otherNames, position,employmentType);
-//                    ourView.setAdapter(adapter);
-//
-//                }
-           // }
-
-//            @Override
-//            public void onFailure(@NonNull okhttp3.Call call, @NonNull IOException e) {
-//
-//            }
-
-
     }
+

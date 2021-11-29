@@ -278,7 +278,6 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             overridePendingTransition(0,0);
         }
 
-
     }
     private void fragmentlaunch(){
         FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
@@ -295,14 +294,8 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         pleasewait.setVisibility(View.GONE);
     }
 
-
     @Override
     public void onItemClick(int position) {
-
-
     }
-
-
-
 
 }

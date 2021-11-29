@@ -24,7 +24,7 @@
             android:id="@+id/positions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:layout_marginStart="170dp"
             android:text="Position"
             android:textColor="#004673" />
 
@@ -32,8 +32,8 @@
             android:id="@+id/worktype"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="310dp"
             android:text="Worktype"
             android:textColor="#004673" />
 

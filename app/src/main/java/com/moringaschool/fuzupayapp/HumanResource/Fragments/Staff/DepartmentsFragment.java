@@ -67,13 +67,18 @@ public class DepartmentsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_departments, container, false);
+
+      // recyclerView = view.findViewById(R.id.recyclerviewDepartments);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+        departmentAdapter = new DepartmentAdapter();
+        getDepartment();
+//         return view;
 
         spinner = view.findViewById(R.id.menu_drop);
         fetchDepartments();
@@ -160,7 +165,6 @@ public class DepartmentsFragment extends Fragment {
     }
 
     private void getDepartment() {
-
         Call<List<DepartmentResponse>> departmentList = DepartmentClient.getDepartmentService().getDepartment();
         departmentList.enqueue(new Callback<List<DepartmentResponse>>() {
             @Override

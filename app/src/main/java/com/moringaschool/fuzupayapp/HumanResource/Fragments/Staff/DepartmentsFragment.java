@@ -51,8 +51,6 @@ public class DepartmentsFragment extends Fragment implements AdapterView.OnItemS
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
@@ -65,6 +63,70 @@ public class DepartmentsFragment extends Fragment implements AdapterView.OnItemS
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
+
+      // recyclerView = view.findViewById(R.id.recyclerviewDepartments);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+        departmentAdapter = new DepartmentAdapter();
+        getDepartment();
+//         return view;
+
+        spinner = view.findViewById(R.id.menu_drop);
+        fetchDepartments();
+             return view;
+
+//        recyclerView = view.findViewById(R.id.recyclerviewDepartments);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+//        departmentAdapter = new DepartmentAdapter();
+//        getDepartment();
+//        return view;
+
+
+    }
+
+    private void fetchDepartments() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(departmentApiInterface.BASEURL)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .build();
+
+        departmentApiInterface api = retrofit.create(departmentApiInterface.class);
+        Call<String> call = api.getDepartments();
+        call.enqueue(new Callback<String>(){
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                Log.i("Responsestring",response.body().toString());
+                if (response.isSuccessful()){
+                    if (response.body() != null) {
+                        Log.i("onSuccess",response.body().toString());
+
+                        String departmentResponse = response.body().toString();
+                        spinDepartment(departmentResponse);
+                    }else {
+                        Log.i("onEmptyResponse","Returned empty response");
+                    }
+                }
+
+            }
+
+//            @Override
+//            public void onFailure(Call<String> call, Throwable t) {
+//
+//            }
+
+            private void spinDepartment(String departmentResponse) {
+                try {
+                    JSONObject object = new JSONObject(departmentResponse);
+                    if (object.optString("status").equals("true")){
+                        departmentsSpinnerArrayList = new ArrayList<>();
+                        JSONArray departmentArray = object.getJSONArray("data");
+                        for (int i = 0;i<departmentArray.length();i++){
+                            DepartmentsSpinner spinnerModel = new DepartmentsSpinner();
+                            JSONObject dataObject = departmentArray.getJSONObject(i);
+
+                            spinnerModel.setId(dataObject.getInt("id"));
+                            spinnerModel.setName(dataObject.getString("name"));
 
 
         recyclerView = view.findViewById(R.id.recyclerviewDepartments);
@@ -81,7 +143,6 @@ public class DepartmentsFragment extends Fragment implements AdapterView.OnItemS
     }
 
     private void getDepartment() {
-
         Call<List<DepartmentResponse>> departmentList = DepartmentClient.getDepartmentService().getDepartment();
         departmentList.enqueue(new Callback<List<DepartmentResponse>>() {
             @Override

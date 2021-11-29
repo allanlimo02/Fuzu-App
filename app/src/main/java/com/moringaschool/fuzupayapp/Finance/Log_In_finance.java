@@ -72,7 +72,7 @@ public void onClick(View v) {
         }
 
         if(v==fillform){
-                mEmailEditText.setText("hr@fuzupay.com");
+                mEmailEditText.setText("finance@fuzupay.com");
                 password.setText("123456");
         }
 

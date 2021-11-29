@@ -2,6 +2,7 @@ package com.moringaschool.fuzupayapp.Finance;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
@@ -32,10 +34,13 @@ import butterknife.ButterKnife;
 public class Dashboard_Finance extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.bottom_navigation) BottomNavigationView bottom_navigation;
     @BindView(R.id.textUser) TextView userName;
-    @BindView(R.id.advancerequestLinear) LinearLayout advancerequestLinear;
+    @BindView(R.id.advanceholder) LinearLayout advancerequestLinear;
     LoginResponse loginResponse;
-    @BindView(R.id.imageView5)
-    ImageView logout;
+    @BindView(R.id.imageView5) ImageView logout;
+    @BindView(R.id.advancerequestimage) ImageView advancerequesttxtV;
+    @BindView(R.id.approveExpenses) TextView approveExpenses;
+    @BindView(R.id.managestaff) ImageView managestaff;
+    @BindView(R.id.runpayrollbtn) Button  runpayrollbtn;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -72,6 +77,11 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
         ButterKnife.bind(this);
 
         logout.setOnClickListener(this);
+        managestaff.setOnClickListener(this);
+        approveExpenses.setOnClickListener(this);
+        advancerequesttxtV.setOnClickListener(this);
+        runpayrollbtn.setOnClickListener(this);
+
 //        displayName
         Intent intent = getIntent();
         if(intent.getExtras() != null){
@@ -94,19 +104,36 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
                         startActivity(new Intent(getApplicationContext(), Finance_Approve_Activity.class));
                         overridePendingTransition(0,0);
                         return true;
-
                 }
                 return false;
             }
         });
-
-
     }
 
     @Override
     public void onClick(View v) {
         if(v == logout){
             startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
+            overridePendingTransition(0,0);
+        }
+        if(v==managestaff){
+            startActivity(new Intent(getApplicationContext(), Payroll2.class));
+            overridePendingTransition(0,0);
+
+        }
+        if(v==approveExpenses){
+            startActivity(new Intent(getApplicationContext(), Finance_Approve_Activity.class));
+            overridePendingTransition(0,0);
+
+
+        }
+        if(v==advancerequesttxtV){
+            startActivity(new Intent(getApplicationContext(), Payroll2.class));
+            overridePendingTransition(0,0);
+
+        }
+        if(v==runpayrollbtn){
+            startActivity(new Intent(getApplicationContext(), Payroll2.class));
             overridePendingTransition(0,0);
         }
 

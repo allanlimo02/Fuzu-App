@@ -89,6 +89,7 @@
 
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/linearLayout7"
         android:layout_width="wrap_content"
@@ -109,8 +110,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
-
-
     <RelativeLayout
         android:id="@+id/titleBar"
         android:layout_width="match_parent"

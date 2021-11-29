@@ -190,7 +190,6 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             overridePendingTransition(0,0);
         }
 
-
     }
     private void fragmentlaunch(){
         FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
@@ -206,25 +205,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         pleasewait.setVisibility(View.GONE);
     }
 
-
     @Override
     public void onItemClick(int position) {
-
-
     }
-
-
-    //Api part
-//    EmploymentApi client = EmploymentClient.getClient();
-//    Call<EmploymentSearchResponse> call = client.getEmployment("employmentType");
-//
-//    call.enqueue(new Callback<EmploymentSearchResponse>(){
-//        @Override
-//                public void onResponse (Call<EmploymentSearchResponse> call, Response<EmploymentSearchResponse> response){
-//                if (response.isSuccessful()) {
-//                    List<name> namList = response.body.getNames();
-//                }
-//        }
-//    })
-
 }

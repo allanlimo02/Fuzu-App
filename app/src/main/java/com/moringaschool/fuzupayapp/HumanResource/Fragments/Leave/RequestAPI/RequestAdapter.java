@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,9 +17,17 @@ import java.util.List;
 public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestAdapterVH> {
 
     private List<RequestResponse>  requestREspondlist;
+    private OnItemClickListener mListener;
     private Context context;
 
     public RequestAdapter() {
+    }
+    public  interface OnItemClickListener{
+        void onItemClick(int position);
+        void onDeleteClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
     }
 
     public void setData(List<RequestResponse>  requestREspondlist) {
@@ -58,12 +67,34 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestA
         TextView date2;
         TextView duration;
         TextView Username3;
+        ImageView iconTick,xIcon;
         public RequestAdapterVH(@NonNull View itemView) {
             super(itemView);
             leaveTitle = itemView.findViewById(R.id.leaveTitle);
             date2 = itemView.findViewById(R.id.date2);
             duration= itemView.findViewById(R.id.duration);
             Username3= itemView.findViewById(R.id.Username3);
+            iconTick = itemView.findViewById(R.id.iconTick);
+            xIcon = itemView.findViewById(R.id.xIcon);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                   if (mListener != null){
+                       int position = getAdapterPosition();
+                       if(position != RecyclerView.NO_POSITION){
+                           mListener.onItemClick(position);
+                       }
+                   }
+                }
+            });
+
+            iconTick.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
 
         }
     }

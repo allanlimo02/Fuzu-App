@@ -56,7 +56,6 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     TextView pleasewait;
 
 
-
    RequestAdapter requestAdapter;
     //    fragment inititializations
 //    private TextView fragmentOneBtn2, fragmentTwoBtn2;
@@ -84,13 +83,9 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_leave);
-
-
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));

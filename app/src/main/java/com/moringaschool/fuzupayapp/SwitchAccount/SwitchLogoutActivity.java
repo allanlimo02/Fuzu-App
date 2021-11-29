@@ -33,7 +33,7 @@ public class SwitchLogoutActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
 
         if(view == backswitch){
-            startActivity(new Intent(getApplicationContext(), Dashboard_Finance.class));
+            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
 
             overridePendingTransition(0,0);
         }

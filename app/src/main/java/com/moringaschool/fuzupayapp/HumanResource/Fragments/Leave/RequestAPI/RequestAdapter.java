@@ -77,18 +77,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestA
             iconTick = itemView.findViewById(R.id.iconTick);
             xIcon = itemView.findViewById(R.id.xIcon);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                   if (mListener != null){
-                       int position = getAdapterPosition();
-                       if(position != RecyclerView.NO_POSITION){
-                           mListener.onItemClick(position);
-                       }
-                   }
-                }
-            });
-
             iconTick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

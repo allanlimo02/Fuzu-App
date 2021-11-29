@@ -93,11 +93,7 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
           Intent intent = new  Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
            startActivityForResult(intent, 2);
 
-            // Map point based on address
-          //  Uri location = Uri.parse("geo:0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+California");
-// Or map point based on latitude/longitude
-// Uri location = Uri.parse("geo:37.422219,-122.08364?z=14"); // z param is zoom level
-        //    Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+
 
 //
 //            Uri pdfUri = FileProvider.getUriForFile(context, FILES_AUTHORITY, filePath);

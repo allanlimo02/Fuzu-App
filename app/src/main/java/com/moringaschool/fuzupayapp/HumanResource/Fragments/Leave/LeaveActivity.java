@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -53,6 +54,7 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     ProgressBar progressBar;
     @BindView(R.id.pleasewaits)
     TextView pleasewait;
+
 
    RequestAdapter requestAdapter;
     //    fragment inititializations
@@ -130,13 +132,31 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onStart() {
         super.onStart();
-        fragmentTwoBtn2.setBackgroundColor(Color.WHITE);
-        fragmentOneBtn2.setBackgroundColor(Color.rgb(0,70,115));
-        fragmentTwoBtn2.setTextColor(Color.BLACK);
-        fragmentOneBtn2.setTextColor(Color.WHITE);
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout2,new Leave_Request_Fragment());
-        fragmentTransaction.commit();
+        Intent intent=getIntent();
+        String broughtIntents=intent.getStringExtra("nextPage");
+
+        if(broughtIntents=="LeaveActivity"){
+            Toast.makeText(LeaveActivity.this, broughtIntents, Toast.LENGTH_SHORT).show();
+            fragmentTwoBtn2.setBackgroundColor(Color.rgb(0,70,115));
+            fragmentOneBtn2.setBackgroundColor(Color.WHITE);
+            fragmentTwoBtn2.setTextColor(Color.WHITE);
+            fragmentOneBtn2.setTextColor(Color.BLACK);
+            recyclerView2.setVisibility(View.GONE);
+            lineLayout.setVisibility(View.GONE);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
+            fragmentTransaction.commit();
+        }
+        else{
+            fragmentTwoBtn2.setBackgroundColor(Color.WHITE);
+            fragmentOneBtn2.setBackgroundColor(Color.rgb(0,70,115));
+            fragmentTwoBtn2.setTextColor(Color.BLACK);
+            fragmentOneBtn2.setTextColor(Color.WHITE);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout2,new Leave_Request_Fragment());
+            fragmentTransaction.commit();
+        }
+
     }
 
 

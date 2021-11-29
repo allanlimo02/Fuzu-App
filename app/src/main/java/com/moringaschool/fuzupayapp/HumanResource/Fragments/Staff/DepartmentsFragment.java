@@ -39,7 +39,7 @@ import retrofit2.Call;
 
 public class DepartmentsFragment extends Fragment implements AdapterView.OnItemSelectedListener {
     LeaveActivity leaveActivity = new LeaveActivity();
-//        Spinner spinner;
+    //        Spinner spinner;
     Spinner spinner;
     RecyclerView recyclerView;
     DepartmentAdapter departmentAdapter;
@@ -103,7 +103,7 @@ public class DepartmentsFragment extends Fragment implements AdapterView.OnItemS
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            String text = adapterView.getItemAtPosition(i).toString();
+        String text = adapterView.getItemAtPosition(i).toString();
         Toast.makeText(adapterView.getContext(),text,Toast.LENGTH_LONG).show();
     }
 

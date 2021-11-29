@@ -75,6 +75,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     TextView pleasewait;
     Context context;
     StaffAdapter staffAdapter;
+
     private List<Department_pojo> departmentlist;
 //    List<Department_pojo> sectionlist = gson.fromJson(jsonTemp, new TypeToken<List<Department_pojo>>(){}.getType());
     private ArrayList<String>getDepName = new ArrayList<String>();
@@ -211,9 +212,11 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                 hideProgressbar();
                 if(response.isSuccessful()){
 
-                    List<StaffResponse> staffResponses=response.body();
-                    staffAdapter.StaffAdapterFilled(staffResponses,itemOnclickPosition);
-                    ourViewStaffHolder.setAdapter(staffAdapter);
+                        List<StaffResponse> staffResponses = response.body();
+                        staffAdapter.StaffAdapterFilled(staffResponses, itemOnclickPosition);
+                        ourViewStaffHolder.setAdapter(staffAdapter);
+
+
                 }
             }
             @Override

@@ -24,6 +24,9 @@
         <entry key="app/src/main/res/drawable/ic_check.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/ic_cloud.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.2361111111111111" />
+        <entry key="app/src/main/res/drawable/ic_baseline_pin_drop_24.xml" value="0.28125" />
+        <entry key="app/src/main/res/drawable/ic_check.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/ic_cloud.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/ic_insert_chart_24.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3734375" />
         <entry key="app/src/main/res/drawable/ic_leave.xml" value="0.3734375" />
@@ -37,6 +40,8 @@
         <entry key="app/src/main/res/drawable/sipinner_style.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/spinner_holder.xml" value="0.33541666666666664" />
         <entry key="app/src/main/res/drawable/spinner_styler.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/spinner_styler.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/spinnerxml.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/thin_border.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/font/open_sans_light.xml" value="0.35" />
         <entry key="app/src/main/res/layout/activity_add_staff_main.xml" value="0.31979166666666664" />
@@ -48,6 +53,7 @@
         <entry key="app/src/main/res/layout/activity_finance_new_run.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_finance_payments.xml" value="0.1580547112462006" />
         <entry key="app/src/main/res/layout/activity_finance_payroll1.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_finance_payroll1.xml" value="0.25842696629213485" />
         <entry key="app/src/main/res/layout/activity_leave.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_leave2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5" />
@@ -101,17 +107,21 @@
         <entry key="app/src/main/res/layout/fragment_mainstaff.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/fragment_on__leave_.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_payments.xml" value="0.33" />
+
+        <entry key="app/src/main/res/layout/fragment_scrolling.xml" value="0.2921195652173913" />
         <entry key="app/src/main/res/layout/fragment_single_staff.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/fragment_staff.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/fragment_staff_main.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/fragment_stuff.xml" value="0.21693840579710144" />
         <entry key="app/src/main/res/layout/holidayholder.xml" value="0.30344202898550726" />
         <entry key="app/src/main/res/layout/hr_staff_recyclerview_item.xml" value="0.31979166666666664" />
+
         <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.30932971014492755" />
         <entry key="app/src/main/res/layout/on_leave_list_item.xml" value="0.321875" />
         <entry key="app/src/main/res/layout/review_holder.xml" value="0.33" />
         <entry key="app/src/main/res/layout/single_holiday.xml" value="0.30344202898550726" />
         <entry key="app/src/main/res/layout/staff_rec_item.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/staff_rec_item.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.3351851851851852" />
         <entry key="app/src/main/res/menu/all_stuff.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.25" />
@@ -119,6 +129,7 @@
         <entry key="app/src/main/res/menu/finance_bottom_menu.xml" value="0.215625" />
         <entry key="app/src/main/res/menu/new_top_navigation_menu.xml" value="0.18802083333333333" />
         <entry key="app/src/main/res/menu/top_navbar.xml" value="0.33" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.1" />
       </map>
     </option>
   </component>

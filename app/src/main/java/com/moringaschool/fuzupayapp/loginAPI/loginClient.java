@@ -26,7 +26,7 @@ public class loginClient {
     }
 
     public static loginInterface getService(){
-        loginInterface loginInterface = getRetrofit().create(com.moringaschool.fuzupayapp.loginAPI.loginInterface.class);
+       loginInterface loginInterface = getRetrofit().create(com.moringaschool.fuzupayapp.loginAPI.loginInterface.class);
         return loginInterface;
     }
 }

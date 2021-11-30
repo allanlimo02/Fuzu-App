@@ -77,23 +77,15 @@ public class DepartmentsFragment extends Fragment implements AdapterView.OnItemS
         spinner.setOnItemSelectedListener(this);
         getDetpartMent();
 
-
-
         recyclerView = view.findViewById(R.id.recyclerviewDepartments);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
         departmentAdapter = new DepartmentAdapter();
         getDepartment();
         return view;
-
-
-
-
-
     }
 
     private void getDepartment() {
-
         Call<List<DepartmentResponse>> departmentList = DepartmentClient.getDepartmentService().getDepartment();
         departmentList.enqueue(new Callback<List<DepartmentResponse>>() {
             @Override
@@ -105,27 +97,21 @@ public class DepartmentsFragment extends Fragment implements AdapterView.OnItemS
                     Log.e("successful",response.body().toString());
                 }
             }
-
             @Override
             public void onFailure(Call<List<DepartmentResponse>> call, Throwable t) {
                 Log.e("failure",t.getLocalizedMessage());
             }
         });
     }
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String text = adapterView.getItemAtPosition(i).toString();
-        Toast.makeText(adapterView.getContext(),text,Toast.LENGTH_LONG).show();
+//        Toast.makeText(adapterView.getContext(),text,Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
-
-
-
     private void getDetpartMent() {
         staffInterface serviceAPI = staffClient.getDepClient().create(staffInterface.class);
         serviceAPI.getDepartmentName().enqueue(new Callback<List>() {

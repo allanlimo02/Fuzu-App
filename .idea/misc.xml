@@ -41,6 +41,7 @@
         <entry key="app/src/main/res/drawable/success_border.xml" value="0.171875" />
         <entry key="app/src/main/res/drawable/super_thin_backround.xml" value="0.1390625" />
         <entry key="app/src/main/res/drawable/thin_border.xml" value="0.18958333333333333" />
+        <entry key="app/src/main/res/drawable/thin_border_theme_backround.xml" value="0.3359375" />
         <entry key="app/src/main/res/font/open_sans_light.xml" value="0.35" />
         <entry key="app/src/main/res/layout/activity_add_staff_main.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/activity_all_staff.xml" value="0.33" />

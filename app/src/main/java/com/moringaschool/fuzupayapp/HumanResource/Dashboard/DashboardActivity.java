@@ -62,6 +62,8 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     private HrListAdaper mAdapter;
     public List<Animal> genders;
 
+
+
     @Override
     protected void onStart() {
         super.onStart();

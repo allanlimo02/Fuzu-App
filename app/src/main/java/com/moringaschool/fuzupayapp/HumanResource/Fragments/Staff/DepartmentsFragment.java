@@ -68,24 +68,24 @@ public class DepartmentsFragment extends Fragment {
 
     }
 
-    private void getDepartment() {
+        private void getDepartment() {
 
-        Call<List<DepartmentResponse>> departmentList = DepartmentClient.getDepartmentService().getDepartment();
-        departmentList.enqueue(new Callback<List<DepartmentResponse>>() {
-            @Override
-            public void onResponse(Call<List<DepartmentResponse>> call, Response<List<DepartmentResponse>> response) {
-                if (response.isSuccessful()) {
-                    List<DepartmentResponse> departmentResponses = response.body();
-                    departmentAdapter.setData(departmentResponses);
-                    recyclerView.setAdapter(departmentAdapter);
-                    Log.e("successful",response.body().toString());
+            Call<List<DepartmentResponse>> departmentList = DepartmentClient.getDepartmentService().getDepartment();
+            departmentList.enqueue(new Callback<List<DepartmentResponse>>() {
+                @Override
+                public void onResponse(Call<List<DepartmentResponse>> call, Response<List<DepartmentResponse>> response) {
+                    if (response.isSuccessful()) {
+                        List<DepartmentResponse> departmentResponses = response.body();
+                        departmentAdapter.setData(departmentResponses);
+                        recyclerView.setAdapter(departmentAdapter);
+                       // Log.e("successful",response.body().toString());
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<List<DepartmentResponse>> call, Throwable t) {
-                Log.e("failure",t.getLocalizedMessage());
-            }
+                @Override
+                public void onFailure(Call<List<DepartmentResponse>> call, Throwable t) {
+                    Log.e("failure",t.getLocalizedMessage());
+                }
         });
     }
 

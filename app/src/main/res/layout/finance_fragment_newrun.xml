@@ -247,6 +247,7 @@
             android:layout_height="wrap_content"
             android:textColor="#004673"
             android:textStyle="bold"
+            android:id="@+id/payIdOne"
             android:layout_marginStart="10dp"
             android:text="Pay ID"/>
         <TextView
@@ -254,6 +255,7 @@
             android:layout_height="wrap_content"
             android:textColor="#004673"
             android:textStyle="bold"
+            android:id="@+id/monthMain"
             android:layout_marginStart="30dp"
             android:text="Month"/>
         <TextView
@@ -261,6 +263,7 @@
             android:layout_height="wrap_content"
             android:textColor="#004673"
             android:textStyle="bold"
+            android:id="@+id/debitAmountMain"
             android:layout_marginStart="30dp"
             android:text="Debit Amount"/>
         <TextView
@@ -268,6 +271,7 @@
             android:layout_height="wrap_content"
             android:textColor="#004673"
             android:textStyle="bold"
+            android:id="@+id/paymentStatus"
             android:layout_marginStart="30dp"
             android:text="Payment Status"/>
     </LinearLayout>

@@ -25,10 +25,11 @@
         <Spinner
             android:id="@+id/menu_drop"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/super_thin_backround"
             android:hint="All" />
 
         <TextView
@@ -40,11 +41,12 @@
         <Spinner
             android:id="@+id/statusDrop"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
+            android:background="@drawable/super_thin_backround"
             android:hint="All" />
 
         <TextView
@@ -54,8 +56,10 @@
             android:background="@drawable/thin_border"
             android:backgroundTint="#004673"
             android:inputType="none"
-            android:padding="8dp"
-            android:paddingLeft="30dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:text="Download List"
             android:textAlignment="center"
             android:textColor="#fff" />

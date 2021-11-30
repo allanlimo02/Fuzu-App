@@ -101,33 +101,30 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
                 return false;
             }
         });
-
-
-
-
     }
-    public void getAll(){
-        Call<List<RequestResponse>> userlist = RequestClient.getRequests().getAllRequests();
-        showProgressbar();
-        userlist.enqueue(new Callback<List<RequestResponse>>() {
-            @Override
-            public void onResponse(Call<List<RequestResponse>> call, Response<List<RequestResponse>> response) {
-                if (response.isSuccessful()) {
-                    List<RequestResponse> requestResponses = response.body();
-                    hideProgressbar();
-                    requestAdapter.setData(requestResponses);
-                    recyclerView2.setAdapter(requestAdapter);
-                }
+public void getAll(){
+    Call<List<RequestResponse>> userlist = RequestClient.getRequests().getAllRequests();
+    showProgressbar();
+    userlist.enqueue(new Callback<List<RequestResponse>>() {
+        @Override
+        public void onResponse(Call<List<RequestResponse>> call, Response<List<RequestResponse>> response) {
+            if (response.isSuccessful()) {
+                List<RequestResponse> requestResponses = response.body();
+                hideProgressbar();
+                requestAdapter.setData(requestResponses);
+                recyclerView2.setAdapter(requestAdapter);
+
             }
+        }
 
-            @Override
-            public void onFailure(Call<List<RequestResponse>> call, Throwable t) {
+        @Override
+        public void onFailure(Call<List<RequestResponse>> call, Throwable t) {
 
-                Log.e("failure",t.getLocalizedMessage());
-            }
-        });
+            Log.e("failure",t.getLocalizedMessage());
+        }
+    });
 
-    }
+}
 
     @Override
     public void onStart() {

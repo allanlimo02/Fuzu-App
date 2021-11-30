@@ -1,11 +1,14 @@
 package com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI;
 
+import static java.lang.Integer.parseInt;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,14 +49,15 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestA
     public void onBindViewHolder(@NonNull RequestAdapterVH holder, int position) {
         RequestResponse requestResponse = requestREspondlist.get(position);
 
-        String leaveTitle = requestResponse.getPosition();
-        String date2 = requestResponse.getLeave_date_from();
-        String duration = requestResponse.getLeave_date_to();
+        String leaveTitleRes = requestResponse.getLeaveType();
+        String date2 = requestResponse.getLeaveDateFrom();
+        String duration = requestResponse.getLeaveDateTo();
         String Username3 = requestResponse.getEmployee();
-        holder.date2.setText(date2);
-        holder.leaveTitle.setText(leaveTitle);
-        holder.duration.setText(duration);
-        holder.Username3.setText(Username3);
+
+        holder.leaveTitle.setText(leaveTitleRes);
+        holder.startdate.setText(date2);
+        holder.staffname.setText(Username3);
+        holder.duration.setText("Duration: "+0+" Days");
 
     }
 
@@ -64,19 +68,18 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestA
 
     public class RequestAdapterVH extends RecyclerView.ViewHolder {
         TextView leaveTitle;
-        TextView date2;
+        TextView startdate;
         TextView duration;
-        TextView Username3;
+        TextView staffname;
         ImageView iconTick,xIcon;
         public RequestAdapterVH(@NonNull View itemView) {
             super(itemView);
             leaveTitle = itemView.findViewById(R.id.leaveTitle);
-            date2 = itemView.findViewById(R.id.date2);
+            startdate = itemView.findViewById(R.id.date2);
             duration= itemView.findViewById(R.id.duration);
-            Username3= itemView.findViewById(R.id.Username3);
+            staffname = itemView.findViewById(R.id.Username3);
             iconTick = itemView.findViewById(R.id.iconTick);
             xIcon = itemView.findViewById(R.id.xIcon);
-
             iconTick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -1,70 +1,44 @@
 package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 
-import android.app.ProgressDialog;
-import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.BaseColumns;
-import android.provider.MediaStore;
-import android.provider.OpenableColumns;
 
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.webkit.MimeTypeMap;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-
-
-import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
-import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.github.barteksc.pdfviewer.listener.OnPageErrorListener;
-import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.PDF.network.ApiConfig;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.PDF.network.AppConfig;
-import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.PDF.network.ServerResponse;
-import com.moringaschool.fuzupayapp.R;
-
-import com.shockwave.pdfium.PdfDocument;
-
-import java.io.File;
-import java.net.URI;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Pattern;
-
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-import android.os.Bundle;
-
+import androidx.core.app.ShareCompat;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.moringaschool.fuzupayapp.R;
 
-public class Add_Staff_Upload_Fragment extends Fragment  implements OnPageChangeListener, OnLoadCompleteListener,
-        OnPageErrorListener{
-    private int pageNumber = 0;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    private String pdfFileName;
-    private PDFView pdfView;
-    public ProgressDialog pDialog;
-    public static final int FILE_PICKER_REQUEST_CODE = 1;
-    private String pdfPath;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link Add_Staff_Upload_Fragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickListener{
+    @BindView(R.id.chooseFile) TextView chooseFile;
+
+
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
 
 
     public Add_Staff_Upload_Fragment() {
@@ -72,113 +46,43 @@ public class Add_Staff_Upload_Fragment extends Fragment  implements OnPageChange
     }
 
 
+    // TODO: Rename and change types and number of parameters
+    public static Add_Staff_Upload_Fragment newInstance(String param1, String param2) {
+        Add_Staff_Upload_Fragment fragment = new Add_Staff_Upload_Fragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //  uploadButton=(Button) uploadButton.findViewById(R.id.uploadButton);
+
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+
+
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add__staff__upload_, container, false);
-        pdfView = (PDFView) view.findViewById(R.id.pdfView);
-        initDialog();
+        ButterKnife.bind(this,view);
+        chooseFile.setOnClickListener(this);
         return view;
     }
-
-
-
     @Override
-    public void loadComplete(int nbPages) {
-        PdfDocument.Meta meta = pdfView.getDocumentMeta();
+    public void onClick(View v) {
+        if (v ==  chooseFile){
 
-        printBookmarksTree(pdfView.getTableOfContents(), "-");
-
-    }
-
-    public void printBookmarksTree(List<PdfDocument.Bookmark> tree, String sep) {
-        for (PdfDocument.Bookmark b : tree) {
-
-            //Log.e(TAG, String.format("%s %s, p %d", sep, b.getTitle(), b.getPageIdx()));
-
-            if (b.hasChildren()) {
-                printBookmarksTree(b.getChildren(), sep + "-");
-            }
+            Intent intent = new  Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(intent, 2);
         }
     }
-
-    @Override
-    public void onPageChanged(int page, int pageCount) {
-        pageNumber = page;
-//        setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-    }
-
-    @Override
-    public void onPageError(int page, Throwable t) {
-
-    }
-
-    private void uploadFile() {
-        if (pdfPath == null) {
-            Toast.makeText(getContext(), "please select an image ", Toast.LENGTH_LONG).show();
-            return;
-        } else {
-            showpDialog();
-
-            // Map is used to multipart the file using okhttp3.RequestBody
-            Map<String, RequestBody> map = new HashMap<>();
-            File file = new File(pdfPath);
-            // Parsing any Media type file
-            RequestBody requestBody = RequestBody.create(MediaType.parse("application/pdf"), file);
-            map.put("file\"; filename=\"" + file.getName() + "\"", requestBody);
-            ApiConfig getResponse = AppConfig.getRetrofit().create(ApiConfig.class);
-            Call<ServerResponse> call = getResponse.upload("token", map);
-            call.enqueue(new Callback<ServerResponse>() {
-                @Override
-                public void onResponse(Call<ServerResponse> call, Response<ServerResponse> response) {
-                    if (response.isSuccessful()){
-                        if (response.body() != null){
-                            hidepDialog();
-                            ServerResponse serverResponse = response.body();
-                            Toast.makeText(getContext(), serverResponse.getMessage(), Toast.LENGTH_SHORT).show();
-
-                        }
-                    }else {
-                        hidepDialog();
-                        Toast.makeText(getContext(), "problem image", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<ServerResponse> call, Throwable t) {
-                    hidepDialog();
-                    Log.v("Response gotten is", t.getMessage());
-                    Toast.makeText(getContext(), "problem uploading image " + t.getMessage(), Toast.LENGTH_SHORT).show();
-
-                }
-            });
-        }
-    }
-
-    protected void initDialog() {
-
-        pDialog = new ProgressDialog(getActivity());
-//        pDialog.setMessage(getString(R.string.msg_loading));
-        pDialog.setCancelable(true);
-    }
-
-
-    protected void showpDialog() {
-
-        if (!pDialog.isShowing()) pDialog.show();
-    }
-
-    protected void hidepDialog() {
-
-        if (pDialog.isShowing()) pDialog.dismiss();
-    }
-
-
-
 }

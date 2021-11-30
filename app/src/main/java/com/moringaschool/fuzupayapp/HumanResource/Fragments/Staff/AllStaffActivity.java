@@ -21,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -69,10 +70,10 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @BindView(R.id.titleBar) RelativeLayout titleBar;
     @BindView(R.id.imageView5) ImageView logout;
     @BindView(R.id.spinnerDep) Spinner spinnerDep;
-    @BindView(R.id.progressBar2)
-    ProgressBar progressBar;
-    @BindView(R.id.pleasewait)
-    TextView pleasewait;
+    @BindView(R.id.progressBar2)    ProgressBar progressBar;
+    @BindView(R.id.pleasewait)  TextView pleasewait;
+    @BindView(R.id.linearLayout7)  LinearLayout linearLayout7;
+
     Context context;
     StaffAdapter staffAdapter;
     StaffResponse staffResponses;
@@ -264,6 +265,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.WHITE);
             titleBar.setVisibility(View.VISIBLE);
+            linearLayout7.setVisibility(View.GONE);
             startActivity(new Intent(getApplicationContext(), AllStaffActivity.class));
             overridePendingTransition(0,0);
         }
@@ -275,7 +277,9 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentTwoBtn.setTextColor(Color.WHITE);
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.BLACK);
-            ourViewStaffHolder.setVisibility(View.GONE);            titleBar.setVisibility(View.GONE);
+            ourViewStaffHolder.setVisibility(View.GONE);
+            titleBar.setVisibility(View.GONE);
+            linearLayout7.setVisibility(View.GONE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
             fragmentTransaction.commit();
@@ -288,6 +292,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentTwoBtn.setTextColor(Color.BLACK);
             fragmentThreeBtn.setTextColor(Color.WHITE);
             fragmentOneBtn.setTextColor(Color.BLACK);
+            linearLayout7.setVisibility(View.GONE);
             startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
             overridePendingTransition(0,0);
 

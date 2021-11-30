@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIclient.staffClient;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIentities.Department_pojo;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIentities.EmployeesDetails_Pojo;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIinterface.staffInterface;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
@@ -45,9 +47,10 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class AllStaffActivity extends AppCompatActivity  implements View.OnClickListener{
-    @BindView(R.id.ourView)  RecyclerView ourView;
+//    @BindView(R.id.ourView)  RecyclerView ourView;
     @BindView(R.id.bottom_navigation)    BottomNavigationView bottomNavigationView;
     @BindView(R.id.fragmentOneBtn)   Button fragmentOneBtn;
     @BindView(R.id.fragmentTwoBtn)  Button fragmentTwoBtn;
@@ -58,6 +61,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @BindView(R.id.spinnerDep) Spinner spinnerDep;
 
     private List<Department_pojo> departmentlist;
+    ListView listView;
 //    List<Department_pojo> sectionlist = gson.fromJson(jsonTemp, new TypeToken<List<Department_pojo>>(){}.getType());
     private ArrayList<String>getDepName = new ArrayList<String>();
 
@@ -71,6 +75,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_staff);
         ButterKnife.bind(this);
+        listView=(ListView)findViewById(R.id.listView1);
         getDetpartMent();
 
         fragmentTwoBtn.setOnClickListener(this);
@@ -81,8 +86,8 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         // Array adapter feeder
 
         DepartmentAdapter adapter=new DepartmentAdapter(this,names,position,employmentType);
-        ourView.setAdapter(adapter);
-        ourView.setLayoutManager(new LinearLayoutManager(this));
+//        ourView.setAdapter(adapter);
+//        ourView.setLayoutManager(new LinearLayoutManager(this));
         // End of array adapter code
 
 
@@ -143,6 +148,9 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                         spinnerDep.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             @Override
                             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                                int getDepid = departmentlist.get(position).getDId();
+//                                getEmployeeDetails(getDepid);
+
 
                             }
 
@@ -164,6 +172,41 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                 Log.e("error",t.getMessage());
             }
         });
+    }
+
+    private void getEmployeeDetails(int getDepid) {
+        staffInterface serviceAPI = staffClient.getDepClient().create(staffInterface.class);
+        serviceAPI.getDetails().enqueue(new Callback<List<EmployeesDetails_Pojo>>() {
+            @Override
+            public void onResponse(Call<List<EmployeesDetails_Pojo>> call, Response<List<EmployeesDetails_Pojo>> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<List<EmployeesDetails_Pojo>> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    private void getDetpartMent(int getDetails) {
+        staffInterface serviceAPI = staffClient.getDepClient().create(staffInterface.class);
+        serviceAPI.getDetails().enqueue(new Callback<List<EmployeesDetails_Pojo>>() {
+            @Override
+            public void onResponse(Call<List<EmployeesDetails_Pojo>> call, Response<List<EmployeesDetails_Pojo>> response) {
+                Log.i("Response",response.body().toString());
+                if(response.isSuccessful()) {
+                    Log.i("Success", response.body().toString());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<EmployeesDetails_Pojo>> call, Throwable t) {
+
+            }
+        });
+
     }
 
     @Override
@@ -198,7 +241,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentTwoBtn.setTextColor(Color.WHITE);
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.BLACK);
-            ourView.setVisibility(View.GONE);
+//            ourView.setVisibility(View.GONE);
             titleBar.setVisibility(View.GONE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());

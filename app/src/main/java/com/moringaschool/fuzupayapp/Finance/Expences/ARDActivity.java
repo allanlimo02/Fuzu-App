@@ -3,10 +3,14 @@ package com.moringaschool.fuzupayapp.Finance.Expences;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,13 +25,23 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.Finance.Dashboard_Finance;
+import com.moringaschool.fuzupayapp.Finance.ExpensesApi.CompletedAdapter.ECompletedAdapter;
+import com.moringaschool.fuzupayapp.Finance.ExpensesApi.EcompletedClient;
+import com.moringaschool.fuzupayapp.Finance.ExpensesApi.EcompletedResponse;
 import com.moringaschool.fuzupayapp.Finance.Fragments.NewrunFragment;
 import com.moringaschool.fuzupayapp.Finance.Payroll2;
+import com.moringaschool.fuzupayapp.HumanResource.LeaveApi.onLeaveClient;
+import com.moringaschool.fuzupayapp.HumanResource.onLeaveResponse;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ARDActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     @BindView(R.id.SpinnerARD)   Spinner spinner;
@@ -43,6 +57,9 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
     ImageView logout;
 
     @BindView(R.id.frameLayoutPendings) FrameLayout Rpendings;
+//    RecyclerView recyclerView;
+//    ECompletedAdapter eCompletedAdapter;
+
 
 
     @Override
@@ -51,7 +68,6 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
         setContentView(R.layout.activity_ardactivity);
         ButterKnife.bind(this);
         logout.setOnClickListener(this);
-
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter .createFromResource(this,R.array.approve, android.R.layout.simple_spinner_item);
@@ -65,6 +81,12 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
         linelayout2.setOnClickListener(this);
         linelayout1.setOnClickListener(this);
         linelayout1.setOnClickListener(this);
+//
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+//        eCompletedAdapter = new ECompletedAdapter();
+//        getCompletedExpe();
+
 
         bottomNavigationView.setSelectedItemId(R.id.nav_expenses);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

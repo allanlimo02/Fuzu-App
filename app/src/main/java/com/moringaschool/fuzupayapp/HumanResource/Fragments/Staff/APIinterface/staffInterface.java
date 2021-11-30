@@ -13,4 +13,6 @@ public interface staffInterface {
 
     @GET("employees")
     Call<List<EmployeesDetails_Pojo>>getDetails();
+
+
 }

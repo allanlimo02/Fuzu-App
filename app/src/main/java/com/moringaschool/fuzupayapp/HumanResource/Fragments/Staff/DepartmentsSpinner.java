@@ -3,7 +3,9 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class DepartmentsSpinner {
+import java.io.Serializable;
+
+public class DepartmentsSpinner implements Serializable {
     private int id;
     private String name;
 

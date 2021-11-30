@@ -4,9 +4,11 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,9 @@ import android.widget.Toast;
 import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.Models.StaffResponse;
 import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.StaffAdapter;
 import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.StaffInterface;
+import com.moringaschool.fuzupayapp.Finance.ExpensesApi.CompletedAdapter.ECompletedAdapter;
+import com.moringaschool.fuzupayapp.Finance.ExpensesApi.EcompletedClient;
+import com.moringaschool.fuzupayapp.Finance.ExpensesApi.EcompletedResponse;
 import com.moringaschool.fuzupayapp.R;
 
 import java.util.List;
@@ -37,10 +42,17 @@ public class FinanceStaffFragment extends Fragment  implements View.OnClickListe
 //    @BindView(R.id.babu) RelativeLayout babu;
     @BindView(R.id.relativeTwo) RelativeLayout relativeTwo;
     @BindView(R.id.headingPart) RelativeLayout headingPart;
-    @BindView(R.id.framebabu) RecyclerView recViewBabu;
+    @BindView(R.id.frameComplete) RecyclerView recyclerComplete;
     Context context;
+    ECompletedAdapter eCompletedAdapter;
+
 //    private Factory GsonConverterFactory;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
 
     @Override
 public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,12 +63,39 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
 //    rowone.setOnClickListener(this);
 //    row2.setOnClickListener(this);
 //    row3.setOnClickListener(this);
-        recViewBabu.hasFixedSize();
-        recViewBabu.setLayoutManager(new LinearLayoutManager(context));
+//        recyclerComplete.hasFixedSize();
+//        recyclerComplete.setLayoutManager(new LinearLayoutManager(context));
+        recyclerComplete = view.findViewById(R.id.frameComplete);
+        recyclerComplete.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerComplete.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+        eCompletedAdapter = new ECompletedAdapter();
+        getCompletedExpe();
 
     return view;
 
 }
+
+    private void getCompletedExpe() {
+        Call<List<EcompletedResponse>> ecompletedList = EcompletedClient.getCompletedService().getCompletedExpense();
+        ecompletedList.enqueue(new Callback<List<EcompletedResponse>>() {
+            @Override
+            public void onResponse(Call<List<EcompletedResponse>> call, Response<List<EcompletedResponse>> response) {
+                if(response.isSuccessful()){
+                    List<EcompletedResponse> ecompletedResponses = response.body();
+                    eCompletedAdapter.setData(ecompletedResponses);
+                    recyclerComplete.setAdapter(eCompletedAdapter);
+                    Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<EcompletedResponse>> call, Throwable t) {
+                Log.d("Failure",t.getLocalizedMessage());
+
+            }
+        });
+    }
+
     @Override
     public void onClick(View v) {
 //    if(v==rowone){

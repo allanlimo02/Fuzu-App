@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/ni"
             android:layout_width="103dp"
-            android:layout_marginStart="-7dp"
             android:layout_height="41dp"
+            android:layout_marginStart="-7dp"
             android:src="@drawable/logo_clear" />
 
         <ImageView

@@ -7,20 +7,19 @@
     android:background="#fbf3ee"
     android:layout_height="match_parent"
     tools:context=".HumanResource.Dashboard.DashboardActivity">
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbardashboard"/>
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Good Morning,"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="7dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbardashboard"
         android:textColor="@color/one"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        />
 
     <TextView
         android:id="@+id/textUser"
@@ -29,12 +28,10 @@
         android:text="Michael"
         android:textStyle="bold"
         android:textColor="#DB3F70"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="7dp"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        />
 
 
     <RelativeLayout
@@ -51,12 +48,12 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="23dp"
-            android:textSize="14sp"
             android:text="You have pending leave requests awaiting your approval"
             android:textColor="@color/black"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.661"
             app:layout_constraintStart_toStartOf="parent" />

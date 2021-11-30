@@ -75,17 +75,11 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     TextView pleasewait;
     Context context;
     StaffAdapter staffAdapter;
-
+    StaffResponse staffResponses;
+    Department_pojo department_pojos;
     private List<Department_pojo> departmentlist;
-//    List<Department_pojo> sectionlist = gson.fromJson(jsonTemp, new TypeToken<List<Department_pojo>>(){}.getType());
     private ArrayList<String>getDepName = new ArrayList<String>();
     private ItemOnclickPosition itemOnclickPosition;
-//
-//    private List list;
-//    private String[] names=new String[]{"Allan Limo","AronLangat","Esther Moki","Judy Rop","Erick Okumu"};
-//    private String[] position= new String[]{"Manager","C.E.O","Developer","Tester","Production"};
-//    private String[] employmentType= new String[]{" Full time","Contract","Full time","Internship","Internship"};
-//
 
 
     @Override
@@ -94,6 +88,8 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         setContentView(R.layout.activity_all_staff);
         ButterKnife.bind(this);
         getDetpartMent();
+//        fetchAPI();
+
 
         fragmentTwoBtn.setOnClickListener(this);
         fragmentOneBtn.setOnClickListener(this);
@@ -103,46 +99,14 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         ourViewStaffHolder.setLayoutManager(new LinearLayoutManager(this));
         ourViewStaffHolder.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         staffAdapter=new StaffAdapter();
-        fetchAPI();
-
-        // Array adapter feeder
-
-//        DepartmentAdapter adapter=new DepartmentAdapter(this,names,position,employmentType);
-//        ourView.setAdapter(adapter);
-//        ourView.setLayoutManager(new LinearLayoutManager(this));
-        // End of array adapter code
-
-
-//        ourViewStaffHolder.setLayoutManager(new LinearLayoutManager(this));
-//        ourViewStaffHolder.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_staff);
-
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        bottomNavigation();
 
 
-                switch (item.getItemId()) {
-                    case R.id.nav_home:
-                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.nav_leave:
-                        startActivity(new Intent(getApplicationContext(), LeaveActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.nav_staff:
-                        return true;
-                }
-                return false;
-            }
-        });
     }
-
-
 
 
 
@@ -172,14 +136,17 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                         for(int i= 0;i<departmentlist.size();i++){
                             getDepName.add(departmentlist.get(i).getDname());
                         }
+
                         ArrayAdapter<String> newDepNameAD = new ArrayAdapter<String>(AllStaffActivity.this, android.R.layout.simple_spinner_item,getDepName);
                         newDepNameAD.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         spinnerDep.setAdapter(newDepNameAD);
                         spinnerDep.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             @Override
                             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                                int getdepid = departmentlist.get(i).getId();
-//                                getEmpDetails(getdepid);
+                                    fetchAPI();
+
+                                    String text = adapterView.getItemAtPosition(i).toString();
+
                             }
 
                             @Override
@@ -192,6 +159,32 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                         ex.printStackTrace();
                     }
                 }
+            }
+
+            private void getEmpDetails(int getdepid) {
+                Call<List<StaffResponse>> stafflist= StaffClientClass.staffInterface().getStaff();
+                showProgressbar();
+                stafflist.enqueue(new Callback<List<StaffResponse>>() {
+
+                    @Override
+                    public void onResponse(Call<List<StaffResponse>> call, Response<List<StaffResponse>> response) {
+                        hideProgressbar();
+                        if(response.isSuccessful()){
+
+                            List<StaffResponse> staffResponses = response.body();
+                            staffAdapter.StaffAdapterFilled(staffResponses, itemOnclickPosition);
+                            ourViewStaffHolder.setAdapter(staffAdapter);
+
+
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<List<StaffResponse>> call, Throwable t) {
+                        hideProgressbar();
+                        Log.e("Haiwezimake",t.getLocalizedMessage());
+                    }
+                });
+
             }
 
             @Override
@@ -236,6 +229,29 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         fragmentTwoBtn.setTextColor(Color.BLACK);
         fragmentThreeBtn.setTextColor(Color.BLACK);
         fragmentOneBtn.setTextColor(Color.WHITE);
+    }
+
+    private void bottomNavigation() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.nav_leave:
+                        startActivity(new Intent(getApplicationContext(), LeaveActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.nav_staff:
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -300,5 +316,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @Override
     public void onItemClick(int position) {
     }
+
+
 
 }

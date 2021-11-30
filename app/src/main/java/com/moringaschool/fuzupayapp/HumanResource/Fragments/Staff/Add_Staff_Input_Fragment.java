@@ -1,6 +1,8 @@
 package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 
+        import android.app.Activity;
         import android.content.Context;
+        import android.content.Intent;
         import android.os.Bundle;
 
         import androidx.fragment.app.Fragment;
@@ -22,6 +24,7 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
         import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.Docs.DocsApploadUserRequest;
         import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.Docs.DocsApploadUserResponse;
         import com.moringaschool.fuzupayapp.R;
+        import com.moringaschool.fuzupayapp.SuccessPage.Success;
 
         import butterknife.BindView;
         import butterknife.ButterKnife;
@@ -102,7 +105,9 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
             @Override
             public void onResponse(Call<BankApploadUserResponse> call, Response<BankApploadUserResponse> response) {
                 if(response.isSuccessful()){
-                    Toast.makeText(getActivity(),"saved successfully",Toast.LENGTH_LONG).show();
+                    Intent m = new Intent(getActivity(), Success.class);
+                    startActivity(m);
+                    ((Activity) getActivity()).overridePendingTransition(0, 0);
                 }
                 else{
                     Toast.makeText(getActivity(),"Docs not saved successfully please input the required inputs",Toast.LENGTH_LONG).show();

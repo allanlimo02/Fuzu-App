@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:background="#fbf3ee"
     android:layout_height="match_parent"
-    tools:context=".SuccessPage.Error">
+    tools:context=".SuccessPage.Error"
+    android:id="@+id/main_Error">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -31,6 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/errorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/border_red"

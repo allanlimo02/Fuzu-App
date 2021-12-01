@@ -62,7 +62,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AllStaffActivity extends AppCompatActivity  implements View.OnClickListener, ItemOnclickPosition {
+public class AllStaffActivity extends AppCompatActivity  implements StaffAdapter.ClickedItems, View.OnClickListener{
     @BindView(R.id.ourViewStaffHolder)  RecyclerView ourViewStaffHolder;
     @BindView(R.id.bottom_navigation)    BottomNavigationView bottomNavigationView;
     @BindView(R.id.fragmentOneBtn)   Button fragmentOneBtn;
@@ -89,8 +89,10 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     String text="Human Resource";
 
 
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_staff);
         ButterKnife.bind(this);
@@ -110,7 +112,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
         ourViewStaffHolder.setLayoutManager(new LinearLayoutManager(this));
         ourViewStaffHolder.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-        staffAdapter=new StaffAdapter();
+        staffAdapter=new StaffAdapter(this::ClickedUser);
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -122,7 +124,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
 
 //    Notifications
-    private void NotificationFetch() {
+    public  void NotificationFetch() {
         Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
 
         userlist.enqueue(new Callback<List<NotificationResponse>>() {
@@ -203,35 +205,6 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                     }
                 }
             }
-
-//            private void getEmpDetails(int getdepid) {
-//                Call<List<StaffResponse>> stafflist= StaffClientClass.staffInterface().getStaff();
-//                showProgressbar();
-//                stafflist.enqueue(new Callback<List<StaffResponse>>() {
-//
-//                    @Override
-//                    public void onResponse(Call<List<StaffResponse>> call, Response<List<StaffResponse>> response) {
-//                        hideProgressbar();
-//                        if(response.isSuccessful()){
-//
-//
-//                            List<StaffResponse> staffResponses = response.body();
-//                            staffAdapter.StaffAdapterFilled(staffResponses, itemOnclickPosition);
-//                            ourViewStaffHolder.setAdapter(staffAdapter);
-//
-//
-//
-//
-//                        }
-//                    }
-//                    @Override
-//                    public void onFailure(Call<List<StaffResponse>> call, Throwable t) {
-//                        hideProgressbar();
-//                        Log.e("Haiwezimake",t.getLocalizedMessage());
-//                    }
-//                });
-//
-//            }
 
             @Override
             public void onFailure(Call<List> call, Throwable t) {
@@ -369,7 +342,8 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentTwoBtn.setTextColor(Color.WHITE);
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.BLACK);
-            ourViewStaffHolder.setVisibility(View.GONE);            titleBar.setVisibility(View.GONE);
+            ourViewStaffHolder.setVisibility(View.GONE);
+            titleBar.setVisibility(View.GONE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
             fragmentTransaction.commit();
@@ -407,10 +381,13 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         pleasewait.setVisibility(View.GONE);
     }
 
+//    @Override
+//    public void onItemClick(int position) {
+//    }
+
+
     @Override
-    public void onItemClick(int position) {
+    public void ClickedUser(StaffResponse staffResponse) {
+
     }
-
-
-
 }

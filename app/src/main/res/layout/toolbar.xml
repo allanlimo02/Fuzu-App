@@ -26,19 +26,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_outline_notifications" />
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/motifivationsNumberContainer"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_alignEnd="@+id/imageView6"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="#FF0000"
-        android:background="#FF0000"
-        app:cardCornerRadius="50dp"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_weight="1"
+        android:backgroundTint="#FF0000"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@id/imageView6"
-        />
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="7dp"/>
 
 
     <ImageView

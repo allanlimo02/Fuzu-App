@@ -137,33 +137,39 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
         docsApploadUserRequest.setOther_names(mOtherNameEditText.getText().toString().trim());
         docsApploadUserRequest.setPhone_number(mPhoneNumberEditText.getText().toString().trim());
         docsApploadUserRequest.setEmail(mEmailEditText.getText().toString().trim());
-        docsApploadUserRequest.setId_no(mEmailEditText.getText().toString().trim());
+        docsApploadUserRequest.setId_no(mIdPassportNumberEditText.getText().toString().trim());
+        docsApploadUserRequest.setBirth_date(mDateOfBirthEditText.getText().toString().trim());
+        docsApploadUserRequest.setNationality(mNationalityEditText.getText().toString().trim());
+        docsApploadUserRequest.setEmployment_date(mEmploymentDateEditText.getText().toString().trim());
+        docsApploadUserRequest.setGross_salary(mGrossSalaryEditText.getText().toString().trim());
+        docsApploadUserRequest.setMarital_status(mMaritalStatusEditText.getText().toString().trim());
+        docsApploadUserRequest.setEmergency_contact(mEmergencyContactEditText.getText().toString().trim());
+        docsApploadUserRequest.setEmergency_phone(mEmergencyContactPhoneEditText.getText().toString().trim());
+        docsApploadUserRequest.setPosition(mPositionEditText.getText().toString().trim());
+
 
 
         return docsApploadUserRequest;
     }
-    public void saveDocs(DocsApploadUserRequest docsApploadUserRequest){
-        Call<DocsApploadUserResponse> docsApploadUserResponseCall= DocsApploadApiClient.getDocsApploadService().saveDocs(docsApploadUserRequest);
+    public void saveDocs(DocsApploadUserRequest docsApploadUserRequest) {
+        Call<DocsApploadUserResponse> docsApploadUserResponseCall = DocsApploadApiClient.getDocsApploadService().saveDocs(docsApploadUserRequest);
         docsApploadUserResponseCall.enqueue(new Callback<DocsApploadUserResponse>() {
             @Override
             public void onResponse(Call<DocsApploadUserResponse> call, Response<DocsApploadUserResponse> response) {
-                if(response.isSuccessful()){
-                    Toast.makeText(getActivity(),"saved successfully",Toast.LENGTH_LONG).show();
-
-                }
-                else{
-                    Toast.makeText(getActivity(),"Not saved successfully",Toast.LENGTH_LONG).show();
+                if (response.isSuccessful()) {
+                    Toast.makeText(getActivity(), "saved successfully", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getActivity(), "Not saved7 successfully", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<DocsApploadUserResponse> call, Throwable t) {
-                Toast.makeText(getActivity(),"Request failure"+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 
     }
-
 
 //    private BankApploadUserRequest createRequest() {
 //    }
@@ -226,17 +232,18 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
         }else
         if(grossSalary .equals("")){
             mGrossSalaryEditText.setError("Cannot be blank");
-        }else{
-//        if( bankName.equals("")){
-//            mBankNameEditText.setError("Cannot be blank");
-//        }else if(  branch.equals("")){
-//            mBranchEditText.setError("Cannot be blank");
-//        }else if( accountNumber .equals("")){
-//            mAccountNumberEditText.setError("Cannot be blank");
-//        }else {
-//            saveBank(createRequest());
-            saveDocs(DocsRequest());
-        }
+        }else {
+            if (bankName.equals("")) {
+                mBankNameEditText.setError("Cannot be blank");
+            } else if (branch.equals("")) {
+                mBranchEditText.setError("Cannot be blank");
+            } else if (accountNumber.equals("")) {
+                mAccountNumberEditText.setError("Cannot be blank");
+            } else {
+//                saveBank(createRequest());
+                saveDocs(DocsRequest());
+            }
 
+        }
     }
 }

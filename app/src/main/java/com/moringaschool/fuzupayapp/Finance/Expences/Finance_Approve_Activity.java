@@ -2,11 +2,13 @@ package com.moringaschool.fuzupayapp.Finance.Expences;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +18,8 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
 import com.moringaschool.fuzupayapp.Finance.Dashboard_Finance;
 import com.moringaschool.fuzupayapp.Finance.EpaymentsFragment;
 import com.moringaschool.fuzupayapp.Finance.FinanceStaffFragment;
@@ -23,8 +27,13 @@ import com.moringaschool.fuzupayapp.Finance.Payroll2;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Finance_Approve_Activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,6 +44,8 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
     @BindView(R.id.my_bottom_navigation) BottomNavigationView our_bottom_navigation;
     @BindView(R.id.imageView5)
     ImageView logout;
+    @BindView(R.id.motifivationsNumberContainer)
+    CardView notify;
     @Override
     protected void onStart() {
         super.onStart();
@@ -54,6 +65,8 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
         payments.setOnClickListener(this);
         completed.setOnClickListener(this);
         logout.setOnClickListener(this);
+
+        NotificationFetch();
 
         Pending.setBackgroundColor(Color.rgb(0,70,115));
         Pending.setTextColor(Color.WHITE);
@@ -124,4 +137,35 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
         }
 
     }
+    public  void NotificationFetch() {
+        Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
+
+        userlist.enqueue(new Callback<List<NotificationResponse>>() {
+            @Override
+            public void onResponse(Call<List<NotificationResponse>> call, Response<List<NotificationResponse>> response) {
+                if (response.isSuccessful()){
+                    List<NotificationResponse> notificationIcon = response.body();
+                    for(NotificationResponse notes:notificationIcon){
+                        String id = String.valueOf(notes.getId().toString());
+                        int intid = new Integer(id).intValue();
+                        if(intid<1){
+                            notify.setVisibility(View.GONE);
+                        }
+                        else {
+                            notify.setVisibility(View.VISIBLE);
+                        }
+
+//                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<NotificationResponse>> call, Throwable t) {
+                Log.e("failure",t.getLocalizedMessage());
+            }
+        });
+    }
+
 }

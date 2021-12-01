@@ -74,8 +74,8 @@ public class AllStaffActivity extends AppCompatActivity  implements StaffAdapter
     @BindView(R.id.spinnerDep) Spinner spinnerDep;
     @BindView(R.id.progressBar2)
     ProgressBar progressBar;
-    @BindView(R.id.pleasewait)
-    TextView pleasewait;
+    @BindView(R.id.pleasewait) TextView pleasewait;
+    @BindView(R.id.imageView6) ImageView notifications;
 
     @BindView(R.id.motifivationsNumberContainer) CardView notify;
     Context context;
@@ -109,6 +109,7 @@ public class AllStaffActivity extends AppCompatActivity  implements StaffAdapter
         fragmentOneBtn.setOnClickListener(this);
         fragmentThreeBtn.setOnClickListener(this);
         logout.setOnClickListener(this);
+        notifications.setOnClickListener(this);
 
         ourViewStaffHolder.setLayoutManager(new LinearLayoutManager(this));
         ourViewStaffHolder.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
@@ -323,6 +324,11 @@ public class AllStaffActivity extends AppCompatActivity  implements StaffAdapter
 
     @Override
     public void onClick(View v) {
+        if(v==notifications){
+            startActivity(new Intent(getApplicationContext(), LeaveActivity.class));
+            overridePendingTransition(0,0);
+        }
+
         if(v==fragmentOneBtn){
             fragmentThreeBtn.setBackgroundColor(Color.WHITE);
             fragmentTwoBtn.setBackgroundColor(Color.WHITE);

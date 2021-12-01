@@ -8,6 +8,87 @@ public class DocsApploadUserRequest {
     private String other_names;
     private String phone_number;
     private String position;
+    private String Email;
+    private String id_no;
+    private String nationality;
+    private String birth_date;
+    private String employment_date;
+    private String gross_salary;
+    private String marital_status;
+    private String emergency_phone;
+    private String emergency_contact;
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getId_no() {
+        return id_no;
+    }
+
+    public void setId_no(String id_no) {
+        this.id_no = id_no;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getBirth_date() {
+        return birth_date;
+    }
+
+    public void setBirth_date(String birth_date) {
+        this.birth_date = birth_date;
+    }
+
+    public String getEmployment_date() {
+        return employment_date;
+    }
+
+    public void setEmployment_date(String employment_date) {
+        this.employment_date = employment_date;
+    }
+
+    public String getGross_salary() {
+        return gross_salary;
+    }
+
+    public void setGross_salary(String gross_salary) {
+        this.gross_salary = gross_salary;
+    }
+
+    public String getMarital_status() {
+        return marital_status;
+    }
+
+    public void setMarital_status(String marital_status) {
+        this.marital_status = marital_status;
+    }
+
+    public String getEmergency_phone() {
+        return emergency_phone;
+    }
+
+    public void setEmergency_phone(String emergency_phone) {
+        this.emergency_phone = emergency_phone;
+    }
+
+    public String getEmergency_contact() {
+        return emergency_contact;
+    }
+
+    public void setEmergency_contact(String emergency_contact) {
+        this.emergency_contact = emergency_contact;
+    }
 
     public String getEmployee_id() {
         return employee_id;

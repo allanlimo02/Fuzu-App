@@ -37,8 +37,8 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
     @BindView(R.id.Ecompleted)Button completed;
 
     @BindView(R.id.linelayout1) LinearLayout linelayout1;
-    @BindView(R.id.linelayout2) LinearLayout linelayout2;
-    @BindView(R.id.linelayout3) LinearLayout linelayout3;
+ //   @BindView(R.id.linelayout2) LinearLayout linelayout2;
+  //  @BindView(R.id.linelayout3) LinearLayout linelayout3;
     @BindView(R.id.imageView5)
     ImageView logout;
 
@@ -62,7 +62,7 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
         Pending.setOnClickListener(this);
         payments.setOnClickListener(this);
         completed.setOnClickListener(this);
-        linelayout2.setOnClickListener(this);
+       // linelayout2.setOnClickListener(this);
         linelayout1.setOnClickListener(this);
         linelayout1.setOnClickListener(this);
 

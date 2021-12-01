@@ -44,6 +44,7 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.De
 
     @Override
     public int getItemCount() {
+
         return departmentResponseList.size();
     }
 

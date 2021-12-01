@@ -85,6 +85,7 @@ public class DepartmentsFragment extends Fragment implements AdapterView.OnItemS
         return view;
     }
 
+
     private void getDepartment() {
         Call<List<DepartmentResponse>> departmentList = DepartmentClient.getDepartmentService().getDepartment();
         departmentList.enqueue(new Callback<List<DepartmentResponse>>() {
@@ -163,7 +164,6 @@ public class DepartmentsFragment extends Fragment implements AdapterView.OnItemS
 
             @Override
             public void onFailure(Call<List> call, Throwable t) {
-//                Toast.makeText(AllStaffActivity.this,t.getMessage(),Toast.LENGTH_LONG).show();
                 Log.e("error",t.getMessage());
             }
         });

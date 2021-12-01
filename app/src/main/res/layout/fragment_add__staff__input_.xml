@@ -20,8 +20,10 @@
         <!--    line 1-->
 
         <LinearLayout
+            android:id="@+id/lineone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -33,21 +35,22 @@
                     android:id="@+id/employeeCodeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#000000"
                     android:layout_marginStart="2dp"
-                    android:text="Employee_code*" />
+                    android:text="Employee_code*"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
 
 
                 <EditText
                     android:id="@+id/employeeCode"
                     android:layout_width="110dp"
-                    android:layout_height="35dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:inputType="textPersonName"/>
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="4dp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,20 +60,21 @@
                 <TextView
                     android:id="@+id/surnameTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
                     android:layout_height="wrap_content"
-                    android:text="surname*" />
+                    android:text="surname*"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
 
 
                 <EditText
                     android:id="@+id/surname"
                     android:layout_width="110dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:inputType="textPersonName"/>
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="4dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,29 +84,29 @@
                 <TextView
                     android:id="@+id/otherNameTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
                     android:layout_height="wrap_content"
-                    android:text="other_name*" />
+                    android:text="other_name*"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
 
 
                 <EditText
                     android:id="@+id/otherName"
                     android:layout_width="110dp"
-                    android:layout_height="35dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:inputType="textPersonName" />
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="4dp" />
 
             </LinearLayout>
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="50dp"
+            android:id="@+id/linetwo"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -113,20 +117,21 @@
                 <TextView
                     android:id="@+id/phoneNumberTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
                     android:layout_height="wrap_content"
-                    android:text="Phone Number*" />
+                    android:text="Phone Number*"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
 
 
                 <EditText
                     android:id="@+id/phoneNumber"
                     android:layout_width="110dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:inputType="textPersonName" />
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="4dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -136,19 +141,20 @@
                 <TextView
                     android:id="@+id/emailTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
                     android:layout_height="wrap_content"
-                    android:text="Email" />
+                    android:text="Email"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/email"
-                    android:paddingLeft="4dp"
                     android:layout_width="110dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:inputType="textEmailAddress" />
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="4dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,105 +164,112 @@
                 <TextView
                     android:id="@+id/idPassportNumberTextView"
                     android:layout_width="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
                     android:layout_height="wrap_content"
-                    android:text="ID/Passport Number" />
+                    android:text="ID/Passport Number"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/idPassportNumber"
                     android:layout_width="110dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:inputType="textPersonName"/>
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="4dp" />
             </LinearLayout>
         </LinearLayout>
-      <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="120dp">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <!--    line3-->
-
-        <TextView
-            android:id="@+id/nationalityTextView"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:textColor="#000000"
-            android:textSize="12sp"
             android:layout_height="wrap_content"
-            android:text="Nationality"/>
+            android:layout_below="@+id/linetwo"
+            android:id="@+id/linethree"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--    line3-->
+
+                <TextView
+                    android:id="@+id/nationalityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nationality"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
 
 
-        <EditText
-            android:id="@+id/nationality"
-            android:layout_width="110dp"
-            android:paddingLeft="4dp"
-            android:background="@drawable/thin_border"
-            android:layout_height="35dp"
-            android:inputType="textPersonName"/>
+                <EditText
+                    android:id="@+id/nationality"
+                    android:layout_width="110dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="4dp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:orientation="vertical">
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/dateOfBirthTextView"
-            android:layout_width="wrap_content"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            android:layout_height="wrap_content"
-            android:text="Date of Birth" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dateOfBirthTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Birth"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
 
 
-        <EditText
-            android:id="@+id/dateOfBirth"
-            android:layout_width="110dp"
-            android:paddingLeft="4dp"
-            android:background="@drawable/thin_border"
-            android:layout_height="35dp"
-            android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/dateOfBirth"
+                    android:layout_width="110dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="4dp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:orientation="vertical">
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/positionTextView"
-            android:layout_width="wrap_content"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            android:layout_height="wrap_content"
-            android:text="Position*" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/position"
-            android:layout_width="110dp"
-            android:paddingLeft="4dp"
-            android:background="@drawable/thin_border"
-            android:layout_height="35dp"
-            android:inputType="textPersonName" />
-    </LinearLayout>
-</LinearLayout>
+                <TextView
+                    android:id="@+id/positionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Position*"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/position"
+                    android:layout_width="110dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="4dp" />
+            </LinearLayout>
+        </LinearLayout>
 
 
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_marginTop="176dp">
+    android:layout_below="@+id/linethree"
+    android:id="@+id/linefour"
+    android:layout_marginTop="10dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -277,8 +290,8 @@
             android:id="@+id/departmentDocs"
             android:inputType="number"
             android:layout_width="110dp"
-            android:background="@drawable/thin_border"
-            android:layout_height="35dp"
+            android:background="@drawable/super_thin_backround"
+            android:layout_height="25dp"
             android:paddingLeft="4dp"
             />
     </LinearLayout>
@@ -300,8 +313,8 @@
             android:id="@+id/employmentType"
             android:layout_width="110dp"
             android:paddingLeft="4dp"
-            android:background="@drawable/thin_border"
-            android:layout_height="35dp"
+            android:background="@drawable/super_thin_backround"
+            android:layout_height="25dp"
             android:inputType="textPersonName" />
 
     </LinearLayout>
@@ -321,8 +334,8 @@
         <EditText
             android:id="@+id/employmentDate"
             android:layout_width="110dp"
-            android:background="@drawable/thin_border"
-            android:layout_height="35dp"
+            android:background="@drawable/super_thin_backround"
+            android:layout_height="25dp"
             android:paddingLeft="4dp"
             android:inputType="textPersonName"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -332,7 +345,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="234dp">
+          android:layout_marginTop="10dp"
+          android:id="@+id/line5"
+            android:layout_below="@+id/linefour">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -353,8 +368,8 @@
                     android:id="@+id/grossSalary"
                     android:layout_width="110dp"
                     android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:layout_height="25dp"
                     android:inputType="textPersonName" />
 
             </LinearLayout>
@@ -376,8 +391,8 @@
                     android:id="@+id/maritalStatus"
                     android:layout_width="110dp"
                     android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:layout_height="25dp"
                     android:inputType="textPersonName" />
 
             </LinearLayout>
@@ -400,8 +415,8 @@
                     android:id="@+id/emergencyContact"
                     android:layout_width="110dp"
                     android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:layout_height="25dp"
                     android:inputType="textPersonName"/>
 
             </LinearLayout>
@@ -410,8 +425,10 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="292dp">
+            android:layout_below="@+id/line5"
+            android:layout_marginTop="10dp"
+            android:id="@+id/line6"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -422,17 +439,17 @@
                     android:id="@+id/emergencyContactPhoneTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
+                    android:text="Emergency Contact Phone"
                     android:textColor="#000000"
-                    android:text="Emergency Contact Phone" />
+                    android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/emergencyContactPhone"
                     android:layout_width="110dp"
-                    android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="35dp"
-                    android:inputType="textPersonName" />
+                    android:layout_height="25dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="4dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -440,17 +457,20 @@
             android:id="@+id/paymentDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="348dp"
-            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/line6"
             android:text="Payment Details"
-            android:textColor="#0c4763" />
+            android:textColor="#0c4763"
+            android:textStyle="bold" />
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="374dp">
+            android:id="@+id/lastrow"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/paymentDetails">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -470,8 +490,8 @@
                     android:id="@+id/bankName"
                     android:layout_width="110dp"
                     android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="34dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:layout_height="25dp"
                     android:inputType="textPersonName"/>
             </LinearLayout>
             <LinearLayout
@@ -492,8 +512,8 @@
                     android:id="@+id/branch"
                     android:paddingLeft="4dp"
                     android:layout_width="110dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="34dp"
+                    android:background="@drawable/super_thin_backround"
+                    android:layout_height="25dp"
                     android:inputType="textPersonName" />
 
             </LinearLayout>
@@ -515,9 +535,9 @@
                     android:id="@+id/accountNumber"
                     android:layout_width="110dp"
                     android:paddingLeft="4dp"
-                    android:background="@drawable/thin_border"
-                    android:layout_height="34dp"
-                    android:inputType="textPersonName" />
+                    android:background="@drawable/super_thin_backround"
+                    android:layout_height="25dp"
+                    android:inputType="number" />
 
             </LinearLayout>
         </LinearLayout>
@@ -526,8 +546,9 @@
             android:id="@+id/saveDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/lastrow"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="434dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#0c4763"
             android:text="Save Details"
             android:textAllCaps="false"

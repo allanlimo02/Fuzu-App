@@ -16,9 +16,6 @@ import android.widget.ProgressBar;
 import com.moringaschool.fuzupayapp.Finance.Pazyroll.reviewApi.ReviewAdapter;
 import com.moringaschool.fuzupayapp.Finance.Pazyroll.reviewApi.ReviewClient;
 import com.moringaschool.fuzupayapp.Finance.Pazyroll.reviewApi.reviewResponse;
-import com.moringaschool.fuzupayapp.HumanResource.LeaveApi.onLeaveClient;
-import com.moringaschool.fuzupayapp.HumanResource.onLeaveAdapter;
-import com.moringaschool.fuzupayapp.HumanResource.onLeaveResponse;
 import com.moringaschool.fuzupayapp.R;
 
 import java.util.List;

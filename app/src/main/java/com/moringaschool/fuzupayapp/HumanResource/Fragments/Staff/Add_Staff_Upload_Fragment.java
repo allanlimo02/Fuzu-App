@@ -85,21 +85,8 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
             startActivityForResult(intent, 2);
         }
     }
-    @Override
-    public void onClick(View v) {
-        if (v ==  chooseFile){
-
-          Intent intent = new  Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-           startActivityForResult(intent, 2);
 
 
-
-
-
-
-
-        }
-    }
 }
 
 

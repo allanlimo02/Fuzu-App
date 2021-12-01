@@ -388,6 +388,6 @@ public class AllStaffActivity extends AppCompatActivity  implements StaffAdapter
 
     @Override
     public void ClickedUser(StaffResponse staffResponse) {
-
+       startActivity(new Intent(this,SIngleStaffActivity.class).putExtra("data",staffResponse));
     }
 }

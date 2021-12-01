@@ -44,7 +44,7 @@ public class LeaveActivityTest extends TestCase {
     //test on recyclerview functionality
     @Test
     public void test_recyclerView_functionality() throws Exception {
-        onView(ViewMatchers.withId(R.id.recview2)).check(matches(isDisplayed()));
+        onView(ViewMatchers.withId(R.id.recviewRequest)).check(matches(isDisplayed()));
     }
     //Test on radioButton
     @Test

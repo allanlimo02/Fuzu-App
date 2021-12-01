@@ -1,34 +1,29 @@
-package com.moringaschool.fuzupayapp.loginAPI;
-
-import org.jetbrains.annotations.TestOnly;
+package com.moringaschool.fuzupayapp.APIRequests;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+public class PayrollApiClient {
 
-public class loginClient {
 
-    public static Retrofit getRetrofit(){
-
+    private static Retrofit getRetrofit(){
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
-
-
-
         Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://machachari.herokuapp.com/finance/api/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://machachari.herokuapp.com/")
-                .client(okHttpClient)
+                .client( okHttpClient)
                 .build();
+
         return retrofit;
     }
 
-    public static loginInterface getService(){
-       loginInterface loginInterface = getRetrofit().create(com.moringaschool.fuzupayapp.loginAPI.loginInterface.class);
-        return loginInterface;
+    public static PayrollService getPayrollService(){
+        PayrollService payrollService = getRetrofit().create(PayrollService.class);
+        return payrollService;
     }
 }

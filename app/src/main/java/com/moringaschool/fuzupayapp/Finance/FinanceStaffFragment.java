@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -42,6 +43,7 @@ public class FinanceStaffFragment extends Fragment  implements View.OnClickListe
     @BindView(R.id.frameComplete) RecyclerView recyclerComplete;
     Context context;
     ECompletedAdapter eCompletedAdapter;
+    ProgressBar progressBar;
 
 //    private Factory GsonConverterFactory;
 
@@ -65,6 +67,7 @@ public class FinanceStaffFragment extends Fragment  implements View.OnClickListe
         recyclerComplete = view.findViewById(R.id.frameComplete);
         recyclerComplete.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerComplete.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+        progressBar = view.findViewById(R.id.completeProgress);
         eCompletedAdapter = new ECompletedAdapter();
         getCompletedExpe();
 
@@ -74,9 +77,11 @@ public class FinanceStaffFragment extends Fragment  implements View.OnClickListe
 
     private void getCompletedExpe() {
         Call<List<EcompletedResponse>> ecompletedList = EcompletedClient.getCompletedService().getCompletedExpense();
+        showProgressBar();
         ecompletedList.enqueue(new Callback<List<EcompletedResponse>>() {
             @Override
             public void onResponse(Call<List<EcompletedResponse>> call, Response<List<EcompletedResponse>> response) {
+               hideProgressBar();
                 if(response.isSuccessful()){
                     List<EcompletedResponse> ecompletedResponses = response.body();
                     eCompletedAdapter.setData(ecompletedResponses);
@@ -91,6 +96,12 @@ public class FinanceStaffFragment extends Fragment  implements View.OnClickListe
 
             }
         });
+    }
+    private void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+    private void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override

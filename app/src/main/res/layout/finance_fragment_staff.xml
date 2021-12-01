@@ -160,4 +160,13 @@
         app:layout_constraintTop_toBottomOf="@+id/headingPart"
         android:id="@+id/frameComplete"/>
 
+    <ProgressBar
+        android:id="@+id/completeProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frameComplete" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

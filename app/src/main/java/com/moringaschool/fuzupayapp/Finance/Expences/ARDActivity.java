@@ -2,11 +2,13 @@ package com.moringaschool.fuzupayapp.Finance.Expences;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,14 +22,21 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
 import com.moringaschool.fuzupayapp.Finance.Dashboard_Finance;
 import com.moringaschool.fuzupayapp.Finance.Fragments.NewrunFragment;
 import com.moringaschool.fuzupayapp.Finance.Payroll2;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ARDActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     @BindView(R.id.SpinnerARD)   Spinner spinner;
@@ -41,6 +50,8 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
   //  @BindView(R.id.linelayout3) LinearLayout linelayout3;
     @BindView(R.id.imageView5)
     ImageView logout;
+    @BindView(R.id.motifivationsNumberContainer)
+    CardView notify;
 
     @BindView(R.id.frameLayoutPendings) FrameLayout Rpendings;
 
@@ -51,6 +62,7 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
         setContentView(R.layout.activity_ardactivity);
         ButterKnife.bind(this);
         logout.setOnClickListener(this);
+        NotificationFetch();
 
 
 
@@ -144,4 +156,35 @@ public class ARDActivity extends AppCompatActivity implements AdapterView.OnItem
         }
 
     }
+    public  void NotificationFetch() {
+        Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
+
+        userlist.enqueue(new Callback<List<NotificationResponse>>() {
+            @Override
+            public void onResponse(Call<List<NotificationResponse>> call, Response<List<NotificationResponse>> response) {
+                if (response.isSuccessful()){
+                    List<NotificationResponse> notificationIcon = response.body();
+                    for(NotificationResponse notes:notificationIcon){
+                        String id = String.valueOf(notes.getId().toString());
+                        int intid = new Integer(id).intValue();
+                        if(intid<1){
+                            notify.setVisibility(View.GONE);
+                        }
+                        else {
+                            notify.setVisibility(View.VISIBLE);
+                        }
+
+//                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<NotificationResponse>> call, Throwable t) {
+                Log.e("failure",t.getLocalizedMessage());
+            }
+        });
+    }
+
 }

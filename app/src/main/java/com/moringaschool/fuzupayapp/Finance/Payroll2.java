@@ -2,11 +2,13 @@ package com.moringaschool.fuzupayapp.Finance;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -16,6 +18,8 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
 import com.moringaschool.fuzupayapp.Finance.Expences.Finance_Approve_Activity;
 import com.moringaschool.fuzupayapp.Finance.Fragments.FinanceComingSoon;
 import com.moringaschool.fuzupayapp.Finance.Fragments.NewrunFragment;
@@ -25,8 +29,13 @@ import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaffActivi
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.newrun)  TextView newrun;
@@ -38,6 +47,8 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
     BottomNavigationView bottom_navigation;
     @BindView(R.id.imageView5)
     ImageView logout;
+    @BindView(R.id.motifivationsNumberContainer)
+    CardView notify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +61,7 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
         staffbtn.setOnClickListener(this);
         logout.setOnClickListener(this);
 
+        NotificationFetch();
         bottom_navigation.setSelectedItemId(R.id.nav_payroll);
         bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -123,5 +135,35 @@ public class Payroll2 extends AppCompatActivity implements View.OnClickListener{
             startActivity(new Intent(getApplicationContext(), SwitchLogoutActivity.class));
             overridePendingTransition(0,0);
         }
+    }
+    public  void NotificationFetch() {
+        Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
+
+        userlist.enqueue(new Callback<List<NotificationResponse>>() {
+            @Override
+            public void onResponse(Call<List<NotificationResponse>> call, Response<List<NotificationResponse>> response) {
+                if (response.isSuccessful()){
+                    List<NotificationResponse> notificationIcon = response.body();
+                    for(NotificationResponse notes:notificationIcon){
+                        String id = String.valueOf(notes.getId().toString());
+                        int intid = new Integer(id).intValue();
+                        if(intid<1){
+                            notify.setVisibility(View.GONE);
+                        }
+                        else {
+                            notify.setVisibility(View.VISIBLE);
+                        }
+
+//                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<NotificationResponse>> call, Throwable t) {
+                Log.e("failure",t.getLocalizedMessage());
+            }
+        });
     }
 }

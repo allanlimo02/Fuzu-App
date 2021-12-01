@@ -92,8 +92,6 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
         bankApploadUserRequest.setBranch_name(mBranchEditText.getText().toString().trim());
         bankApploadUserRequest.setAccount_number(mAccountNumberEditText.getText().toString().trim());
 
-
-
         return bankApploadUserRequest;
     }
     public void saveBank(BankApploadUserRequest bankApploadUserRequest){

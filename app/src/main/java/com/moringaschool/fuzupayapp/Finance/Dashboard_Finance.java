@@ -2,6 +2,7 @@ package com.moringaschool.fuzupayapp.Finance;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
 import com.moringaschool.fuzupayapp.Finance.Expences.Finance_Approve_Activity;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
@@ -28,8 +31,13 @@ import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 import com.moringaschool.fuzupayapp.loginAPI.models.LoginResponse;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Dashboard_Finance extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.bottom_navigation) BottomNavigationView bottom_navigation;
@@ -41,6 +49,8 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
     @BindView(R.id.approveExpenses) TextView approveExpenses;
     @BindView(R.id.managestaff) ImageView managestaff;
     @BindView(R.id.runpayrollbtn) Button  runpayrollbtn;
+    @BindView(R.id.motifivationsNumberContainer)
+    CardView notify;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -81,6 +91,8 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
         approveExpenses.setOnClickListener(this);
         advancerequesttxtV.setOnClickListener(this);
         runpayrollbtn.setOnClickListener(this);
+
+        NotificationFetch();
 
 //        displayName
         Intent intent = getIntent();
@@ -137,6 +149,36 @@ public class Dashboard_Finance extends AppCompatActivity implements View.OnClick
             overridePendingTransition(0,0);
         }
 
+    }
+    public  void NotificationFetch() {
+        Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
+
+        userlist.enqueue(new Callback<List<NotificationResponse>>() {
+            @Override
+            public void onResponse(Call<List<NotificationResponse>> call, Response<List<NotificationResponse>> response) {
+                if (response.isSuccessful()){
+                    List<NotificationResponse> notificationIcon = response.body();
+                    for(NotificationResponse notes:notificationIcon){
+                        String id = String.valueOf(notes.getId().toString());
+                        int intid = new Integer(id).intValue();
+                        if(intid<1){
+                            notify.setVisibility(View.GONE);
+                        }
+                        else {
+                            notify.setVisibility(View.VISIBLE);
+                        }
+
+//                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<NotificationResponse>> call, Throwable t) {
+                Log.e("failure",t.getLocalizedMessage());
+            }
+        });
     }
 
 }

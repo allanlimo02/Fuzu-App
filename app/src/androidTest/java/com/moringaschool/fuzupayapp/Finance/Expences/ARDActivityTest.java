@@ -24,10 +24,10 @@ import org.junit.runner.RunWith;
 public class ARDActivityTest extends TestCase {
 
     @Rule
-    public ActivityScenarioRule<ARDActivity> activityScenarioRule = new ActivityScenarioRule<ARDActivity>(ARDActivity.class);
+    public ActivityScenarioRule<ARDActivity> activityScenarioRule = new ActivityScenarioRule<>(ARDActivity.class);
 
 //    @Test
-//    public void test_recyclerview() throws Exception {
-//        onView(ViewMatchers.withId(R.id.frameLayoutPendings)).check(matches(isDisplayed()));
+//    public void test_textview() throws Exception {
+//        onView(ViewMatchers.withId(R.id.Amount)).check(matches(isDisplayed()));
 //    }
 }

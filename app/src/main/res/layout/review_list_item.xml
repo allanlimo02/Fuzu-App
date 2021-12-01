@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/payroll_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/nameOfficial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="#004673"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hours:249hrs" />
+
+            <TextView
+                android:id="@+id/gross"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gross Pay : ksh 103,000" />
+
+            <TextView
+                android:id="@+id/commission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Commissions :kes 0.00" />
+
+            <TextView
+                android:id="@+id/deductionreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deductions :kes 120.00" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/paymentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/PayMethod"
+                android:text="Kes 130,000"
+                android:textColor="#004673"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/PayMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="DirectMethod"
+                android:textColor="#004673" />
+
+            <TextView
+                android:id="@+id/depodate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11/11/2021" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

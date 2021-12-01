@@ -2,6 +2,7 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,7 +22,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -31,6 +31,8 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.gson.reflect.TypeToken;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
 import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.ItemOnclickPosition;
 import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.Models.StaffResponse;
 import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.StaffAdapter;
@@ -60,7 +62,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AllStaffActivity extends AppCompatActivity  implements View.OnClickListener, ItemOnclickPosition {
+public class AllStaffActivity extends AppCompatActivity  implements StaffAdapter.ClickedItems, View.OnClickListener{
     @BindView(R.id.ourViewStaffHolder)  RecyclerView ourViewStaffHolder;
     @BindView(R.id.bottom_navigation)    BottomNavigationView bottomNavigationView;
     @BindView(R.id.fragmentOneBtn)   Button fragmentOneBtn;
@@ -70,28 +72,39 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
     @BindView(R.id.titleBar) RelativeLayout titleBar;
     @BindView(R.id.imageView5) ImageView logout;
     @BindView(R.id.spinnerDep) Spinner spinnerDep;
-    @BindView(R.id.progressBar2)    ProgressBar progressBar;
-    @BindView(R.id.pleasewait)  TextView pleasewait;
-    @BindView(R.id.linearLayout7)  LinearLayout linearLayout7;
+    @BindView(R.id.progressBar2)
+    ProgressBar progressBar;
+    @BindView(R.id.pleasewait)
+    TextView pleasewait;
 
+    @BindView(R.id.motifivationsNumberContainer) CardView notify;
     Context context;
     StaffAdapter staffAdapter;
-    StaffResponse staffResponses;
     Department_pojo department_pojos;
+
     private List<Department_pojo> departmentlist;
+    private List<StaffResponse> staffRes;
     private ArrayList<String>getDepName = new ArrayList<String>();
     private ItemOnclickPosition itemOnclickPosition;
+    String text="Human Resource";
+
+
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_staff);
         ButterKnife.bind(this);
         getDetpartMent();
-//        fetchAPI();
 
 
+
+
+        fetchAPI();
+
+        NotificationFetch();
+//                                                         /search filter
         fragmentTwoBtn.setOnClickListener(this);
         fragmentOneBtn.setOnClickListener(this);
         fragmentThreeBtn.setOnClickListener(this);
@@ -99,7 +112,7 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
         ourViewStaffHolder.setLayoutManager(new LinearLayoutManager(this));
         ourViewStaffHolder.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-        staffAdapter=new StaffAdapter();
+        staffAdapter=new StaffAdapter(this::ClickedUser);
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -109,6 +122,38 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
 
     }
 
+
+//    Notifications
+    public  void NotificationFetch() {
+        Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
+
+        userlist.enqueue(new Callback<List<NotificationResponse>>() {
+            @Override
+            public void onResponse(Call<List<NotificationResponse>> call, Response<List<NotificationResponse>> response) {
+                if (response.isSuccessful()){
+                    List<NotificationResponse> notificationIcon = response.body();
+                    for(NotificationResponse notes:notificationIcon){
+                        String id = String.valueOf(notes.getId().toString());
+                        int intid = new Integer(id).intValue();
+                        if(intid<1){
+                            notify.setVisibility(View.GONE);
+                        }
+                        else {
+                            notify.setVisibility(View.VISIBLE);
+                        }
+
+//                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<NotificationResponse>> call, Throwable t) {
+                      Log.e("failure",t.getLocalizedMessage());
+            }
+        });
+    }
 
 
     private void getDetpartMent() {
@@ -144,9 +189,8 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                         spinnerDep.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             @Override
                             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                                    fetchAPI();
-
-                                    String text = adapterView.getItemAtPosition(i).toString();
+                                text = adapterView.getItemAtPosition(i).toString();
+                                fetchAPItext(text);
 
                             }
 
@@ -162,36 +206,49 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
                 }
             }
 
-            private void getEmpDetails(int getdepid) {
-                Call<List<StaffResponse>> stafflist= StaffClientClass.staffInterface().getStaff();
-                showProgressbar();
-                stafflist.enqueue(new Callback<List<StaffResponse>>() {
-
-                    @Override
-                    public void onResponse(Call<List<StaffResponse>> call, Response<List<StaffResponse>> response) {
-                        hideProgressbar();
-                        if(response.isSuccessful()){
-
-                            List<StaffResponse> staffResponses = response.body();
-                            staffAdapter.StaffAdapterFilled(staffResponses, itemOnclickPosition);
-                            ourViewStaffHolder.setAdapter(staffAdapter);
-
-
-                        }
-                    }
-                    @Override
-                    public void onFailure(Call<List<StaffResponse>> call, Throwable t) {
-                        hideProgressbar();
-                        Log.e("Haiwezimake",t.getLocalizedMessage());
-                    }
-                });
-
-            }
-
             @Override
             public void onFailure(Call<List> call, Throwable t) {
 //                Toast.makeText(AllStaffActivity.this,t.getMessage(),Toast.LENGTH_LONG).show();
                 Log.e("error",t.getMessage());
+            }
+        });
+    }
+
+//    method in
+    private void fetchAPItext(String text) {
+        Call<List<StaffResponse>> stafflist= StaffClientClass.staffInterface().getStaff();
+        showProgressbar();
+        stafflist.enqueue(new Callback<List<StaffResponse>>() {
+
+
+            @Override
+            public void onResponse(Call<List<StaffResponse>> call, Response<List<StaffResponse>> response) {
+                hideProgressbar();
+                if(response.isSuccessful()){
+
+                    List<StaffResponse> staffResponses = response.body();
+                    for(StaffResponse stafs:staffResponses){
+                        String departments1 = String.valueOf(stafs.getPosition());
+//                        Toast.makeText(AllStaffActivity.this,departments1,Toast.LENGTH_LONG).show();
+                        if(text.equals("Human Resource")){
+                            staffAdapter.StaffAdapterFilled(staffResponses, itemOnclickPosition);
+                            ourViewStaffHolder.setAdapter(staffAdapter);
+                        }
+
+                    }
+
+
+
+//                    for(int i= 0;i<departmentlist.size();i++){
+//                        saffResponse.add(staffResponse.getDepartment().toString());
+//                    }
+
+                }
+            }
+            @Override
+            public void onFailure(Call<List<StaffResponse>> call, Throwable t) {
+                hideProgressbar();
+                Log.e("Haiwezimake",t.getLocalizedMessage());
             }
         });
     }
@@ -201,14 +258,20 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         showProgressbar();
         stafflist.enqueue(new Callback<List<StaffResponse>>() {
 
+
             @Override
             public void onResponse(Call<List<StaffResponse>> call, Response<List<StaffResponse>> response) {
                 hideProgressbar();
                 if(response.isSuccessful()){
 
                         List<StaffResponse> staffResponses = response.body();
-                        staffAdapter.StaffAdapterFilled(staffResponses, itemOnclickPosition);
-                        ourViewStaffHolder.setAdapter(staffAdapter);
+                        for(StaffResponse stafs:staffResponses){
+                            String departments1 = String.valueOf(stafs.getDepartment());
+//                            Toast.makeText(AllStaffActivity.this,departments1,Toast.LENGTH_LONG).show();
+                            staffAdapter.StaffAdapterFilled(staffResponses, itemOnclickPosition);
+                            ourViewStaffHolder.setAdapter(staffAdapter);
+                        }
+
 
 
                 }
@@ -220,6 +283,9 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             }
         });
     }
+
+
+
 
     @Override
     protected void onStart() {
@@ -265,7 +331,6 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentThreeBtn.setTextColor(Color.BLACK);
             fragmentOneBtn.setTextColor(Color.WHITE);
             titleBar.setVisibility(View.VISIBLE);
-            linearLayout7.setVisibility(View.GONE);
             startActivity(new Intent(getApplicationContext(), AllStaffActivity.class));
             overridePendingTransition(0,0);
         }
@@ -279,7 +344,6 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentOneBtn.setTextColor(Color.BLACK);
             ourViewStaffHolder.setVisibility(View.GONE);
             titleBar.setVisibility(View.GONE);
-            linearLayout7.setVisibility(View.GONE);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
             fragmentTransaction.commit();
@@ -292,7 +356,6 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
             fragmentTwoBtn.setTextColor(Color.BLACK);
             fragmentThreeBtn.setTextColor(Color.WHITE);
             fragmentOneBtn.setTextColor(Color.BLACK);
-            linearLayout7.setVisibility(View.GONE);
             startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
             overridePendingTransition(0,0);
 
@@ -318,10 +381,13 @@ public class AllStaffActivity extends AppCompatActivity  implements View.OnClick
         pleasewait.setVisibility(View.GONE);
     }
 
+//    @Override
+//    public void onItemClick(int position) {
+//    }
+
+
     @Override
-    public void onItemClick(int position) {
+    public void ClickedUser(StaffResponse staffResponse) {
+       startActivity(new Intent(this,SIngleStaffActivity.class).putExtra("data",staffResponse));
     }
-
-
-
 }

@@ -1,7 +1,5 @@
 package com.moringaschool.fuzupayapp.HumanResource.LeaveApi;
 
-import com.moringaschool.fuzupayapp.HumanResource.onLeaveResponse;
-
 import java.util.List;
 
 import retrofit2.Call;

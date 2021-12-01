@@ -537,7 +537,7 @@
                     android:paddingLeft="4dp"
                     android:background="@drawable/super_thin_backround"
                     android:layout_height="25dp"
-                    android:inputType="textPersonName" />
+                    android:inputType="number" />
 
             </LinearLayout>
         </LinearLayout>

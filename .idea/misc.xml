@@ -47,6 +47,7 @@
         <entry key="app/src/main/res/layout/activity_all_staff.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_ardactivity.xml" value="0.21" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.38333333333333336" />
+        <entry key="app/src/main/res/layout/activity_error.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/activity_finance_approve.xml" value="0.12" />
         <entry key="app/src/main/res/layout/activity_finance_expense_details.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_finance_new_run.xml" value="0.35572916666666665" />

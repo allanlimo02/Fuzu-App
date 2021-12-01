@@ -1,6 +1,5 @@
 package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 
-        import android.app.Activity;
         import android.content.Context;
         import android.content.Intent;
         import android.os.Bundle;
@@ -24,6 +23,7 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
         import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.Docs.DocsApploadUserRequest;
         import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.Docs.DocsApploadUserResponse;
         import com.moringaschool.fuzupayapp.R;
+        import com.moringaschool.fuzupayapp.SuccessPage.Error;
         import com.moringaschool.fuzupayapp.SuccessPage.Success;
 
         import butterknife.BindView;
@@ -62,9 +62,6 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        mBankNameEditText = getView().findViewById(R.id.bankName);
-//        mBranchEditText= getView().findViewById(R.id.branch);
-//        mAccountNumberEditText = getView().findViewById(R.id.accountNumber);
 
 
     }
@@ -105,9 +102,9 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
             @Override
             public void onResponse(Call<BankApploadUserResponse> call, Response<BankApploadUserResponse> response) {
                 if(response.isSuccessful()){
-//                    Intent m = new Intent(getActivity(), Success.class);
-//                    startActivity(m);
-//                    ((Activity) getActivity()).overridePendingTransition(0, 0);
+                    Intent in = new Intent(getActivity(), Success.class);
+                    startActivity(in);
+
                 }
                 else{
                     Toast.makeText(getActivity(),"Something Went Wrong, please try again",Toast.LENGTH_LONG).show();
@@ -156,6 +153,7 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
         docsApploadUserResponseCall.enqueue(new Callback<DocsApploadUserResponse>() {
             @Override
             public void onResponse(Call<DocsApploadUserResponse> call, Response<DocsApploadUserResponse> response) {
+
                 if (response.isSuccessful()) {
                     Toast.makeText(getActivity(), "saved successfully", Toast.LENGTH_LONG).show();
                 } else {
@@ -165,6 +163,7 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
 
             @Override
             public void onFailure(Call<DocsApploadUserResponse> call, Throwable t) {
+
                 Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });

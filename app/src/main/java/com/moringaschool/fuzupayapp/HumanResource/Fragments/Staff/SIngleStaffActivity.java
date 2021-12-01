@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.APIRequests.StaffApiResources.Models.StaffResponse;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.R;
@@ -31,6 +32,7 @@ public class SIngleStaffActivity extends AppCompatActivity implements View.OnCli
     @BindView(R.id.fragmentTwoBtn)    Button fragmentTwoBtn;
     @BindView(R.id.fragmentThreeBtn) Button fragmentThreeBtn;
 
+    StaffResponse staffResponse;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +40,13 @@ public class SIngleStaffActivity extends AppCompatActivity implements View.OnCli
         ButterKnife.bind(this);
 
         Intent intent=getIntent();
-        String username=intent.getStringExtra("name");
-        String role=intent.getStringExtra("position");
-        String jobType=intent.getStringExtra("jobtype");
+
+            staffResponse= (StaffResponse) intent.getSerializableExtra("data");
+
+            String username = staffResponse.getOtherNames();
+            String role = staffResponse.getDepartment();
+            String jobType = staffResponse.getMaritalStatus();
+
 
         Toast.makeText(SIngleStaffActivity.this,"Hello"+username,Toast.LENGTH_SHORT).show();
         mUsername.setText(username);

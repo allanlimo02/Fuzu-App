@@ -2,6 +2,7 @@ package com.moringaschool.fuzupayapp.HumanResource.Dashboard;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 //import com.moringaschool.fuzupayapp.Holidays.Holiday;
 import com.example.petyfinderip_version2.models.Animal;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AddStaffMain;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaffActivity;
@@ -57,12 +60,14 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     LoginResponse loginResponse;
     @BindView(R.id.imageView5)
     ImageView logout;
+    @BindView(R.id.motifivationsNumberContainer)
+    CardView notify;
 
 
     private HrListAdaper mAdapter;
     public List<Animal> genders;
 
-
+    AllStaffActivity allStaffActivity = new AllStaffActivity();
 
     @Override
     protected void onStart() {
@@ -86,6 +91,8 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
         onleave.setOnClickListener(this);
         approvebutton.setOnClickListener(this);
         logout.setOnClickListener(this);
+
+        NotificationFetch();
 
         Intent intent = getIntent();
         if(intent.getExtras() != null){
@@ -151,6 +158,36 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
                         return true;
                 }
                 return false;
+            }
+        });
+    }
+    private   void NotificationFetch() {
+        Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
+
+        userlist.enqueue(new Callback<List<NotificationResponse>>() {
+            @Override
+            public void onResponse(Call<List<NotificationResponse>> call, Response<List<NotificationResponse>> response) {
+                if (response.isSuccessful()){
+                    List<NotificationResponse> notificationIcon = response.body();
+                    for(NotificationResponse notes:notificationIcon){
+                        String id = String.valueOf(notes.getId().toString());
+                        int intid = new Integer(id).intValue();
+                        if(intid<1){
+                            notify.setVisibility(View.GONE);
+                        }
+                        else {
+                            notify.setVisibility(View.VISIBLE);
+                        }
+
+//                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<NotificationResponse>> call, Throwable t) {
+                Log.e("failure",t.getLocalizedMessage());
             }
         });
     }

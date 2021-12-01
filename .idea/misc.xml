@@ -51,13 +51,14 @@
         <entry key="app/src/main/res/layout/department_drop_down.xml" value="0.25" />
         <entry key="app/src/main/res/layout/department_holder.xml" value="0.1" />
         <entry key="app/src/main/res/layout/departments_rec_view.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/expense_holder.xml" value="0.1" />
         <entry key="app/src/main/res/layout/finance_activity_dashboard.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/finance_activity_login.xml" value="0.24320652173913043" />
         <entry key="app/src/main/res/layout/finance_activity_new_run.xml" value="0.291213768115942" />
         <entry key="app/src/main/res/layout/finance_activity_payroll2.xml" value="0.215625" />
         <entry key="app/src/main/res/layout/finance_activity_ss_holder.xml" value="0.31979166666666664" />
         <entry key="app/src/main/res/layout/finance_activity_staff.xml" value="0.16621376811594202" />
-        <entry key="app/src/main/res/layout/finance_arda_fragment.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/finance_arda_fragment.xml" value="0.22" />
         <entry key="app/src/main/res/layout/finance_dashboard_activity.xml" value="0.4260027662517289" />
         <entry key="app/src/main/res/layout/finance_expense_detail_fragment.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/finance_expense_fragment.xml" value="0.16979166666666667" />

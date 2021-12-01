@@ -102,9 +102,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:text="Expense ID"
+            android:textSize="12dp"
             android:textColor="#0c4763"
-            android:layout_marginStart="10dp"
-            android:textSize="14sp" />
+            android:layout_marginStart="5dp"/>
 
         <TextView
             android:id="@+id/Astaff"
@@ -112,6 +112,7 @@
             android:layout_height="wrap_content"
             android:text="Staff Name"
             android:textStyle="bold"
+            android:textSize="12dp"
             android:textColor="@color/one"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="20dp"/>
@@ -120,6 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Amount"
+            android:textSize="12dp"
             android:textStyle="bold"
             android:textColor="@color/one"
             android:layout_marginEnd="10dp"
@@ -130,121 +132,129 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date"
+            android:textSize="12dp"
             android:textColor="@color/one"
             android:textStyle="bold"
             android:layout_marginStart="20dp"/>
+
+
+
     </LinearLayout>
-<!--    <androidx.recyclerview.widget.RecyclerView-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/frameLayoutPendingsOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linelayout1" />
+
+
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linelayout2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linelayout1">-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/radio_Expense2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="RE34334"-->
+<!--            android:textColor="#0c4763"-->
+<!--            android:textSize="14sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/Astaff2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:text="James Wanyama"-->
+<!--            android:textColor="@color/one"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/Amount2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="KES 3000"-->
+<!--            android:textColor="@color/one"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/ADate2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="12/3/2021"-->
+<!--            android:textColor="@color/one"-->
+<!--            android:textStyle="bold" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linelayout3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="124dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linelayout2"-->
+<!--        tools:layout_editor_absoluteX="-154dp">-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/radio_Expense3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="Reff3e3"-->
+<!--            android:textColor="#0c4763"-->
+<!--            android:textSize="14sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/Astaff3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="Allan Limo langat "-->
+<!--            android:textColor="@color/one"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/Amount3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="3434343"-->
+<!--            android:textColor="@color/one"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/ADate3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="2/3/2021"-->
+<!--            android:textColor="@color/one"-->
+<!--            android:textStyle="bold" />-->
+<!--    </LinearLayout>-->
+
+<!--    <FrameLayout-->
 <!--        android:id="@+id/frameLayoutPendings"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:padding="5dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/linelayout1" />-->
-    <LinearLayout
-        android:id="@+id/linelayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linelayout1">
-
-        <RadioButton
-            android:id="@+id/radio_Expense2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="10dp"
-            android:text="RE34334"
-            android:textColor="#0c4763"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/Astaff2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="James Wanyama"
-            android:textColor="@color/one"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/Amount2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="KES 3000"
-            android:textColor="@color/one"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/ADate2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="12/3/2021"
-            android:textColor="@color/one"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linelayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linelayout2"
-        tools:layout_editor_absoluteX="-154dp">
-
-        <RadioButton
-            android:id="@+id/radio_Expense3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="10dp"
-            android:text="Reff3e3"
-            android:textColor="#0c4763"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/Astaff3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Allan Limo langat "
-            android:textColor="@color/one"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/Amount3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="3434343"
-            android:textColor="@color/one"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/ADate3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="2/3/2021"
-            android:textColor="@color/one"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayoutPendings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+<!--        />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -62,6 +62,8 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     private HrListAdaper mAdapter;
     public List<Animal> genders;
 
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -160,23 +162,29 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
         }
         if(v==departments){
             Intent intent= new Intent(DashboardActivity.this, AllStaffActivity.class);
+            String nPage="AddStaffMain";
             startActivity(intent);
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
-            fragmentTransaction.commit();
+
+//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//            fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
+//            fragmentTransaction.commit();
         }
         if(v==addstaff){
             Intent intent= new Intent(DashboardActivity.this,AddStaffMain.class);
+            String nPage="AddStaffMain";
 //            startActivity(new Intent(getApplicationContext(), AddStaffMain.class));
 //            overridePendingTransition(0,0);
             startActivity(intent);
         }
         if(v==onleave){
-            Intent intent= new Intent(DashboardActivity.this,LeaveActivity.class);
+            Intent intent=new Intent(DashboardActivity.this,LeaveActivity.class);
+            String nPage="LeaveActivity";
+            intent.putExtra("nextPage",nPage);
             startActivity(intent);
         }
         if(v==approvebutton){
             Intent intent=new Intent(DashboardActivity.this,LeaveActivity.class);
+//            Intent intent = new Intent(DashboardActivity.this,)
             startActivity(intent);
         }
         if(v == logout){

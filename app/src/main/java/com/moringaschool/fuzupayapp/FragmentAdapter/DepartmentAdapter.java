@@ -15,6 +15,8 @@ import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.SIngleStaffAct
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.SingleStaffFragment;
 import com.moringaschool.fuzupayapp.R;
 
+import okhttp3.Callback;
+
 public class DepartmentAdapter  extends RecyclerView.Adapter<DepartmentAdapter.ViewHolder> {
 
     private String nameArray[], roleArray[], jobTypeArray[];
@@ -26,6 +28,9 @@ public class DepartmentAdapter  extends RecyclerView.Adapter<DepartmentAdapter.V
         this.roleArray = position;
         this.jobTypeArray = workType;
     }
+
+//    public DepartmentAdapter(Callback departmentSearchResponseCallback, int simple_list_item_1, String[] otherNames, String[] position, String[] employmentType) {
+//    }
 
     @NonNull
     @Override

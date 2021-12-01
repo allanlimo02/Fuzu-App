@@ -36,11 +36,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FinanceStaffFragment extends Fragment  implements View.OnClickListener{
 
-//
-//    @BindView(R.id.rowone)  RelativeLayout rowone;
-//    @BindView(R.id.row2) RelativeLayout row2;
-//    @BindView(R.id.row3) RelativeLayout row3;
-//    @BindView(R.id.babu) RelativeLayout babu;
 
     @BindView(R.id.relativeTwo) RelativeLayout relativeTwo;
     @BindView(R.id.headingPart) RelativeLayout headingPart;

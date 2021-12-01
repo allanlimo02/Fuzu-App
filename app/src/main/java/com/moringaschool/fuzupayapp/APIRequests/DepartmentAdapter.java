@@ -37,13 +37,9 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.De
     @Override
     public void onBindViewHolder(@NonNull DepartmentAdapter.DepartmentListViewHolder holder, int position) {
        DepartmentResponse departmentResponse= departmentResponseList.get(position);
-//
-
         holder.fullName.setText(departmentResponse.getOther_names().toString().trim());
         holder.department.setText(departmentResponse.getDepartment().toString().trim());
         holder.status.setText(departmentResponse.getStatus().toString().trim());
-
-
     }
 
     @Override

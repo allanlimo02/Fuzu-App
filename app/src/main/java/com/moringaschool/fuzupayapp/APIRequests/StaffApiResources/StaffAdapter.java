@@ -19,10 +19,11 @@ public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.StaffViewHol
     private List<StaffResponse> staffResponses;
 //    StaffResponse stRes;
     private Context context;
-    private ClickedItem clickedItem;
+    private ClickedItems clickedItem;
     private ItemOnclickPosition itemOnclickPosition;
 
-    public StaffAdapter() {
+    public StaffAdapter(ClickedItems clickedItem) {
+        this.clickedItem =clickedItem;
 
     }
 
@@ -48,10 +49,16 @@ public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.StaffViewHol
         holder.fullname.setText(staffRes.getOtherNames());
         holder.role.setText(staffRes.getPosition());
         holder.workStatus.setText(staffRes.getEmploymentType());
+        holder.fullname.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickedItem.ClickedUser(staffRes);
+            }
+        });
 //        holder.workStatus.setText(staffRes.getDepartment());
     }
-    public interface ClickedItem{
-        void onClickItem(int position);
+    public interface ClickedItems{
+        public void ClickedUser(StaffResponse staffResponse);
 
     }
 

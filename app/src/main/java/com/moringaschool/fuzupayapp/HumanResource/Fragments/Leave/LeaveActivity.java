@@ -2,6 +2,7 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,14 +21,18 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
 import com.moringaschool.fuzupayapp.FragmentAdapter.LeaveRequestAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestClient;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestResponse;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaffActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
@@ -53,9 +58,12 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     ProgressBar progressBar;
     @BindView(R.id.pleasewaits)
     TextView pleasewait;
+    @BindView(R.id.motifivationsNumberContainer)
+    CardView notify;
 
 
    RequestAdapter requestAdapter;
+
     //    fragment inititializations
 //    private TextView fragmentOneBtn2, fragmentTwoBtn2;
 
@@ -82,13 +90,9 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_leave);
-
-
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
@@ -104,44 +108,90 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
                 return false;
             }
         });
-
-
-
-
     }
-    public void getAll(){
-        Call<List<RequestResponse>> userlist = RequestClient.getRequests().getAllRequests();
-        showProgressbar();
-        userlist.enqueue(new Callback<List<RequestResponse>>() {
+public void getAll(){
+    Call<List<RequestResponse>> userlist = RequestClient.getRequests().getAllRequests();
+    showProgressbar();
+    userlist.enqueue(new Callback<List<RequestResponse>>() {
+        @Override
+        public void onResponse(Call<List<RequestResponse>> call, Response<List<RequestResponse>> response) {
+            if (response.isSuccessful()) {
+                List<RequestResponse> requestResponses = response.body();
+                hideProgressbar();
+                requestAdapter.setData(requestResponses);
+                recyclerView2.setAdapter(requestAdapter);
+
+            }
+        }
+
+        @Override
+        public void onFailure(Call<List<RequestResponse>> call, Throwable t) {
+
+            Log.e("failure",t.getLocalizedMessage());
+        }
+    });
+
+}
+    public  void NotificationFetch() {
+        Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
+
+        userlist.enqueue(new Callback<List<NotificationResponse>>() {
             @Override
-            public void onResponse(Call<List<RequestResponse>> call, Response<List<RequestResponse>> response) {
-                if (response.isSuccessful()) {
-                    List<RequestResponse> requestResponses = response.body();
-                    hideProgressbar();
-                    requestAdapter.setData(requestResponses);
-                    recyclerView2.setAdapter(requestAdapter);
+            public void onResponse(Call<List<NotificationResponse>> call, Response<List<NotificationResponse>> response) {
+                if (response.isSuccessful()){
+                    List<NotificationResponse> notificationIcon = response.body();
+                    for(NotificationResponse notes:notificationIcon){
+                        String id = String.valueOf(notes.getId().toString());
+                        int intid = new Integer(id).intValue();
+                        if(intid<1){
+                            notify.setVisibility(View.GONE);
+                        }
+                        else {
+                            notify.setVisibility(View.VISIBLE);
+                        }
+
+//                        }
+
+                    }
                 }
             }
 
             @Override
-            public void onFailure(Call<List<RequestResponse>> call, Throwable t) {
-
+            public void onFailure(Call<List<NotificationResponse>> call, Throwable t) {
                 Log.e("failure",t.getLocalizedMessage());
             }
         });
-
     }
+
 
     @Override
     public void onStart() {
         super.onStart();
-        fragmentTwoBtn2.setBackgroundColor(Color.WHITE);
-        fragmentOneBtn2.setBackgroundColor(Color.rgb(0,70,115));
-        fragmentTwoBtn2.setTextColor(Color.BLACK);
-        fragmentOneBtn2.setTextColor(Color.WHITE);
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout2,new Leave_Request_Fragment());
-        fragmentTransaction.commit();
+        Intent intent=getIntent();
+        String broughtIntents=intent.getStringExtra("nextPage");
+
+        if(broughtIntents=="LeaveActivity"){
+            Toast.makeText(LeaveActivity.this, broughtIntents, Toast.LENGTH_SHORT).show();
+            fragmentTwoBtn2.setBackgroundColor(Color.rgb(0,70,115));
+            fragmentOneBtn2.setBackgroundColor(Color.WHITE);
+            fragmentTwoBtn2.setTextColor(Color.WHITE);
+            fragmentOneBtn2.setTextColor(Color.BLACK);
+            recyclerView2.setVisibility(View.GONE);
+            lineLayout.setVisibility(View.GONE);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout2,new On_Leave_Fragment());
+            fragmentTransaction.commit();
+        }
+        else{
+            fragmentTwoBtn2.setBackgroundColor(Color.WHITE);
+            fragmentOneBtn2.setBackgroundColor(Color.rgb(0,70,115));
+            fragmentTwoBtn2.setTextColor(Color.BLACK);
+            fragmentOneBtn2.setTextColor(Color.WHITE);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout2,new Leave_Request_Fragment());
+            fragmentTransaction.commit();
+        }
+
     }
 
 

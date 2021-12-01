@@ -1,4 +1,4 @@
-package com.moringaschool.fuzupayapp.HumanResource;
+package com.moringaschool.fuzupayapp.HumanResource.LeaveApi;
 
 public class onLeaveResponse {
 

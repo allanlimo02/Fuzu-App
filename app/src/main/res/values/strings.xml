@@ -7,6 +7,7 @@
     <string name="other_name">Other Name</string>
     <string name="password">Password</string>
     <string name="Approve">Approve</string>
+    <string name="Active">Active</string>
     <string-array name="workTypes">
         <item> Full time</item>
         <item>Contract</item>
@@ -31,6 +32,10 @@
     <string-array name="approves">
         <item>Approve</item>
         <item>DisApprove</item>
+    </string-array>
+    <string-array name="dissaprove">
+        <item>Active</item>
+        <item>inactive</item>
     </string-array>
 
     <string name="All">All</string>

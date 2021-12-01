@@ -59,7 +59,6 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      //  uploadButton=(Button) uploadButton.findViewById(R.id.uploadButton);
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -77,8 +76,14 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
         chooseFile.setOnClickListener(this);
         return view;
 
+    }
+    @Override
+    public void onClick(View v) {
+        if (v ==  chooseFile){
 
-
+            Intent intent = new  Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(intent, 2);
+        }
     }
     @Override
     public void onClick(View v) {

@@ -65,7 +65,7 @@
         <entry key="app/src/main/res/layout/finance_fragment_completed_expenses.xml" value="0.1" />
         <entry key="app/src/main/res/layout/finance_fragment_expense_payments.xml" value="0.353125" />
         <entry key="app/src/main/res/layout/finance_fragment_expenses.xml" value="0.16621376811594202" />
-        <entry key="app/src/main/res/layout/finance_fragment_newrun.xml" value="0.44854368932038835" />
+        <entry key="app/src/main/res/layout/finance_fragment_newrun.xml" value="0.2" />
         <entry key="app/src/main/res/layout/finance_fragment_single_staff2.xml" value="0.33" />
         <entry key="app/src/main/res/layout/finance_fragment_single_staff_benefits.xml" value="0.33541666666666664" />
         <entry key="app/src/main/res/layout/finance_fragment_staff.xml" value="0.2545289855072464" />
@@ -75,7 +75,7 @@
         <entry key="app/src/main/res/layout/financeexpenses_recview.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.22780797101449277" />
         <entry key="app/src/main/res/layout/fragment_add__staff__input_.xml" value="0.33059548254620125" />
-        <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_add__staff__upload_.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_add_staff.xml" value="0.22780797101449277" />
         <entry key="app/src/main/res/layout/fragment_all_staff.xml" value="0.5046343975283213" />
         <entry key="app/src/main/res/layout/fragment_benefits.xml" value="0.2833333333333333" />
@@ -98,7 +98,7 @@
         <entry key="app/src/main/res/layout/fragment_stuff.xml" value="0.21693840579710144" />
         <entry key="app/src/main/res/layout/leave_list_item.xml" value="0.13723511604439959" />
         <entry key="app/src/main/res/layout/on_leave_list_item.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/payroll_finance_holder.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/payroll_finance_holder.xml" value="0.15" />
         <entry key="app/src/main/res/layout/staff_rec_item.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.5" />
         <entry key="app/src/main/res/menu/all_stuff.xml" value="0.22592592592592592" />

@@ -256,7 +256,7 @@
             android:textColor="#004673"
             android:textStyle="bold"
             android:id="@+id/monthMain"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="43dp"
             android:text="Month"/>
         <TextView
             android:layout_width="wrap_content"
@@ -264,7 +264,7 @@
             android:textColor="#004673"
             android:textStyle="bold"
             android:id="@+id/debitAmountMain"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="15dp"
             android:text="Debit Amount"/>
         <TextView
             android:layout_width="wrap_content"
@@ -272,7 +272,7 @@
             android:textColor="#004673"
             android:textStyle="bold"
             android:id="@+id/paymentStatus"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="18dp"
             android:text="Payment Status"/>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView

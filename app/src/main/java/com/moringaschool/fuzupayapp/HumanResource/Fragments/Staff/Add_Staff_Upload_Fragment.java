@@ -27,10 +27,7 @@ import butterknife.ButterKnife;
  */
 public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickListener{
     @BindView(R.id.chooseFile) TextView chooseFile;
-//    android:id="@+id/chooseFile
-  //  Button uploadButton;
-   // @BindView(R.id.saveRestaurantButton)
-   // TextView mSaveRestaurantButton;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -43,7 +40,6 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
     private String mParam2;
 
 
-//         android:id="@+id/uploadButton"
 
     public Add_Staff_Upload_Fragment() {
         // Required empty public constructor
@@ -71,7 +67,6 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
         }
 
 
-        //uploadButton.setOnClickListener(this);
     }
 
     @Override
@@ -88,8 +83,7 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
     @Override
     public void onClick(View v) {
         if (v ==  chooseFile){
-           // Uri gallery = Uri.parse("https://www.android.com");
-         //  Intent galleryIntent = new Intent(Intent.ACTION_VIEW, gallery);
+
           Intent intent = new  Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
            startActivityForResult(intent, 2);
 
@@ -97,6 +91,15 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
 
 
 
+
+
+        }
+    }
+}
+
+
+// Uri gallery = Uri.parse("https://www.android.com");
+//  Intent galleryIntent = new Intent(Intent.ACTION_VIEW, gallery);
 //
 //            Uri pdfUri = FileProvider.getUriForFile(context, FILES_AUTHORITY, filePath);
 //          Intent shareIntent = ShareCompat.IntentBuilder.from(activity)
@@ -105,7 +108,3 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
 //
 //            shareIntent.setData(pdfUri);
 //            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
-        }
-    }
-}

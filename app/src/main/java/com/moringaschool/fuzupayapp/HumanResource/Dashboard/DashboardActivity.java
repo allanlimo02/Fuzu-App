@@ -62,6 +62,7 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     ImageView logout;
     @BindView(R.id.motifivationsNumberContainer)
     CardView notify;
+    @BindView(R.id.imageView6) ImageView notifications;
 
 
     private HrListAdaper mAdapter;
@@ -91,6 +92,8 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
         onleave.setOnClickListener(this);
         approvebutton.setOnClickListener(this);
         logout.setOnClickListener(this);
+        notifications.setOnClickListener(this);
+
 
         NotificationFetch();
 
@@ -111,7 +114,9 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
         call.enqueue(new Callback<com.example.petyfinderip_version2.models.SearchResponse>() {
             @Override
             public void onResponse(Call<com.example.petyfinderip_version2.models.SearchResponse> call, Response<com.example.petyfinderip_version2.models.SearchResponse> response) {
-                hideProgressBar();
+                hideProgressBar();//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//            fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
+//            fragmentTransaction.commit();
                 if (response.isSuccessful()) {
                     genders = response.body().getAnimals();
                     mAdapter = new HrListAdaper(DashboardActivity.this, genders);
@@ -193,6 +198,10 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     }
     @Override
     public void onClick(View v) {
+        if(v == notifications){
+            Intent intent= new Intent(DashboardActivity.this,LeaveActivity.class);
+            startActivity(intent);
+        }
         if(v==managestaff){
             Intent intent= new Intent(DashboardActivity.this,StaffActivity.class);
             startActivity(intent);
@@ -202,9 +211,7 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
             String nPage="AddStaffMain";
             startActivity(intent);
 
-//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//            fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
-//            fragmentTransaction.commit();
+
         }
         if(v==addstaff){
             Intent intent= new Intent(DashboardActivity.this,AddStaffMain.class);

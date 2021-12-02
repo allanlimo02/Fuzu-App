@@ -122,17 +122,23 @@ public void getAll(){
                 hideProgressbar();
                 requestAdapter.setData(requestResponses);
                 recyclerView2.setAdapter(requestAdapter);
-
+                int listLength=0;
+                for(int i=0;i<requestResponses.size();i++){
+                    listLength=listLength+1;
+                }
+                if(listLength>0){
+                    Toast.makeText(LeaveActivity.this, "Leave request available", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(LeaveActivity.this, "Leave request unavailable", Toast.LENGTH_SHORT).show();
+                }
             }
         }
-
         @Override
         public void onFailure(Call<List<RequestResponse>> call, Throwable t) {
-
             Log.e("failure",t.getLocalizedMessage());
         }
     });
-
 }
 
     public  void NotificationFetch() {

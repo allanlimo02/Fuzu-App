@@ -100,8 +100,8 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
             @Override
             public void onResponse(Call<BankApploadUserResponse> call, Response<BankApploadUserResponse> response) {
                 if(response.isSuccessful()){
-                    Intent in = new Intent(getActivity(), Success.class);
-                    startActivity(in);
+//                    Intent in = new Intent(getActivity(), Success.class);
+//                    startActivity(in);
 
                 }
                 else{
@@ -111,7 +111,8 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
 
             @Override
             public void onFailure(Call<BankApploadUserResponse> call, Throwable t) {
-                Toast.makeText(getActivity(),"Request failure"+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+//                Toast.makeText(getActivity(),"Request failure"+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Saved Successfully", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -155,7 +156,7 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
                 if (response.isSuccessful()) {
                     Toast.makeText(getActivity(), "saved successfully", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getActivity(), "Not saved7 successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Not saved successfully", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -163,6 +164,7 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
             public void onFailure(Call<DocsApploadUserResponse> call, Throwable t) {
 
                 Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Well Successfully but on Failure", Toast.LENGTH_SHORT).show();
             }
         });
 

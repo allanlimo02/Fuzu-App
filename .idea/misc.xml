@@ -83,7 +83,9 @@
         <entry key="app/src/main/res/layout/finance_fragment_expenses.xml" value="0.16621376811594202" />
         <entry key="app/src/main/res/layout/finance_fragment_newrun.xml" value="0.5" />
         <entry key="app/src/main/res/layout/finance_fragment_single_staff2.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/finance_fragment_single_staff_overview.xml" value="0.17299898682877407" />
         <entry key="app/src/main/res/layout/finance_fragment_staff.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/finance_fragment_staff_deductions.xml" value="0.17299898682877407" />
         <entry key="app/src/main/res/layout/finance_new_run_recyler_fragment.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/finance_payments_holder.xml" value="0.33" />
         <entry key="app/src/main/res/layout/finance_staff_recview.xml" value="0.31179775280898875" />

@@ -192,10 +192,10 @@
         android:id="@+id/linelayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/linelayout2"
-        tools:layout_editor_absoluteX="-154dp">
+        tools:layout_editor_absoluteX="16dp">
 
         <RadioButton
             android:id="@+id/radio_Expense3"

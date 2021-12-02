@@ -2,6 +2,8 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -11,8 +13,16 @@ import android.view.ViewGroup;
 import com.moringaschool.fuzupayapp.R;
 
 public class SingleStaffFragment extends Fragment {
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.fragment_single_staff, container, false);
+        return view;
+    }
 
-
-
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
 
 }

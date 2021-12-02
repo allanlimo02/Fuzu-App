@@ -102,20 +102,15 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
                 if(response.isSuccessful()){
 //                    Intent in = new Intent(getActivity(), Success.class);
 //                    startActivity(in);
-
                 }
                 else{
-                    Toast.makeText(getActivity(),"Something Went Wrong, please try again",Toast.LENGTH_LONG).show();
                 }
             }
-
             @Override
             public void onFailure(Call<BankApploadUserResponse> call, Throwable t) {
 //                Toast.makeText(getActivity(),"Request failure"+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
-                Toast.makeText(getActivity(), "Saved Successfully", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     public DocsApploadUserRequest DocsRequest(){
@@ -143,8 +138,6 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
         docsApploadUserRequest.setEmergency_phone(mEmergencyContactPhoneEditText.getText().toString().trim());
         docsApploadUserRequest.setPosition(mPositionEditText.getText().toString().trim());
 
-
-
         return docsApploadUserRequest;
     }
     public void saveDocs(DocsApploadUserRequest docsApploadUserRequest) {
@@ -154,7 +147,8 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
             public void onResponse(Call<DocsApploadUserResponse> call, Response<DocsApploadUserResponse> response) {
 
                 if (response.isSuccessful()) {
-                    Toast.makeText(getActivity(), "saved successfully", Toast.LENGTH_LONG).show();
+                    Intent in = new Intent(getActivity(), Success.class);
+                    startActivity(in);
                 } else {
                     Toast.makeText(getActivity(), "Not saved successfully", Toast.LENGTH_LONG).show();
                 }
@@ -162,9 +156,8 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
 
             @Override
             public void onFailure(Call<DocsApploadUserResponse> call, Throwable t) {
-
-                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
-                Toast.makeText(getActivity(), "Well Successfully but on Failure", Toast.LENGTH_SHORT).show();
+                Intent in = new Intent(getActivity(), Success.class);
+                startActivity(in);
             }
         });
 
@@ -239,7 +232,7 @@ public class Add_Staff_Input_Fragment extends Fragment  implements View.OnClickL
             } else if (accountNumber.equals("")) {
                 mAccountNumberEditText.setError("Cannot be blank");
             } else {
-//                saveBank(createRequest());
+                saveBank(createRequest());
                 saveDocs(DocsRequest());
             }
 

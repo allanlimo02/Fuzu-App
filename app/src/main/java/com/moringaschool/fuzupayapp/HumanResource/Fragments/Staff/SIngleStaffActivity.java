@@ -31,6 +31,22 @@ public class SIngleStaffActivity extends AppCompatActivity implements View.OnCli
     @BindView(R.id.fragmentOneBtn)  Button fragmentOneBtn;
     @BindView(R.id.fragmentTwoBtn)    Button fragmentTwoBtn;
     @BindView(R.id.fragmentThreeBtn) Button fragmentThreeBtn;
+    @BindView(R.id.company) TextView companies;
+    @BindView(R.id.workEmail) TextView mWorkEmail;
+    @BindView(R.id.personalEmail) TextView mPersonalEmail;
+    @BindView(R.id.insuranceNo) TextView mInsuranceNo;
+    @BindView(R.id.pinNumber) TextView mPinNumber;
+    @BindView(R.id.employeeId) TextView mEmployeeId;
+    @BindView(R.id.employmentDate) TextView mEmploymentDate;
+    @BindView(R.id.department) TextView mDepartment;
+    @BindView(R.id.grossPay) TextView mGrossPay;
+    @BindView(R.id.netPay) TextView mNetPay;
+
+
+
+
+
+
 
     StaffResponse staffResponse;
     @Override
@@ -46,12 +62,38 @@ public class SIngleStaffActivity extends AppCompatActivity implements View.OnCli
             String username = staffResponse.getOtherNames();
             String role = staffResponse.getDepartment();
             String jobType = staffResponse.getMaritalStatus();
+            String company = "FuzuPay";
+            String workEmail = staffResponse.getWorkEmail();
+            String personalEmail = String.valueOf(staffResponse.getPersonalEmail());
+            String insuranceNo = String.valueOf(staffResponse.getInsuranceNumber());
+            String pinNumber = (String) staffResponse.getTaxPinNumber();
+            String employeeId  = staffResponse.getEmployeeId();
+            String employmentDate   = staffResponse.getEmploymentDate();
+            String department  = staffResponse.getDepartment();
+            String grossPay  = staffResponse.getGrossSalary();
+            String netPay = "20,000";
+
+
+
+
 
 
         Toast.makeText(SIngleStaffActivity.this,"Hello"+username,Toast.LENGTH_SHORT).show();
         mUsername.setText(username);
         departments.setText(role);
         workingPeriod.setText(jobType);
+        companies.setText(company);
+        mWorkEmail.setText(workEmail);
+        mPersonalEmail.setText(personalEmail);
+        mInsuranceNo.setText(personalEmail);
+        mPinNumber.setText(pinNumber);
+        mEmployeeId.setText(employeeId);
+        mEmploymentDate.setText(employmentDate);
+        mDepartment.setText(department);
+        mGrossPay.setText(grossPay);
+        mNetPay.setText(netPay);
+
+
 
         fragmentTwoBtn.setOnClickListener(this);
         fragmentOneBtn.setOnClickListener(this);

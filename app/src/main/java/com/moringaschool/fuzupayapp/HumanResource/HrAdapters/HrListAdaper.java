@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+//import com.example.petyfinderip_version2.models.Animal;
 import com.example.petyfinderip_version2.models.Animal;
 import com.moringaschool.fuzupayapp.R;
 

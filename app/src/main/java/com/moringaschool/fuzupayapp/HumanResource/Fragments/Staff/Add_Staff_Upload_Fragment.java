@@ -59,7 +59,6 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //  uploadButton=(Button) uploadButton.findViewById(R.id.uploadButton);
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -76,6 +75,7 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
         ButterKnife.bind(this,view);
         chooseFile.setOnClickListener(this);
         return view;
+
     }
     @Override
     public void onClick(View v) {
@@ -85,4 +85,18 @@ public class Add_Staff_Upload_Fragment extends Fragment implements View.OnClickL
             startActivityForResult(intent, 2);
         }
     }
+
+
 }
+
+
+// Uri gallery = Uri.parse("https://www.android.com");
+//  Intent galleryIntent = new Intent(Intent.ACTION_VIEW, gallery);
+//
+//            Uri pdfUri = FileProvider.getUriForFile(context, FILES_AUTHORITY, filePath);
+//          Intent shareIntent = ShareCompat.IntentBuilder.from(activity)
+//                    .setStream(pdfUri)
+//                    .getIntent();
+//
+//            shareIntent.setData(pdfUri);
+//            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);

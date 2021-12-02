@@ -2,12 +2,12 @@ package com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,7 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -24,8 +23,12 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.moringaschool.fuzupayapp.FragmentAdapter.LeaveRequestAdapter;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
+import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
 import com.moringaschool.fuzupayapp.HumanResource.Dashboard.DashboardActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.PostrequestApi.PostLeaveRequest;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.PostrequestApi.PostClient;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.PostrequestApi.PostResponses;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestClient;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestResponse;
@@ -41,7 +44,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LeaveActivity extends AppCompatActivity implements View.OnClickListener{
+public class LeaveActivity extends AppCompatActivity implements RequestAdapter.ClickedLeave, View.OnClickListener{
     @BindView(R.id.bottom_navigation) BottomNavigationView mBottomNavigationView;
     @BindView(R.id.fragmentOneBtn2) Button fragmentOneBtn2;
     @BindView(R.id.fragmentTwoBtn2) Button fragmentTwoBtn2;
@@ -50,13 +53,19 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
     BottomNavigationView bottomNavigationView;
     @BindView(R.id.imageView5)
     ImageView logout;
+//    @BindView(R.id.iconTick) ImageView iconTick;
+//    @BindView(R.id.xIcon) ImageView xIcon;
+
     @BindView(R.id.progressBars)
     ProgressBar progressBar;
     @BindView(R.id.pleasewaits)
     TextView pleasewait;
+    @BindView(R.id.motifivationsNumberContainer)
+    CardView notify;
 
 
    RequestAdapter requestAdapter;
+
     //    fragment inititializations
 //    private TextView fragmentOneBtn2, fragmentTwoBtn2;
 
@@ -73,11 +82,11 @@ public class LeaveActivity extends AppCompatActivity implements View.OnClickList
         fragmentOneBtn2.setOnClickListener(this);
         logout.setOnClickListener(this);
 
-//        LeaveRequestAdapter adapter=new LeaveRequestAdapter(this,leaveName,names,dates,durations);
-//        recyclerView2.setAdapter(adapter);
+        NotificationFetch();
+
         recyclerView2.setLayoutManager(new LinearLayoutManager(this));
         recyclerView2.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-        requestAdapter = new RequestAdapter();
+        requestAdapter = new RequestAdapter(this::ClickedUserleave);
 
         getAll();
 
@@ -113,18 +122,48 @@ public void getAll(){
                 hideProgressbar();
                 requestAdapter.setData(requestResponses);
                 recyclerView2.setAdapter(requestAdapter);
-
             }
-        }
+                else {
+                }
+            }
 
         @Override
         public void onFailure(Call<List<RequestResponse>> call, Throwable t) {
-
-            Log.e("failure",t.getLocalizedMessage());
         }
     });
-
 }
+
+    public  void NotificationFetch() {
+        Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
+
+        userlist.enqueue(new Callback<List<NotificationResponse>>() {
+            @Override
+            public void onResponse(Call<List<NotificationResponse>> call, Response<List<NotificationResponse>> response) {
+                if (response.isSuccessful()){
+                    List<NotificationResponse> notificationIcon = response.body();
+                    for(NotificationResponse notes:notificationIcon){
+                        String id = String.valueOf(notes.getId().toString());
+                        int intid = new Integer(id).intValue();
+                        if(intid<1){
+                            notify.setVisibility(View.GONE);
+                        }
+                        else {
+                            notify.setVisibility(View.VISIBLE);
+                        }
+
+//                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<NotificationResponse>> call, Throwable t) {
+                Log.e("failure",t.getLocalizedMessage());
+            }
+        });
+    }
+
 
     @Override
     public void onStart() {
@@ -154,6 +193,10 @@ public void getAll(){
             fragmentTransaction.commit();
         }
 
+    }
+
+    public void removeItem(int position){
+        requestAdapter.notifyItemRemoved(position);
     }
 
 
@@ -197,4 +240,26 @@ public void getAll(){
         progressBar.setVisibility(View.GONE);
         pleasewait.setVisibility(View.GONE);
     }
+
+
+    @Override
+    public void ClickedUserleave(RequestResponse requestResponse) {
+        PostLeaveRequest postLeaveRequest = new PostLeaveRequest();
+
+        String employee = requestResponse.getEmployee().toString();
+        String leave_type = requestResponse.getLeaveType().toString();
+        String department = requestResponse.getDepartment().toString();
+        String employment_type = requestResponse.getEmploymentType().toString();
+
+        postLeaveRequest.setEmployee(employee);
+        postLeaveRequest.setLeave_type(leave_type);
+        postLeaveRequest.setDepartment(department);
+        postLeaveRequest.setEmployment_type(employment_type);
+        Log.e("eiop",employee);
+        removeItem(0);
+    }
+
+
+
+
 }

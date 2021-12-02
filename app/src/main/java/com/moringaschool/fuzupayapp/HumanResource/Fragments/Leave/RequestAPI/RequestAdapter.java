@@ -22,8 +22,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestA
     private List<RequestResponse>  requestREspondlist;
     private OnItemClickListener mListener;
     private Context context;
+    private ClickedLeave clickedLeave;
 
-    public RequestAdapter() {
+    public RequestAdapter(ClickedLeave clickedLeave) {
+        this.clickedLeave = clickedLeave;
     }
     public  interface OnItemClickListener{
         void onItemClick(int position);
@@ -59,6 +61,16 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestA
         holder.staffname.setText(Username3);
         holder.duration.setText("Duration: "+0+" Days");
 
+        holder.iconTick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickedLeave.ClickedUserleave(requestResponse);
+            }
+        });
+    }
+
+    public interface ClickedLeave{
+        public  void ClickedUserleave(RequestResponse requestResponse);
     }
 
     @Override

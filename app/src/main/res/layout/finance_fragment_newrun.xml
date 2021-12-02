@@ -76,9 +76,10 @@
                 android:textStyle="bold"
                 android:layout_marginStart="10dp"/>
             <EditText
-                android:id="@+id/runfrom"
+                android:id="@+id/datePicker"
                 android:layout_width="90dp"
                 android:layout_height="30dp"
+                style="?android:spinnerStyle"
                 android:padding="5dp"
                 android:background="@drawable/thin_border"
                 android:drawableEnd="@drawable/ic_calendar"/>
@@ -247,6 +248,7 @@
             android:layout_height="wrap_content"
             android:textColor="#004673"
             android:textStyle="bold"
+            android:id="@+id/payIdOne"
             android:layout_marginStart="10dp"
             android:text="Pay ID"/>
         <TextView
@@ -254,21 +256,24 @@
             android:layout_height="wrap_content"
             android:textColor="#004673"
             android:textStyle="bold"
-            android:layout_marginStart="30dp"
+            android:id="@+id/monthMain"
+            android:layout_marginStart="43dp"
             android:text="Month"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#004673"
             android:textStyle="bold"
-            android:layout_marginStart="30dp"
+            android:id="@+id/debitAmountMain"
+            android:layout_marginStart="15dp"
             android:text="Debit Amount"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#004673"
             android:textStyle="bold"
-            android:layout_marginStart="30dp"
+            android:id="@+id/paymentStatus"
+            android:layout_marginStart="18dp"
             android:text="Payment Status"/>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView

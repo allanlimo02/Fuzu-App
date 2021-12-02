@@ -13,10 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.moringaschool.fuzupayapp.HumanResource.LeaveApi.OnLeaveApi;
 import com.moringaschool.fuzupayapp.HumanResource.LeaveApi.onLeaveClient;
-import com.moringaschool.fuzupayapp.HumanResource.onLeaveAdapter;
-import com.moringaschool.fuzupayapp.HumanResource.onLeaveResponse;
+import com.moringaschool.fuzupayapp.HumanResource.LeaveApi.onLeaveAdapter;
+import com.moringaschool.fuzupayapp.HumanResource.LeaveApi.onLeaveResponse;
 import com.moringaschool.fuzupayapp.R;
 
 import java.util.List;

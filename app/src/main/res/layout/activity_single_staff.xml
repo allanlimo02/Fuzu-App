@@ -136,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:drawableStart="@drawable/location_pin"
-                    android:text="Location"
+                    android:text="Nairobi"
                     android:textColor="#004763" />
 
                 <TextView

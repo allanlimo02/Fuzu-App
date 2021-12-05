@@ -4,12 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -21,13 +19,14 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.petyfinderip_version2.models.SearchResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 //import com.moringaschool.fuzupayapp.Holidays.Holiday;
-import com.example.petyfinderip_version2.models.Animal;
 import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
 import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
+import com.moringaschool.fuzupayapp.Holidays.HolidayResponses;
+import com.moringaschool.fuzupayapp.Holidays.models.HolidayAdapter;
+import com.moringaschool.fuzupayapp.Holidays.models.HolidayClients;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestClient;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestResponse;
@@ -35,9 +34,6 @@ import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AddStaffMain;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.AllStaffActivity;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.DepartmentsFragment;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
-import com.moringaschool.fuzupayapp.HumanResource.HrAdapters.HrListAdaper;
-import com.moringaschool.fuzupayapp.HumanResource.HrApiInterface.HolidayClient;
-import com.moringaschool.fuzupayapp.HumanResource.HrApiInterface.hrApi;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
 import com.moringaschool.fuzupayapp.loginAPI.models.LoginResponse;
@@ -71,10 +67,12 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     @BindView(R.id.managestaffbtn) TextView manageStaffBtn;
     @BindView(R.id.relative)  RelativeLayout relative;
     @BindView(R.id.topBarProgress) ProgressBar topBarProgress;
+    @BindView(R.id.prog) ProgressBar prog;
 
 
-    private HrListAdaper mAdapter;
-    public List<Animal> genders;
+
+    private HolidayAdapter holidayAdapter;
+
 
     AllStaffActivity allStaffActivity = new AllStaffActivity();
 
@@ -116,39 +114,6 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-//        API
-        hrApi client = HolidayClient.getClient();
-        Call<SearchResponse> call = client.getPets("horse");
-
-        call.enqueue(new Callback<com.example.petyfinderip_version2.models.SearchResponse>() {
-            @Override
-            public void onResponse(Call<com.example.petyfinderip_version2.models.SearchResponse> call, Response<com.example.petyfinderip_version2.models.SearchResponse> response) {
-                hideProgressBar();//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//            fragmentTransaction.replace(R.id.ourFrameLayout,new DepartmentsFragment());
-//            fragmentTransaction.commit();
-                if (response.isSuccessful()) {
-                    genders = response.body().getAnimals();
-                    mAdapter = new HrListAdaper(DashboardActivity.this, genders);
-
-                    recycle.setAdapter(mAdapter);
-                    RecyclerView.LayoutManager layoutManager =
-                            new LinearLayoutManager(DashboardActivity.this);
-                    recycle.setLayoutManager(layoutManager);
-                    recycle.setHasFixedSize(true);
-                    showRestaurants();
-
-                } else {
-                    showUnsuccessfulMessage();
-                }
-            }
-            @Override
-            public void onFailure(Call<com.example.petyfinderip_version2.models.SearchResponse> call, Throwable t) {
-                Log.e("Error Message", "onFailure: ",t );
-                hideProgressBar();
-                showFailureMessage();
-            }
-        });
-
             bottomNavigationView = findViewById(R.id.bottom_navigation);
       bottomNavigationView.setSelectedItemId(R.id.nav_home);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -171,6 +136,36 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
             }
         });
     }
+
+    private void HolidayAll() {
+        Call<HolidayResponses>holiday=HolidayClients.getHolidayServices().getHoliday();
+        showProgressbar();
+        holiday.enqueue(new Callback<HolidayResponses>() {
+            @Override
+            public void onResponse(Call<HolidayResponses> call, Response<HolidayResponses> response) {
+                hideProgressbar();
+                if (response.isSuccessful()) {
+                    HolidayResponses departmentResponses = response.body();
+                    holidayAdapter.setData(departmentResponses);
+                    recycle.setAdapter(holidayAdapter);
+                    Log.e("successful",response.body().toString());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<HolidayResponses> call, Throwable t) {
+                Log.e("failure", t.getLocalizedMessage());
+            }
+        });
+    }
+
+//            @Override
+//            public void onFailure(Call<List<HolidayResponse>> call, Throwable t) {
+//
+//            }
+//        });
+//    }
+
     private   void NotificationFetch() {
         Call<List<NotificationResponse>> userlist = NotificationClient.getNotification().getNotification();
 
@@ -263,11 +258,29 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
         mProgressBar.setVisibility(View.GONE);
     }
 
+    private void showRestaurantss() {
+        prog.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBars() {
+        prog.setVisibility(View.GONE);
+    }
+    private void showProgressbar() {
+        mProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressbar() {
+        mProgressBar.setVisibility(View.GONE);
+    }
+
+
     public void getLeaveRequests(){
+        showRestaurantss();
         Call<List<RequestResponse>> userlist = RequestClient.getRequests().getAllRequests();
         userlist.enqueue(new Callback<List<RequestResponse>>() {
             @Override
             public void onResponse(Call<List<RequestResponse>> call, Response<List<RequestResponse>> response) {
+                hideProgressBars();
                 List<RequestResponse> requestResponses = response.body();
                 for(RequestResponse reqres:requestResponses ){
                     String id=String.valueOf(reqres.getId().toString());

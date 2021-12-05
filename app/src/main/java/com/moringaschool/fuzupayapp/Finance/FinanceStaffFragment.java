@@ -86,7 +86,7 @@ public class FinanceStaffFragment extends Fragment  implements View.OnClickListe
                     List<EcompletedResponse> ecompletedResponses = response.body();
                     eCompletedAdapter.setData(ecompletedResponses);
                     recyclerComplete.setAdapter(eCompletedAdapter);
-                    Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
                 }
             }
 

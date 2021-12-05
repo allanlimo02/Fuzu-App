@@ -6,44 +6,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/recViewPart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:padding="5dp"
-        android:weightSum="4"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/recViewPart">
+        android:paddingTop="10dp"
+        android:layout_marginStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
             android:id="@+id/payIdOne"
-            android:layout_marginStart="0dp"
-            android:text="Pay ID"/>
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:id="@+id/monthMain"
-            android:layout_marginStart="18dp"
-            android:text="Month"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:id="@+id/debitAmountMain"
-            android:layout_marginStart="15dp"
-            android:text="Debit Amount"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Pay ID"
             android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/monthMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:text="Month"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/debitAmountMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Debit Amount"
+            android:layout_marginStart="170dp"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/paymentStatus"
-            android:layout_marginStart="28dp"
-            android:text="Payment Status"/>
-    </LinearLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="290dp"
+            android:text="Payment Status"
+            android:textColor="#004673"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
 <!--    <RelativeLayout-->
 <!--        android:id="@+id/titleBar"-->

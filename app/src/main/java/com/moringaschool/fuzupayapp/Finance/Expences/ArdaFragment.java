@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -31,6 +32,8 @@ import com.moringaschool.fuzupayapp.Finance.Fragments.FinanceExpenseDetail;
 import com.moringaschool.fuzupayapp.Finance.Fragments.FinanceExpenseDetailsActivity;
 import com.moringaschool.fuzupayapp.Finance.Pazyroll.financePayroll_1;
 import com.moringaschool.fuzupayapp.Finance.SingleStaffFragment;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.LeaveActivity;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.DepartmentsFragment;
 import com.moringaschool.fuzupayapp.R;
 
 import java.util.List;
@@ -41,7 +44,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ArdaFragment extends Fragment implements View.OnClickListener {
+public class ArdaFragment extends Fragment implements View.OnClickListener , ExpensesAdapter.ClickedItem {
     @BindView(R.id.SpinnerARD)  Spinner spinner;
     @BindView(R.id.linelayout1)
     LinearLayout linelayout1;
@@ -62,7 +65,9 @@ public class ArdaFragment extends Fragment implements View.OnClickListener {
         recyclerView = view.findViewById(R.id.frameLayoutPendingsOne);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
-        expensesAdapter = new ExpensesAdapter();
+
+
+        expensesAdapter = new ExpensesAdapter(this::ClickedUser);
         getExpenses();
         return view;
 
@@ -83,20 +88,8 @@ public class ArdaFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-//        if(view == linelayout2){
-//            startActivity(new Intent(getActivity(), FinanceExpenseDetailsActivity.class));
-//        }
-       // if(view == linelayout1){
-         //   startActivity(new Intent(getActivity(), FinanceExpenseDetailsActivity.class));
-      //  }
-//        if(view == linelayout3){
-//            startActivity(new Intent(getActivity(), FinanceExpenseDetailsActivity.class));
-//        }
 
     }
-
-
-
     private void getExpenses() {
 
         Call<List<ExpensesResponse>> expensesList = ExpenseApiClient.getExpensesService().getExpenses();
@@ -116,5 +109,12 @@ public class ArdaFragment extends Fragment implements View.OnClickListener {
                 Log.e("failure",t.getLocalizedMessage());
             }
         });
+    }
+
+    @Override
+    public void ClickedUser(ExpensesResponse expensesResponse) {
+        Log.d("failure",expensesResponse.getAmount().toString());
+        startActivity(new Intent(getActivity(), SingleExpenseActivity.class).putExtra("data",expensesResponse));
+//        overridePendingTransition(0,0);
     }
 }

@@ -18,12 +18,14 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="PAY12/2021"
+           android:layout_weight="1"
            android:textColor="@color/black"
            android:id="@+id/payid"/>
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="December"
+           android:layout_weight="1"
            android:textColor="@color/black"
            android:layout_marginStart="20dp"
            android:id="@+id/paymonth"/>
@@ -31,6 +33,7 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="KES 1,458,000"
+           android:layout_weight="1"
            android:textColor="@color/black"
            android:layout_marginStart="20dp"
            android:id="@+id/payAmount"/>
@@ -38,6 +41,7 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="Successful"
+           android:layout_weight="1"
            android:textColor="#004763"
            android:layout_marginStart="20dp"
            android:id="@+id/paystatus"/>

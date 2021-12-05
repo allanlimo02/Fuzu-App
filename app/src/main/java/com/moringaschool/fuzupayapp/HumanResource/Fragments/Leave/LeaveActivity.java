@@ -32,6 +32,8 @@ import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.PostrequestApi
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestAdapter;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestClient;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Leave.RequestAPI.RequestResponse;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.Docs.DocsApploadApiClient;
+import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.APIApploadDocs.Bank.Docs.DocsApploadUserResponse;
 import com.moringaschool.fuzupayapp.HumanResource.Fragments.Staff.StaffActivity;
 import com.moringaschool.fuzupayapp.R;
 import com.moringaschool.fuzupayapp.SwitchAccount.SwitchLogoutActivity;
@@ -257,9 +259,85 @@ public void getAll(){
         postLeaveRequest.setEmployment_type(employment_type);
         Log.e("eiop",employee);
         removeItem(0);
+
+
+        Call<PostResponses> docsApploadUserResponseCall = PostClient.getleaveservice().saveLeave(postLeaveRequest);
+        docsApploadUserResponseCall.enqueue(new Callback<PostResponses>() {
+            @Override
+            public void onResponse(Call<PostResponses> call, Response<PostResponses> response) {
+
+                if (response.isSuccessful()) {
+                    Toast.makeText(LeaveActivity.this, "saved successfully", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LeaveActivity.this, " not saved successfully", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PostResponses> call, Throwable t) {
+                Toast.makeText(LeaveActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(LeaveActivity.this, "Well Successfully but on Failure", Toast.LENGTH_SHORT).show();
+            }
+//
+//            @Override
+//            public void onFailure(Call<DocsApploadUserResponse> call, Throwable t) {
+//
+//                Toast.makeText(LeaveActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(LeaveActivity.this, "Well Successfully but on Failure", Toast.LENGTH_SHORT).show();
+//            }
+        });
+
+
     }
 
+//    private PostLeaveRequest save() {
+//        RequestResponse requestResponse = new RequestResponse();
+//        PostLeaveRequest postLeaveRequest = new PostLeaveRequest();
+//
+//
+//        String employee = requestResponse.getEmployee().toString();
+//        String leave_type = requestResponse.getLeaveType().toString();
+//        String department = requestResponse.getDepartment().toString();
+//        String employment_type = requestResponse.getEmploymentType().toString();
+//
+//        postLeaveRequest.setEmployee(employee);
+//        postLeaveRequest.setLeave_type(leave_type);
+//        postLeaveRequest.setDepartment(department);
+//        postLeaveRequest.setEmployment_type(employment_type);
+//        Log.e("eiop",employee);
+//        removeItem(0);
+//return postLeaveRequest;
+//    }
 
+    private void saveleaves(PostLeaveRequest postLeaveRequest) {
+        Call<PostResponses> docsApploadUserResponseCall = PostClient.getleaveservice().saveLeave(postLeaveRequest);
+        docsApploadUserResponseCall.enqueue(new Callback<PostResponses>() {
+            @Override
+            public void onResponse(Call<PostResponses> call, Response<PostResponses> response) {
+
+                if (response.isSuccessful()) {
+                    Toast.makeText(LeaveActivity.this, "saved successfully", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LeaveActivity.this, " not saved successfully", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PostResponses> call, Throwable t) {
+                Toast.makeText(LeaveActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(LeaveActivity.this, "Well Successfully but on Failure", Toast.LENGTH_SHORT).show();
+            }
+//
+//            @Override
+//            public void onFailure(Call<DocsApploadUserResponse> call, Throwable t) {
+//
+//                Toast.makeText(LeaveActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(LeaveActivity.this, "Well Successfully but on Failure", Toast.LENGTH_SHORT).show();
+//            }
+        });
+
+
+    }
 
 
 }

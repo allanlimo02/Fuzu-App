@@ -70,6 +70,7 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
     @BindView(R.id.ifleaverequestnotavailable) LinearLayout ifLeaveRequestNotAvailable;
     @BindView(R.id.managestaffbtn) TextView manageStaffBtn;
     @BindView(R.id.relative)  RelativeLayout relative;
+    @BindView(R.id.topBarProgress) ProgressBar topBarProgress;
 
 
     private HrListAdaper mAdapter;
@@ -140,20 +141,16 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
                     showUnsuccessfulMessage();
                 }
             }
-
             @Override
             public void onFailure(Call<com.example.petyfinderip_version2.models.SearchResponse> call, Throwable t) {
                 Log.e("Error Message", "onFailure: ",t );
                 hideProgressBar();
                 showFailureMessage();
             }
-
         });
 
             bottomNavigationView = findViewById(R.id.bottom_navigation);
-
       bottomNavigationView.setSelectedItemId(R.id.nav_home);
-
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -214,8 +211,6 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
             Intent intent= new Intent(DashboardActivity.this, AllStaffActivity.class);
             String nPage="AddStaffMain";
             startActivity(intent);
-
-
         }
         if(v==addstaff){
             Intent intent= new Intent(DashboardActivity.this,AddStaffMain.class);
@@ -281,11 +276,12 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
                         listlength=0;
                     }
                     if(listlength<1){
-
+                        lRequestProgressHide();
                         relative.setBackgroundColor(Color.rgb(0,70,115));
                         ifLeaveRequestNotAvailable.setVisibility(View.VISIBLE);
                         ifLeaveRequestAvailable.setVisibility(View.GONE);
                     }else{
+                        lRequestProgressHide();
                         relative.setBackgroundColor(Color.rgb(200, 208, 211));
                         ifLeaveRequestNotAvailable.setVisibility(View.GONE);
                         ifLeaveRequestAvailable.setVisibility(View.VISIBLE);
@@ -299,6 +295,9 @@ public class DashboardActivity extends AppCompatActivity  implements View.OnClic
             }
         });
 
+    }
+    private void lRequestProgressHide(){
+        topBarProgress.setVisibility(View.GONE);
     }
 
 

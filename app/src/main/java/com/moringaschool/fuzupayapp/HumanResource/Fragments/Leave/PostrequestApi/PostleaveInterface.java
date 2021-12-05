@@ -9,4 +9,6 @@ public interface PostleaveInterface {
 
      @POST("leaves/")
      Call<PostResponses>saveLeave(@Body PostLeaveRequest postLeaveRequest);
+
+//     Call<PostResponses> saveLeave(@Body String employee, String leave_type, String department, String employment_type);
 }

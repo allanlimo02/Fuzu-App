@@ -76,44 +76,53 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView3"
                         app:layout_constraintVertical_bias="0.042" />
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/ifleaverequestnotavailable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:id="@+id/ifleaverequestnotavailable"
             android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/managestafftext"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:text="You have no pending tasks today,now its a good time to \n manage your staff"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        android:paddingTop="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.661"
-                        app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:id="@+id/managestaffbtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:background="@drawable/thin_border_theme_backround"
-                        android:text="Manage Staff"
-                        android:layout_marginStart="7dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView3"
-                        app:layout_constraintVertical_bias="0.042" />
+            <TextView
+                android:id="@+id/managestafftext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:paddingTop="10dp"
+                android:text="You have no pending tasks today,now its a good time to \n manage your staff"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.661"
+                app:layout_constraintStart_toStartOf="parent" />
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/prog"
+                android:visibility="gone"
+               />
+
+            <TextView
+                android:id="@+id/managestaffbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/thin_border_theme_backround"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="5dp"
+                android:text="Manage Staff"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:layout_constraintVertical_bias="0.042" />
         </LinearLayout>
     </RelativeLayout>
 

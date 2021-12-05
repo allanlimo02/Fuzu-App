@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +20,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationClient;
 import com.moringaschool.fuzupayapp.APIRequests.Notification.NotificationResponse;
 import com.moringaschool.fuzupayapp.Finance.Dashboard_Finance;
-import com.moringaschool.fuzupayapp.Finance.EpaymentsFragment;
+import com.moringaschool.fuzupayapp.Finance.FinancePayrolePaymentFragment;
 import com.moringaschool.fuzupayapp.Finance.FinanceStaffFragment;
 import com.moringaschool.fuzupayapp.Finance.Payroll2;
 import com.moringaschool.fuzupayapp.R;
@@ -116,7 +115,7 @@ public class Finance_Approve_Activity extends AppCompatActivity implements View.
            Pending.setBackgroundResource(R.drawable.thin_border);
            Pending.setTextColor(Color.rgb(0,70,115));
            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-           fragmentTransaction.replace(R.id.frameLayoutPendings,new EpaymentsFragment());
+           fragmentTransaction.replace(R.id.frameLayoutPendings,new FinancePayrolePaymentFragment());
            fragmentTransaction.commit();
 
        }

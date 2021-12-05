@@ -1,6 +1,10 @@
 package com.moringaschool.fuzupayapp.APIRequests;
 
-public class ExpensesResponse {
+import org.parceler.Parcel;
+
+import java.io.Serializable;
+
+public class ExpensesResponse implements Serializable {
 
     private int id;
     private String name;

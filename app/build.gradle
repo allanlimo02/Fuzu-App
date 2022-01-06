@@ -135,4 +135,7 @@ dependencies {
 //    implementation 'com.nbsp:library:1.8'
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation 'junit:junit:4.12'
+    // Parceler
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
 }
